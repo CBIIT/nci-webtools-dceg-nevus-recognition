@@ -3,9 +3,6 @@
   display: block;
   clear: both;
 }
-button:focus{
-	outline:none;
-}
 
 body {
   background: #F4F3F3;
@@ -13,7 +10,7 @@ body {
 
 .isotope {
   margin: 40px auto;
-  min-height: 300px;
+  min-height: 425px;
 }
 
 .item {

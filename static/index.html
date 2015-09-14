@@ -37,9 +37,9 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" ng-click="home=true; searching=false; ulinks=false;">Home</a></li>
+            <li><a href="#" ng-click="gohome()">Home</a></li>
             <li><a href="#" ng-click="tool()" class="tool">Recognition Tool</a></li>
-            <li><a href="#" ng-click="ulinks=true">Useful Links</a></li>
+            <li><a href="#" ng-click="goulinks()">Useful Links</a></li>
           </ul>
         </div>
       </div>
@@ -49,16 +49,16 @@
     </div>
     <div class="contain">
       <div class="button-group" id="filters" ng-class="{active:searching || home || ulinks}">
-        <button class="button" data-filter="{{filter.type}}" filters-dir="" ng-click="updatecurrenttype(filter)" ng-repeat="filter in filters">{{filter.name}}</button>
+        <button class="button blur" data-filter="{{filter.type}}" filters-dir="" ng-click="updatecurrenttype(filter)" ng-repeat="filter in filters">{{filter.name}}</button>
       </div>
       <div class="type" ng-if="!searching && !home && !ulinks">
         <div id="typedescription">
           <p class="previewdescription" ng-if="!showfull" ng-bind-html="currenttype.descriptionpreview"></p>
           <p class="fulldescription" ng-if="showfull" ng-bind-html="currenttype.description"></p>
-          <button class="readmore" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Read More' }}</button>
+          <button class="readmore blur" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Read More' }}</button>
         </div>
         <div class="subgroup button-group" ng-if="currenttype.subgroups">
-          <button class="button" data-filter="{{subgroup.type}}" ng-repeat="subgroup in currenttype.subgroups" subgroup-dir="true">{{subgroup.name}}</button>
+          <button class="button blur" data-filter="{{subgroup.type}}" ng-repeat="subgroup in currenttype.subgroups" subgroup-dir="true">{{subgroup.name}}</button>
         </div>
       </div>
       <h3 class="searchbanner" ng-if="searching">SEARCH RESULTS</h3>
@@ -116,7 +116,7 @@
       </ul>
       <span class="copyright">NIH... Turning Discovey into Health&reg;</span>
     </footer>
-    <button class="backtotop">
+    <button class="backtotop blur">
       <span class="glyphicon glyphicon-chevron-up"></span>
     </button>
     <div aria-labelledby="myModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">

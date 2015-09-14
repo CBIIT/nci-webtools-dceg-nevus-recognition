@@ -24,6 +24,9 @@ $( document ).ready( function() {
     itemSelector: '.item',
     filter: filterFns.by6
   });
+  $('.blur').click(function(){
+    $(this).blur();
+  });
   if($('.'+filterValue).length>pages*itemsperpage){
     $('.loadmore').show();
   }else{
@@ -177,6 +180,12 @@ app.controller('myCtrl', function($scope, $http) {
     $scope.home=false;
     $scope.ulinks=false;
     $('.loadmoresearch').hide();
+  }
+  $scope.gohome = function() {
+    $scope.home=true; $scope.searching=false; $scope.ulinks=false; $('.loadmore').hide();
+  }
+  $scope.goulinks = function() {
+    $scope.ulinks=true; $('.loadmore').hide();
   }
   $scope.clearsearch = function() {
     $scope.searching=false;
