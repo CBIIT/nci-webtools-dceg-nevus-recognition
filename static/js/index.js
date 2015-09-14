@@ -1,23 +1,23 @@
 var $container;
 var filterValue='mole';
-  var pages=1, itemsperpage=6, numitems=0, search="";
-  var filterFns = {
-    by6: function() {
-      if(numitems<itemsperpage*pages && $(this).hasClass(filterValue)){
-        numitems++;
-        return true;
-      }
-      return false;
-    },
-    searchby6: function() {
+var pages=1, itemsperpage=6, numitems=0, search="";
+var filterFns = {
+  by6: function() {
+    if(numitems<itemsperpage*pages && $(this).hasClass(filterValue)){
+      numitems++;
       return true;
-      if(numitems<itemsperpage*pages){
-        numitems++;
-        return true;
-      }
-      return false;
     }
+    return false;
+  },
+  searchby6: function() {
+    return true;
+    if(numitems<itemsperpage*pages){
+	  numitems++;
+	  return true;
+    }
+    return false;
   }
+}
 $( document ).ready( function() {
   // init Isotope
   $container = $('.isotope').isotope({
@@ -35,6 +35,7 @@ $( document ).ready( function() {
   numitems=0;
   // bind filter button click
   $('#filters').on( 'click', 'button', function() {
+    console.log("show");
     filterValue = $( this ).attr('data-filter');
     numitems=0;
     pages=1;
@@ -76,8 +77,8 @@ $( document ).ready( function() {
   $('.button-group').each( function( i, buttonGroup ) {
     var $buttonGroup = $( buttonGroup );
     $buttonGroup.on( 'click', 'button', function() {
-      $buttonGroup.find('.is-checked').removeClass('is-checked');
-      $( this ).addClass('is-checked');
+      $(this).addClass('is-checked');
+      $(this).siblings().removeClass('is-checked');
     });
   });
   
@@ -145,7 +146,6 @@ $( document ).ready( function() {
       $('.backtotop').removeClass('active');
     }
   });
-  
 });
 
 var app = angular.module('myApp', ['ngSanitize']);
@@ -157,6 +157,16 @@ app.controller('myCtrl', function($scope, $http) {
   $scope.currentimg=0;
   $scope.arrows=true;
   $scope.currenttype=$scope.filters[0];
+  $scope.home = false;
+  $scope.tool = true;
+  $scope.searching = false;
+  $scope.ulinks = false;
+  $scope.changePage = function() {
+    $scope.home = false;
+    $scope.tool = false;
+    $scope.searching = false;
+    $scope.ulinks = false;
+  }
   $scope.update = function(index) {
     $scope.currentcase=index;
     $scope.currentimg=0;
@@ -169,28 +179,28 @@ app.controller('myCtrl', function($scope, $http) {
     $('.spinnerbox').addClass('spinner-show');
   }
   $scope.updatecurrenttype = function(index) {
+	$scope.changePage();
+    $scope.tool = true;
     $scope.currenttype=index;
-    $scope.searching=false;
-    $scope.home=false;
-    $scope.ulinks=false;
-    $('.loadmoresearch').hide();
-  }
-  $scope.tool = function() {
-    $scope.searching=false;
-    $scope.home=false;
-    $scope.ulinks=false;
-    $('.loadmoresearch').hide();
   }
   $scope.gohome = function() {
-    $scope.home=true; $scope.searching=false; $scope.ulinks=false; $('.loadmore').hide();
+	$scope.changePage();
+    $scope.home = true;
+  }
+  $scope.goabout = function() {
+    $scope.changePage();
+	$scope.about = true;
+  }
+  $scope.gotool = function() {
+	$scope.changePage();
+    $scope.tool = true;
   }
   $scope.goulinks = function() {
-    $scope.ulinks=true; $('.loadmore').hide();
+	$scope.changePage();
+    $scope.ulinks = true;
   }
   $scope.clearsearch = function() {
-    $scope.searching=false;
-    $scope.home=false;
-    $scope.ulinks=false;
+    $scope.changePage();
     numitems=0;
     $container = $('.isotope').isotope({
       itemSelector: '.item',
@@ -206,12 +216,10 @@ app.controller('myCtrl', function($scope, $http) {
   $scope.searchingfunc = function() {
     pages=1;
     numitems=0;
-    $scope.home=false;
-    $scope.ulinks=false;
+	$scope.changePage();
     $scope.searching=true;
   }
   $scope.search="";
-  $scope.searching=false;
   $scope.scrollLeft = function() {
     $('.images').animate({scrollLeft:$('.images').scrollLeft()-$('.images').width()}, 300);
   }

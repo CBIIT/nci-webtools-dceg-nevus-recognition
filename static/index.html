@@ -38,7 +38,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#" ng-click="gohome()">Home</a></li>
-            <li><a href="#" ng-click="tool()" class="tool">Recognition Tool</a></li>
+			<li><a href="#" ng-click="goabout()">About the Tool</a></li>
+            <li><a href="#" ng-click="gotool()" class="tool">Recognition Tool</a></li>
             <li><a href="#" ng-click="goulinks()">Useful Links</a></li>
           </ul>
         </div>
@@ -47,11 +48,11 @@
     <div class="jumbotron">
       <h1>Moles, Dysplastic Nevi & Melanoma</h1>
     </div>
-    <div class="contain">
-      <div class="button-group" id="filters" ng-class="{active:searching || home || ulinks}">
+    <div class="contain" ng-if="searching || tool">
+      <div class="button-group" id="filters" ng-class="{active: searching}">
         <button class="button blur" data-filter="{{filter.type}}" filters-dir="" ng-click="updatecurrenttype(filter)" ng-repeat="filter in filters">{{filter.name}}</button>
       </div>
-      <div class="type" ng-if="!searching && !home && !ulinks">
+      <div class="type" ng-if="tool">
         <div id="typedescription">
           <p class="previewdescription" ng-if="!showfull" ng-bind-html="currenttype.descriptionpreview"></p>
           <p class="fulldescription" ng-if="showfull" ng-bind-html="currenttype.description"></p>
@@ -62,7 +63,7 @@
         </div>
       </div>
       <h3 class="searchbanner" ng-if="searching">SEARCH RESULTS</h3>
-      <div class="isotope" ng-if="!home && !ulinks">
+      <div class="isotope" ng-if="searching || tool">
         <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
           <a data-target="#myModal" data-toggle="modal" href="#" ng-click="update(case)">
             <img alt="" src=".{{case.images[0].image}}" />
@@ -73,7 +74,7 @@
         </div>
       </div>
       <button class="loadmore btn btn-large" >Load More</button>
-      <button class="loadmoresearch btn btn-large" ng-if="!home && !ulinks" style="display:none;">Load More</button>
+      <button class="loadmoresearch btn btn-large" ng-if="searching" style="display:none;">Load More</button>
     </div>
     <div id="usful-links" ng-if="ulinks">
       <h2>Useful Links</h2>
