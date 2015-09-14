@@ -65,7 +65,7 @@
       <div class="isotope" ng-if="!home && !ulinks">
         <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
           <a data-target="#myModal" data-toggle="modal" href="#" ng-click="update(case)">
-            <img alt="" src=".{{case.images[0].thumbnail}}" />
+            <img alt="" src=".{{case.images[0].image}}" />
             <span class="type" ng-if="searching">{{case.typeSearch}}</span>
             <span class="title">{{case.name}}</span>
           </a>
