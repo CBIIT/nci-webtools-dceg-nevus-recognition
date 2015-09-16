@@ -8,46 +8,42 @@ var data={
         "<li>Growths on the skin that develop when pigment cells (melanocytes) grow in clusters</li>"+
         "<li>Also called “common moles” or “common acquired moles”</li>"+
         "<li>Appearance</li>"+
-            "<ul>"+
-                "<li>Size:  Usually less than 5 millimeters or about ¼ inch (not as wide as a new pencil eraser</li>"+
-                "<li>Color:  Usually have an even color; may be pink, tan, brown, black (in deeply pigmented individuals), or a color that is very close to a person’s normal skin tone</li>"+
-                "<li>Shape: Usually round or oval</li>"+
-                "<li>Border:  Usually have a distinct edge that separates it from the rest of the skin</li>"+
-                "<li>Surface:  Begins as a flat, smooth spot on the skin.   May become raised and form a smooth bump</li>"+
-            "</ul>"+
+          "<ul>"+
+            "<li>Size:  Usually less than 5 millimeters or about ¼ inch (not as wide as a new pencil eraser</li>"+
+            "<li>Color:  Usually have an even color; may be pink, tan, brown, black (in deeply pigmented individuals), or a color that is very close to a person’s normal skin tone</li>"+
+            "<li>Shape: Usually round or oval</li>"+
+            "<li>Border:  Usually have a distinct edge that separates it from the rest of the skin</li>"+
+            "<li>Surface:  Begins as a flat, smooth spot on the skin.   May become raised and form a smooth bump</li>"+
+          "</ul>"+
         "<li>Average number for white adult: 10 - 40</li>"+
         "<li>Rarely develop into melanoma (or cancer)</li>"+
         "<li>Vast majority are stable and then disappear</li>"+
             "<ul>"+
-                "<li>Moles go through a “life-cycle”: start as small freckle-like spots; gradually round up and form a bump; may lighten, become flesh-colored; become less elevated, flatten and eventually disappear</li>"+
-                "<li>Life-cycle is a gradual process typically over many years</li>"+
-                "<li>Some moles do not go through the entire “life-cycle”</li>"+
+              "<li>Moles go through a “life-cycle”: start as small freckle-like spots; gradually round up and form a bump; may lighten, become flesh-colored; become less elevated, flatten and eventually disappear</li>"+
+              "<li>Life-cycle is a gradual process typically over many years</li>"+
+              "<li>Some moles do not go through the entire “life-cycle”</li>"+
             "</ul>"+
-      "</ol>",
-    "descriptionpreview":"<b>Basic Information</b><br>"+
-      "<ol>"+
-        "<li>Growths on the skin that develop when pigment cells (melanocytes) grow in clusters</li>"+
-        "<li>Also called “common moles” or “common acquired moles”</li>"+
+        "</li>"+
       "</ol>"
-  },
-  
-    {
+  }, {
     "type":"dysplasticnevi",
     "name":"Dysplastic Nevi",
     "description":"<b>Basic Information</b><br>"+
       "<ol>"+
         "<li>Identify some individuals who are at increased risk of developing melanoma</li>"+
         "<li>Large (greater than 5 mm or ¼ inch) flat (totally or partially) unusual appearing moles with:</li>"+
-            "<ul>"+
-                "<li>irregular shape</li>"+
-                "<li>indistinct (blurry) borders</li>"+
-                "<li>mixture of colors (tan, brown, and red or pink shades)</li>"+
-            "</ul>"+
+          "<ul>"+
+            "<li>irregular shape</li>"+
+            "<li>indistinct (blurry) borders</li>"+
+            "<li>mixture of colors (tan, brown, and red or pink shades)</li>"+
+          "</ul>"+
+        "</li>"+
         "<li>Most common sites for dysplastic nevi are on sun-exposed areas, especially intermittently exposed, such as the back</li>"+
         "<li>Majority are stable and then disappear</li>"+
-            "<ul>"+
-                "<li>typically develop from normal common moles and eventually disappear</li>"+
-            "</ul>"+
+          "<ul>"+
+              "<li>typically develop from normal common moles and eventually disappear</li>"+
+          "</ul>"+
+        "</li>"+
         "<li>Associated with larger numbers of common acquired moles</li>"+
         "<li>Many people have a few DN; occur in approximately 10% of adult populations of northern European descent</li>"+
         "<li>Frequently found in melanoma-prone families in North America, Europe, and Australia</li>"+
@@ -57,16 +53,7 @@ var data={
                 "<li>greatest for people who have a large number of dysplastic nevi</li>"+
                 "<li>especially high for people with a family history of both DN and melanoma</li>"+
             "</ul>"+
-      "</ol>",
-    "descriptionpreview":"<b>Basic Information</b><br>"+
-      "<ol>"+
-        "<li>Identify some individuals who are at increased risk of developing melanoma</li>"+
-        "<li>Large (greater than 5 mm or ¼ inch) flat (totally or partially) unusual appearing moles with:</li>"+
-            "<ul>"+
-                "<li>irregular shape</li>"+
-                "<li>indistinct (blurry) borders</li>"+
-                "<li>mixture of colors (tan, brown, and red or pink shades)</li>"+
-            "</ul>"+
+        "</li>"+
       "</ol>",
     "subgroups":[
       {
@@ -91,55 +78,53 @@ var data={
         "<li>A type of skin cancer that begins in melanocytes (cells that make the pigment melanin)</li>"+
         "<li>Early thin melanomas are curable by minimal surgery alone; advanced melanomas may spread to others parts of the body</li>"+
         "<li>Melanomas can vary greatly in how they look</li>"+
-      "</ul>"+      
-"<b>Melanoma Warning Signs</b><br>"+
-"<b>Pay close attention to any irregular moles or dysplastic nevi, looking for any melanoma warning signs.</b>  If any moles have changed in any of the following ways, or if you are concerned about any of your moles, see your doctor:<br />"+
+      "</ul>"+
+      "<b>Melanoma Warning Signs</b><br>"+
+      "<b>Pay close attention to any irregular moles or dysplastic nevi, looking for any melanoma warning signs.</b>  If any moles have changed in any of the following ways, or if you are concerned about any of your moles, see your doctor:<br />"+
       "<ul>"+
         "<li>Large size, rapid growth, or change in size</li>"+
         "<li>Change in color or development of a black, much darker brown, red or white area</li>"+
-        "<li>Irregular border or changes in outline</li>"+                        
+        "<li>Irregular border or changes in outline</li>"+
         "<li>New scaliness, bleeding, or very shiny surface</li>"+
         "<li>New firm nodule or texture</li>"+
         "<li>New loss of color or areas of blue in skin surrounding a mole</li>"+
         "<li>Unusual sensations or onset of a new feeling within a mole (for example, feeling itchy)</li>"+
         "<li>Sudden appearance of a new pigmented spot or new shiny nodule in previously-normal skin</li>"+
-      "</ul>"+      
+      "</ul>"+
       "<b>Guidelines for Individuals at Increased Risk of Melanoma</b><br>"+
       "<ol>"+
         "<li>Examine your skin thoroughly on a monthly basis.  In order to do this effectively, you should:</li>"+
             "<ul>"+
                 "<li>Familiarize yourself with your skin and all of your moles.</li>"+
-                "<li>Be sure to examine your scalp.</li>"+          
+                "<li>Be sure to examine your scalp.</li>"+
                 "<li>Use mirrors to see your hard-to-see areas.</li>"+
                 "<li>Photographs of your skin and a body diagram are useful for comparison to determine if any moles have changed or if any new ones have appeared.  Make notes of any changes or questions.  If you are concerned, call your doctor.</li>"+
             "</ul>"+
+        "</li>"+
         "<li>Get routine, regular examinations by your health-care provider</li>"+
             "<ul>"+
                 "<li>Point out any moles that you think have changed, or any areas on your skin that worry you. (See Melanoma Warning Signs)</li>"+
             "</ul>"+
+        "</li>"+
         "<li>Watch moles extra carefully during hormonal changes</li>"+
             "<ul>"+
                 "<li>Increased mole activity often occurs in adolescence, and in women who are pregnant, or taking oral contraceptives or post-menopausal estrogen replacement therapy.</li>"+
             "</ul>"+
+        "</li>"+
         "<li>Avoid excessive sun and ultraviolet (UV) radiation exposure</li>"+
             "<ul>"+
                 "<li>Minimize sun exposure between 10AM and 4PM (daylight savings time)</li>"+
                 "<li>Seek shade when outdoors</li>"+
                 "<li>Avoid sunburns; do not suntan</li>"+
-                "<li>Do not use sunlamps, sunbeds or tanning parlors</li>"+      
+                "<li>Do not use sunlamps, sunbeds or tanning parlors</li>"+
                 "<li>Use sunscreens regularly (broad spectrum with UVA and UVB radiation protection and sun protection factor [SPF] of 30 or higher).  Reapply at least every 2 hours or more frequently if perspiring or swimming.</li>"+
                 "<li>Wear protective clothing [hats with wide brims, long sleeves and long pants made of tightly woven fabrics, or fabrics with a Ultraviolet Protection Factor (UPF) of 50+]</li>"+
                 "<li>Wear sunglasses that block 99-100% UV radiation</li>"+
                 "<li>Remember that UV radiation can penetrate light clothing, windshields, and windows.  It reflects from water, sand, snow, and concrete.</li>"+
                 "<li>Keep infants out of the sun.  Be sure children are protected when outdoors.</li>"+
+            "</ul>"+
+        "</li>"+
       "</ol>",
-    
-      "descriptionpreview":"<b>Basic Information</b><br>"+
-      "<ul>"+
-        "<li>A type of skin cancer that begins in melanocytes (cells that make the pigment melanin)</li>"+
-        "<li>Early thin melanomas are curable by minimal surgery alone; advanced melanomas may spread to others parts of the body</li>"+
-        "<li>Melanomas can vary greatly in how they look</li>"+
-      "</ul>"
   }
 ],
 

@@ -18,7 +18,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       if (trueFilter($(this))) {
         if (numitems < itemsperpage*pages) {
           numitems++;
-		  return true;
+    	  return true;
         } else {
           $scope.showload = true;
         }
@@ -34,6 +34,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   }
   $scope.cases = data.cases;
   $scope.filters = data.filters;
+  $scope.about = false;
   $scope.arrows = true;
   $scope.currentcase = {};
   $scope.currentimg = 0;
@@ -51,6 +52,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     $('body,html').animate({scrollTop:0}, 1000);
   }
   $scope.changePage = function() {
+    $scope.about = false;
     $scope.home = false;
     $scope.tool = false;
     $scope.searching = false;
@@ -62,24 +64,32 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       $('#filters button').first().click();
     });
   };
-  $scope.filterClick = function($event, filter, toplevel) {
+  $scope.getFilterByName = function(filterName) {
+    for (var index = 0; index < $scope.filters.length; index++) {
+      var filter = $scope.filters[index];
+      if (filter.type == filterName) {
+        return filter;
+      }
+    }
+    return $scope.filters[0];
+  }
+  $scope.filterClick = function(filter, toplevel) {
     toplevel = typeof toplevel === undefined ? false : toplevel;
-    var element = $event.target;
     $scope.changePage();
-	$scope.tool = true;
+    $scope.tool = true;
     $scope.filterValue = filter.type;
     numitems = 0;
     pages = 1;
     $scope.showload = false;
-	isotopic(filterFns.by6);
     if (toplevel) {
       $scope.currenttype = filter;
-	  if (filter.subgroups) {
+      if (filter.subgroups) {
         $scope.subgrouptype = filter.subgroups[0];
       }
     } else {
       $scope.subgrouptype = filter;
     }
+    $timeout(function() { isotopic(filterFns.by6); });
   }
   $scope.goabout = function() {
     $scope.changePage();
@@ -99,9 +109,9 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   };
   $scope.loadMore = function() {
     pages++;
-	$scope.showload = false;
-	numitems = 0;
-	isotopic($scope.tool?filterFns.by6:filterFns.searchby6);
+    $scope.showload = false;
+    numitems = 0;
+    isotopic($scope.tool?filterFns.by6:filterFns.searchby6);
   }
   $scope.scrollLeft = function() {
     $('.images').animate({scrollLeft:$('.images').scrollLeft()-$('.images').width()}, 300);
@@ -113,7 +123,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     if ($scope.search == undefined) {
       return $scope.clearsearch();
     }
-	$scope.currenttype = null;
+    $scope.currenttype = null;
     $scope.changePage();
     $scope.searching = true;
     search = new RegExp( $scope.search, 'gi' );
@@ -141,7 +151,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     });
   });
   $(document).ready( function() {
-	isotopic(filterFns.by6);
+    isotopic(filterFns.by6);
   });
 });
 
