@@ -17,7 +17,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand tool" href="#" id="brand" ng-click="tool()">
+          <a class="navbar-brand tool" href="#" id="brand" ng-click="gotool()">
             <img alt="" src="http://dceg.cancer.gov/publishedcontent/images/images/DCEG-logo.svg" />
           </a>
           <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
@@ -37,9 +37,10 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" ng-click="home=true; searching=false; ulinks=false;">Home</a></li>
-            <li><a href="#" ng-click="tool()" class="tool">Recognition Tool</a></li>
-            <li><a href="#" ng-click="ulinks=true">Useful Links</a></li>
+            <li><a href="#" ng-click="gohome()">Home</a></li>
+			<li><a href="#" ng-click="goabout()">About the Tool</a></li>
+            <li><a href="#" ng-click="gotool()" class="tool">Recognition Tool</a></li>
+            <li><a href="#" ng-click="goulinks()">Useful Links</a></li>
           </ul>
         </div>
       </div>
@@ -47,35 +48,33 @@
     <div class="jumbotron">
       <h1>Moles, Dysplastic Nevi & Melanoma</h1>
     </div>
-    <div class="contain">
-      <div class="button-group" id="filters" ng-class="{active:searching || home || ulinks}">
-        <button class="button" data-filter="{{filter.type}}" filters-dir="" ng-click="updatecurrenttype(filter)" ng-repeat="filter in filters">{{filter.name}}</button>
+    <div class="contain" ng-show="searching || tool">
+      <div class="button-group" id="filters" ng-class="{}">
+        <button class="button blur" ng-class="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick($event,filter,true)" ng-repeat="filter in filters">{{filter.name}}</button>
       </div>
-      <div class="type" ng-if="!searching && !home && !ulinks">
+      <div class="type" ng-show="tool">
         <div id="typedescription">
-          <p class="previewdescription" ng-if="!showfull" ng-bind-html="currenttype.descriptionpreview"></p>
-          <p class="fulldescription" ng-if="showfull" ng-bind-html="currenttype.description"></p>
-          <button class="readmore" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Read More' }}</button>
+          <p class="fulldescription" ng-class="{limited:!showfull}" ng-bind-html="currenttype.description"></p>
+          <button class="readmore blur" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Read More' }}</button>
         </div>
-        <div class="subgroup button-group" ng-if="currenttype.subgroups">
-          <button class="button" data-filter="{{subgroup.type}}" ng-repeat="subgroup in currenttype.subgroups" subgroup-dir="true">{{subgroup.name}}</button>
+        <div class="subgroup button-group" ng-show="currenttype.subgroups">
+          <button class="button blur" ng-class="{'is-checked':subgrouptype.type==subgroup.type}" ng-click="filterClick($event,subgroup)" ng-repeat="subgroup in currenttype.subgroups">{{subgroup.name}}</button>
         </div>
       </div>
-      <h3 class="searchbanner" ng-if="searching">SEARCH RESULTS</h3>
-      <div class="isotope" ng-if="!home && !ulinks">
+      <h3 class="searchbanner" ng-show="searching">SEARCH RESULTS</h3>
+      <div class="isotope" ng-show="searching || tool">
         <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
           <a data-target="#myModal" data-toggle="modal" href="#" ng-click="update(case)">
-            <img alt="" src=".{{case.images[0].thumbnail}}" />
-            <span class="type" ng-if="searching">{{case.typeSearch}}</span>
+            <img alt="" src=".{{case.images[0].image}}" />
+            <span class="type" ng-show="searching">{{case.typeSearch}}</span>
             <span class="title">{{case.name}}</span>
           </a>
           <div class="sr-only">{{case.description}}</div>
         </div>
       </div>
-      <button class="loadmore btn btn-large" >Load More</button>
-      <button class="loadmoresearch btn btn-large" ng-if="!home && !ulinks" style="display:none;">Load More</button>
+      <button class="loadmore btn btn-large" ng-click="loadMore()" ng-show="showload">Load More</button>
     </div>
-    <div id="usful-links" ng-if="ulinks">
+    <div id="usful-links" ng-show="ulinks">
       <h2>Useful Links</h2>
             <p><a href="http://dcmf.ca/" target="_new">Dear 16-year-old Me</a> <br>
               A promotional video courtesy of the David Cornfield Melanoma Fund.<br>
@@ -116,7 +115,7 @@
       </ul>
       <span class="copyright">NIH... Turning Discovey into Health&reg;</span>
     </footer>
-    <button class="backtotop">
+    <button class="backtotop blur" ng-show="showbacktotop" ng-click="backToTop()">
       <span class="glyphicon glyphicon-chevron-up"></span>
     </button>
     <div aria-labelledby="myModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">
@@ -131,10 +130,10 @@
           <div class="modal-body group">
             <p class="casedescription" ng-bind-html="currentcase.description"></p>
             <div class="carousel">
-              <div class="leftarrow" ng-click="scrollLeft()" ng-if="arrows">
+              <div class="leftarrow" ng-click="scrollLeft()" ng-show="arrows">
                 <span class="glyphicon glyphicon-chevron-left"></span>
               </div>
-              <div class="rightarrow" ng-click="scrollRight()" ng-if="arrows">
+              <div class="rightarrow" ng-click="scrollRight()" ng-show="arrows">
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </div>
               <div class="images">
