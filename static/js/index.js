@@ -25,7 +25,8 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       }
     }
   };
-  var isotopic = function(trueFilter=function(element) { return true; }) {
+  var isotopic = function(trueFilter) {
+    trueFilter = typeof trueFilter === undefined ? function(element) { return true; } : trueFilter;
     $container.isotope({
       itemSelector: '.item',
 	  filter: basicFilter(trueFilter)
@@ -61,7 +62,8 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       $('#filters button').first().click();
     });
   };
-  $scope.filterClick = function($event, filter, toplevel=false) {
+  $scope.filterClick = function($event, filter, toplevel) {
+    toplevel = typeof toplevel === undefined ? false : toplevel;
     var element = $event.target;
     $scope.changePage();
 	$scope.tool = true;
