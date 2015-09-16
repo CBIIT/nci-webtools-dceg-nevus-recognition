@@ -176,14 +176,16 @@
           <div class="modal-body group">
             <p class="casedescription" ng-bind-html="currentcase.description"></p>
             <div class="carousel">
-              <div class="leftarrow" ng-click="scrollLeft()" ng-show="arrows">
+              <div class="leftarrow blur" ng-click="scrollLeft()">
                 <span class="glyphicon glyphicon-chevron-left"></span>
               </div>
-              <div class="rightarrow" ng-click="scrollRight()" ng-show="arrows">
+              <div class="rightarrow blur" ng-click="scrollRight()">
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </div>
               <div class="images">
-                <img carousel-dir="" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" src=".{{image.thumbnail}}" />
+                <button carousel-dir="" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0">
+                  <img src=".{{image.thumbnail}}" />
+                </button>
               </div>
             </div>
             <div class="imgbox">

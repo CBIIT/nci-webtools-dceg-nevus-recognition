@@ -18,7 +18,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       if (trueFilter($(this))) {
         if (numitems < itemsperpage*pages) {
           numitems++;
-    	  return true;
+          return true;
         } else {
           $scope.showload = true;
         }
@@ -27,15 +27,16 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   };
   var isotopic = function(trueFilter) {
     trueFilter = typeof trueFilter === undefined ? function(element) { return true; } : trueFilter;
-    $container.isotope({
-      itemSelector: '.item',
-	  filter: basicFilter(trueFilter)
-	});
+    $timeout(function() {
+      $container.isotope({
+        itemSelector: '.item',
+        filter: basicFilter(trueFilter)
+      });
+    });
   }
   $scope.cases = data.cases;
   $scope.filters = data.filters;
   $scope.about = false;
-  $scope.arrows = true;
   $scope.currentcase = {};
   $scope.currentimg = 0;
   $scope.currenttype = $scope.filters[0];
@@ -172,23 +173,23 @@ app.directive('imageOnLoad', function() {
 app.directive('carouselDir', function() {
   return function(scope, element, attrs) {
     if (scope.$last){
-      $('.images img:nth-child(1)').addClass('active');
-      var imgwidth=$('.images img').length*114;
-      if(imgwidth>$( window ).width()){
+      $('.images button:nth-child(1)').addClass('active');
+      var imgwidth = $('.images img').length * 114;
+      if (imgwidth > 758 || imgwidth > $(window).width()) {
         $('.leftarrow').show();
         $('.rightarrow').show();
         $('.images').css('padding', '8px 50px');
-      }else{
+      } else {
         $('.leftarrow').hide();
         $('.rightarrow').hide();
         $('.images').css('padding', '8px');
       }
       $( window ).resize(function() {
-        if(imgwidth>$( window ).width()){
+        if (imgwidth > 758 || imgwidth > $(window).width()) {
           $('.leftarrow').show();
           $('.rightarrow').show();
           $('.images').css('padding', '8px 50px');
-        }else{
+        } else {
           $('.leftarrow').hide();
           $('.rightarrow').hide();
           $('.images').css('padding', '8px');
