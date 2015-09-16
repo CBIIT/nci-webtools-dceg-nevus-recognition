@@ -260,6 +260,11 @@ footer a {
   height:100px;
   overflow:hidden;
 }
+.carousel button {
+  background:none;
+  border:none;
+  padding:0;
+}
 .carousel .images {
   height:115px;
   white-space: nowrap;
@@ -285,6 +290,7 @@ footer a {
   background: white;
   color: #A92957;
   box-shadow: 2px 2px 4px #585858;
+  cursor: pointer;
 }
 .carousel .rightarrow {
   right: 8px;
