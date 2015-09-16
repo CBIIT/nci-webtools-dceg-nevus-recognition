@@ -9,7 +9,7 @@ var data={
         "<li>Also called “common moles” or “common acquired moles”</li>"+
         "<li>Appearance</li>"+
             "<ul>"+
-                "<li>Size:  Usually less than 5 millimeters or about ¼ inch (not as wide as a new pencil eraser/li>"+
+                "<li>Size:  Usually less than 5 millimeters or about ¼ inch (not as wide as a new pencil eraser</li>"+
                 "<li>Color:  Usually have an even color; may be pink, tan, brown, black (in deeply pigmented individuals), or a color that is very close to a person’s normal skin tone</li>"+
                 "<li>Shape: Usually round or oval</li>"+
                 "<li>Border:  Usually have a distinct edge that separates it from the rest of the skin</li>"+

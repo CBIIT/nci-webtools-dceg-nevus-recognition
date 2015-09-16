@@ -1,271 +1,161 @@
-var $container;
-var filterValue='mole';
-var pages=1, itemsperpage=6, numitems=0, search="";
-var filterFns = {
-  by6: function() {
-    if(numitems<itemsperpage*pages && $(this).hasClass(filterValue)){
-      numitems++;
-      return true;
-    }
-    return false;
-  },
-  searchby6: function() {
-    return true;
-    if(numitems<itemsperpage*pages){
-	  numitems++;
-	  return true;
-    }
-    return false;
-  }
-}
-$( document ).ready( function() {
-  // init Isotope
-  $container = $('.isotope').isotope({
-    itemSelector: '.item',
-    filter: filterFns.by6
-  });
-  $('.blur').click(function(){
+$(document).ready( function() {
+  $('.app').on('click', '.blur', function() {
     $(this).blur();
-  });
-  if($('.'+filterValue).length>pages*itemsperpage){
-    $('.loadmore').show();
-  }else{
-    $('.loadmore').hide();
-  }
-  numitems=0;
-  // bind filter button click
-  $('#filters').on( 'click', 'button', function() {
-    console.log("show");
-    filterValue = $( this ).attr('data-filter');
-    numitems=0;
-    pages=1;
-    $container = $('.isotope').isotope({
-      itemSelector: '.item',
-      filter: filterFns.by6
-    });
-    if($('.'+filterValue).length>pages*itemsperpage){
-      $('.loadmore').show();
-    }else{
-      $('.loadmore').hide();
-    }
-  });
-  $('.tool').on( 'click', function() {
-    numitems=0;
-    pages=1;
-    $container = $('.isotope').isotope({
-      itemSelector: '.item',
-      filter: filterFns.by6
-    });
-    if($('.'+filterValue).length>pages*itemsperpage){
-      $('.loadmore').show();
-    }else{
-      $('.loadmore').hide();
-    }
-  });
-  $('.subgroup').on( 'click', 'button', function() {
-    filterValue = $( this ).attr('data-filter');
-    numitems=0;
-    $container.isotope({ filter: filterFns.by6 });
-    if($('.'+filterValue).length>pages*itemsperpage){
-      $('.loadmore').show();
-    }else{
-      $('.loadmore').hide();
-    }
-  });
-  
-  // change is-checked class on buttons
-  $('.button-group').each( function( i, buttonGroup ) {
-    var $buttonGroup = $( buttonGroup );
-    $buttonGroup.on( 'click', 'button', function() {
-      $(this).addClass('is-checked');
-      $(this).siblings().removeClass('is-checked');
-    });
-  });
-  
-  $('#search').keyup( function() {
-    search = new RegExp( $(this).val(), 'gi' );
-    numitems=0;
-    pages=1;
-    var loadmore=false;
-    $container.isotope({
-      itemSelector: '.item',
-      filter: function() {
-        if(numitems<itemsperpage*pages){
-          numitems++;
-          return search ? $(this).text().match( search ) : true;
-        }else{
-          loadmore=$(this).text().match( search )!=undefined;
-           return false;
-        }
-       } 
-    });
-    $('.loadmore').hide();
-    if(loadmore){
-      $('.loadmoresearch').show();
-    }else{
-      $('.loadmoresearch').hide();
-    }
-  } );
-  
-  $('.loadmoresearch').on( 'click', function() {
-    numitems=0;
-    pages++;
-    var loadmore=false;
-    $container.isotope({
-      itemSelector: '.item',
-      filter: function() {
-        if(numitems<itemsperpage*pages){
-          numitems++;
-          return search ? $(this).text().match( search ) : true;
-        }else{
-          loadmore=$(this).text().match( search )!=undefined;
-           return false;
-        }
-       } 
-    });
-    if(!loadmore){
-      $(this).hide();
-    }
-  });
-  $('.loadmore').on( 'click', function() {
-    
-    numitems=0;
-    pages++;
-    $container.isotope({ filter: filterFns.by6 });
-    if($('.'+filterValue).length<=pages*itemsperpage){
-      $(this).hide();
-    }
-  });
-  $('.backtotop').on( 'click', function() {
-    $('body').animate({scrollTop:0}, 1000);
-  });
-  $( window ).scroll(function() {
-    if($( window ).scrollTop()>500){
-      $('.backtotop').addClass('active');
-    }else{
-      $('.backtotop').removeClass('active');
-    }
   });
 });
 
 var app = angular.module('myApp', ['ngSanitize']);
 
-app.controller('myCtrl', function($scope, $http) {
-  $scope.cases=data.cases;
-  $scope.filters=data.filters;
-  $scope.currentcase={};
-  $scope.currentimg=0;
-  $scope.arrows=true;
-  $scope.currenttype=$scope.filters[0];
+app.controller('myCtrl', function($scope, $http, $timeout) {
+  var pages=1, itemsperpage=6, numitems=0, search="";
+  var filterFns = {
+    by6: function(element) { return element.hasClass($scope.filterValue); },
+    searchby6: function(element) { return search ? element.text().match(search) : true; }
+  };
+  var $container = $('.isotope');
+  var basicFilter = function(trueFilter) {
+    return function() {
+      if (trueFilter($(this))) {
+        if (numitems < itemsperpage*pages) {
+          numitems++;
+		  return true;
+        } else {
+          $scope.showload = true;
+        }
+      }
+    }
+  };
+  var isotopic = function(trueFilter=function(element) { return true; }) {
+    $container.isotope({
+      itemSelector: '.item',
+	  filter: basicFilter(trueFilter)
+	});
+  }
+  $scope.cases = data.cases;
+  $scope.filters = data.filters;
+  $scope.arrows = true;
+  $scope.currentcase = {};
+  $scope.currentimg = 0;
+  $scope.currenttype = $scope.filters[0];
+  $scope.filterValue = 'mole';
   $scope.home = false;
-  $scope.tool = true;
   $scope.searching = false;
+  $scope.tool = true;
   $scope.ulinks = false;
+  $scope.showbacktotop = false;
+  $scope.showload = false;
+  $scope.search = "";
+  $scope.subgrouptype = null;
+  $scope.backToTop = function() {
+    $('body,html').animate({scrollTop:0}, 1000);
+  }
   $scope.changePage = function() {
     $scope.home = false;
     $scope.tool = false;
     $scope.searching = false;
     $scope.ulinks = false;
-  }
-  $scope.update = function(index) {
-    $scope.currentcase=index;
-    $scope.currentimg=0;
-  }
-  $scope.updatecurrentimg = function(index) {
-    $scope.currentimg=index;
-    $('.images img').removeClass('active');
-    index++;
-    $('.images img:nth-child('+index+')').addClass('active');
-    $('.spinnerbox').addClass('spinner-show');
-  }
-  $scope.updatecurrenttype = function(index) {
-	$scope.changePage();
-    $scope.tool = true;
-    $scope.currenttype=index;
-  }
-  $scope.gohome = function() {
-	$scope.changePage();
-    $scope.home = true;
+  };
+  $scope.clearsearch = function() {
+    $timeout(function() {
+      $scope.search = "";
+      $('#filters button').first().click();
+    });
+  };
+  $scope.filterClick = function($event, filter, toplevel=false) {
+    var element = $event.target;
+    $scope.changePage();
+	$scope.tool = true;
+    $scope.filterValue = filter.type;
+    numitems = 0;
+    pages = 1;
+    $scope.showload = false;
+	isotopic(filterFns.by6);
+    if (toplevel) {
+      $scope.currenttype = filter;
+	  if (filter.subgroups) {
+        $scope.subgrouptype = filter.subgroups[0];
+      }
+    } else {
+      $scope.subgrouptype = filter;
+    }
   }
   $scope.goabout = function() {
     $scope.changePage();
-	$scope.about = true;
-  }
-  $scope.gotool = function() {
-	$scope.changePage();
-    $scope.tool = true;
-  }
-  $scope.goulinks = function() {
-	$scope.changePage();
-    $scope.ulinks = true;
-  }
-  $scope.clearsearch = function() {
+    $scope.about = true;
+  };
+  $scope.gohome = function() {
     $scope.changePage();
-    numitems=0;
-    $container = $('.isotope').isotope({
-      itemSelector: '.item',
-      filter: filterFns.by6
-    });
-    $('.loadmoresearch').hide();
-    if($('.'+filterValue).length>pages*itemsperpage){
-      $('.loadmore').show();
-    }else{
-      $('.loadmore').hide();
-    }
+    $scope.home = true;
+  };
+  $scope.gotool = function() {
+    $scope.changePage();
+    $scope.tool = true;
+  };
+  $scope.goulinks = function() {
+    $scope.changePage();
+    $scope.ulinks = true;
+  };
+  $scope.loadMore = function() {
+    pages++;
+	$scope.showload = false;
+	numitems = 0;
+	isotopic($scope.tool?filterFns.by6:filterFns.searchby6);
   }
-  $scope.searchingfunc = function() {
-    pages=1;
-    numitems=0;
-	$scope.changePage();
-    $scope.searching=true;
-  }
-  $scope.search="";
   $scope.scrollLeft = function() {
     $('.images').animate({scrollLeft:$('.images').scrollLeft()-$('.images').width()}, 300);
   }
   $scope.scrollRight = function() {
     $('.images').animate({scrollLeft:$('.images').scrollLeft()+$('.images').width()}, 300);
   }
-});
-
-app.directive('subgroupDir', function() {
-  return function(scope, element, attrs) {
-    if (scope.$last){
-      $('.subgroup button').on( 'click', function() {
-        $(this).addClass('is-checked');
-        $(this).siblings().removeClass('is-checked');
-        filterValue = $( this ).attr('data-filter');
-        numitems=0;
-        $container.isotope({ filter: filterFns.by6 });
-      });
-       $('.subgroup').find('button').first().addClass('is-checked');
+  $scope.searchingfunc = function() {
+    if ($scope.search == undefined) {
+      return $scope.clearsearch();
     }
+	$scope.currenttype = null;
+    $scope.changePage();
+    $scope.searching = true;
+    search = new RegExp( $scope.search, 'gi' );
+    numitems = 0;
+    pages = 1;
+    $scope.showload = false;
+    $timeout(function() {
+      isotopic(filterFns.searchby6);
+    });
+  }
+  $scope.update = function(index) {
+    $scope.currentcase=index;
+    $scope.currentimg=0;
   };
-});
-
-
-app.directive('filtersDir', function() {
-  return function(scope, element, attrs) {
-    if (scope.$last){
-      $('#filters').find('button').first().addClass('is-checked');
-    }
+  $scope.updatecurrentimg = function(index) {
+    $scope.currentimg=index;
+    $('.images img').removeClass('active');
+    index++;
+    $('.images img:nth-child('+index+')').addClass('active');
+    $('.spinnerbox').addClass('spinner-show');
   };
+  $(window).scroll(function() {
+    $scope.$apply(function() {
+      $scope.showbacktotop = $(window).scrollTop() > 500;
+    });
+  });
+  $(document).ready( function() {
+	isotopic(filterFns.by6);
+  });
 });
 
 app.directive('imageOnLoad', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, element) {
-          element.on('load', function() {
-            // Set visibility: true + remove spinner overlay
-              $('.spinnerbox').removeClass('spinner-show');
-          });
-          scope.$watch('ngSrc', function() {
-          });
-        }
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      element.on('load', function() {
+        // Set visibility: true + remove spinner overlay
+        $('.spinnerbox').removeClass('spinner-show');
+      });
+      scope.$watch('ngSrc', function() {
+      });
+      }
     };
 });
-
 
 app.directive('carouselDir', function() {
   return function(scope, element, attrs) {
@@ -293,6 +183,5 @@ app.directive('carouselDir', function() {
         }
       });
     }
-    
   };
 });

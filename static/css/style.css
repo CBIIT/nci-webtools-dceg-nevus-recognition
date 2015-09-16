@@ -98,7 +98,13 @@ body {
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
+  overflow:hidden;
 }
+
+#typedescription .limited {
+	max-height:2em;
+}
+
 .type .readmore {
     background-color: white;
     color: #A92957;
@@ -149,7 +155,7 @@ form.navbar-form, .nav.navbar-nav {
 
 .backtotop {
   position: fixed;
-  bottom: -40px;
+  bottom: 40px;
   right: 40px;
   background: #A92957;
   color: white;
@@ -158,10 +164,7 @@ form.navbar-form, .nav.navbar-nav {
   height: 40px;
   border-radius: 50%;
   margin: auto;
-  transition: all .3s;
-}
-.backtotop.active {
-  bottom: 40px;
+  transition: all .3s;t
 }
 .backtotop:hover, .backtotop:active, .backtotop:focus {
   color: white;

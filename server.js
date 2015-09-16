@@ -6,7 +6,7 @@ app.use(expressLogger({ path: "express.log" }));
 app.use(express.static("static"));
 
 // Default values
-var port = 8080;
+var port = 8210;
 
 function parseArgs() {
 	var usage = false;
