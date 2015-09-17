@@ -140,10 +140,11 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     $scope.currentimg=0;
   };
   $scope.updatecurrentimg = function(index) {
+    console.log(index);
     $scope.currentimg=index;
-    $('.images img').removeClass('active');
+    $('.images button').removeClass('active');
     index++;
-    $('.images img:nth-child('+index+')').addClass('active');
+    $('.images button:nth-child('+index+')').addClass('active');
     $('.spinnerbox').addClass('spinner-show');
   };
   $(window).scroll(function() {
