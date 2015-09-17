@@ -3,6 +3,10 @@ var expressLogger = require('express-logger');
 var app = express();
 
 app.use(expressLogger({ path: "express.log" }));
+app.use(function(req,res,next) {
+  res.header('X-UA-Compatible','IE=edge');
+  next();
+});
 app.use(express.static("static"));
 
 // Default values
