@@ -4,6 +4,8 @@
   "private": "true",
   "dependencies": {
     "express": "4.x.x",
-    "express-logger": "0.0.3"
+    "express-logger": "0.0.3",
+    "mongodb": "2.x.x",
+    "underscore": "1.x.x"
   }
 }
