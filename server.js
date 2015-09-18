@@ -5,6 +5,10 @@ var MongoClient = require('mongodb').MongoClient;
 var _ = require('underscore');
 var app = express();
 app.use(expressLogger({ path: "express.log" }));
+app.use(function(req,res,next) {
+  res.header('X-UA-Compatible','IE=edge');
+  next();
+});
 app.use(express.static("static"));
 
 // Default values
@@ -48,7 +52,8 @@ function parseArgs() {
 			case "-p":
 				index++;
 				port = process.argv[index];
-				if (typeof value !== "number") break;
+				if (typeof port !== "number") usage = true;
+        break;
 			default:
 				usage = true;
 		}
