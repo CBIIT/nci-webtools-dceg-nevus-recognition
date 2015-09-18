@@ -10,7 +10,7 @@ app.use(function(req,res,next) {
 app.use(express.static("static"));
 
 // Default values
-var port = 8210;
+var port = 8180;
 
 function parseArgs() {
 	var usage = false;
