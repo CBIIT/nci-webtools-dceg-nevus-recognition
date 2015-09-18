@@ -232,29 +232,6 @@ form.navbar-form, .nav.navbar-nav {
 .navbar {
   margin: 0;
 }
-footer {
-  text-align: center;
-  background: #363636;
-  color: #F4F3F3;
-  margin: auto;
-  padding: 80px 30px;
-}
-footer ul {
-  margin: 0;
-  padding: 0;
-}
-footer .sitelinks {
-  margin: 5px;
-  padding: 5px;
-}
-footer li {
-  display: inline-block;
-}
-footer a {
-  text-decoration: none;
-  color: #F4F3F3;
-  margin: 0 7px;
-}
 .carousel {
   text-align: center;
   height:100px;
