@@ -1,4 +1,7 @@
 $(document).ready( function() {
+  $('body, html').on('contextmenu', 'img', function(event) {
+    event.preventDefault();
+  });
   $('.app').on('click', '.blur', function() {
     $(this).blur();
   });
@@ -40,10 +43,10 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   $scope.currentcase = {};
   $scope.currentimg = 0;
   $scope.currenttype = $scope.filters[0];
-  $scope.filterValue = 'mole';
+  $scope.filterValue = '';
   $scope.home = false;
   $scope.searching = false;
-  $scope.tool = true;
+  $scope.tool = false;
   $scope.ulinks = false;
   $scope.showbacktotop = false;
   $scope.showload = false;
@@ -60,10 +63,8 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     $scope.ulinks = false;
   };
   $scope.clearsearch = function() {
-    $timeout(function() {
-      $scope.search = "";
-      $('#filters button').first().click();
-    });
+    $scope.search = "";
+    $scope.filterClick($scope.getFilterByName('mole'),true);
   };
   $scope.getFilterByName = function(filterName) {
     for (var index = 0; index < $scope.filters.length; index++) {
@@ -90,7 +91,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     } else {
       $scope.subgrouptype = filter;
     }
-    $timeout(function() { isotopic(filterFns.by6); });
+    isotopic(filterFns.by6);
   }
   $scope.goabout = function() {
     $scope.changePage();
@@ -103,6 +104,9 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   $scope.gotool = function() {
     $scope.changePage();
     $scope.tool = true;
+    if ($scope.filterValue == '') {
+      $scope.filterClick($scope.getFilterByName('mole'),true);
+    }
   };
   $scope.goulinks = function() {
     $scope.changePage();
@@ -131,16 +135,13 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     numitems = 0;
     pages = 1;
     $scope.showload = false;
-    $timeout(function() {
-      isotopic(filterFns.searchby6);
-    });
+    isotopic(filterFns.searchby6);
   }
   $scope.update = function(index) {
     $scope.currentcase=index;
-    $scope.currentimg=0;
+    $scope.updatecurrentimg(0);
   };
   $scope.updatecurrentimg = function(index) {
-    console.log(index);
     $scope.currentimg=index;
     $('.images button').removeClass('active');
     index++;
@@ -155,6 +156,18 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   $(document).ready( function() {
     isotopic(filterFns.by6);
   });
+});
+
+app.directive('bindCompiledHtml', function($compile) {
+  return function(scope, element, attrs) {
+    scope.$watch(
+      function(scope) { return scope.$eval(attrs.bindCompiledHtml); },
+      function(value) {
+        element.html(value);
+        $compile(element.contents())(scope)
+      }
+    )
+  }
 });
 
 app.directive('imageOnLoad', function() {
