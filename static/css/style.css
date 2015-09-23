@@ -32,7 +32,7 @@ body {
 }
 .item .type {
   display: block;
-  color: #A92957;
+  color: #023C4D;
   margin: 10px 20px;
   font-size: 1.5em;
   font-weight: bold;
@@ -45,7 +45,7 @@ body {
   font-size: 1.3em;
 }
 #filters.active button {
-  background: #A92957;
+  background: #023C4D;
   color: white;
 }
 #filters button {
@@ -58,7 +58,7 @@ body {
   padding: 0;
 }
 #filters button.is-checked {
-  background: #A92957;
+  background: #023C4D;
   color: white;
 }
 #filters button div {
@@ -84,7 +84,7 @@ body {
   border-bottom: 5px solid #8782BB;
 }
 #typedescription {
-  background: #A92957;
+  background: #023C4D;
   color: white;
   padding: 20px;
   text-align: left;
@@ -103,7 +103,7 @@ body {
 }
 .type .readmore {
     background-color: white;
-    color: #A92957;
+    color: #023C4D;
     border: none;
     border-radius: 5px;
     padding: 8px 16px;
@@ -136,7 +136,7 @@ form.navbar-form, .nav.navbar-nav {
   text-align: center;
 }
 .loadmore, .loadmoresearch {
-  background: #A92957;
+  background: #023C4D;
   color: white;
   margin-bottom: 40px;
   transition: all .3s;
@@ -149,7 +149,7 @@ form.navbar-form, .nav.navbar-nav {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background: #A92957;
+  background: #023C4D;
   color: white;
   border: none;
   width: 40px;
@@ -172,7 +172,7 @@ form.navbar-form, .nav.navbar-nav {
   margin: auto;
 }
 .disclaimer button {
-  background-color: #A92957;
+  background-color: #023C4D;
   color: white;
   border: none;
   border-radius: 5px;
@@ -209,7 +209,7 @@ form.navbar-form, .nav.navbar-nav {
   margin: 0;
 }
 .jumbotron h1 {
-    color: #A92957;
+    color: #023C4D;
     font-weight: 300;
     padding-right: 40%;
     font-size: 48px;
@@ -231,7 +231,7 @@ form.navbar-form, .nav.navbar-nav {
   right: 7px;
   bottom: 7px;
   overflow: visible;
-  color: #A92957;
+  color: #023C4D;
   background-color: transparent;
 }
 .search-box:not(:valid) ~ .close-icon {
@@ -278,7 +278,7 @@ form.navbar-form, .nav.navbar-nav {
   height: 80%;
   width: 30px;
   background: white;
-  color: #A92957;
+  color: #023C4D;
   box-shadow: 2px 2px 4px #585858;
   cursor: pointer;
 }
