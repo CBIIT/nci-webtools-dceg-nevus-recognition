@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
@@ -18,7 +18,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand tool" href="#" id="brand" ng-click="gotool()">
+          <a class="navbar-brand tool" href="javascript:void(0);" id="brand" ng-click="gotool()">
             <img alt="" src="http://dceg.cancer.gov/publishedcontent/images/images/DCEG-logo.svg" />
           </a>
           <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
@@ -38,10 +38,10 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" ng-click="gohome()">Home</a></li>
-            <li><a href="#" ng-click="goabout()">About the Tool</a></li>
-            <li><a href="#" ng-click="gotool()" class="tool">Recognition Tool</a></li>
-            <li><a href="#" ng-click="goulinks()">Useful Links</a></li>
+            <li><a href="javascript:void(0);" ng-click="gohome()">Home</a></li>
+            <li><a href="javascript:void(0);" ng-click="goabout()">About the Tool</a></li>
+            <li><a href="javascript:void(0);" ng-click="gotool()" class="tool">Recognition Tool</a></li>
+            <li><a href="javascript:void(0);" ng-click="goulinks()">Useful Links</a></li>
           </ul>
         </div>
       </div>
@@ -80,7 +80,7 @@
       </div>
       <div class="type" ng-show="tool">
         <div id="typedescription">
-          <p class="fulldescription" ng-class="{limited:!showfull}" ng-bind-html="currenttype.description"></p>
+          <p class="fulldescription" ng-class="{limited:!showfull}" bind-compiled-html="currenttype.description"></p>
           <button class="readmore blur" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Read More' }}</button>
         </div>
         <div class="subgroup button-group" ng-show="currenttype.subgroups">
@@ -90,7 +90,7 @@
       <h3 class="searchbanner" ng-show="searching">SEARCH RESULTS</h3>
       <div class="isotope" ng-show="searching || tool">
         <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
-          <a data-target="#myModal" data-toggle="modal" href="#" ng-click="update(case)">
+          <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case)">
             <img alt="" src=".{{case.images[0].image}}" />
             <span class="type" ng-show="searching">{{case.typeSearch}}</span>
             <span class="title">{{case.name}}</span>
@@ -103,8 +103,24 @@
     <div class="noninteractive" ng-show="ulinks">
       <h2>Useful Links</h2>
       <p>
-        <a href="http://dcmf.ca/" target="_new" class="blockified">Dear 16-year-old Me</a>
-        <span>A promotional video courtesy of the David Cornfield Melanoma Fund.</span>
+        <a href="http://www.cancer.gov/cancertopics/types/melanoma" target="_new" class="blockified">NCI Melanoma Home Page</a>
+        <span>National Cancer Institute homepage for Melanoma</span>
+      </p>
+      <p>
+        <a href="http://www.cancer.gov/melanomarisktool/" target="_new" class="blockified">Melanoma Risk Assessment Tool</a>
+        <span>An interactive tool designed by scientists at the National Cancer Institute (NCI), the University of Pennsylvania, and the University of California, San Francisco, to estimate a person's absolute risk of developing invasive melanoma. The tool helps clinicians identify individuals at increased risk of melanoma in order to plan appropriate screening interventions with them.</span>
+      </p>
+      <p>
+        <a href="http://www.cancer.gov/publications/patient-education/anyone-can-get-skin-cancer" target="_new" class="blockified">Anyone Can Get Skin Cancer</a>
+        <span>A brochure developed to dispel the belief that only people with light skin are at risk for skin cancer. Although people with light skin have greater risk than people with darker skin, people with darker skin can also be at risk.</span>
+      </p>
+      <p>
+        <a href="http://www.cancer.gov/cancertopics/factsheet/Risk/moles" target="_new" class="blockified">Common Moles, Dysplastic Nevi, and Risk of Melanoma</a>
+        <span>National Cancer Institute fact sheet on common moles, dysplastic nevi and melanoma</span>
+      </p>
+      <p>
+        <a href="http://www.skinsight.com/info/for_professionals/skin-cancer-detection-informed/skin-cancer-education" target="_new" class="blockified">INFORMED Skin Cancer Education Series</a>
+        <span>The INFORMED (INternet curriculum FOR Melanoma Early Detection) program was developed to provide a Web-based early detection training program available for widespread use that is grounded in the realities of primary care delivery, and which includes a deep image database. INFORMED is transforming melanoma education by engaging the learner. In addition, the INFORMED program provides training in dermoscopy (epiluminescence microscopy), which has been proven to increase diagnostic accuracy during the skin examination.</span>
       </p>
       <p>
         <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm309136.htm?source=govdelivery" target="_new" class="blockified">Sunscreen on Infants? Not Usually—Shade is Best</a>
@@ -114,25 +130,14 @@
         <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm049090.htm?source=govdelivery" target="_new" class="blockified">Sun Safety: Save Your Skin!</a>
         <span>Summer is coming, and it's a great time for fun in the sun for you and your family. But it also leaves you vulnerable to dangerous ultraviolet radiation. The National Council on Skin Cancer Prevention has designated May 25, 2012 as "Don't Fry Day." FDA is helping to spread the word on sun safety.</span>
       </p>
+      <h4>Educational Videos</h4>
       <p>
-        <a href="http://www.cancer.gov/cancertopics/factsheet/Risk/moles" target="_new" class="blockified">Common Moles, Dysplastic Nevi, and Risk of Melanoma</a>
-        <span>National Cancer Institute fact sheet on common moles, dysplastic nevi and melanoma</span>
-      </p>
-      <p>
-        <a href="http://www.cancer.gov/melanomarisktool/" target="_new" class="blockified">Melanoma Risk Assessment Tool</a>
-        <span>An interactive tool designed by scientists at the National Cancer Institute (NCI), the University of Pennsylvania, and the University of California, San Francisco, to estimate a person's absolute risk of developing invasive melanoma. The tool helps clinicians identify individuals at increased risk of melanoma in order to plan appropriate screening interventions with them.</span>
-      </p>
-      <p>
-        <a href="http://www.cancer.gov/cancertopics/types/melanoma" target="_new" class="blockified">NCI Melanoma Home Page</a>
-        <span>National Cancer Institute homepage for Melanoma</span>
-      </p>
-      <p>
-        <a href="http://www.skinsight.com/info/for_professionals/skin-cancer-detection-informed/skin-cancer-education" target="_new" class="blockified">INFORMED Skin Cancer Education Series</a>
-        <span>The INFORMED (INternet curriculum FOR Melanoma Early Detection) program was developed to provide a Web-based early detection training program available for widespread use that is grounded in the realities of primary care delivery, and which includes a deep image database. INFORMED is transforming melanoma education by engaging the learner. In addition, the INFORMED program provides training in dermoscopy (epiluminescence microscopy), which has been proven to increase diagnostic accuracy during the skin examination.</span>
+        <a href="http://dcmf.ca/" target="_new" class="blockified">Dear 16-year-old Me</a>
+        <span>A promotional video courtesy of the David Cornfield Melanoma Fund.</span>
       </p>
       <p>
         <a href="https://www.youtube.com/watch?v=o9BqrSAHbTc" target="_new" class="blockified">How the Sun Sees You</a>
-        <span>If you're not already wearing sunscreen regularly, here's something to  convince you. Photographer Thomas Leveritt modified his camera to record  people in the ultraviolet spectrum, which highlights freckles and sun  damage unnoticeable to the naked eye. He captured strangers'  shocked reactions at viewing their faces in a way they never had before.  Leveritt also asked his subjects to apply sunscreen to show how under the  camera's filter, the white lotion shows up like black war paint.</span>
+        <span>If you're not already wearing sunscreen regularly, here's something to convince you. Photographer Thomas Leveritt modified his camera to record people in the ultraviolet spectrum, which highlights freckles and sun damage unnoticeable to the naked eye. He captured strangers' shocked reactions at viewing their faces in a way they never had before. Leveritt also asked his subjects to apply sunscreen to show how under the camera's filter, the white lotion shows up like black war paint.</span>
       </p>
       <h4>Publications</h4>
       <p>Tucker MA, Fraser MC, Goldstein AM, et al. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12115352" target="_new">Melanomas and Dysplastic Nevi: A natural history atlas</a>. Cancer. 2002 Jun 15;94(12):3192-209.</p>
@@ -140,11 +145,9 @@
     </div>
     <div class="disclaimer">
       <h2>Disclaimer</h2>
-      <p>The photographs of the moles and melanomas used in this collection were taken over a 35-year period. Thus, there may be variations in color among the pictures due to the differences in: photography equipment, supplies and methods used (e.g. types
-        of cameras and color film, development and processing of film, use of digital photography when it became available); lighting in the many clinic rooms in which the pictures were taken; and skin color of the individual (e.g. whether or not his
-        or her skin was sunburned or suntanned) at the time each of the pictures were taken. We have attempted, to the extent that we can, to standarize the pictures in each series without modifying the natural features of the lesions. To address the
-        variations in relative size of the lesions, a ruler is included in each picture. When comparing the pictures within each of the cases series, it is important to use the rulers. In some series, the rulers in some pictures may be in different locations
-        because of where the rulers were placed on the skin when each picture was taken.</p>
+      <p>The photographs of the moles and melanomas used in this tool were taken over more than a 35-year period from participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>, a long term study investigating genetic and environmental factors that contribute to the development of melanoma. The pictures are guides that show examples of the large variability in pigmented lesions in U.S. melanoma-prone families. Because most of the study participants are Caucasians, the nevi and melanomas shown are not representative of nevi and melanomas in individuals with darker skin who have distinctive pigmented lesions. Melanomas and lesions suspicious for melanoma vary widely in appearance; thus, the pictures should not be used to diagnose melanoma.</p>
+      <p>Because the photographs of the moles and melanomas used in this collection were taken over more than a 35-year period, there may be variations in color among the pictures due to the differences in: photography equipment, supplies and methods used (e.g. types of cameras and color film, development and processing of film, use of digital photography when it became available); lighting in the many clinic rooms in which the pictures were taken; and skin color of the individual (e.g. whether or not his or her skin was sunburned or suntanned) at the time each of the pictures were taken.  We have attempted, to the extent that we can, to standardize the pictures in each series without modifying the natural features of the moles and melanomas.  To address the variations in relative size of the moles and melanomas, a ruler that shows the measurements in millimeters is included in each picture.  When comparing the pictures within each of the cases series, it is important to use the rulers.  In some series, the rulers in some pictures may be in different locations because of where the rulers were placed on the skin when each picture was taken.</p>
+      <p>In general, it is not NCI's intention to provide specific medical advice to users of its website, but rather to provide users with information to help them better understand their health, diagnosed conditions, and the current range of approaches related to cancer treatment, prevention, screening, and supportive care. NCI urges users to consult with a qualified physician for diagnosis and for answers to their personal medical questions.</p>
     </div>
     <footer class="container footer">
       <div class="center-block">
@@ -186,7 +189,21 @@
             <h4 class="modal-title" id="myModalLabel">{{currentcase.title}}</h4>
           </div>
           <div class="modal-body group">
-            <p class="casedescription" ng-bind-html="currentcase.description"></p>
+            <div class="casedescription">
+              <p ng-bind-html="currentcase.description"></p>
+              <div>
+                <span>The "ABCDE" features for this case are as follows:</span>
+                <ul>
+                  <li><label>Asymmetry</label><span>{{currentcase.abcde.asymmetry}}</span></li>
+                  <li><label>Border</label><span>{{currentcase.abcde.border}}</span></li>
+                  <li><label>Color</label><span>{{currentcase.abcde.color}}</span></li>
+                  <li><label>Diameter</label><span>{{currentcase.abcde.diameter}}</span></li>
+                  <li><label>Evolving</label><span>{{currentcase.abcde.evolving}}</span></li>
+                </ul>
+              </div>
+              <p ng-show="currentcase.diagnosis.clinical"><label>Clinical Diagnosis</label><span>{{currentcase.diagnosis.clinical}}</span></p>
+              <p ng-show="currentcase.diagnosis.pathology"><label>Pathology Diagnosis</label><span>{{currentcase.diagnosis.pathology}}</span></p>
+            </div>
             <div class="carousel">
               <div class="leftarrow blur" ng-click="scrollLeft()">
                 <span class="glyphicon glyphicon-chevron-left"></span>

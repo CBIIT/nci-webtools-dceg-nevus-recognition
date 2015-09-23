@@ -136,10 +136,9 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   }
   $scope.update = function(index) {
     $scope.currentcase=index;
-    $scope.currentimg=0;
+    $scope.updatecurrentimg(0);
   };
   $scope.updatecurrentimg = function(index) {
-    console.log(index);
     $scope.currentimg=index;
     $('.images button').removeClass('active');
     index++;
@@ -154,6 +153,18 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   $(document).ready( function() {
     isotopic(filterFns.by6);
   });
+});
+
+app.directive('bindCompiledHtml', function($compile) {
+  return function(scope, element, attrs) {
+    scope.$watch(
+      function(scope) { return scope.$eval(attrs.bindCompiledHtml); },
+      function(value) {
+        element.html(value);
+        $compile(element.contents())(scope)
+      }
+    )
+  }
 });
 
 app.directive('imageOnLoad', function() {
