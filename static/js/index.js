@@ -1,4 +1,7 @@
 $(document).ready( function() {
+  $('body, html').on('contextmenu', 'img', function(event) {
+    event.preventDefault();
+  });
   $('.app').on('click', '.blur', function() {
     $(this).blur();
   });
