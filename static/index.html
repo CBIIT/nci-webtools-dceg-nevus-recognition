@@ -80,7 +80,7 @@
       </div>
       <div class="type" ng-show="tool">
         <div id="typedescription">
-          <p class="fulldescription" ng-class="{limited:!showfull}" bind-compiled-html="currenttype.description"></p>
+          <p class="fulldescription" bind-compiled-html="showfull?currenttype.description:currenttype.descriptionsummary"></p>
           <button class="readmore blur" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Read More' }}</button>
         </div>
         <div class="subgroup button-group" ng-show="currenttype.subgroups">

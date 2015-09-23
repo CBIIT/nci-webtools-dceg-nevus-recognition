@@ -98,8 +98,9 @@ body {
   color: lightGray;
   text-decoration: none;
 }
-#typedescription .limited {
-  max-height:2em;
+#typedescription p, #typedescription ul {
+  width:100%;
+  padding-left: 3.5%
 }
 .type .readmore {
     background-color: white;

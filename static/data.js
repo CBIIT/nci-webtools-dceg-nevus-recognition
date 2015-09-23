@@ -23,7 +23,10 @@ var data = {
         "<li>Moles go through a \"life-cycle\": start as small freckle-like spots; gradually round up and form a bump; may lighten, become flesh-colored; become less elevated, flatten and eventually disappear</li>" +
         "<li>Life-cycle is a gradual process typically over many years</li>" +
         "<li>Some moles do not go through the entire \"life-cycle\"</li>" +
-      "</ul>"
+      "</ul>",
+    "descriptionsummary":
+      "<h4>Basic Information</h4>" +
+      "<p>A common mole is a growth on the skin that develops when pigment cells (melanocytes) grow in clusters. Most adults have between 10 and 40 common moles. These growths are usually found above the waist on areas exposed to the sun. They are seldom found on the scalp, breast, or buttocks.</p>"
   }, {
     "type": "dysplasticnevi",
     "name": "Dysplastic Nevi",
@@ -61,6 +64,9 @@ var data = {
           "</ul>" +
         "</li>" +
       "</ul>",
+    "descriptionsummary":
+      "<h4>Basic Information</h4>" +
+      "<p>A dysplastic nevus is a type of mole that looks different from a common mole. (Some doctors use the term \"atypical mole\" to refer to a dysplastic nevus.) A dysplastic nevus may be bigger than a common mole, and its color, surface, and border may be different.</p>",
     "subgroups": [ {
       "type": "dysplasticnevi",
       "typeSearch": "Dysplastic Nevi",
@@ -131,7 +137,10 @@ var data = {
             "<li>Keep infants out of the sun. Be sure children are protected when outdoors.</li>" +
           "</ul>" +
         "</li>" +
-      "</ul>"
+      "</ul>",
+    "descriptionsummary":
+      "<h4>Basic Information</h4>" +
+      "<p>Melanoma is a type of skin cancer that begins in melanocytes. It is potentially dangerous because it can invade nearby tissues and spread to other parts of the body, such as the lung, liver, bone, or brain. The earlier that melanoma is detected and removed, the more likely that treatment will be successful.</p>"
   } ],
   "cases": [ {
     "type": "mole",
