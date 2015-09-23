@@ -362,8 +362,7 @@ form.navbar-form, .nav.navbar-nav {
     width: calc(100% - 50px);
   }
   #typedescription {
-    flex-direction:column;
-    align-items: center;
+    flex-direction: column;
   }
   form.navbar-form {
       margin-top: 80px;
