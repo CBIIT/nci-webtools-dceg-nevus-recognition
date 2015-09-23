@@ -2,6 +2,9 @@ $(document).ready( function() {
   $('body, html').on('contextmenu', 'img', function(event) {
     event.preventDefault();
   });
+  $('.modal').on('hidden.bs.modal', function() {
+    window.history.pushState(null, "Moles, Dysplastic Nevi & Melanoma - Recognition Tool", window.location.href.replace(/&case=\d+&img=\d+/,''));
+  });
   $('.app').on('click', '.blur', function() {
     $(this).blur();
   });
@@ -91,15 +94,18 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     } else {
       $scope.subgrouptype = filter;
     }
+    window.history.pushState(null,"Moles, Dysplastic Nevi & Melanoma - Recognition Tool", "?page=tool&filter="+$scope.filterValue);
     isotopic(filterFns.by6);
   }
   $scope.goabout = function() {
     $scope.changePage();
     $scope.about = true;
+    window.history.pushState(null,"Moles, Dysplastic Nevi & Melanoma - About the Tool", "?page=about");
   };
   $scope.gohome = function() {
     $scope.changePage();
     $scope.home = true;
+    window.history.pushState(null,"Moles, Dysplastic Nevi & Melanoma - Home", "?page=home");
   };
   $scope.gotool = function() {
     $scope.changePage();
@@ -107,10 +113,12 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     if ($scope.filterValue == '') {
       $scope.filterClick($scope.getFilterByName('mole'),true);
     }
+    window.history.pushState(null,"Moles, Dysplastic Nevi & Melanoma - Recognition Tool", "?page=tool&filter="+$scope.filterValue);
   };
   $scope.goulinks = function() {
     $scope.changePage();
     $scope.ulinks = true;
+    window.history.pushState(null,"Moles, Dysplastic Nevi & Melanoma - Useful Links", "?page=ulinks");
   };
   $scope.loadMore = function() {
     pages++;
@@ -135,14 +143,17 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     numitems = 0;
     pages = 1;
     $scope.showload = false;
+    window.history.pushState(null,"Moles, Dysplastic Nevi & Melanoma - Recognition Tool", "?page=tool&search="+$scope.search);
     isotopic(filterFns.searchby6);
   }
-  $scope.update = function(index) {
-    $scope.currentcase=index;
+  $scope.update = function(caseObject,index) {
+    $scope.currentcase=caseObject;
+    window.history.pushState(null,"Moles, Dysplastic Nevi & Melanoma - Recognition Tool", window.location.href+"&case="+index);
     $scope.updatecurrentimg(0);
   };
   $scope.updatecurrentimg = function(index) {
     $scope.currentimg=index;
+    window.history.replaceState(null,"Moles, Dysplastic Nevi & Melanoma - Recognition Tool", window.location.href.replace(/&img=\d+/,'')+"&img="+index);
     $('.images button').removeClass('active');
     index++;
     $('.images button:nth-child('+index+')').addClass('active');
