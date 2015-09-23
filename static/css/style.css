@@ -193,8 +193,7 @@ form.navbar-form, .nav.navbar-nav {
   text-align: center;
 }
 .noninteractive ul {
-  list-style: inside;
-  padding-left: 0px;
+  padding-left: 2.5%;
 }
 .noninteractive .blockified {
   display: block;
