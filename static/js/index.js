@@ -41,7 +41,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   $scope.currentimg = 0;
   $scope.currenttype = $scope.filters[0];
   $scope.filterValue = '';
-  $scope.home = true;
+  $scope.home = false;
   $scope.searching = false;
   $scope.tool = false;
   $scope.ulinks = false;

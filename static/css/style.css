@@ -170,6 +170,15 @@ form.navbar-form, .nav.navbar-nav {
   padding: 20px;
   margin: auto;
 }
+.disclaimer button {
+  background-color: #A92957;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 .noninteractive {
   padding: 40px 0;
 }
