@@ -213,7 +213,7 @@
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </div>
               <div class="images">
-                <button carousel-dir="" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0">
+                <button carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0">
                   <img src=".{{image.thumbnail}}" />
                 </button>
               </div>

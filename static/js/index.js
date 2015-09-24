@@ -187,9 +187,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     var urlParams = window.history.state;
     urlParams.img = index;
     newState(urlParams, 'Recognition Tool');
-    $('.images button').removeClass('active');
     index++;
-    $('.images button:nth-child('+index+')').addClass('active');
     $('.spinnerbox').addClass('spinner-show');
   };
   $(window).scroll(function() {
@@ -203,7 +201,6 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       search = /([^&=]+)=?([^&]*)/g,
       decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
       query = window.location.search.substring(1);
-      console.log(window.location.search);
     urlParams = {};
     while (match = search.exec(query))
       urlParams[decode(match[1])] = decode(match[2]);
@@ -235,6 +232,13 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
           } else if (urlParams.search !== undefined) {
             $scope.search = urlParams.search;
             $scope.searchingfunc();
+          }
+          if (urlParams.case !== undefined) {
+            $scope.update($scope.cases[urlParams.case],urlParams.case);
+            if (urlParams.img !== undefined) {
+              $scope.updatecurrentimg(urlParams.img);
+            }
+            $timeout(function() { $('#myModal').modal('show'); });
           }
           break;
         case 'ulinks':
@@ -274,7 +278,6 @@ app.directive('imageOnLoad', function() {
 app.directive('carouselDir', function() {
   return function(scope, element, attrs) {
     if (scope.$last){
-      $('.images button:nth-child(1)').addClass('active');
       var imgwidth = $('.images img').length * 114;
       if (imgwidth > 758 || imgwidth > $(window).width()) {
         $('.leftarrow').show();
