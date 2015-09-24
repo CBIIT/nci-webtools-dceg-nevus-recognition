@@ -1,5 +1,5 @@
 function newState(urlParams,title) {
-  var url = "";
+  var url = window.location.pathname;
   for (var index in urlParams) {
     url += '&'+index+'='+urlParams[index];
   }
@@ -132,7 +132,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     $scope.changePage();
     $scope.tool = true;
     if ($scope.filterValue == '') {
-      $scope.filterClick($scope.getFilterByName('mole'),true);
+      $scope.filterClick($scope.getFilterByName('mole'));
     }
     newState({
       'page': 'tool',
@@ -203,6 +203,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       search = /([^&=]+)=?([^&]*)/g,
       decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
       query = window.location.search.substring(1);
+      console.log(window.location.search);
     urlParams = {};
     while (match = search.exec(query))
       urlParams[decode(match[1])] = decode(match[2]);
