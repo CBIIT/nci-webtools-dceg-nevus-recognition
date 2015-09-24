@@ -1245,7 +1245,7 @@ var data = {
     }, {
       "name": "Image 2",
       "description": "<p>This picture shows a close-up of #129. The mole is slightly abnormal in outline. Most of the mole is raised. However, there is a small flat area in the upper border.</p>",
-      "image": "/images/M10/M10A.jpg",
+      "image": "/images/M10/M10B.jpg",
       "thumbnail": "/images/M10/M10B-thumb.jpg"
     }, {
       "name": "Image 3",
