@@ -1,10 +1,10 @@
 function newState(urlParams,title) {
-  var url = window.location.pathname;
+  var url = "";
   for (var index in urlParams) {
     url += '&'+index+'='+urlParams[index];
   }
-  url.length==0?void(0):url = '/?'+url.substring(1,url.length);
-  window.history.replaceState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, url);
+  url.length==0?void(0):url = '?'+url.substring(1,url.length);
+  window.history.replaceState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, window.location.pathname+url);
 }
 
 $(document).ready( function() {
