@@ -61,7 +61,7 @@
     </div>
     <div class="noninteractive" ng-show="about">
       <h2>About the Tool</h2>
-      <p>The pictures in the tool are organized in 3 main sections: <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'),true)">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'),true)">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'),true)">melanomas</a> that arose in DN. The Dysplastic Nevi section is subdivided into: stable and fading DN, and DN evolving toward melanoma. The pictures show the various phases in the spectrum of pigmented lesions typically seen in U.S. melanoma-prone families. As a teaching aid, this tool also includes the <a href="http://www.cancer.gov/types/skin/moles-fact-sheet#q9" target="_new">“ABCDE” features</a> for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN. The tool also contains additional information and links to other resources about dysplastic nevi and the prevention and early detection of melanoma.</p>
+      <p>The pictures in the tool are organized in 3 main sections: <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose in DN. The Dysplastic Nevi section is subdivided into: stable and fading DN, and DN evolving toward melanoma. The pictures show the various phases in the spectrum of pigmented lesions typically seen in U.S. melanoma-prone families. As a teaching aid, this tool also includes the <a href="http://www.cancer.gov/types/skin/moles-fact-sheet#q9" target="_new">“ABCDE” features</a> for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN. The tool also contains additional information and links to other resources about dysplastic nevi and the prevention and early detection of melanoma.</p>
       <h4>What is the "ABCDE" rule?</h4>
       <div>
         <span>The "ABCDE" rule describes the features of early melanoma. These features are:</span>
@@ -76,7 +76,7 @@
     </div>
     <div class="contain" ng-show="searching || tool">
       <div class="button-group" id="filters" ng-class="{}">
-        <button class="button blur" ng-class="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick(filter,true)" ng-repeat="filter in filters">{{filter.name}}</button>
+        <button class="button blur" ng-class="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick(filter)" ng-repeat="filter in filters">{{filter.name}}</button>
       </div>
       <div class="type" ng-show="tool">
         <div id="typedescription">
@@ -84,13 +84,13 @@
           <button class="readmore blur" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Read More' }}</button>
         </div>
         <div class="subgroup button-group" ng-show="currenttype.subgroups">
-          <button class="button blur" ng-class="{'is-checked':subgrouptype.type==subgroup.type}" ng-click="filterClick(subgroup)" ng-repeat="subgroup in currenttype.subgroups">{{subgroup.name}}</button>
+          <button class="button blur" ng-class="{'is-checked':subgrouptype.type==subgroup.type}" ng-click="filterClick(currenttype,subgroup)" ng-repeat="subgroup in currenttype.subgroups">{{subgroup.name}}</button>
         </div>
       </div>
       <h3 class="searchbanner" ng-show="searching">SEARCH RESULTS</h3>
       <div class="isotope" ng-show="searching || tool">
         <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
-          <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case)">
+          <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case,$index)">
             <img alt="" src=".{{case.images[0].image}}" />
             <span class="type" ng-show="searching">{{case.typeSearch}}</span>
             <span class="title">{{case.name}}</span>
@@ -213,7 +213,7 @@
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </div>
               <div class="images">
-                <button carousel-dir="" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0">
+                <button carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0">
                   <img src=".{{image.thumbnail}}" />
                 </button>
               </div>
@@ -233,7 +233,6 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-sanitize.min.js"></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
-
   <script src="js/index.js"></script>
 </body>
 </html>

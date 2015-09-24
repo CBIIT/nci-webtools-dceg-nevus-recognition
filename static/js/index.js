@@ -1,6 +1,21 @@
+function newState(urlParams,title) {
+  var url = "";
+  for (var index in urlParams) {
+    url += '&'+index+'='+urlParams[index];
+  }
+  url.length==0?void(0):url = '?'+url.substring(1,url.length);
+  window.history.replaceState==undefined?void(0):window.history.replaceState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, window.location.pathname+url);
+}
+
 $(document).ready( function() {
   $('body, html').on('contextmenu', 'img', function(event) {
     event.preventDefault();
+  });
+  $('.modal').on('hidden.bs.modal', function() {
+    var urlParams = window.history.state || {};
+    delete urlParams.case;
+    delete urlParams.img;
+    newState(urlParams, 'Recognition Tool');
   });
   $('.app').on('click', '.blur', function() {
     $(this).blur();
@@ -75,42 +90,61 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     }
     return $scope.filters[0];
   }
-  $scope.filterClick = function(filter, toplevel) {
-    toplevel = typeof toplevel === undefined ? false : toplevel;
+  $scope.filterClick = function(filter, subgroup) {
+    var urlParams = window.history.state || {};
+    urlParams.page = 'tool';
+    delete urlParams.subgrouptype;
     $scope.changePage();
     $scope.tool = true;
     $scope.filterValue = filter.type;
+    $scope.currenttype = filter;
+    urlParams.filter = $scope.filterValue;
     numitems = 0;
     pages = 1;
     $scope.showload = false;
-    if (toplevel) {
-      $scope.currenttype = filter;
-      if (filter.subgroups) {
-        $scope.subgrouptype = filter.subgroups[0];
-      }
-    } else {
-      $scope.subgrouptype = filter;
+    if (subgroup !== undefined) {
+      $scope.filterValue = subgroup.type;
+      $scope.subgrouptype = subgroup;
+      urlParams.subgrouptype = subgroup.type;
+    } else if (filter.subgroups) {
+      $scope.filterValue = filter.subgroups[0].type;
+      $scope.subgrouptype = filter.subgroups[0];
+      urlParams.subgrouptype = filter.subgroups[0].type;
     }
+    newState(urlParams, 'Recognition Tool');
     isotopic(filterFns.by6);
   }
   $scope.goabout = function() {
     $scope.changePage();
     $scope.about = true;
+    newState({
+      'page': 'about'
+    }, 'About the Tool')
   };
   $scope.gohome = function() {
     $scope.changePage();
     $scope.home = true;
+    newState({
+      'page': 'home'
+    }, 'Home');
   };
   $scope.gotool = function() {
     $scope.changePage();
     $scope.tool = true;
     if ($scope.filterValue == '') {
-      $scope.filterClick($scope.getFilterByName('mole'),true);
+      $scope.filterClick($scope.getFilterByName('mole'));
     }
+    newState({
+      'page': 'tool',
+      'filter': $scope.filterValue
+    }, 'Recognition Tool');
   };
   $scope.goulinks = function() {
     $scope.changePage();
     $scope.ulinks = true;
+    newState({
+      'page': 'ulinks'
+    }, 'Useful Links');
   };
   $scope.loadMore = function() {
     pages++;
@@ -135,17 +169,25 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     numitems = 0;
     pages = 1;
     $scope.showload = false;
+    newState({
+      'page': 'tool',
+      'search': $scope.search
+    }, 'Recognition Tool');
     isotopic(filterFns.searchby6);
   }
-  $scope.update = function(index) {
-    $scope.currentcase=index;
+  $scope.update = function(caseObject,index) {
+    $scope.currentcase=caseObject;
+    var urlParams = window.history.state || {};
+    urlParams.case = index;
+    newState(urlParams, 'Recognition Tool');
     $scope.updatecurrentimg(0);
   };
   $scope.updatecurrentimg = function(index) {
     $scope.currentimg=index;
-    $('.images button').removeClass('active');
+    var urlParams = window.history.state || {};
+    urlParams.img = index;
+    newState(urlParams, 'Recognition Tool');
     index++;
-    $('.images button:nth-child('+index+')').addClass('active');
     $('.spinnerbox').addClass('spinner-show');
   };
   $(window).scroll(function() {
@@ -153,8 +195,59 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       $scope.showbacktotop = $(window).scrollTop() > 500;
     });
   });
-  $(document).ready( function() {
-    isotopic(filterFns.by6);
+  $(window).load( function() {
+    var match,
+      pl = /\+/g,  // Regex for replacing addition symbol with a space
+      search = /([^&=]+)=?([^&]*)/g,
+      decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+      query = window.location.search.substring(1);
+    var urlParams = {};
+    while (match = search.exec(query))
+      urlParams[decode(match[1])] = decode(match[2]);
+    newState(urlParams,document.title);
+    $scope.$apply(function() {
+      if (urlParams.page !== undefined) {
+        switch (urlParams.page) {
+          case 'home':
+            $scope.gohome();
+            break;
+          case 'about':
+            $scope.goabout();
+            break;
+          case 'tool':
+            if (urlParams.filter !== undefined) {
+              var filter = $scope.getFilterByName(urlParams.filter);
+              if (filter.subgroups !== undefined) {
+                var subgroup = filter.subgroups[0];
+                if (urlParams.subgrouptype !== undefined) {
+                  for (var index in filter.subgroups) {
+                    if (filter.subgroups[index].type == urlParams.subgrouptype) {
+                      subgroup = filter.subgroups[index];
+                    }
+                  }
+                }
+                $scope.filterClick(filter,subgroup);
+              } else {
+                $scope.filterClick(filter);
+              }
+            } else if (urlParams.search !== undefined) {
+              $scope.search = urlParams.search;
+              $scope.searchingfunc();
+            }
+            if (urlParams.case !== undefined) {
+              $scope.update($scope.cases[urlParams.case],urlParams.case);
+              if (urlParams.img !== undefined) {
+                $scope.updatecurrentimg(urlParams.img);
+              }
+              $timeout(function() { $('#myModal').modal('show'); });
+            }
+            break;
+          case 'ulinks':
+            $scope.goulinks();
+            break;
+        }
+      }
+    });
   });
 });
 
@@ -187,7 +280,6 @@ app.directive('imageOnLoad', function() {
 app.directive('carouselDir', function() {
   return function(scope, element, attrs) {
     if (scope.$last){
-      $('.images button:nth-child(1)').addClass('active');
       var imgwidth = $('.images img').length * 114;
       if (imgwidth > 758 || imgwidth > $(window).width()) {
         $('.leftarrow').show();
