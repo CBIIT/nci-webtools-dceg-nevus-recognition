@@ -4,7 +4,7 @@ function newState(urlParams,title) {
     url += '&'+index+'='+urlParams[index];
   }
   url.length==0?void(0):url = '?'+url.substring(1,url.length);
-  window.history.replaceState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, window.location.pathname+url);
+  window.history.replaceState==undefined?void(0):window.history.replaceState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, window.location.pathname+url);
 }
 
 $(document).ready( function() {
@@ -12,7 +12,7 @@ $(document).ready( function() {
     event.preventDefault();
   });
   $('.modal').on('hidden.bs.modal', function() {
-    var urlParams = window.history.state;
+    var urlParams = window.history.state || {};
     delete urlParams.case;
     delete urlParams.img;
     newState(urlParams, 'Recognition Tool');
@@ -91,7 +91,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     return $scope.filters[0];
   }
   $scope.filterClick = function(filter, subgroup) {
-    var urlParams = window.history.state;
+    var urlParams = window.history.state || {};
     urlParams.page = 'tool';
     delete urlParams.subgrouptype;
     $scope.changePage();
@@ -177,14 +177,14 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   }
   $scope.update = function(caseObject,index) {
     $scope.currentcase=caseObject;
-    var urlParams = window.history.state;
+    var urlParams = window.history.state || {};
     urlParams.case = index;
     newState(urlParams, 'Recognition Tool');
     $scope.updatecurrentimg(0);
   };
   $scope.updatecurrentimg = function(index) {
     $scope.currentimg=index;
-    var urlParams = window.history.state;
+    var urlParams = window.history.state || {};
     urlParams.img = index;
     newState(urlParams, 'Recognition Tool');
     index++;
@@ -201,49 +201,51 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       search = /([^&=]+)=?([^&]*)/g,
       decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
       query = window.location.search.substring(1);
-    urlParams = {};
+    var urlParams = {};
     while (match = search.exec(query))
       urlParams[decode(match[1])] = decode(match[2]);
     newState(urlParams,document.title);
     $scope.$apply(function() {
-      switch (urlParams.page) {
-        case 'home':
-          $scope.gohome();
-          break;
-        case 'about':
-          $scope.goabout();
-          break;
-        case 'tool':
-          if (urlParams.filter !== undefined) {
-            var filter = $scope.getFilterByName(urlParams.filter);
-            if (filter.subgroups !== undefined) {
-              var subgroup = filter.subgroups[0];
-              if (urlParams.subgrouptype !== undefined) {
-                for (var index in filter.subgroups) {
-                  if (filter.subgroups[index].type == urlParams.subgrouptype) {
-                    subgroup = filter.subgroups[index]
+      if (urlParams.page !== undefined) {
+        switch (urlParams.page) {
+          case 'home':
+            $scope.gohome();
+            break;
+          case 'about':
+            $scope.goabout();
+            break;
+          case 'tool':
+            if (urlParams.filter !== undefined) {
+              var filter = $scope.getFilterByName(urlParams.filter);
+              if (filter.subgroups !== undefined) {
+                var subgroup = filter.subgroups[0];
+                if (urlParams.subgrouptype !== undefined) {
+                  for (var index in filter.subgroups) {
+                    if (filter.subgroups[index].type == urlParams.subgrouptype) {
+                      subgroup = filter.subgroups[index];
+                    }
                   }
                 }
+                $scope.filterClick(filter,subgroup);
+              } else {
+                $scope.filterClick(filter);
               }
-              $scope.filterClick(filter,subgroup);
-            } else {
-              $scope.filterClick(filter);
+            } else if (urlParams.search !== undefined) {
+              $scope.search = urlParams.search;
+              $scope.searchingfunc();
             }
-          } else if (urlParams.search !== undefined) {
-            $scope.search = urlParams.search;
-            $scope.searchingfunc();
-          }
-          if (urlParams.case !== undefined) {
-            $scope.update($scope.cases[urlParams.case],urlParams.case);
-            if (urlParams.img !== undefined) {
-              $scope.updatecurrentimg(urlParams.img);
+            if (urlParams.case !== undefined) {
+              $scope.update($scope.cases[urlParams.case],urlParams.case);
+              if (urlParams.img !== undefined) {
+                $scope.updatecurrentimg(urlParams.img);
+              }
+              $timeout(function() { $('#myModal').modal('show'); });
             }
-            $timeout(function() { $('#myModal').modal('show'); });
-          }
-          break;
-        case 'ulinks':
-          $scope.goulinks();
-          break;
+            break;
+          case 'ulinks':
+            $scope.goulinks();
+            break;
+        }
       }
     });
   });
