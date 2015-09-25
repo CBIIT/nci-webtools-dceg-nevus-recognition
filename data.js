@@ -467,7 +467,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
-    "subgroup": "stable",
+    "subgroup": "unstable",
     "name": "Case 7",
     "title": "Dysplastic Nevi Case 7: Changing dysplastic nevus suspicious for melanoma",
     "description": "Over 3 years, this dysplastic nevus increased from 3 millimeters to 7 millimeters in greatest diameter. It has an irregular shape and indistinct borders and contains multiple shades of brown. The color became more variable, darker in the center and lighter at the edges. The borders became more indistinct and more irregular in shape. As the mole continued to enlarge, it continued to change in shape and outline. The mole showed increasing continuous growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular asymmetric shape and dark coloration. The mole was removed because it was changing in ways suspicious for melanoma.",
@@ -522,6 +522,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "stable",
     "name": "Case 8",
     "title": "Dysplastic Nevi Case 8: Regressing (Disappearing) dysplastic nevus over almost 4 years",
     "description": "Over 3½ years, this dysplastic nevus went from a 9 millimeter mole in greatest width to 3 millimeters. The mole was mostly flat, and had irregular, indistinct borders. It had a mixture of colors with darker brown in the center surrounded by an area that contains pink, tan and light brown. After the patient received <a href=\"http://www.cancer.gov/publications/dictionaries/cancer-terms?CdrID=45729\" target=\"_new\">immunotherapy</a> as a treatment for metastatic melanoma, the mole faded dramatically and decreased in size substantially to a 3 millimeter small pink smooth papule (bump) that is slightly reddened in the upper portion. The mole then became slightly less raised, less reddened, and more light pink and flesh colored.",
@@ -554,6 +555,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "stable",
     "name": "Case 9",
     "title": "Dysplastic Nevi Case 9: Regressing (Disappearing) dysplastic nevus",
     "description": "Over 28 years, this dysplastic nevus 8 millimeters in greatest width decreased to 7 millimeters became barely visible. The mole contained light brown in the left lower portion and pink which became mostly tan in the rest of the mole. The mole was partially flat and before fading, became more irregular in outline with borders that became more indistinct (blurry). Much of the surface developed a pebbly texture which faded. The color in the entire mole lightened, including the bottom area which was the darkest part of the mole. Most of the rest of the mole faded to flesh color and became barely visible.",
@@ -596,6 +598,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "stable",
     "name": "Case 10",
     "title": "Dysplastic Nevi Case 10: Stable then regressing (fading) dysplastic nevus",
     "description": "Over 25 years, this dysplastic nevus, which was about 6 millimeters, changed in shape and became longer (8 millimeters) and narrower (3 millimeters). The mixture of pink, red, and light brown became more tan and less reddened, and then darkened to shades of brown before fading to more pink and red. The surface was partially flat. Small papules (bumps) that formed in the upper left and the lower central portion, and an elevated rim that developed at the upper left border became less prominent as the mole faded. The borders were indistinct (blurry) and became even more indistinct before the mole started fading and becoming smaller in width.",
@@ -638,6 +641,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "stable",
     "name": "Case 11",
     "title": "Dysplastic Nevi Case 11: Stable then regressing (fading) dysplastic nevus",
     "description": "Over 23 years, this dysplastic nevus increased in greatest width from 7 millimeters to 11 millimeters before regressing and becoming slightly smaller. The mole contained shades of pink, red, tan, and light brown, which darkened slightly before lightening considerably. Some of the color faded completely. The outline remained slightly irregular. The shape became more oval before the mole started fading. The borders remained very indistinct. The surface was partially flat with a pebbly texture that became more and then less prominent. The tiny papule in the central portion became less prominent before it enlarged and developed a darker rim and depressed center. A slightly pebbly texture remained on most of the flattened surface surrounding the papule.",
@@ -680,6 +684,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "stable",
     "name": "Case 12",
     "title": "Dysplastic Nevi Case 12: Stable then regressing (fading/disappearing) dysplastic nevus",
     "description": "Over 23 years, this dysplastic nevus increased in greatest width from 5 millimeters to 9 millimeters. The nevus went from being a mixture of brown colors, partially flat with indistinct borders and an irregular shape and outline to a much lighter arch-shaped mole with even more indistinct borders. The small papule in the left central portion became less prominent and faded.",
@@ -712,6 +717,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "stable",
     "name": "Case 13",
     "title": "Dysplastic Nevi Case 13: Stable then regressing (fading) dysplastic nevus",
     "description": "Over 16 years, this 8 millimeter wide dysplastic nevus increased minimally, but appeared larger (about 12 millimeters) when a tiny pink area nearby enlarged and grew together with the larger nevus. The larger nevus then appeared to have changed to a much more irregular shape. It contained a mixture of brown colors, lighter on the flat base and darker on the raised pebbly surface. The pebbly surface area enlarged and darkened before fading substantially as the mole flattened. The indistinct borders became even more indistinct as the mole continued to fade. The smaller attached mole became raised before fading to a pink papule (bump) which was barely visible.",
@@ -749,6 +755,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "stable",
     "name": "Case 14",
     "title": "Dysplastic Nevi Case 14: Evolving and regressing (fading) dysplastic nevus",
     "description": "Over 16 years, this dysplastic nevus changed in size, shape, surface, and color. It increased in greatest width from 5 millimeters to 11 millimeters. It contained a mix of brown colors with darker brown in the lower central area surrounded by a lighter shade of brown. The raised area near the 6 o’clock position became very dark brown before the entire nevus lightened substantially, with the central portion fading to almost the color of the normal skin. The mole initially had a slightly irregular outline. It changed in shape when it grew outward in several areas, developed scalloped borders in the right lower quarter, and when it faded substantially. The borders were indistinct and became even more indistinct as the mole was fading away. The surface was mostly raised and had a slightly pebbly appearance before becoming flatter as the mole faded.",
@@ -786,6 +793,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "stable",
     "name": "Case 15",
     "title": "Dysplastic Nevi Case 15: Evolving and regressing (fading) dysplastic nevus",
     "description": "Over 23 years, this mole changed in size, shape, surface, and color. Initially, the mole had minimally atypical features, but then evolved into a dysplastic nevus. The nevus increased from 3 millimeters to 5 millimeters in greatest width before becoming slightly smaller. It contained a slight mixture of medium to dark brown colors before lightening and fading substantially, becoming pink and red and more uniform in color. The nevus was mostly raised with a pebbly surface; the edges were flat, with indistinct borders, and lighter in color. Except for the area from the 12 o’clock to 3 o’clock positions, the edge around the nevus became flatter. The outline was slightly irregular and became more irregular before the nevus began fading.",
@@ -828,6 +836,7 @@ var data = {
   }, {
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
+    "subgroup": "unstable",
     "name": "Case 16",
     "title": "Dysplastic Nevi Case 16: A changing dysplastic nevus suspicious for melanoma",
     "description": "Over 2 years, this dysplastic nevus increased in greatest width from 7 millimeters to 9 millimeters. The mole was partially flat, quite irregular in outline and shape, and had indistinct borders. The mixture of pink to dark brown colors lightened and then turned substantially darker in a very short period of time. As the mole was growing darker and larger, the shape changed, with the outline becoming much more irregular. New areas of darker pigment developed in the upper and lower portions. The small papule (bump) that had developed near the bottom almost completely disappeared. The mole was removed because of the continuous changes -- increasing size and the shape becoming more irregular – and new dark areas.",
