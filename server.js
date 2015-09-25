@@ -13,7 +13,9 @@ app.use(express.static("static"));
 
 // Default values
 var port = 8180;
-var url = 'mongodb://localhost:27017/nevus';
+var mongohost = 'localhost';
+var mongoport = 27017;
+var databasename = 'nevus';
 
 app.get("/data.js", function(request, response) {
   var data = {};
@@ -23,8 +25,9 @@ app.get("/data.js", function(request, response) {
     database.close();
   };
   var fetched = _.after(2, respond);
-  MongoClient.connect(url, function(err, db) {
+  MongoClient.connect('mongodb://'+mongohost+':'+mongoport+'/'+databasename, function(err, db) {
     database = db;
+    console.log(database);
     assert.equal(null,err);
     db.collection("filters", function(err, collection) {
       assert.equal(null,err);
@@ -45,6 +48,8 @@ app.get("/data.js", function(request, response) {
   });
 });
 
+function isNumeric(maybe) { return !isNaN(parseFloat(maybe)) && isFinite(maybe); }
+
 function parseArgs() {
 	var usage = false;
 	for (var index = 2; index < process.argv.length; index++) {
@@ -52,7 +57,20 @@ function parseArgs() {
 			case "-p":
 				index++;
 				port = process.argv[index];
-				if (typeof port !== "number") usage = true;
+				if (!isNumeric(port)) usage = true;
+        break;
+      case "-mh":
+        index++;
+        mongohost = process.argv[index];
+        break;
+      case "-mp":
+        index++;
+        mongoport = process.argv[index];
+        if (!isNumeric(mongoport)) usage = true;
+        break;
+      case "-d":
+        index++;
+        database = process.argv[index];
         break;
 			default:
 				usage = true;
@@ -60,7 +78,7 @@ function parseArgs() {
 		if (usage) break;
 	}
 	if (usage) {
-		console.log("node server.js [-p <port>]");
+		console.log("node server.js [-p <port>] [-mh <mongo hostname>] [-mp <mongo port>] [-d <database name>]");
 		process.exit(1);
 	}
 }
