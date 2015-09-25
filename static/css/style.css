@@ -87,12 +87,11 @@ body {
   background: #023C4D;
   color: white;
   padding: 20px;
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
+  text-align: right;
   overflow:hidden;
+}
+#typedescription * {
+  text-align: left;
 }
 #typedescription a {
   color: lightGray;
@@ -360,9 +359,6 @@ form.navbar-form, .nav.navbar-nav {
 @media (max-width: 768px) {
   .navbar-brand {
     width: calc(100% - 50px);
-  }
-  #typedescription {
-    flex-direction: column;
   }
   form.navbar-form {
       margin-top: 80px;
