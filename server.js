@@ -27,7 +27,6 @@ app.get("/data.js", function(request, response) {
   var fetched = _.after(2, respond);
   MongoClient.connect('mongodb://'+mongohost+':'+mongoport+'/'+databasename, function(err, db) {
     database = db;
-    console.log(database);
     assert.equal(null,err);
     db.collection("filters", function(err, collection) {
       assert.equal(null,err);
