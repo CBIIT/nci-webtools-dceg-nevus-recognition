@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Moles, Dysplastic Nevi & Melanoma</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='/common/css/bootstrap.css'>
+  <link rel='stylesheet' href='../css/bootstrap.css'>
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="/common/css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="app" ng-app="nevusAdmin" ng-controller="nevusDataAdmin">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand tool" href="../" id="brand">
+            <img alt="" src="http://dceg.cancer.gov/publishedcontent/images/images/DCEG-logo.svg" />
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <h1>NEVUS Administration</h1>
+    </div>
+    <div class="contain">
+      <div class="button-group" id="filters" ng-class="{}">
+        <button class="button blur" ng-class="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick(filter)" ng-repeat="filter in filters">{{filter.name}}</button>
+      </div>
+      <div class="type">
+        <div class="subgroup button-group" ng-show="currenttype.subgroups">
+          <button class="button blur" ng-class="{'is-checked':subgrouptype.type==subgroup.type}" ng-click="filterClick(currenttype,subgroup)" ng-repeat="subgroup in currenttype.subgroups">{{subgroup.name}}</button>
+        </div>
+      </div>
+      <div class="isotope">
+        <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
+          <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case,$index)">
+            <img alt="" src="..{{case.images[0].thumbnail}}" />
+            <span class="type">{{case.typeSearch}}</span>
+            <span class="title">{{case.name}}</span>
+          </a>
+          <div class="sr-only">{{case.description}}</div>
+        </div>
+      </div>
+    </div>
+    <footer class="container footer">
+      <div class="center-block">
+        <ul class="list-inline">
+          <li><a href="http://www.cancer.gov/" title="Home" target="_blank">Home</a></li>
+          <li>|</li>
+          <li><a href="mailto:NevusToolSupport@mail.nih.gov" title="Support" target="_top">Support</a></li>
+          <li>|</li>
+          <li><a href="http://www.cancer.gov/global/web/policies" title="Policies" target="_blank">Policies</a></li>
+          <li>|</li>
+          <li><a href="http://www.cancer.gov/global/web/policies/accessibility" title="Accessibility" target="_blank">Accessibility</a></li>
+          <li>|</li>
+          <li><a href="http://cancer.gov/global/viewing-files" title="Viewing Files" target="_blank">Viewing Files</a></li>
+          <li>|</li>
+          <li><a href="http://www.cancer.gov/global/web/policies/foia" title="FOIA" target="_blank">FOIA</a></li>
+        </ul>
+        <ul class="list-inline">
+          <li><a href="http://www.hhs.gov/" target="_blank">U.S. Department of Health and Human Services</a></li>
+          <li>|</li>
+          <li><a href="http://www.nih.gov" target="_blank">National Institutes of Health</a></li>
+          <li>|</li>
+          <li><a href="http://www.cancer.gov/" target="_blank">National Cancer Institute</a></li>
+          <li>|</li>
+          <li><a href="http://usa.gov" target="_blank">USA.gov</a></li>
+        </ul>
+        <div class="text-center">NIH ... Turning Discovery Into Health<sup>®</sup></div>
+      </div>
+    </footer>
+    <button class="backtotop blur" ng-show="showbacktotop" ng-click="backToTop()">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </button>
+    <div aria-labelledby="myModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">{{currentcase.title}}</h4>
+          </div>
+          <div class="modal-body group">
+            <div class="casedescription">
+              <p ng-bind-html="currentcase.description"></p>
+              <div>
+                <span>The "ABCDE" features for this case are as follows:</span>
+                <ul>
+                  <li><label>Asymmetry</label><span>{{currentcase.abcde.asymmetry}}</span></li>
+                  <li><label>Border</label><span>{{currentcase.abcde.border}}</span></li>
+                  <li><label>Color</label><span>{{currentcase.abcde.color}}</span></li>
+                  <li><label>Diameter</label><span>{{currentcase.abcde.diameter}}</span></li>
+                  <li><label>Evolving</label><span>{{currentcase.abcde.evolving}}</span></li>
+                </ul>
+              </div>
+              <p ng-show="currentcase.diagnosis.clinical"><label>Clinical Diagnosis</label><span>{{currentcase.diagnosis.clinical}}</span></p>
+              <p ng-show="currentcase.diagnosis.pathology"><label>Pathology Diagnosis</label><span>{{currentcase.diagnosis.pathology}}</span></p>
+            </div>
+            <div class="carousel">
+              <div class="leftarrow blur" ng-click="scrollLeft()">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </div>
+              <div class="rightarrow blur" ng-click="scrollRight()">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </div>
+              <div class="images">
+                <button carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0">
+                  <img src="..{{image.thumbnail}}" />
+                </button>
+              </div>
+            </div>
+            <div class="imgbox">
+              <img alt="" class="currentimage" image-on-load="" src="..{{currentcase.images[currentimg].image}}" />
+            </div>
+            <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='../data.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-sanitize.min.js"></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
