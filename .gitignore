@@ -1,5 +1,5 @@
 .DS_Store
 database/*
-express.log
+express.log*
 node_modules/*
 static/common/*
