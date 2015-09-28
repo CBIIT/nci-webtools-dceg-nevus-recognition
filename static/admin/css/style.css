@@ -1,3 +1,45 @@
 .item {
   width: 12.5%;
+  min-width: 200px;
+  min-height: 100px;
+}
+.textwrap {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  overflow: hidden;
+}
+#myModal label {
+  float: left;
+  width: 10em;
+  margin: 0px;
+  padding: 0px;
+}
+#myModal .modal-header label {
+  font-size: 18px;
+}
+#myModal .casedescription label {
+  font-size: 14px;
+}
+#myModal label + :not(textarea) {
+  float: none;
+}
+#myModal textarea, #myModal input[type='text'] {
+  width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  margin: 0px; 
+  padding: 0px;
+}
+#myModal select {
+  height: 26px;
+}
+#myModal .modal-header textarea, #myModal .modal-header .textwrap {
+  height: 26px;
 }

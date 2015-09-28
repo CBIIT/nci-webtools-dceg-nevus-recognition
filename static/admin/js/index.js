@@ -32,7 +32,33 @@ app.controller('nevusDataAdmin', function($scope, $http, $timeout) {
   $scope.backToTop = function() {
     $('body,html').animate({scrollTop:0}, 1000);
   }
+  $scope.getFilterByName = function(filterName) {
+    for (var index = 0; index < $scope.filters.length; index++) {
+      var filter = $scope.filters[index];
+      if (filter.type == filterName) {
+        return filter;
+      }
+    }
+    return $scope.filters[0];
+  }
+  $scope.getSubgroupByName = function(filter,subgroupName) {
+    var subgroups = filter.subgroups;
+    for (var index = 0; index < subgroups.length; index++) {
+      var subgroup = subgroups[index];
+      if (subgroup.type == subgroupName) {
+        return subgroup;
+      }
+    }
+  }
   $scope.filterClick = function(filter, subgroup) {
+    filter = filter===undefined?$scope.getFilterByName($scope.currentcase.type):filter;
+    if (subgroup === undefined) {
+      if (filter.subgroups === undefined) {
+        delete $scope.currentcase.subgroup;
+      } else {
+        subgroup = $scope.getSubgroupByName(filter,$scope.currentcase.subgroup);
+      }
+    }
     $scope.filterValue = filter.type;
     $scope.currenttype = filter;
     if (subgroup !== undefined) {

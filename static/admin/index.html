@@ -30,7 +30,7 @@
       <h1>NEVUS Administration</h1>
     </div>
     <div class="contain">
-      <div class="button-group" id="filters" ng-class="{}">
+      <div class="button-group" id="filters">
         <button class="button blur" ng-class="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick(filter)" ng-repeat="filter in filters">{{filter.name}}</button>
       </div>
       <div class="type">
@@ -42,7 +42,6 @@
         <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
           <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case,$index)">
             <img alt="" src="..{{case.images[0].thumbnail}}" />
-            <span class="type">{{case.typeSearch}}</span>
             <span class="title">{{case.name}}</span>
           </a>
           <div class="sr-only">{{case.description}}</div>
@@ -86,23 +85,29 @@
             <button aria-label="Close" class="close" data-dismiss="modal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">{{currentcase.title}}</h4>
+            <textarea id="myModalLabel" class="modal-title" ng-model="currentcase.title"></textarea>
+            <label>Display Title:</label><div class="textwrap"><textarea class="modal-title" ng-model="currentcase.name"></textarea></div>
+            <label>Display Category:</label><div class="textwrap"><select ng-options="filter.type as filter.name for filter in filters" ng-model="currentcase.type" ng-change="filterClick();"></select></div>
+            <label ng-show="currenttype.subgroups">Display Subgroup:</label><div class="textwrap"><select ng-show="currenttype.subgroups" ng-options="subgroup.type as subgroup.name for subgroup in currenttype.subgroups" ng-model="currentcase.subgroup" ng-change="filterClick()"></select></div>
           </div>
           <div class="modal-body group">
             <div class="casedescription">
-              <p ng-bind-html="currentcase.description"></p>
+              <textarea ng-model="currentcase.description"></textarea>
               <div>
                 <span>The "ABCDE" features for this case are as follows:</span>
                 <ul>
-                  <li><label>Asymmetry</label><span>{{currentcase.abcde.asymmetry}}</span></li>
-                  <li><label>Border</label><span>{{currentcase.abcde.border}}</span></li>
-                  <li><label>Color</label><span>{{currentcase.abcde.color}}</span></li>
-                  <li><label>Diameter</label><span>{{currentcase.abcde.diameter}}</span></li>
-                  <li><label>Evolving</label><span>{{currentcase.abcde.evolving}}</span></li>
+                  <li><label>Asymmetry</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.asymmetry"/></div></li>
+                  <li><label>Border</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.border"/></div></li>
+                  <li><label>Color</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.color"/></div></li>
+                  <li><label>Diameter</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.diameter"/></div></li>
+                  <li><label>Evolving</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.evolving"/></div></li>
                 </ul>
               </div>
-              <p ng-show="currentcase.diagnosis.clinical"><label>Clinical Diagnosis</label><span>{{currentcase.diagnosis.clinical}}</span></p>
-              <p ng-show="currentcase.diagnosis.pathology"><label>Pathology Diagnosis</label><span>{{currentcase.diagnosis.pathology}}</span></p>
+              <select>
+                <option value="clinical" ng-selected="currentcase.diagnosis.type=='clinical'">Clinical Diagnosis</option>
+                <option value="pathology" ng-selected="currentcase.diagnosis.type=='pathology'">Pathology Diagnosis</option>
+              </select>
+              <div class="textwrap"><input type="text" ng-model="currentcase.diagnosis.value"/></div>
             </div>
             <div class="carousel">
               <div class="leftarrow blur" ng-click="scrollLeft()">
