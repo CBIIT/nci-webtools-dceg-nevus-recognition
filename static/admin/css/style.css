@@ -15,19 +15,33 @@
   margin: 0px;
   padding: 0px;
 }
-#myModal .modal-header label {
+#myModal select {
+  height: 26px;
+}
+#myModal .modal-header {
   font-size: 18px;
+}
+#myModal .modal-header label {
   width: 9em;
+  font-weight: 500;
+}
+#myModal .modal-header textarea, #myModal .modal-header .textwrap {
+  height: 26px;
 }
 #myModal .casedescription label {
   font-size: 14px;
   width: 6em;
 }
+#myModal .casedescription textarea:first-child {
+  height: 80px;
+}
 #myModal textarea, #myModal input[type='text'] {
   width: 100%;
   border: none;
   resize: none;
-  outline: none;
+  outline-style: none;
+  outline-width: none;
+  outline-color: none;
   box-sizing: border-box;
   font-family: inherit;
   font-size: inherit;
@@ -36,12 +50,6 @@
   margin: 0px; 
   padding: 0px;
   line-height: 1.42857;
-}
-#myModal select {
-  height: 26px;
-}
-#myModal .modal-header textarea, #myModal .modal-header .textwrap {
-  height: 26px;
 }
 #myModal .textwrap * {
   vertical-align: middle;
