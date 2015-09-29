@@ -99,12 +99,15 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
     }
     isotopic(filterFns.by6);
   }
+  $scope.imageSelected = function(target) {
+    $scope.fileToUpload = target.files[0];
+  };
   $scope.scrollLeft = function() {
     $('.images').animate({scrollLeft:$('.images').scrollLeft()-$('.images').width()}, 300);
-  }
+  };
   $scope.scrollRight = function() {
     $('.images').animate({scrollLeft:$('.images').scrollLeft()+$('.images').width()}, 300);
-  }
+  };
   $scope.update = function(caseObject) {
     $scope.currentcase=caseObject;
     $scope.updatecurrentimg(0);
@@ -113,6 +116,41 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
     $scope.currentimg=index;
     index++;
     $('.spinnerbox').addClass('spinner-show');
+  };
+  var progressHandlingFunction = function(e) {
+    
+  };
+  $scope.uploadImage = function(e) {
+    var formData = new FormData($(e.target).parent()[0]);
+    $.ajax({
+      url: 'image',
+      type: 'POST',
+      xhr: function() {
+        var myXhr = $.ajaxSettings.xhr();
+        if(myXhr.upload){
+          myXhr.upload.addEventListener('progress',function(other) {
+            if(other.lengthComputable){
+              $(e.target).parent().next().attr({value:other.loaded,max:other.total});
+            }
+          }, false);
+        }
+        return myXhr;
+      },
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: 'text',
+      cache: false
+    }).done(function(data) {
+      $scope.$apply(function() {
+        $(e.target).prev().val('');
+        $(e.target).parent().next().val(0);
+        $scope.currentcase.images = $scope.currentcase.images || [];
+        $scope.currentcase.images.push({ 'description': data });
+        $scope.updatecurrentimg($scope.currentcase.images.length-1);
+      });
+    });
+    e.preventDefault();
   };
   $(window).scroll(function() {
     $scope.$apply(function() {

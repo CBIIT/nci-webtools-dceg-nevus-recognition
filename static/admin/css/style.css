@@ -60,3 +60,20 @@
 .imgbox + .textwrap textarea {
   height: 275px;
 }
+#uploadForm  * {
+  background: black;
+  color: white;
+}
+#uploadForm form {
+  display: block;
+}
+#uploadForm input[type='file'] {
+  float: left;
+}
+#uploadForm button {
+  border: none;
+  height: 24px;
+}
+#uploadForm progress {
+  width: 100%;
+}

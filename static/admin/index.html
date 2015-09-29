@@ -125,14 +125,36 @@
               </div>
               <div class="images">
                 <button carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0">
-                  <img src="..{{image.thumbnail}}" />
+                  <img src="..{{ image.thumbnail || '/images/MissingImage.png' }}" />
+                </button>
+                <button data-target="#uploadForm" data-toggle="modal" carousel-dir="" class="blur" tabindex="0">
+                  <img src="../images/AddImage.png" />
                 </button>
               </div>
             </div>
-            <div class="imgbox" ng-show="currentimg">
+            <div class="imgbox">
               <img alt="" class="currentimage" image-on-load="" src="..{{currentcase.images[currentimg].image}}" />
             </div>
-            <div class="textwrap" ng-show="currentimg"><textarea class="currentimagedescription" placeholder="Image Description" ng-model="currentcase.images[currentimg].description"></textarea></div>
+            <div class="textwrap"><textarea class="currentimagedescription" placeholder="Image Description" ng-model="currentcase.images[currentimg].description"></textarea></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="uploadForm" role="dialog" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <label>Upload a File</div>
+          </div>
+          <div class="modal-body">
+            <form enctype="multipart/form-data">
+              <input type="file" onchange="angular.element(this).scope().imageSelected(this)"/>
+              <button ng-click="uploadImage($event)">Upload</button>
+            </form>
+            <progress value="0"></progress>
           </div>
         </div>
       </div>

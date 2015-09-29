@@ -47,6 +47,12 @@ app.get("/data.js", function(request, response) {
   });
 });
 
+app.all("/admin/image", function(request, response, next) {
+  next();
+}).post("/admin/image", function(request, response) {
+  response.end("Hello, World!");
+});
+
 function isNumeric(maybe) { return !isNaN(parseFloat(maybe)) && isFinite(maybe); }
 
 function parseArgs() {
