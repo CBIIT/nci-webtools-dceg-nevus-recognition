@@ -40,11 +40,18 @@
       </div>
       <div class="isotope">
         <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
-          <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case,$index)">
-            <img alt="" src="..{{case.images[0].thumbnail}}" />
-            <span class="title">{{case.name}}</span>
+          <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case)">
+            <img alt="" src="..{{ case.images[0].thumbnail || '/images/MissingImage.png' }}"/>
+            <span class="title">{{ case.name || 'Untitled Case' }}</span>
           </a>
-          <div class="sr-only">{{case.description}}</div>
+          <div class="sr-only" ng-bind="case.description"></div>
+        </div>
+        <div class="item" ng-class="allFilters">
+          <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="createNew()">
+            <img alt="" src="../images/AddImage.png" />
+            <span class="title">Add New Case</title>
+          </a>
+          <div class="sr-only"></div>
         </div>
       </div>
     </div>
@@ -85,29 +92,29 @@
             <button aria-label="Close" class="close" data-dismiss="modal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>
-            <textarea id="myModalLabel" class="modal-title" ng-model="currentcase.title"></textarea>
-            <label>Display Title:</label><div class="textwrap"><textarea class="modal-title" ng-model="currentcase.name"></textarea></div>
+            <textarea id="myModalLabel" class="modal-title" placeholder="Title" ng-model="currentcase.title"></textarea>
+            <label>Display Name:</label><div class="textwrap"><textarea class="modal-title" placeholder="Untitled Case" ng-model="currentcase.name"></textarea></div>
             <label>Display Category:</label><div class="textwrap"><select ng-options="filter.type as filter.name for filter in filters" ng-model="currentcase.type" ng-change="filterClick();"></select></div>
             <label ng-show="currenttype.subgroups">Display Subgroup:</label><div class="textwrap"><select ng-show="currenttype.subgroups" ng-options="subgroup.type as subgroup.name for subgroup in currenttype.subgroups" ng-model="currentcase.subgroup" ng-change="filterClick()"></select></div>
           </div>
           <div class="modal-body group">
             <div class="casedescription">
-              <textarea ng-model="currentcase.description"></textarea>
+              <textarea placeholder="Description" ng-model="currentcase.description"></textarea>
               <div>
                 <span>The "ABCDE" features for this case are as follows:</span>
                 <ul>
-                  <li><label>Asymmetry</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.asymmetry"/></div></li>
-                  <li><label>Border</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.border"/></div></li>
-                  <li><label>Color</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.color"/></div></li>
-                  <li><label>Diameter</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.diameter"/></div></li>
-                  <li><label>Evolving</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.evolving"/></div></li>
+                  <li><label>Asymmetry</label><div class="textwrap"><input type="text" placeholder="Asymmetry" ng-model="currentcase.abcde.asymmetry"/></div></li>
+                  <li><label>Border</label><div class="textwrap"><input type="text" placeholder="Border" ng-model="currentcase.abcde.border"/></div></li>
+                  <li><label>Color</label><div class="textwrap"><input type="text" placeholder="Color" ng-model="currentcase.abcde.color"/></div></li>
+                  <li><label>Diameter</label><div class="textwrap"><input type="text" placeholder="Diameter" ng-model="currentcase.abcde.diameter"/></div></li>
+                  <li><label>Evolving</label><div class="textwrap"><input type="text" placeholder="Evolving" ng-model="currentcase.abcde.evolving"/></div></li>
                 </ul>
               </div>
               <select class="aslabel" ng-model="currentcase.diagnosis.type">
                 <option value="clinical">Clinical Diagnosis</option>
                 <option value="pathology">Pathology Diagnosis</option>
               </select>
-              <div class="textwrap"><input type="text" ng-model="currentcase.diagnosis.result"/></div>
+              <div class="textwrap"><input type="text" placeholder="Diagnosis" ng-model="currentcase.diagnosis.result"/></div>
             </div>
             <div class="carousel">
               <div class="leftarrow blur" ng-click="scrollLeft()">
@@ -122,10 +129,10 @@
                 </button>
               </div>
             </div>
-            <div class="imgbox">
+            <div class="imgbox" ng-show="currentimg">
               <img alt="" class="currentimage" image-on-load="" src="..{{currentcase.images[currentimg].image}}" />
             </div>
-            <div class="textwrap"><textarea class="currentimagedescription" ng-model="currentcase.images[currentimg].description"></textarea></div>
+            <div class="textwrap" ng-show="currentimg"><textarea class="currentimagedescription" placeholder="Image Description" ng-model="currentcase.images[currentimg].description"></textarea></div>
           </div>
         </div>
       </div>

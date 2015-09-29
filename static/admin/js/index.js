@@ -1,6 +1,6 @@
 var app = angular.module('nevusAdmin', ['ngSanitize']);
 
-app.controller('nevusDataAdmin', function($scope, $http, $timeout) {
+app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   var filterFns = {
     by6: function(element) { return element.hasClass($scope.filterValue); }
   };
@@ -23,6 +23,17 @@ app.controller('nevusDataAdmin', function($scope, $http, $timeout) {
   }
   $scope.cases = data.cases;
   $scope.filters = data.filters;
+  $scope.allFilters = [];
+  for (var index in $scope.filters) {
+    var filter = $scope.filters[index];
+    $scope.allFilters.push(filter.type);
+    if (filter.subgroups) {
+      for (var subIndex in filter.subgroups) {
+        var subgroup = filter.subgroups[subIndex];
+        $scope.allFilters.push(subgroup.type);
+      }
+    }
+  }
   $scope.currentcase = {};
   $scope.currentimg = 0;
   $scope.currenttype = $scope.filters[0];
@@ -31,6 +42,22 @@ app.controller('nevusDataAdmin', function($scope, $http, $timeout) {
   $scope.subgrouptype = null;
   $scope.backToTop = function() {
     $('body,html').animate({scrollTop:0}, 1000);
+  }
+  $scope.createNew = function() {
+    var newCase = {};
+    newCase.type = $scope.currenttype.type;
+    if ($scope.subgrouptype) {
+      newCase.subgroup = $scope.subgrouptype.type;
+    }
+    $scope.cases.push(newCase);
+    $scope.update(newCase);
+    $timeout(function() {
+      $container.isotope('appended',$container.children().last().prev());
+      var newCaseButton = $container.children().last().prop('outerHTML');
+      $container.isotope('remove',$container.children().last());
+      $container.isotope('insert',$(newCaseButton));
+      $compile($container.children().last())($scope);
+    });
   }
   $scope.getFilterByName = function(filterName) {
     for (var index = 0; index < $scope.filters.length; index++) {
@@ -51,12 +78,14 @@ app.controller('nevusDataAdmin', function($scope, $http, $timeout) {
     }
   }
   $scope.filterClick = function(filter, subgroup) {
-    filter = filter===undefined?$scope.getFilterByName($scope.currentcase.type):filter;
-    if (subgroup === undefined) {
-      if (filter.subgroups === undefined) {
-        delete $scope.currentcase.subgroup;
-      } else {
-        subgroup = $scope.getSubgroupByName(filter,$scope.currentcase.subgroup);
+    if (filter === undefined) {
+      filter = $scope.getFilterByName($scope.currentcase.type);
+      if (subgroup === undefined) {
+        if (filter.subgroups === undefined) {
+          delete $scope.currentcase.subgroup;
+        } else {
+          subgroup = $scope.getSubgroupByName(filter,$scope.currentcase.subgroup);
+        }
       }
     }
     $scope.filterValue = filter.type;
@@ -76,7 +105,7 @@ app.controller('nevusDataAdmin', function($scope, $http, $timeout) {
   $scope.scrollRight = function() {
     $('.images').animate({scrollLeft:$('.images').scrollLeft()+$('.images').width()}, 300);
   }
-  $scope.update = function(caseObject,index) {
+  $scope.update = function(caseObject) {
     $scope.currentcase=caseObject;
     $scope.updatecurrentimg(0);
   };
