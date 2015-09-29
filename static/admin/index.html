@@ -103,11 +103,11 @@
                   <li><label>Evolving</label><div class="textwrap"><input type="text" ng-model="currentcase.abcde.evolving"/></div></li>
                 </ul>
               </div>
-              <select>
-                <option value="clinical" ng-selected="currentcase.diagnosis.type=='clinical'">Clinical Diagnosis</option>
-                <option value="pathology" ng-selected="currentcase.diagnosis.type=='pathology'">Pathology Diagnosis</option>
+              <select class="aslabel" ng-model="currentcase.diagnosis.type">
+                <option value="clinical">Clinical Diagnosis</option>
+                <option value="pathology">Pathology Diagnosis</option>
               </select>
-              <div class="textwrap"><input type="text" ng-model="currentcase.diagnosis.value"/></div>
+              <div class="textwrap"><input type="text" ng-model="currentcase.diagnosis.result"/></div>
             </div>
             <div class="carousel">
               <div class="leftarrow blur" ng-click="scrollLeft()">
@@ -125,7 +125,7 @@
             <div class="imgbox">
               <img alt="" class="currentimage" image-on-load="" src="..{{currentcase.images[currentimg].image}}" />
             </div>
-            <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description"></p>
+            <div class="textwrap"><textarea class="currentimagedescription" ng-model="currentcase.images[currentimg].description"></textarea></div>
           </div>
         </div>
       </div>
