@@ -77,3 +77,8 @@
 #uploadForm progress {
   width: 100%;
 }
+button.save {
+  border:none;
+  width:100%;
+  font-size:20px;
+}

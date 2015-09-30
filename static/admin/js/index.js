@@ -102,6 +102,20 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   $scope.imageSelected = function(target) {
     $scope.fileToUpload = target.files[0];
   };
+  $scope.saveChanges = function() {
+    console.log($scope.cases);
+    $.ajax({
+      url: 'cases',
+      type: 'PUT',
+      data: JSON.stringify($scope.cases),
+      processData: false,
+      contentType: 'application/json',
+      dataType: 'json',
+      cache: false
+    }).fail(function(data) { console.log(data) }).done(function(data) {
+      console.log(data);
+    });
+  };
   $scope.scrollLeft = function() {
     $('.images').animate({scrollLeft:$('.images').scrollLeft()-$('.images').width()}, 300);
   };

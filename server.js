@@ -1,4 +1,5 @@
 var assert = require('assert');
+var bodyParser = require('body-parser');
 var express = require('express');
 var expressLogger = require('express-logger');
 var fs = require('fs');
@@ -6,6 +7,7 @@ var gm = require('gm');
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/' });
 var MongoClient = require('mongodb').MongoClient;
+var ObjectID = require('mongodb').ObjectID;
 var _ = require('underscore');
 var app = express();
 
@@ -14,6 +16,7 @@ app.use(function(req,res,next) {
   res.header('X-UA-Compatible','IE=edge');
   next();
 });
+app.use(bodyParser.json());
 app.use(express.static("static"));
 
 // Default values
@@ -78,6 +81,33 @@ app.route("/admin/image").all(function(request, response, next) {
       response.end("{ \"image\": \""+filename+"\", \"thumbnail\": \""+thumbnail+"\" }");
     });
   });
+});
+
+app.put("/admin/cases", function(request,response) {
+  MongoClient.connect('mongodb://'+mongohost+':'+mongoport+'/'+databasename, function(err, db) {
+    database = db;
+    assert.equal(null,err);
+    db.collection("cases", function(err, collection) {
+      assert.equal(null,err);
+      for (var index in request.body) {
+        var item = request.body[index];
+        var _id = new ObjectID(item._id);
+        delete item._id;
+        delete item['$$hashKey'];
+        for (var imageIndex in item.images) {
+          delete item.images[imageIndex]['$$hashKey'];
+        }
+        collection.update({
+          "_id": _id
+        }, item, {
+          "upsert": true
+        },function(err, result) {
+          assert.equal(null,err);
+        });
+      }
+    });
+  });  
+  response.end("{}");
 });
 
 function isNumeric(maybe) { return !isNaN(parseFloat(maybe)) && isFinite(maybe); }
