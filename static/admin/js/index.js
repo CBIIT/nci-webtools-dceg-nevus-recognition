@@ -58,7 +58,7 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
     });
   }
   $scope.createNew = function() {
-    var newCase = {};
+    var newCase = { 'order': $scope.cases.length };
     newCase.type = $scope.currenttype.type;
     if ($scope.subgrouptype) {
       newCase.subgroup = $scope.subgrouptype.type;

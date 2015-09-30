@@ -72,7 +72,7 @@ app.route("/admin/image").all(function(request, response, next) {
       if (request.file.mimetype.startsWith('image/')) {
         extension = '.'+request.file.mimetype.substring(6);
       } else {
-        return uploadError("Invalid File Type",request.file.path);
+        return uploadError("Invalid File Type",request.file.path,response);
       }
   }
   var filename = '/images/uploads/'+request.file.filename;
@@ -80,9 +80,9 @@ app.route("/admin/image").all(function(request, response, next) {
   filename += extension;
   fs.rename(request.file.path,request.file.path+extension,function() {
     gm(request.file.path+extension).resize(428,275,"^").crop(428,275,0,0).write("static"+filename,function(error) {
-      if (error) { return uploadError(JSON.stringify(error),request.file.path+extension); }
+      if (error) { return uploadError(JSON.stringify(error),request.file.path+extension,response); }
       gm("static"+filename).resize(100,67,"^").crop(100,67,0,0).write("static"+thumbnail,function(error) {
-        if (error) { return uploadError(JSON.stringify(error),request.file.path+extension); }
+        if (error) { return uploadError(JSON.stringify(error),request.file.path+extension,response); }
         fs.unlink(request.file.path+extension);
         response.end("{ \"image\": \""+filename+"\", \"thumbnail\": \""+thumbnail+"\" }");
       });
@@ -90,7 +90,7 @@ app.route("/admin/image").all(function(request, response, next) {
   });
 });
 
-app.put("/admin/cases", function(request,response) {
+app.route("/admin/cases").put(function(request,response) {
   MongoClient.connect('mongodb://'+mongohost+':'+mongoport+'/'+databasename, function(err, db) {
     database = db;
     assert.equal(null,err);
@@ -115,7 +115,7 @@ app.put("/admin/cases", function(request,response) {
     });
   });  
   response.end("{}");
-}).delete("/admin/cases", function(request,response) {
+}).delete(function(request,response) {
   MongoClient.connect('mongodb://'+mongohost+':'+mongoport+'/'+databasename, function(err, db) {
     database = db;
     assert.equal(null,err);
@@ -128,7 +128,7 @@ app.put("/admin/cases", function(request,response) {
 
 function isNumeric(maybe) { return !isNaN(parseFloat(maybe)) && isFinite(maybe); }
 
-function uploadError(errorMsg,filePath) {
+function uploadError(errorMsg,filePath,response) {
   response.end("{ \"error\": \""+errorMsg+"\" }");
   fs.unlink(filePath);
   return;
