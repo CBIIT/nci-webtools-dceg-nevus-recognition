@@ -1,0 +1,104 @@
+.item {
+  width: 12.5%;
+  min-width: 200px;
+  min-height: 100px;
+}
+.textwrap {
+  padding: 0px;
+  padding-left: 5px;
+  margin: 0px;
+  border: 0px;
+  overflow: hidden;
+}
+#myModal label, .aslabel {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+#myModal select {
+  height: 26px;
+}
+#myModal .modal-header {
+  font-size: 18px;
+}
+#myModal .modal-header label {
+  width: 9em;
+  font-weight: 500;
+}
+#myModal .modal-header textarea, #myModal .modal-header .textwrap {
+  height: 26px;
+}
+#myModal .casedescription label {
+  font-size: 14px;
+  width: 6em;
+}
+#myModal .casedescription textarea:first-child {
+  height: 80px;
+}
+#myModal textarea, #myModal input[type='text'] {
+  width: 100%;
+  border: none;
+  resize: none;
+  outline-style: none;
+  outline-width: none;
+  outline-color: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  margin: 0px; 
+  padding: 0px;
+  line-height: 1.42857;
+}
+#myModal .textwrap * {
+  vertical-align: middle;
+}
+.imgbox + .textwrap {
+  padding: 0px;
+}
+.imgbox + .textwrap textarea {
+  height: 275px;
+}
+#uploadForm  * {
+  background: black;
+  color: white;
+}
+#uploadForm form {
+  display: block;
+}
+#uploadForm input[type='file'] {
+  float: left;
+}
+#uploadForm button {
+  border: none;
+  height: 24px;
+}
+#uploadForm progress {
+  width: 100%;
+}
+button.save {
+  border:none;
+  width:100%;
+  font-size:20px;
+}
+.boundry {
+  position: relative;
+}
+.boundry input[type='text'] {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px 20px;
+  width: 3em;
+}
+.boundry input[type='button'] {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: 0px;
+  background: lightGray;
+}
+.item .boundry input[type='button'] {
+  margin: 0px 20px;
+}

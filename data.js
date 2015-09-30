@@ -143,6 +143,7 @@ var data = {
       "<p>Melanoma is a type of skin cancer that begins in melanocytes. It is potentially dangerous because it can invade nearby tissues and spread to other parts of the body, such as the lung, liver, bone, or brain. The earlier that melanoma is detected and removed, the more likely that treatment will be successful.</p>"
   } ],
   "cases": [ {
+    "order": 1,
     "type": "mole",
     "typeSearch": "Mole",
     "name": "Case 1",
@@ -156,7 +157,8 @@ var data = {
       "evolving": "not changing"
     },
     "diagnosis": {
-      "clinical": "Common acquired nevus"
+      "type": "clinical",
+      "result": "Common acquired nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -170,6 +172,7 @@ var data = {
       "thumbnail": "/images/N1/N1B-thumb.jpg"
     } ]
   }, {
+    "order": 2,
     "type": "mole",
     "typeSearch": "Mole",
     "name": "Case 2",
@@ -183,7 +186,8 @@ var data = {
       "evolving": "regressing"
     },
     "diagnosis": {
-      "clinical": "Common acquired nevus"
+      "type": "clinical",
+      "result": "Common acquired nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -207,6 +211,7 @@ var data = {
       "thumbnail": "/images/N2/N2D-thumb.jpg"
     } ]
   }, {
+    "order": 3,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -221,7 +226,8 @@ var data = {
       "evolving": "the changes in color and the patient’s report that the mole had been itching are signs that the immune system is responding to the changes occurring in this mole"
     },
     "diagnosis": {
-      "pathology": "Dysplastic nevus with moderate dysplasia"
+      "type": "pathology",
+      "result": "Dysplastic nevus with moderate dysplasia"
     },
     "images": [ {
       "name": "Image 1",
@@ -258,6 +264,7 @@ var data = {
       "thumbnail": "/images/DN1/DN1E-thumb.jpg"
     } ]
   }, {
+    "order": 4,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -272,7 +279,8 @@ var data = {
       "evolving": "disappearing over time"
     },
     "diagnosis": {
-      "clinical": "Dysplastic Nevus that disappears"
+      "type": "clinical",
+      "result": "Dysplastic Nevus that disappears"
     },
     "images": [ {
       "name": "Image 1",
@@ -301,6 +309,7 @@ var data = {
       "thumbnail": "/images/DN2/DN2E-thumb.jpg"
     } ]
   }, {
+    "order": 5,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -315,7 +324,8 @@ var data = {
       "evolving": "disappearing over time"
     },
     "diagnosis": {
-      "clinical": "Dysplastic Nevus that disappears"
+      "type": "clinical",
+      "result": "Dysplastic Nevus that disappears"
     },
     "images": [ {
       "name": "Image 1",
@@ -344,6 +354,7 @@ var data = {
       "thumbnail": "/images/DN3/DN3E-thumb.jpg"
     } ]
   }, {
+    "order": 6,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -358,7 +369,8 @@ var data = {
       "evolving": "disappearing over time "
     },
     "diagnosis": {
-      "clinical": "Dysplastic Nevus that disappears"
+      "type": "clinical",
+      "result": "Dysplastic Nevus that disappears"
     },
     "images": [ {
       "name": "Image 1",
@@ -382,6 +394,7 @@ var data = {
       "thumbnail": "/images/DN4/DN4D-thumb.jpg"
     } ]
   }, {
+    "order": 7,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -396,7 +409,8 @@ var data = {
       "evolving": "enlarging very dark brown area after having lightened"
     },
     "diagnosis": {
-      "pathology": "Dysplastic nevus with severe dysplasia (close to but not meeting the criteria for melanoma)"
+      "type": "pathology",
+      "result": "Dysplastic nevus with severe dysplasia (close to but not meeting the criteria for melanoma)"
     },
     "images": [ {
       "name": "Image 1",
@@ -425,6 +439,7 @@ var data = {
       "thumbnail": "/images/DN5/DN5E-thumb.jpg"
     } ]
   }, {
+    "order": 8,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -439,7 +454,8 @@ var data = {
       "evolving": "enlarging very dark brown area after having lightened"
     },
     "diagnosis": {
-      "pathology": "Dysplastic nevus with severe dysplasia (close to but not meeting the criteria for melanoma)"
+      "type": "pathology",
+      "result": "Dysplastic nevus with severe dysplasia (close to but not meeting the criteria for melanoma)"
     },
     "images": [ {
       "name": "Image 1",
@@ -465,6 +481,7 @@ var data = {
       "thumbnail": "/images/DN6/DN6D-thumb.jpg"
     } ]
   }, {
+    "order": 9,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -479,7 +496,8 @@ var data = {
       "evolving": "over 3 years, the mole continued to change in size, color, shape, and surface"
     },
     "diagnosis": {
-      "pathology": "Dysplastic nevus with extensive dysplasia"
+      "type": "pathology",
+      "result": "Dysplastic nevus with extensive dysplasia"
     },
     "images": [ {
       "name": "Image 1",
@@ -520,6 +538,7 @@ var data = {
       "thumbnail": "/images/DN7/DN7E-thumb.jpg"
     } ]
   }, {
+    "order": 10,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -534,7 +553,8 @@ var data = {
       "evolving": "disappearing over time "
     },
     "diagnosis": {
-      "clinical": "Dysplastic Nevus that becomes a common mole"
+      "type": "clinical",
+      "result": "Dysplastic Nevus that becomes a common mole"
     },
     "images": [ {
       "name": "Image 1",
@@ -553,6 +573,7 @@ var data = {
       "thumbnail": "/images/DN8/DN8C-thumb.jpg"
     } ]
   }, {
+    "order": 11,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -567,7 +588,8 @@ var data = {
       "evolving": "regressing"
     },
     "diagnosis": {
-      "clinical": "Dysplastic Nevus that disappears"
+      "type": "clinical",
+      "result": "Dysplastic Nevus that disappears"
     },
     "images": [ {
       "name": "Image 1",
@@ -596,6 +618,7 @@ var data = {
       "thumbnail": "/images/DN9/DN9E-thumb.jpg"
     } ]
   }, {
+    "order": 12,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -610,7 +633,8 @@ var data = {
       "evolving": "regressing "
     },
     "diagnosis": {
-      "clinical": "Fading Dysplastic Nevus"
+      "type": "clinical",
+      "result": "Fading Dysplastic Nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -639,6 +663,7 @@ var data = {
       "thumbnail": "/images/DN10/DN10E-thumb.jpg"
     } ]
   }, {
+    "order": 13,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -653,7 +678,8 @@ var data = {
       "evolving": "fading"
     },
     "diagnosis": {
-      "clinical": "Fading Dysplastic Nevus"
+      "type": "clinical",
+      "result": "Fading Dysplastic Nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -682,6 +708,7 @@ var data = {
       "thumbnail": "/images/DN11/DN11E-thumb.jpg"
     } ]
   }, {
+    "order": 14,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -696,7 +723,8 @@ var data = {
       "evolving": "fading"
     },
     "diagnosis": {
-      "clinical": "Fading Dysplastic Nevus"
+      "type": "clinical",
+      "result": "Fading Dysplastic Nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -715,6 +743,7 @@ var data = {
       "thumbnail": "/images/DN12/DN12C-thumb.jpg"
     } ]
   }, {
+    "order": 15,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -729,7 +758,8 @@ var data = {
       "evolving": "fading"
     },
     "diagnosis": {
-      "clinical": "Fading Dysplastic Nevus"
+      "type": "clinical",
+      "result": "Fading Dysplastic Nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -753,6 +783,7 @@ var data = {
       "thumbnail": "/images/DN13/DN13D-thumb.jpg"
     } ]
   }, {
+    "order": 16,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -767,7 +798,8 @@ var data = {
       "evolving": "changes in size, shape, surface, and color before fading "
     },
     "diagnosis": {
-      "clinical": "Fading Dysplastic Nevus"
+      "type": "clinical",
+      "result": "Fading Dysplastic Nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -791,6 +823,7 @@ var data = {
       "thumbnail": "/images/DN14/DN14D-thumb.jpg"
     } ]
   }, {
+    "order": 17,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -805,7 +838,8 @@ var data = {
       "evolving": "fading"
     },
     "diagnosis": {
-      "clinical": "Dysplastic Nevus that is becoming a common mole"
+      "type": "clinical",
+      "result": "Dysplastic Nevus that is becoming a common mole"
     },
     "images": [ {
       "name": "Image 1",
@@ -834,6 +868,7 @@ var data = {
       "thumbnail": "/images/DN15/DN15E-thumb.jpg"
     } ]
   }, {
+    "order": 18,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -848,7 +883,8 @@ var data = {
       "evolving": "continuous increases in size, shape becoming more irregular, and new dark areas"
     },
     "diagnosis": {
-      "pathology": "Dysplastic nevus with severe dysplasia (close to but not meeting the criteria for melanoma)"
+      "type": "pathology",
+      "result": "Dysplastic nevus with severe dysplasia (close to but not meeting the criteria for melanoma)"
     },
     "images": [ {
       "name": "Image 1",
@@ -879,6 +915,7 @@ var data = {
       "thumbnail": "/images/DN16/DN16E-thumb.jpg"
     } ]
   }, {
+    "order": 19,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 1",
@@ -892,7 +929,8 @@ var data = {
       "evolving": "The lesion was changing in size, color, shape"
     },
     "diagnosis": {
-      "pathology": "Early, thin melanoma that started in a dysplastic nevus."
+      "type": "pathology",
+      "result": "Early, thin melanoma that started in a dysplastic nevus."
     },
     "images": [ {
       "name": "Image 1",
@@ -923,6 +961,7 @@ var data = {
       "thumbnail": "/images/M1/M1E-thumb.jpg"
     } ]
   }, {
+    "order": 20,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 2",
@@ -936,7 +975,8 @@ var data = {
       "evolving": "The mole had changed in size, color, shape and surface."
     },
     "diagnosis": {
-      "pathology": "Early melanoma that started in a dysplastic nevus"
+      "type": "pathology",
+      "result": "Early melanoma that started in a dysplastic nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -960,6 +1000,7 @@ var data = {
       "thumbnail": "/images/M2/M2D-thumb.jpg"
     } ]
   }, {
+    "order": 21,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 3",
@@ -973,7 +1014,8 @@ var data = {
       "evolving": "the lesion had changed rapidly in size, color, and shape."
     },
     "diagnosis": {
-      "pathology": "Early melanoma that started in a dysplastic nevus"
+      "type": "pathology",
+      "result": "Early melanoma that started in a dysplastic nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -994,6 +1036,7 @@ var data = {
       "thumbnail": "/images/M3/M3C-thumb.jpg"
     } ]
   }, {
+    "order": 22,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 4",
@@ -1007,7 +1050,8 @@ var data = {
       "evolving": "this new mole had changed in size, color, and shape during a very short period of time"
     },
     "diagnosis": {
-      "pathology": "Early melanoma that started in a dysplastic nevus"
+      "type": "pathology",
+      "result": "Early melanoma that started in a dysplastic nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -1021,6 +1065,7 @@ var data = {
       "thumbnail": "/images/M4/M4B-thumb.jpg"
     } ]
   }, {
+    "order": 23,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 5",
@@ -1034,7 +1079,8 @@ var data = {
       "evolving": "the mole had increased in size and continued to darken when most other moles were fading."
     },
     "diagnosis": {
-      "pathology": "Melanoma in situ, which is the earliest and thinnest kind of melanoma"
+      "type": "pathology",
+      "result": "Melanoma in situ, which is the earliest and thinnest kind of melanoma"
     },
     "images": [ {
       "name": "Image 1",
@@ -1065,6 +1111,7 @@ var data = {
       "thumbnail": "/images/M5/M5E-thumb.jpg"
     } ]
   }, {
+    "order": 24,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 6",
@@ -1078,7 +1125,8 @@ var data = {
       "evolving": "the mole had changed in size, color, shape and surface."
     },
     "diagnosis": {
-      "pathology": "Melanoma arising in a dysplastic nevus"
+      "type": "pathology",
+      "result": "Melanoma arising in a dysplastic nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -1104,6 +1152,7 @@ var data = {
       "thumbnail": "/images/M6/M6D-thumb.jpg"
     } ]
   }, {
+    "order": 25,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 7",
@@ -1117,7 +1166,8 @@ var data = {
       "evolving": "the mole had continued to change in size, color, and shape"
     },
     "diagnosis": {
-      "pathology": "Early melanoma arising in a changing nevus"
+      "type": "pathology",
+      "result": "Early melanoma arising in a changing nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -1148,6 +1198,7 @@ var data = {
       "thumbnail": "/images/M7/M7E-thumb.jpg"
     } ]
   }, {
+    "order": 26,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 8",
@@ -1161,7 +1212,8 @@ var data = {
       "evolving": "the mole had continued to change in size, color, shape, and surface"
     },
     "diagnosis": {
-      "pathology": "Melanoma in-situ, which is the earliest and thinnest kind of melanoma"
+      "type": "pathology",
+      "result": "Melanoma in-situ, which is the earliest and thinnest kind of melanoma"
     },
     "images": [ {
       "name": "Image 1",
@@ -1192,6 +1244,7 @@ var data = {
       "thumbnail": "/images/M8/M8E-thumb.jpg"
     } ]
   }, {
+    "order": 27,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 9",
@@ -1205,7 +1258,8 @@ var data = {
       "evolving": "the mole had continued to change in size, color, shape, and surface"
     },
     "diagnosis": {
-      "pathology": "Melanoma in-situ, which is the earliest and thinnest kind of melanoma"
+      "type": "pathology",
+      "result": "Melanoma in-situ, which is the earliest and thinnest kind of melanoma"
     },
     "images": [ {
       "name": "Image 1",
@@ -1231,6 +1285,7 @@ var data = {
       "thumbnail": "/images/M9/M9D-thumb.jpg"
     } ]
   }, {
+    "order": 28,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 10",
@@ -1244,7 +1299,8 @@ var data = {
       "evolving": "over 2½ years, the mole has continued to change in size, color, shape, and surface"
     },
     "diagnosis": {
-      "pathology": "Melanoma in-situ, which is the earliest and thinnest kind of melanoma"
+      "type": "pathology",
+      "result": "Melanoma in-situ, which is the earliest and thinnest kind of melanoma"
     },
     "images": [ {
       "name": "Image 1",
@@ -1270,6 +1326,7 @@ var data = {
       "thumbnail": "/images/M10/M10D-thumb.jpg"
     } ]
   }, {
+    "order": 29,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 11",
@@ -1283,7 +1340,8 @@ var data = {
       "evolving": "the mole had continued to change in size, color, and shape."
     },
     "diagnosis": {
-      "pathology": "Moderately thin melanoma arising in a clinical dysplastic nevus"
+      "type": "pathology",
+      "result": "Moderately thin melanoma arising in a clinical dysplastic nevus"
     },
     "images": [ {
       "name": "Image 1",
@@ -1314,6 +1372,7 @@ var data = {
       "thumbnail": "/images/M11/M11E-thumb.jpg"
     } ]
   }, {
+    "order": 30,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 12",
@@ -1327,7 +1386,8 @@ var data = {
       "evolving": "the mole had changed rapidly in size, color, and shape."
     },
     "diagnosis": {
-      "pathology": "Moderately thin melanoma arising in a clinical dysplastic nevus"
+      "type": "pathology",
+      "result": "Moderately thin melanoma arising in a clinical dysplastic nevus"
     },
     "images": [ {
       "name": "Image 1",

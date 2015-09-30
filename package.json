@@ -3,9 +3,12 @@
   "version": "0.0.0a",
   "private": "true",
   "dependencies": {
+    "body-parser": "1.x.x",
     "express": "4.x.x",
     "express-logger": "0.0.3",
+    "gm": "1.x.x",
     "mongodb": "2.x.x",
+    "multer": "1.x.x",
     "underscore": "1.x.x"
   }
 }
