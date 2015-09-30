@@ -1,3 +1,8 @@
+if (typeof String.prototype.startsWith != 'function') {
+  String.prototype.startsWith = function (str){
+    return this.slice(0, str.length) == str;
+  };
+}
 var assert = require('assert');
 var bodyParser = require('body-parser');
 var express = require('express');

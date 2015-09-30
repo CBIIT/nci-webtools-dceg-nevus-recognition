@@ -3,3 +3,4 @@ database/*
 express.log*
 node_modules/*
 static/common/*
+uploads/*

@@ -153,7 +153,9 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
       contentType: 'application/json',
       dataType: 'json',
       cache: false
-    }).fail(function(data) { console.log(data) }).done(function(data) {
+    }).fail(function(data) {
+      console.log(data)
+    }).done(function(data) {
       console.log(data);
     });
   };
@@ -170,9 +172,6 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   $scope.updatecurrentimg = function(index) {
     $scope.currentimg=index;
     $('.spinnerbox').addClass('spinner-show');
-  };
-  var progressHandlingFunction = function(e) {
-    
   };
   $scope.uploadImage = function(e) {
     var formData = new FormData($(e.target).parent()[0]);
