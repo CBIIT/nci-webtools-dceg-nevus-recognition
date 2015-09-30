@@ -197,20 +197,22 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
       dataType: 'json',
       cache: false
     }).fail(function(data) {
-      $scope.fileUploadError = "Unrecognized Error: "+JSON.stringify(data);
+      $scope.$apply(function() {
+        $scope.fileUploadError = "Unrecognized Error: "+JSON.stringify(data);
+      });
     }).done(function(data) {
       $(e.target).prev().val('');
       $(e.target).parent().next().val(0);
-      if (data.error) {
-        $scope.fileUploadError = data.error;
-      } else {
-        $scope.$apply(function() {
+      $scope.$apply(function() {
+        if (data.error) {
+          $scope.fileUploadError = data.error;
+        } else {
           $scope.currentcase.images = $scope.currentcase.images || [];
           $scope.currentcase.images.push(data);
           $scope.updatecurrentimg($scope.currentcase.images.length-1);
-        });
+        }
         $('#uploadForm').modal('hide');
-      }
+      });
     });
     e.preventDefault();
   };

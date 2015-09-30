@@ -129,7 +129,7 @@ app.route("/admin/cases").put(function(request,response) {
 function isNumeric(maybe) { return !isNaN(parseFloat(maybe)) && isFinite(maybe); }
 
 function uploadError(errorMsg,filePath,response) {
-  response.end("{ \"error\": \""+errorMsg+"\" }");
+  response.end(JSON.stringify({ "error": errorMsg }));
   fs.unlink(filePath);
   return;
 }
