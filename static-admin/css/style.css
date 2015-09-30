@@ -85,6 +85,9 @@ button.save {
 .boundry {
   position: relative;
 }
+#myModal .boundry {
+  display: inline-block;
+}
 .boundry input[type='text'] {
   position: absolute;
   top: 0px;

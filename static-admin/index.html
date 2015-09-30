@@ -129,12 +129,12 @@
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </div>
               <div class="images">
-                <button carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0">
-                  <div class="boundry">
-                    <input type="button" value="x" ng-click="removeImage($index)"/>
+                <div class="boundry" ng-repeat="image in currentcase.images">
+                  <input type="button" value="x" ng-click="removeImage($index)"/>
+                  <button carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" class="blur" tabindex="0">
                     <img src="..{{ image.thumbnail || '/images/MissingImage.png' }}" />
-                  </div>
-                </button>
+                  </button>
+                </div>
                 <button data-target="#uploadForm" data-toggle="modal" carousel-dir="" class="blur" tabindex="0">
                   <img src="../images/AddImage.png" />
                 </button>
