@@ -210,8 +210,8 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
           $scope.currentcase.images = $scope.currentcase.images || [];
           $scope.currentcase.images.push(data);
           $scope.updatecurrentimg($scope.currentcase.images.length-1);
+          $('#uploadForm').modal('hide');
         }
-        $('#uploadForm').modal('hide');
       });
     });
     e.preventDefault();
