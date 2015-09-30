@@ -139,16 +139,23 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
       data: formData,
       processData: false,
       contentType: false,
-      dataType: 'text',
+      dataType: 'json',
       cache: false
+    }).fail(function(data) {
+      $scope.fileUploadError = "Unrecognized Error: "+JSON.stringify(data);
     }).done(function(data) {
-      $scope.$apply(function() {
-        $(e.target).prev().val('');
-        $(e.target).parent().next().val(0);
-        $scope.currentcase.images = $scope.currentcase.images || [];
-        $scope.currentcase.images.push({ 'description': data });
-        $scope.updatecurrentimg($scope.currentcase.images.length-1);
-      });
+      $(e.target).prev().val('');
+      $(e.target).parent().next().val(0);
+      if (data.error) {
+        $scope.fileUploadError = data.error;
+      } else {
+        $scope.$apply(function() {
+          $scope.currentcase.images = $scope.currentcase.images || [];
+          $scope.currentcase.images.push(data);
+          $scope.updatecurrentimg($scope.currentcase.images.length-1);
+        });
+        $('#uploadForm').modal('hide');
+      }
     });
     e.preventDefault();
   };
@@ -158,6 +165,9 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
     });
   });
   $(window).load(function() {
+    $('#uploadForm').on('hidden.bs.modal', function() {
+      delete $scope.fileUploadError;
+    });
     $scope.$apply($scope.filterClick($scope.filters[0]));
   })
 });
