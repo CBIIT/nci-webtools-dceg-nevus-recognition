@@ -72,18 +72,20 @@ app.route("/admin/image").all(function(request, response, next) {
       if (request.file.mimetype.startsWith('image/')) {
         extension = '.'+request.file.mimetype.substring(6);
       } else {
-        response.end("{ \"error\": \"Invalid File Type\" }");
-        fs.unlink(request.file.path);
-        return;
+        return uploadError("Invalid File Type",request.file.path);
       }
   }
   var filename = '/images/uploads/'+request.file.filename;
   var thumbnail = filename+'-thumb'+extension;
   filename += extension;
-  gm(request.file.path).resize(428,275,"^").crop(428,275,0,0).write("static"+filename,function() {
-    gm("static"+filename).resize(100,67,"^").crop(100,67,0,0).write("static"+thumbnail,function() {
-      fs.unlink(request.file.path);
-      response.end("{ \"image\": \""+filename+"\", \"thumbnail\": \""+thumbnail+"\" }");
+  fs.rename(request.file.path,request.file.path+extension,function() {
+    gm(request.file.path+extension).resize(428,275,"^").crop(428,275,0,0).write("static"+filename,function(error) {
+      if (error) { return uploadError(JSON.stringify(error),request.file.path+extension); }
+      gm("static"+filename).resize(100,67,"^").crop(100,67,0,0).write("static"+thumbnail,function(error) {
+        if (error) { return uploadError(JSON.stringify(error),request.file.path+extension); }
+        fs.unlink(request.file.path+extension);
+        response.end("{ \"image\": \""+filename+"\", \"thumbnail\": \""+thumbnail+"\" }");
+      });
     });
   });
 });
@@ -125,6 +127,12 @@ app.put("/admin/cases", function(request,response) {
 });
 
 function isNumeric(maybe) { return !isNaN(parseFloat(maybe)) && isFinite(maybe); }
+
+function uploadError(errorMsg,filePath) {
+  response.end("{ \"error\": \""+errorMsg+"\" }");
+  fs.unlink(filePath);
+  return;
+}
 
 function parseArgs() {
 	var usage = false;

@@ -127,7 +127,9 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
         contentType: 'application/json',
         dataType: 'json',
         cache: false
-      }).fail(function(data) { console.log(data) }).done(function(data) {
+      }).fail(function(data) {
+        console.log(data)
+      }).done(function(data) {
         console.log(data);
       });
       for (var index in $scope.cases) {
