@@ -43,6 +43,20 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   $scope.backToTop = function() {
     $('body,html').animate({scrollTop:0}, 1000);
   }
+  $scope.changeOrder = function(target,changed) {
+    $scope.$apply(function() {
+      $scope.cases.sort(function(a,b) {
+        return a.order-b.order;
+      })
+      for (var index in $scope.cases) {
+        $scope.cases[index].order = parseInt(index)+1;
+      }
+      $timeout(function() {
+        $container.isotope('destroy');
+        isotopic(filterFns.by6);
+      });
+    });
+  }
   $scope.createNew = function() {
     var newCase = {};
     newCase.type = $scope.currenttype.type;

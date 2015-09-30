@@ -143,6 +143,7 @@ var data = {
       "<p>Melanoma is a type of skin cancer that begins in melanocytes. It is potentially dangerous because it can invade nearby tissues and spread to other parts of the body, such as the lung, liver, bone, or brain. The earlier that melanoma is detected and removed, the more likely that treatment will be successful.</p>"
   } ],
   "cases": [ {
+    "order": 1,
     "type": "mole",
     "typeSearch": "Mole",
     "name": "Case 1",
@@ -171,6 +172,7 @@ var data = {
       "thumbnail": "/images/N1/N1B-thumb.jpg"
     } ]
   }, {
+    "order": 2,
     "type": "mole",
     "typeSearch": "Mole",
     "name": "Case 2",
@@ -209,6 +211,7 @@ var data = {
       "thumbnail": "/images/N2/N2D-thumb.jpg"
     } ]
   }, {
+    "order": 3,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -261,6 +264,7 @@ var data = {
       "thumbnail": "/images/DN1/DN1E-thumb.jpg"
     } ]
   }, {
+    "order": 4,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -305,6 +309,7 @@ var data = {
       "thumbnail": "/images/DN2/DN2E-thumb.jpg"
     } ]
   }, {
+    "order": 5,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -349,6 +354,7 @@ var data = {
       "thumbnail": "/images/DN3/DN3E-thumb.jpg"
     } ]
   }, {
+    "order": 6,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -388,6 +394,7 @@ var data = {
       "thumbnail": "/images/DN4/DN4D-thumb.jpg"
     } ]
   }, {
+    "order": 7,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -432,6 +439,7 @@ var data = {
       "thumbnail": "/images/DN5/DN5E-thumb.jpg"
     } ]
   }, {
+    "order": 8,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -473,6 +481,7 @@ var data = {
       "thumbnail": "/images/DN6/DN6D-thumb.jpg"
     } ]
   }, {
+    "order": 9,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -529,6 +538,7 @@ var data = {
       "thumbnail": "/images/DN7/DN7E-thumb.jpg"
     } ]
   }, {
+    "order": 10,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -563,6 +573,7 @@ var data = {
       "thumbnail": "/images/DN8/DN8C-thumb.jpg"
     } ]
   }, {
+    "order": 11,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -607,6 +618,7 @@ var data = {
       "thumbnail": "/images/DN9/DN9E-thumb.jpg"
     } ]
   }, {
+    "order": 12,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -651,6 +663,7 @@ var data = {
       "thumbnail": "/images/DN10/DN10E-thumb.jpg"
     } ]
   }, {
+    "order": 13,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -695,6 +708,7 @@ var data = {
       "thumbnail": "/images/DN11/DN11E-thumb.jpg"
     } ]
   }, {
+    "order": 14,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -729,6 +743,7 @@ var data = {
       "thumbnail": "/images/DN12/DN12C-thumb.jpg"
     } ]
   }, {
+    "order": 15,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -768,6 +783,7 @@ var data = {
       "thumbnail": "/images/DN13/DN13D-thumb.jpg"
     } ]
   }, {
+    "order": 16,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -807,6 +823,7 @@ var data = {
       "thumbnail": "/images/DN14/DN14D-thumb.jpg"
     } ]
   }, {
+    "order": 17,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "stable",
@@ -851,6 +868,7 @@ var data = {
       "thumbnail": "/images/DN15/DN15E-thumb.jpg"
     } ]
   }, {
+    "order": 18,
     "type": "dysplasticnevi",
     "typeSearch": "Dysplastic Nevi",
     "subgroup": "unstable",
@@ -897,6 +915,7 @@ var data = {
       "thumbnail": "/images/DN16/DN16E-thumb.jpg"
     } ]
   }, {
+    "order": 19,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 1",
@@ -942,6 +961,7 @@ var data = {
       "thumbnail": "/images/M1/M1E-thumb.jpg"
     } ]
   }, {
+    "order": 20,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 2",
@@ -980,6 +1000,7 @@ var data = {
       "thumbnail": "/images/M2/M2D-thumb.jpg"
     } ]
   }, {
+    "order": 21,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 3",
@@ -1015,6 +1036,7 @@ var data = {
       "thumbnail": "/images/M3/M3C-thumb.jpg"
     } ]
   }, {
+    "order": 22,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 4",
@@ -1043,6 +1065,7 @@ var data = {
       "thumbnail": "/images/M4/M4B-thumb.jpg"
     } ]
   }, {
+    "order": 23,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 5",
@@ -1088,6 +1111,7 @@ var data = {
       "thumbnail": "/images/M5/M5E-thumb.jpg"
     } ]
   }, {
+    "order": 24,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 6",
@@ -1128,6 +1152,7 @@ var data = {
       "thumbnail": "/images/M6/M6D-thumb.jpg"
     } ]
   }, {
+    "order": 25,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 7",
@@ -1173,6 +1198,7 @@ var data = {
       "thumbnail": "/images/M7/M7E-thumb.jpg"
     } ]
   }, {
+    "order": 26,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 8",
@@ -1218,6 +1244,7 @@ var data = {
       "thumbnail": "/images/M8/M8E-thumb.jpg"
     } ]
   }, {
+    "order": 27,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 9",
@@ -1258,6 +1285,7 @@ var data = {
       "thumbnail": "/images/M9/M9D-thumb.jpg"
     } ]
   }, {
+    "order": 28,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 10",
@@ -1298,6 +1326,7 @@ var data = {
       "thumbnail": "/images/M10/M10D-thumb.jpg"
     } ]
   }, {
+    "order": 29,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 11",
@@ -1343,6 +1372,7 @@ var data = {
       "thumbnail": "/images/M11/M11E-thumb.jpg"
     } ]
   }, {
+    "order": 30,
     "type": "melanoma",
     "typeSearch": "Melanoma",
     "name": "Case 12",

@@ -82,3 +82,13 @@ button.save {
   width:100%;
   font-size:20px;
 }
+.item .boundry {
+  position: relative;
+}
+.item input[type='text'] {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px 20px;
+  width: 3em;
+}

@@ -46,7 +46,7 @@ app.get("/data.js", function(request, response) {
     });
     db.collection("cases", function(err, collection) {
       assert.equal(null,err);
-      collection.find().toArray(function(err, items) {
+      collection.find({$query:{},$orderby:{order:1}}).toArray(function(err, items) {
         assert.equal(null,err);
         data.cases = items;
         fetched();
