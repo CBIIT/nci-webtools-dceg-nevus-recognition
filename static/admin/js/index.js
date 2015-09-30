@@ -43,7 +43,7 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   $scope.backToTop = function() {
     $('body,html').animate({scrollTop:0}, 1000);
   }
-  $scope.changeOrder = function(target,changed) {
+  $scope.casesReordered = function() {
     $scope.$apply(function() {
       $scope.cases.sort(function(a,b) {
         return a.order-b.order;
@@ -116,6 +116,33 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   $scope.imageSelected = function(target) {
     $scope.fileToUpload = target.files[0];
   };
+  $scope.removeCase = function(index) {
+    if (confirm("Pressing 'OK' will permanently delete this case.")) {
+      var thisCase = $scope.cases.splice(index,1)[0];
+      $.ajax({
+        url: 'cases',
+        type: 'DELETE',
+        data: JSON.stringify({"_id":thisCase._id}),
+        processData: false,
+        contentType: 'application/json',
+        dataType: 'json',
+        cache: false
+      }).fail(function(data) { console.log(data) }).done(function(data) {
+        console.log(data);
+      });
+      for (var index in $scope.cases) {
+        $scope.cases[index].order = parseInt(index)+1;
+      }
+      $timeout(function() {
+        $container.isotope('destroy');
+        isotopic(filterFns.by6);
+      });
+    }
+  };
+  $scope.removeImage = function(index) {
+    $scope.currentcase.images.splice(index,1);
+    $scope.updatecurrentimg(0);
+  }
   $scope.saveChanges = function() {
     console.log($scope.cases);
     $.ajax({
@@ -142,7 +169,6 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   };
   $scope.updatecurrentimg = function(index) {
     $scope.currentimg=index;
-    index++;
     $('.spinnerbox').addClass('spinner-show');
   };
   var progressHandlingFunction = function(e) {

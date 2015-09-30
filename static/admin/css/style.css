@@ -82,13 +82,23 @@ button.save {
   width:100%;
   font-size:20px;
 }
-.item .boundry {
+.boundry {
   position: relative;
 }
-.item input[type='text'] {
+.boundry input[type='text'] {
   position: absolute;
   top: 0px;
   left: 0px;
   margin: 0px 20px;
   width: 3em;
+}
+.boundry input[type='button'] {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: 0px;
+  background: lightGray;
+}
+.item .boundry input[type='button'] {
+  margin: 0px 20px;
 }

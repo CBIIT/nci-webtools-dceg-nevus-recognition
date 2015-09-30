@@ -108,6 +108,15 @@ app.put("/admin/cases", function(request,response) {
     });
   });  
   response.end("{}");
+}).delete("/admin/cases", function(request,response) {
+  MongoClient.connect('mongodb://'+mongohost+':'+mongoport+'/'+databasename, function(err, db) {
+    database = db;
+    assert.equal(null,err);
+    db.collection("cases", function(err, collection) {
+      assert.equal(null,err);
+      collection.remove({ "_id": new ObjectID(request.body._id) });
+    });
+  });
 });
 
 function isNumeric(maybe) { return !isNaN(parseFloat(maybe)) && isFinite(maybe); }
