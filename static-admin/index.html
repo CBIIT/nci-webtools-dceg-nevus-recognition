@@ -44,7 +44,7 @@
             <input type="text" ng-model="case.order" onchange="angular.element(this).scope().casesReordered()"/>
             <input type="button" value="x" ng-click="removeCase($index)"/>
             <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case)">
-              <img alt="" src="..{{ case.images[0].thumbnail || '/images/MissingImage.png' }}"/>
+              <img alt="" src="/images/MissingImage.png" ng-src="..{{ case.images[0].thumbnail}}"/>
               <span class="title">{{ case.name || 'Untitled Case' }}</span>
             </a>
             <div class="sr-only" ng-bind="case.description"></div>
@@ -132,7 +132,7 @@
                 <div class="boundry" ng-repeat="image in currentcase.images">
                   <input type="button" value="x" ng-click="removeImage($index)"/>
                   <button carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" class="blur" tabindex="0">
-                    <img src="..{{ image.thumbnail || '/images/MissingImage.png' }}" />
+                    <img src="/images/MissingImage.png" ng-src="..{{ image.thumbnail }}" />
                   </button>
                 </div>
                 <button data-target="#uploadForm" data-toggle="modal" carousel-dir="" class="blur" tabindex="0">
