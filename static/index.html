@@ -149,7 +149,6 @@
       <p>The photographs of the moles and melanomas used in this tool were taken over more than a 35-year period from participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>, a long term study investigating genetic and environmental factors that contribute to the development of melanoma. The pictures are guides that show examples of the large variability in pigmented lesions in U.S. melanoma-prone families. Because most of the study participants are Caucasians, the nevi and melanomas shown are not representative of nevi and melanomas in individuals with darker skin who have distinctive pigmented lesions. Melanomas and lesions suspicious for melanoma vary widely in appearance; thus, the pictures should not be used to diagnose melanoma.</p>
       <p>Because the photographs of the moles and melanomas used in this collection were taken over more than a 35-year period, there may be variations in color among the pictures due to the differences in: photography equipment, supplies and methods used (e.g. types of cameras and color film, development and processing of film, use of digital photography when it became available); lighting in the many clinic rooms in which the pictures were taken; and skin color of the individual (e.g. whether or not his or her skin was sunburned or suntanned) at the time each of the pictures were taken.  We have attempted, to the extent that we can, to standardize the pictures in each series without modifying the natural features of the moles and melanomas.  To address the variations in relative size of the moles and melanomas, a ruler that shows the measurements in millimeters is included in each picture.  When comparing the pictures within each of the cases series, it is important to use the rulers.  In some series, the rulers in some pictures may be in different locations because of where the rulers were placed on the skin when each picture was taken.</p>
       <p>In general, it is not NCI's intention to provide specific medical advice to users of its website, but rather to provide users with information to help them better understand their health, diagnosed conditions, and the current range of approaches related to cancer treatment, prevention, screening, and supportive care. NCI urges users to consult with a qualified physician for diagnosis and for answers to their personal medical questions.</p>
-      <button ng-click="gohome()" ng-hide="home||about||tool||ulinks">I Understand</button>
     </div>
     <footer class="container footer">
       <div class="center-block">
@@ -223,6 +222,26 @@
               <img alt="" class="currentimage" image-on-load="" src=".{{currentcase.images[currentimg].image}}" />
             </div>
             <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="disclaimerModal" role="dialog"  role="dialog" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h2>Disclaimer</h2>
+          </div>
+          <div class="modal-body">
+            <div class="disclaimer">
+              <p>The photographs of the moles and melanomas used in this tool were taken over more than a 35-year period from participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>, a long term study investigating genetic and environmental factors that contribute to the development of melanoma. The pictures are guides that show examples of the large variability in pigmented lesions in U.S. melanoma-prone families. Because most of the study participants are Caucasians, the nevi and melanomas shown are not representative of nevi and melanomas in individuals with darker skin who have distinctive pigmented lesions. Melanomas and lesions suspicious for melanoma vary widely in appearance; thus, the pictures should not be used to diagnose melanoma.</p>
+              <p>Because the photographs of the moles and melanomas used in this collection were taken over more than a 35-year period, there may be variations in color among the pictures due to the differences in: photography equipment, supplies and methods used (e.g. types of cameras and color film, development and processing of film, use of digital photography when it became available); lighting in the many clinic rooms in which the pictures were taken; and skin color of the individual (e.g. whether or not his or her skin was sunburned or suntanned) at the time each of the pictures were taken.  We have attempted, to the extent that we can, to standardize the pictures in each series without modifying the natural features of the moles and melanomas.  To address the variations in relative size of the moles and melanomas, a ruler that shows the measurements in millimeters is included in each picture.  When comparing the pictures within each of the cases series, it is important to use the rulers.  In some series, the rulers in some pictures may be in different locations because of where the rulers were placed on the skin when each picture was taken.</p>
+              <p>In general, it is not NCI's intention to provide specific medical advice to users of its website, but rather to provide users with information to help them better understand their health, diagnosed conditions, and the current range of approaches related to cancer treatment, prevention, screening, and supportive care. NCI urges users to consult with a qualified physician for diagnosis and for answers to their personal medical questions.</p>
+              <button aria-label="Close" data-dismiss="modal" type="button">I Understand</button>
+            </div>
           </div>
         </div>
       </div>
