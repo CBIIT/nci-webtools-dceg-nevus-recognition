@@ -301,6 +301,7 @@ form.navbar-form, .nav.navbar-nav {
 }
 .casedescription {
   padding: 15px;
+  width: 100%;
   margin: 0;
   background: white;
   overflow: hidden;
