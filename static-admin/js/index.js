@@ -46,7 +46,7 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   $scope.casesReordered = function() {
     $scope.$apply(function() {
       $scope.cases.sort(function(a,b) {
-        return a.order-b.order;
+        return a.order==b.order?1:a.order-b.order;
       })
       for (var index in $scope.cases) {
         $scope.cases[index].order = parseInt(index)+1;
@@ -64,13 +64,13 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
       newCase.subgroup = $scope.subgrouptype.type;
     }
     $scope.cases.push(newCase);
+    for (var index in $scope.cases) {
+      $scope.cases[index].order = parseInt(index)+1;
+    }
     $scope.update(newCase);
     $timeout(function() {
-      $container.isotope('appended',$container.children().last().prev());
-      var newCaseButton = $container.children().last().prop('outerHTML');
-      $container.isotope('remove',$container.children().last());
-      $container.isotope('insert',$(newCaseButton));
-      $compile($container.children().last())($scope);
+      $container.isotope('destroy');
+      isotopic(filterFns.by6);
     });
   }
   $scope.getFilterByName = function(filterName) {
@@ -119,19 +119,21 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
   $scope.removeCase = function(index) {
     if (confirm("Pressing 'OK' will permanently delete this case.")) {
       var thisCase = $scope.cases.splice(index,1)[0];
-      $.ajax({
-        url: 'cases',
-        type: 'DELETE',
-        data: JSON.stringify({"_id":thisCase._id}),
-        processData: false,
-        contentType: 'application/json',
-        dataType: 'json',
-        cache: false
-      }).fail(function(data) {
-        console.log(data)
-      }).done(function(data) {
-        console.log(data);
-      });
+      if (thisCase._id) {
+        $.ajax({
+          url: 'cases',
+          type: 'DELETE',
+          data: JSON.stringify({"_id":thisCase._id}),
+          processData: false,
+          contentType: 'application/json',
+          dataType: 'json',
+          cache: false
+        }).fail(function(data) {
+          console.log(data)
+        }).done(function(data) {
+          console.log(data);
+        });
+      }
       for (var index in $scope.cases) {
         $scope.cases[index].order = parseInt(index)+1;
       }

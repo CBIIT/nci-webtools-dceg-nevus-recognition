@@ -92,11 +92,11 @@
       <div class="isotope" ng-show="searching || tool">
         <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
           <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case,$index)">
-            <img alt="" src=".{{case.images[0].image}}" />
-            <span class="type" ng-show="searching">{{case.typeSearch}}</span>
-            <span class="title">{{case.name}}</span>
+            <img alt="" src="./images/MissingImage.png" ng-src=".{{case.images[0].image}}" />
+            <span class="type" ng-show="searching" ng-bind="case.typeSearch"></span>
+            <span class="title">{{case.name || 'Untitled Case'}}</span>
           </a>
-          <div class="sr-only">{{case.description}}</div>
+          <div class="sr-only" ng-bind="case.description"></div>
         </div>
       </div>
       <button class="loadmore btn btn-large" ng-click="loadMore()" ng-show="showload">Load More</button>

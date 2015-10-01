@@ -324,12 +324,14 @@ form.navbar-form, .nav.navbar-nav {
   display: block;
   font-weight: normal;
   width: 10em;
+  min-height: 24px;
   float: left;
 }
 
 .casedescription label ~ span {
   margin: 0px;
   padding: 2px;
+  min-height: 24px;
   display: block;
   overflow: hidden;
 }
