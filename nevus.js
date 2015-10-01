@@ -89,7 +89,7 @@ if (ADMIN_ENABLED) {
     var thumbnail = filename+'-thumb'+extension;
     filename += extension;
     fs.rename(request.file.path,request.file.path+extension,function() {
-      gm(request.file.path+extension).resize(428,275,"^").crop(428,275,0,0).write("static"+filename,function(error) {
+      gm(request.file.path+extension).resize(428,275,"^").crop(428,285,0,0).write("static"+filename,function(error) {
         if (error) { return uploadError(JSON.stringify(error),request.file.path+extension,response); }
         gm("static"+filename).resize(100,67,"^").crop(100,67,0,0).write("static"+thumbnail,function(error) {
           if (error) { return uploadError(JSON.stringify(error),request.file.path+extension,response); }
@@ -105,6 +105,13 @@ if (ADMIN_ENABLED) {
       assert.equal(null,err);
       db.collection("cases", function(err, collection) {
         assert.equal(null,err);
+        var respond = function() {
+          collection.find({$query:{},$orderby:{order:1}}).toArray(function(err, items) {
+            assert.equal(null,err);
+            response.end(JSON.stringify({'cases': items}));
+          });
+        }
+        var saved = _.after(request.body.length, respond);
         for (var index in request.body) {
           var item = request.body[index];
           var _id = new ObjectID(item._id);
@@ -119,11 +126,11 @@ if (ADMIN_ENABLED) {
             "upsert": true
           },function(err, result) {
             assert.equal(null,err);
+            saved();
           });
         }
       });
     });  
-    response.end("{}");
   }).delete(function(request,response) {
     MongoClient.connect('mongodb://'+mongohost+':'+mongoport+'/'+databasename, function(err, db) {
       database = db;

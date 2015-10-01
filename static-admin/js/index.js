@@ -148,7 +148,6 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
     $scope.updatecurrentimg(0);
   }
   $scope.saveChanges = function() {
-    console.log($scope.cases);
     $.ajax({
       url: 'cases',
       type: 'PUT',
@@ -160,7 +159,15 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
     }).fail(function(data) {
       console.log(data)
     }).done(function(data) {
-      console.log(data);
+      if (data && !data.error) {
+        $scope.cases = data.cases;
+        $timeout(function() {
+          $container.isotope('destroy');
+          isotopic(filterFns.by6);
+        })
+      } else {
+        console.log(data);
+      }
     });
   };
   $scope.scrollLeft = function() {
