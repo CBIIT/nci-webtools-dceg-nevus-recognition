@@ -356,6 +356,14 @@ form.navbar-form, .nav.navbar-nav {
     width: 50%;
   }
 }
+@media screen and (max-width: 860px){
+  .jumbotron {
+    background-image: none;
+  }
+  .jumbotron h1 {
+    padding: 0;
+  }
+}
 @media (max-width: 768px) {
   .navbar-brand {
     width: calc(100% - 50px);
@@ -386,14 +394,6 @@ form.navbar-form, .nav.navbar-nav {
     padding: 15px;
     clear: both;
   }
-}
-@media screen and (max-width: 600px){
-.jumbotron {
-    background-image: none;
-}
-.jumbotron h1 {
-    padding: 0;
-}
 }
 @media (max-width: 460px) {
   .item {
