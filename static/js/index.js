@@ -251,6 +251,19 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
         $('#disclaimerModal').modal('show');
       });
     });
+    $('#myModal').on('swipeleft','.imgbox .currentimage',function() {
+      $scope.scrollRight();
+      $scope.$apply(function() {
+        $scope.currentimage++;
+        $scope.currentimage %= $scope.currentcase.images.length;
+      });
+    }).on('swiperight','.imgbox .currentimage',function() {
+      $scope.scrollLeft();
+      $scope.$apply(function() {
+        $scope.currentimage--;
+        $scope.currentimage %= $scope.currentcase.images.length;
+      });
+    });
   });
 });
 
