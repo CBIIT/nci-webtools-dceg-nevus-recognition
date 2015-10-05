@@ -11,7 +11,7 @@ $(document).ready( function() {
   $('body, html').on('contextmenu', 'img', function(event) {
     event.preventDefault();
   });
-  $('.modal').on('hidden.bs.modal', function() {
+  $('#myModal').on('hidden.bs.modal', function() {
     var urlParams = window.history.state || {};
     delete urlParams.case;
     delete urlParams.img;
