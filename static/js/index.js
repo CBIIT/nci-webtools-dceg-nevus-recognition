@@ -11,7 +11,7 @@ $(document).ready( function() {
   $('body, html').on('contextmenu', 'img', function(event) {
     event.preventDefault();
   });
-  $('.modal').on('hidden.bs.modal', function() {
+  $('#myModal').on('hidden.bs.modal', function() {
     var urlParams = window.history.state || {};
     delete urlParams.case;
     delete urlParams.img;
@@ -249,6 +249,15 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       }
       $timeout(function() {
         $('#disclaimerModal').modal('show');
+      });
+    });
+    $('#myModal').on('swipeleft','.currentimage',function() {
+      $scope.$apply(function() {
+        $scope.updatecurrentimg(($scope.currentimg+1)%$scope.currentcase.images.length);
+      });
+    }).on('swiperight','.currentimage',function() {
+      $scope.$apply(function() {
+        $scope.updatecurrentimg(($scope.currentcase.images.length+$scope.currentimg-1)%$scope.currentcase.images.length);
       });
     });
   });
