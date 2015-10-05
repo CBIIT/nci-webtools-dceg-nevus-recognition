@@ -44,7 +44,7 @@
             <input type="text" ng-model="case.order" onchange="angular.element(this).scope().casesReordered()"/>
             <input type="button" value="x" ng-click="removeCase($index)"/>
             <a data-target="#myModal" data-toggle="modal" href="javascript:void(0);" ng-click="update(case)">
-              <img alt="" src="/images/MissingImage.png" ng-src="..{{ case.images[0].thumbnail}}"/>
+              <img alt="" src="../images/MissingImage.png" ng-src="..{{ case.images[0].thumbnail}}"/>
               <span class="title">{{ case.name || 'Untitled Case' }}</span>
             </a>
             <div class="sr-only" ng-bind="case.description"></div>
@@ -100,7 +100,7 @@
             <textarea id="myModalLabel" class="modal-title" placeholder="Title" ng-model="currentcase.title"></textarea>
             <label>Display Name:</label><div class="textwrap"><textarea class="modal-title" placeholder="Untitled Case" ng-model="currentcase.name"></textarea></div>
             <label>Display Category:</label><div class="textwrap"><select ng-options="filter.type as filter.name for filter in filters" ng-model="currentcase.type" ng-change="filterClick();"></select></div>
-            <label ng-show="currenttype.subgroups">Display Subgroup:</label><div class="textwrap"><select ng-show="currenttype.subgroups" ng-options="subgroup.type as subgroup.name for subgroup in currenttype.subgroups" ng-model="currentcase.subgroup" ng-change="filterClick()"></select></div>
+            <label ng-show="currenttype.subgroups">Display Subgroup:</label><div class="textwrap" ng-show="currenttype.subgroups"><select ng-show="currenttype.subgroups" ng-options="subgroup.type as subgroup.name for subgroup in currenttype.subgroups" ng-model="currentcase.subgroup" ng-change="filterClick()"></select></div>
           </div>
           <div class="modal-body group">
             <div class="casedescription">
@@ -132,7 +132,7 @@
                 <div class="boundry" ng-repeat="image in currentcase.images">
                   <input type="button" value="x" ng-click="removeImage($index)"/>
                   <button carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" class="blur" tabindex="0">
-                    <img src="/images/MissingImage.png" ng-src="..{{ image.thumbnail }}" />
+                    <img src="../images/MissingImage.png" ng-src="..{{ image.thumbnail }}" />
                   </button>
                 </div>
                 <button data-target="#uploadForm" data-toggle="modal" carousel-dir="" class="blur" tabindex="0">
