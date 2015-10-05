@@ -252,12 +252,10 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       });
     });
     $('#myModal').on('swipeleft','.currentimage',function() {
-      $scope.scrollRight();
       $scope.$apply(function() {
         $scope.updatecurrentimg(($scope.currentimg+1)%$scope.currentcase.images.length);
       });
     }).on('swiperight','.currentimage',function() {
-      $scope.scrollLeft();
       $scope.$apply(function() {
         $scope.updatecurrentimg(($scope.currentcase.images.length+$scope.currentimg-1)%$scope.currentcase.images.length);
       });
