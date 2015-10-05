@@ -251,17 +251,15 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
         $('#disclaimerModal').modal('show');
       });
     });
-    $('#myModal').on('swipeleft','.imgbox .currentimage',function() {
+    $('#myModal').on('swipeleft','.currentimage',function() {
       $scope.scrollRight();
       $scope.$apply(function() {
-        $scope.currentimage++;
-        $scope.currentimage %= $scope.currentcase.images.length;
+        $scope.updatecurrentimg(($scope.currentimg+1)%$scope.currentcase.images.length);
       });
-    }).on('swiperight','.imgbox .currentimage',function() {
+    }).on('swiperight','.currentimage',function() {
       $scope.scrollLeft();
       $scope.$apply(function() {
-        $scope.currentimage--;
-        $scope.currentimage %= $scope.currentcase.images.length;
+        $scope.updatecurrentimg(($scope.currentcase.images.length+$scope.currentimg-1)%$scope.currentcase.images.length);
       });
     });
   });
