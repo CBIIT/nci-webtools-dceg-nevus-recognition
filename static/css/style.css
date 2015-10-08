@@ -102,13 +102,13 @@ body {
   padding-left: 3.5%
 }
 .type .readmore {
-    background-color: white;
-    color: #023C4D;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    text-transform: uppercase;
-    white-space: nowrap;
+  background-color: white;
+  color: #023C4D;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 .navbar-brand {
   padding: 0;
@@ -121,7 +121,7 @@ body {
   max-width: 500px;
 }
 .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
-    margin: 0;
+  margin: 0;
 }
 .navbar-toggle{
   margin-right: 0;
@@ -129,8 +129,8 @@ body {
   margin-left: 5px;
 }
 form.navbar-form, .nav.navbar-nav {
-    margin-top: 25px;
-    border: none;
+  margin-top: 25px;
+  border: none;
 }
 .contain {
   text-align: center;
@@ -209,10 +209,10 @@ form.navbar-form, .nav.navbar-nav {
   margin: 0;
 }
 .jumbotron h1 {
-    color: #023C4D;
-    font-weight: 300;
-    padding-right: 40%;
-    font-size: 48px;
+  color: #023C4D;
+  font-weight: 300;
+  padding-right: 40%;
+  font-size: 48px;
 }
 .searchcont{
   position: relative;
@@ -309,15 +309,12 @@ form.navbar-form, .nav.navbar-nav {
 .modal-body ul {
   list-style-type: none;
 }
-
 .casedescription li label {
   width: 7em;
 }
-
 .casedescription label:after {
   content: ':';
 }
-
 .casedescription label {
   margin: 0px;
   padding: 2px;
@@ -327,7 +324,6 @@ form.navbar-form, .nav.navbar-nav {
   min-height: 24px;
   float: left;
 }
-
 .casedescription label ~ span {
   margin: 0px;
   padding: 2px;
@@ -335,7 +331,6 @@ form.navbar-form, .nav.navbar-nav {
   display: block;
   overflow: hidden;
 }
-
 .currentimage {
   width: 428px;
   float: left;
@@ -345,6 +340,12 @@ form.navbar-form, .nav.navbar-nav {
   margin: 0px;
   padding: 15px;
   color: white;
+}
+.modal-header h2 {
+  margin: 0px;
+}
+.modal-body .disclaimer {
+  padding: 0px 0px 40px;
 }
 @media (max-width: 1020px) {
   .navbar-header {
