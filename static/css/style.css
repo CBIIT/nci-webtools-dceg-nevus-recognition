@@ -162,9 +162,11 @@ form.navbar-form, .nav.navbar-nav {
   color: white;
 }
 .disclaimer {
-  text-align: center;
+  text-align: left;
   background: white;
-  padding: 40px 0;
+  padding: 20px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 .disclaimer p {
   max-width: 900px;
@@ -241,6 +243,7 @@ form.navbar-form, .nav.navbar-nav {
   font-size: 3em;
   text-align: center;
   color: #65666A;
+  padding-top:20px;
 }
 .navbar {
   margin: 0;
