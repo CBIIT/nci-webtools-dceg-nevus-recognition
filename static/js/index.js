@@ -146,6 +146,13 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
       'page': 'ulinks'
     }, 'Useful Links');
   };
+  $scope.godisclaimer = function() {
+    $scope.changePage();
+    $scope.disclaimer = true;
+    newState({
+      'page': 'disclaimer'
+    }, 'Disclaimer');
+  };
   $scope.loadMore = function() {
     pages++;
     $scope.showload = false;
