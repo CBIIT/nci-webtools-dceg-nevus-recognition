@@ -18,7 +18,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand tool" href="javascript:void(0);" id="brand" ng-click="gotool()">
+          <a class="navbar-brand tool" href="javascript:void(0);" id="brand" ng-click="http://dceg.cancer.gov">
             <img alt="" src="http://dceg.cancer.gov/publishedcontent/images/images/DCEG-logo.svg" />
           </a>
           <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
@@ -42,6 +42,7 @@
             <li><a href="javascript:void(0);" ng-click="goabout()">About the Tool</a></li>
             <li><a href="javascript:void(0);" ng-click="gotool()" class="tool">Recognition Tool</a></li>
             <li><a href="javascript:void(0);" ng-click="goulinks()">Useful Links</a></li>
+            <li><a href="javascript:void(0);" ng-click="godisclaimer()">Disclaimer</a></li>
           </ul>
         </div>
       </div>
@@ -68,13 +69,14 @@ Nearly all 30 of the DN and melanomas were photographed over the course of many 
   <li>For question about this tool, or to report an issue, please contact: <a href="mailto:NevusToolSupport@mail.nih.gov">NevusToolSupport@mail.nih.gov</a></li>
 </ul>
 </div>
+</div>
     <div class="noninteractive" ng-show="about">
       <h2>About the Tool</h2>
       <p>The Moles, Dysplastic Nevi &amp; Melanoma Tool presents photographs in three main groups of pigmented lesions:  <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN. <br>
         <br>
       The dysplastic nevi section is subdivided into: stable and fading DN, and DN evolving toward melanoma. <br>
       <br>
-      The case series show changes in individual pigmented lesions over a number of years and across the spectrum of changes typically seen in U.S. melanoma-prone families.  As a teaching aid, each case series includes a description of the <a href="http://www.cancer.gov/types/skin/moles-fact-sheet#q9" target="_new">“ABCDE” features</a> for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN. <br>
+      The case series show changes in individual pigmented lesions over a number of years and across the spectrum of changes typically seen in U.S. melanoma-prone families.  As a teaching aid, each case series includes a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN. <br>
       <br>
       The tool also contains additional information and links to other resources about dysplastic nevi and the prevention and early detection of melanoma.</p>
       <h4>What is the "ABCDE" rule?</h4>
@@ -82,11 +84,11 @@ Nearly all 30 of the DN and melanomas were photographed over the course of many 
         <span>The "ABCDE" rule describes the features of early melanoma. These features are:</span><br>
         <br>
         <ul><ul style="list-style:upper-alpha">
-          <li>Asymmetry - The shape of one half does not match the other half.</li>
-          <li>Border that is irregular - The edges are often ragged, notched, or blurred in outline. The pigment may spread into the surrounding skin.</li>
-          <li>Color that is uneven - Shades of black, brown, and tan may be present. Areas of white, gray, red, pink, or blue may also be seen.</li>
-          <li>Diameter - There is a change in size, usually an increase. Melanomas can be tiny, but most are larger than 6 millimeters wide (about 1/4 inch wide).</li>
-          <li>Evolving - The mole has changed over the past few weeks or months.</li>
+          <li><b>Asymmetry</b> - The shape of one half does not match the other half.</li>
+          <li><b>Border</b> that is irregular - The edges are often ragged, notched, or blurred in outline. The pigment may spread into the surrounding skin.</li>
+          <li><b>Color</b> that is uneven - Shades of black, brown, and tan may be present. Areas of white, gray, red, pink, or blue may also be seen.</li>
+          <li><b>Diameter</b> - There is a change in size, usually an increase. Melanomas can be tiny, but most are larger than 6 millimeters wide (about 1/4 inch wide).</li>
+          <li><b>Evolving</b> - The mole has changed over the past few weeks or months.</li>
         </ul></ul>
       </div>
     </div>
@@ -160,7 +162,7 @@ Nearly all 30 of the DN and melanomas were photographed over the course of many 
       <p>Tucker MA, Fraser MC, Goldstein AM, et al. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12115352" target="_new">Melanomas and Dysplastic Nevi: A natural history atlas</a>. Cancer. 2002 Jun 15;94(12):3192-209.</p>
       <p>Tucker MA, Halpern A, Holly EA, et al. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9145715" target="_new">Clinically recognized dysplastic nevi: a central risk factor for cutaneous melanoma</a>. JAMA: The Journal of the American Medical Association 1997; 277(18):1439–1444.</p>
     </div>
-    <div class="disclaimer">
+    <<div class="noninteractive" ng-show="disclaimer">
       <h2><center>Disclaimer</center></h2>
       <ul>
         <li>The photographs of the moles and  melanomas used in this tool were taken over more than a 35-year period from  participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>. </li>
@@ -171,7 +173,8 @@ Nearly all 30 of the DN and melanomas were photographed over the course of many 
 <li>NCI  urges users to consult with a qualified health care provider for diagnosis and  for answers to their personal medical questions. 
 </li>
 </ul><br>
-  <h4><center>About  the photos</center></h4>
+
+    <h4><center>About the photos</center></h4>
   <ul>
   	<li>The photographs will have variations in  color due to the differences in photography equipment, lighting, and skin color  of the individual (e.g. sunburned or suntanned).</li>
     <li>Photographs are standardized to ease  viewing. </li>
@@ -221,13 +224,13 @@ Nearly all 30 of the DN and melanomas were photographed over the course of many 
             <div class="casedescription">
               <p ng-bind-html="currentcase.description"></p>
               <div>
-                <span>The "ABCDE" features for this case are as follows:</span>
+                <span><b>The "ABCDE" features for this case are as follows:</b></span>
                 <ul>
-                  <li><label>Asymmetry</label><span>{{currentcase.abcde.asymmetry}}</span></li>
-                  <li><label>Border</label><span>{{currentcase.abcde.border}}</span></li>
-                  <li><label>Color</label><span>{{currentcase.abcde.color}}</span></li>
-                  <li><label>Diameter</label><span>{{currentcase.abcde.diameter}}</span></li>
-                  <li><label>Evolving</label><span>{{currentcase.abcde.evolving}}</span></li>
+                  <li><label><b>Asymmetry</b></label><span>{{currentcase.abcde.asymmetry}}</span></li>
+                  <li><label><b>Border</b></label><span>{{currentcase.abcde.border}}</span></li>
+                  <li><label><b>Color</b></label><span>{{currentcase.abcde.color}}</span></li>
+                  <li><label><b>Diameter</b></label><span>{{currentcase.abcde.diameter}}</span></li>
+                  <li><label><b>Evolving</b></label><span>{{currentcase.abcde.evolving}}</span></li>
                 </ul>
               </div>
               <p ng-show="currentcase.diagnosis.clinical"><label>Clinical Diagnosis</label><span>{{currentcase.diagnosis.clinical}}</span></p>
@@ -254,7 +257,7 @@ Nearly all 30 of the DN and melanomas were photographed over the course of many 
         </div>
       </div>
     </div>
-    <div class="modal fade" id="disclaimerModal" role="dialog" tabindex="-1" data-backdrop="static">
+    <div class="modal fade" id="disclaimerModal" role="dialog" role="dialog" tabindex="-1" data-backdrop="static">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
