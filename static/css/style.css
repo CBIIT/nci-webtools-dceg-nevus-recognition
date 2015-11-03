@@ -350,6 +350,44 @@ form.navbar-form, .nav.navbar-nav {
 .modal-body .disclaimer {
   padding: 0px 0px 40px;
 }
+
+.startbutton .holder ul {
+	list-style:none;	
+	height:auto;
+	font-size:18px;
+	transition:all .3s;
+}
+.startbutton .holder ul li a {
+	text-align:center;
+	padding:15px;
+	height:auto;
+	width: 200px;
+	background: #023C4D;
+	border: 1px solid #000;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration:none;
+}
+
+.startbutton .holder a:active {
+color: #FFF;
+font-weight: bold;
+text-decoration:none;
+
+}
+
+.startbutton .holder a:hover {
+color: #023C4D;
+font-weight: bold;
+text-decoration:none;
+background: #FFF;
+border: 2px solid #023C4D;
+box-shadow: 2px 2px 5px grey;
+}
+
 @media (max-width: 1020px) {
   .navbar-header {
       width: 100%;
