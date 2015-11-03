@@ -47,7 +47,7 @@
         </div>
       </div>
     </nav>
-    <div class="jumbotron">
+<div class="jumbotron">
       <h1>Moles, Dysplastic Nevi & Melanoma</h1>
     </div>
     <div class="noninteractive" ng-show="home">
@@ -56,6 +56,17 @@
 This web-based educational tool includes photographs of 30 different DN. Epidemiologists, clinicians and staff at the National Cancer Institute developed the tool to help patients and other individuals recognize DN and melanomas that started in DN. The photographs were taken of participants in the <a href="https://clinicaltrials.gov/ct2/show/NCT00040352" target="_new">NCI Clinical, Laboratory, and Epidemiologic Characterization of Individuals and Families at High Risk of Melanoma</a>. <br>
 <br>
 Nearly all 30 of the DN and melanomas were photographed over the course of many years. The pictures and accompanying clinical descriptions show how pigmented lesions evolve in this population of U.S. melanoma-prone families. The types of moles shown include normal, common acquired moles, dysplastic nevi (DN), and some melanomas that arose in DN. </p>
+      <br>
+      <div class="startbutton">
+      	<div class="holder" align="center">
+      	<ul>
+        <li>
+        <a href="javascript:void(0);" ng-click="gotool()" class="tool">View Photographs</a>
+		</li>
+        </ul>
+        </div>
+    	</div>
+<br>
 <h4>Acknowledgements</h4>
       <p>We thank the study participants for their many years of participation, their willingness to be photographed during many skin examinations, and their generosity in allowing their pictures to be included. 
         <br>
@@ -70,7 +81,7 @@ Nearly all 30 of the DN and melanomas were photographed over the course of many 
 </ul>
 </div>
 </div>
-    <div class="noninteractive" ng-show="about">
+<div class="noninteractive" ng-show="about">
       <h2>About the Tool</h2>
       <p>The Moles, Dysplastic Nevi &amp; Melanoma Tool presents photographs in three main groups of pigmented lesions:  <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN. <br>
         <br>
