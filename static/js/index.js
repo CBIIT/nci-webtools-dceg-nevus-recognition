@@ -76,7 +76,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     $scope.tool = false;
     $scope.searching = false;
     $scope.ulinks = false;
-	$scope.disclaimer = false;
+    $scope.disclaimer = false;
   };
   $scope.clearsearch = function() {
     $scope.search = "";
@@ -253,7 +253,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
           case 'ulinks':
             $scope.goulinks();
             break;
-		  case 'disclaimer':
+          case 'disclaimer':
             $scope.godisclaimer();
             break;
         }

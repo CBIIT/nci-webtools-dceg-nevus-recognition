@@ -5,6 +5,27 @@
 }
 body {
   background: #F4F3F3;
+  min-width: 320px;
+}
+button {
+  display: block;
+  margin: 0px auto;
+	padding:.5em 2em;
+  border: 2px solid #000;
+	border-radius: 7px;
+  box-shadow: 2px 2px 5px grey;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+  background: #023C4D;
+  color: #FFF;
+  transition: all .3s;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+button:hover {
+  border: 2px solid #023C4D;
+  background: #FFF;
+  color: #023C4D;
 }
 .isotope {
   margin: 40px auto;
@@ -17,7 +38,7 @@ body {
   margin: 0;
   padding: 0;
   width: 33.333%;
-  min-height: 300px;
+  min-height: 240px;
 }
 .item a {
   display: block;
@@ -44,43 +65,23 @@ body {
   margin: 10px 20px;
   font-size: 1.3em;
 }
-#filters.active button {
-  background: #023C4D;
-  color: white;
-}
-#filters button {
-  width: 33.333%;
-  height: 50px;
-  background: none;
-  border: none;
+#filters div {
+  padding: .5em .1em;
   font-size: 1.5em;
-  margin: 0;
-  padding: 0;
 }
-#filters button.is-checked {
+#filters .is-checked {
   background: #023C4D;
   color: white;
-}
-#filters button div {
-  display: table;
-}
-#filters button div div {
-  display: table-cell;
-  vertical-align: middle;
 }
 .subgroup {
-  text-align: center;
   max-width: 800px;
-  margin: auto;
+  margin: 0px auto;
 }
-.subgroup button {
-  width: 33.333%;
-  background: none;
-  border: none;
+.subgroup div {
   font-size: 1.4em;
-  padding: 10px;
+  border-bottom: 5px solid transparent;
 }
-.subgroup button.is-checked {
+.subgroup .is-checked {
   border-bottom: 5px solid #8782BB;
 }
 #typedescription {
@@ -102,13 +103,16 @@ body {
   padding-left: 3.5%
 }
 .type .readmore {
+  display: inline;
+  margin: 0px;
   background-color: white;
   color: #023C4D;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  text-transform: uppercase;
-  white-space: nowrap;
+  box-shadow: none;
+}
+.type .readmore:hover {
+  background: #023C4D;
+  color: #FFF;
+  border-color: #000;
 }
 .navbar-brand {
   padding: 0;
@@ -136,51 +140,30 @@ form.navbar-form, .nav.navbar-nav {
   text-align: center;
 }
 .loadmore, .loadmoresearch {
-  background: #023C4D;
-  color: white;
   margin-bottom: 40px;
-  transition: all .3s;
-}
-.loadmore:hover, .loadmore:active, .loadmore:focus, .loadmoresearch:hover, .loadmoresearch:active, .loadmoresearch:focus {
-  color: white;
-  box-shadow: 2px 2px 5px grey;
 }
 .backtotop {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background: #023C4D;
-  color: white;
-  border: none;
   width: 40px;
   height: 40px;
+  padding: 0px;
   border-radius: 50%;
-  margin: auto;
-  transition: all .3s;t
-}
-.backtotop:hover, .backtotop:active, .backtotop:focus {
-  color: white;
 }
 .disclaimer {
   text-align: left;
-  background: white;
   padding: 20px 20px;
   max-width: 900px;
   margin: auto;
+}
+.disclaimer h4 {
+  text-align: center;
 }
 .disclaimer p {
   max-width: 900px;
   padding: 20px;
   margin: auto;
-}
-.disclaimer button {
-  background-color: #023C4D;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  text-transform: uppercase;
-  white-space: nowrap;
 }
 .noninteractive {
   padding: 40px 0;
@@ -201,6 +184,8 @@ form.navbar-form, .nav.navbar-nav {
   display: block;
 }
 .jumbotron {
+  margin: 0px;
+  padding: 0px;
   text-align: center;
   background-color: #C9CBD4;
   background-image: url("../images/gradient.png");
@@ -208,13 +193,15 @@ form.navbar-form, .nav.navbar-nav {
   background-size: contain;
   background-repeat: no-repeat;
   color: white;
-  margin: 0;
 }
 .jumbotron h1 {
   color: #023C4D;
   font-weight: 300;
-  padding-right: 40%;
-  font-size: 48px;
+  font-size: 3.5em;
+  line-height: 1;
+  padding: .5em 4em .5em 1em;
+  transition: all .3s;
+  margin: 0px;
 }
 .searchcont{
   position: relative;
@@ -253,11 +240,6 @@ form.navbar-form, .nav.navbar-nav {
   height:100px;
   overflow:hidden;
 }
-.carousel button {
-  background:none;
-  border:none;
-  padding:0;
-}
 .carousel .images {
   height:115px;
   white-space: nowrap;
@@ -267,11 +249,14 @@ form.navbar-form, .nav.navbar-nav {
   background-color: #CECECE;
   box-shadow: inset 0px 0px 15px #585858;
 }
-.carousel button {
+.carousel img {
+  background: none;
+  border: none;
+  padding: 0;
   margin: 5px;
   box-shadow: 2px 2px 4px;
 }
-.carousel button.active {
+.carousel img.active {
   margin:3px;
   border: 2px solid white;
 }
@@ -351,43 +336,11 @@ form.navbar-form, .nav.navbar-nav {
   padding: 0px 0px 40px;
 }
 
-.startbutton .holder ul {
-	list-style:none;	
-	height:auto;
-	font-size:18px;
-	transition:all .3s;
+@media screen and (max-width: 1100px){
+  .jumbotron h1 {
+    font-size: 3em;
+  }
 }
-.startbutton .holder ul li a {
-	text-align:center;
-	padding:15px;
-	height:auto;
-	width: 200px;
-	background: #023C4D;
-	border: 1px solid #000;
-	border-radius: 7px;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	color: #FFF;
-	font-weight: bold;
-	text-decoration:none;
-}
-
-.startbutton .holder a:active {
-color: #FFF;
-font-weight: bold;
-text-decoration:none;
-
-}
-
-.startbutton .holder a:hover {
-color: #023C4D;
-font-weight: bold;
-text-decoration:none;
-background: #FFF;
-border: 2px solid #023C4D;
-box-shadow: 2px 2px 5px grey;
-}
-
 @media (max-width: 1020px) {
   .navbar-header {
       width: 100%;
@@ -396,17 +349,34 @@ box-shadow: 2px 2px 5px grey;
       margin-top: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1000px) {
   .item {
     width: 50%;
   }
 }
-@media screen and (max-width: 860px){
+@media screen and (max-width: 900px){
+  .jumbotron h1 {
+    font-size: 2.5em;
+  }
+}
+@media screen and (max-width: 800px){
   .jumbotron {
     background-image: none;
   }
   .jumbotron h1 {
-    padding: 0;
+    padding-right: 1.5em;
+    font-size: 2em;
+  }
+}
+@media (min-width: 479px) {
+  .button-group {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .button-group div {
+    display: table-cell;
+    vertical-align: middle;
   }
 }
 @media (max-width: 768px) {
@@ -440,18 +410,8 @@ box-shadow: 2px 2px 5px grey;
     clear: both;
   }
 }
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   .item {
     width: 100%;
-  }
-  #filters button {
-    font-size: 1.2em;
-    width: 29%;
-  }
-  #filters button + button {
-    width: 42%;
-  }
-  #filters button + button + button {
-    width: 29%;
   }
 }
