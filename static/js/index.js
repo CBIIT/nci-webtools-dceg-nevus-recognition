@@ -264,11 +264,11 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     });
     $('#myModal').on('swipeleft','.currentimage',function() {
       $scope.$apply(function() {
-        $scope.updatecurrentimg(($scope.currentimg+1)%$scope.currentcase.images.length);
+        $scope.updatecurrentimg(Math.min($scope.currentimg+1,$scope.currentcase.images.length));
       });
     }).on('swiperight','.currentimage',function() {
       $scope.$apply(function() {
-        $scope.updatecurrentimg(($scope.currentcase.images.length+$scope.currentimg-1)%$scope.currentcase.images.length);
+        $scope.updatecurrentimg(Math.max(0,$scope.currentimg-1));
       });
     });
   });
@@ -327,3 +327,10 @@ app.directive('carouselDir', function() {
     }
   };
 });
+
+app.filter('titleCase', function() {
+  return function(input) {
+    input = input || '';
+    return input.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  };
+})

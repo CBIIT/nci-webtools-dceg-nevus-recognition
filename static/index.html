@@ -15,37 +15,29 @@
 
 <body>
   <div class="app" ng-app="myApp" ng-controller="myCtrl">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand tool" href="http://dceg.cancer.gov" id="brand">
-            <img alt="" src="http://dceg.cancer.gov/publishedcontent/images/images/DCEG-logo.svg" />
-          </a>
-          <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <form class="navbar-form navbar-right">
-            <div class="searchcont">
-              <form>
-                <input class="form-control search-box" id="search"  type="text" name="focus" required ng-change="searchingfunc()" ng-model="search" placeholder="Search"  />
-                <button class="close-icon" type="reset" ng-click="clearsearch()"><span class="glyphicon glyphicon-remove"></span></button>
-              </form>
-            </div>
-          </form>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="javascript:void(0);" ng-click="gohome()">Home</a></li>
-            <li><a href="javascript:void(0);" ng-click="goabout()">About the Tool</a></li>
-            <li><a href="javascript:void(0);" ng-click="gotool()" class="tool">Recognition Tool</a></li>
-            <li><a href="javascript:void(0);" ng-click="goulinks()">Useful Links</a></li>
-            <li><a href="javascript:void(0);" ng-click="godisclaimer()">Disclaimer</a></li>
-          </ul>
-        </div>
+    <nav class="navbar-default">
+      <a href="http://dceg.cancer.gov" id="brand">&nbsp;</a>
+      <div class="nav-block collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="javascript:void(0);" ng-click="gohome()">Home</a></li>
+          <li><a href="javascript:void(0);" ng-click="goabout()">About the Tool</a></li>
+          <li><a href="javascript:void(0);" ng-click="gotool()">Recognition Tool</a></li>
+          <li><a href="javascript:void(0);" ng-click="goulinks()">Useful Links</a></li>
+          <li><a href="javascript:void(0);" ng-click="godisclaimer()">Disclaimer</a></li>
+        </ul>
       </div>
+      <div class="toggle-block">
+        <button aria-expanded="false" class="navbar-toggle" data-target=".nav-block" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <form class="searchcont">
+        <input class="form-control search-box" id="search" type="text" name="focus" required ng-change="searchingfunc()" ng-model="search" placeholder="Search" />
+        <button class="close-icon" type="reset" ng-click="clearsearch()"><span class="glyphicon glyphicon-remove"></span></button>
+      </form>
     </nav>
     <div class="jumbotron">
       <h1>Moles, Dysplastic Nevi & Melanoma</h1>
@@ -227,8 +219,7 @@
                   <li><label><b>Evolving</b></label><span>{{currentcase.abcde.evolving}}</span></li>
                 </ul>
               </div>
-              <p ng-show="currentcase.diagnosis.clinical"><b>Clinical Diagnosis</b><span>{{currentcase.diagnosis.clinical}}</span></p>
-              <p ng-show="currentcase.diagnosis.pathology"><b>Pathology Diagnosis</b><span>{{currentcase.diagnosis.pathology}}</span></p>
+              <p ng-show="currentcase.diagnosis"><label><b>{{currentcase.diagnosis.type | titleCase }} Diagnosis</b></label><span>{{currentcase.diagnosis.result}}</span></p>
             </div>
             <div class="carousel">
               <div class="leftarrow blur" ng-click="scrollLeft()">
@@ -276,6 +267,7 @@
         </div>
       </div>
     </div>
+  </div>
   <script src='./data.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js'></script>
