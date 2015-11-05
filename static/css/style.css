@@ -226,6 +226,9 @@ nav {
 .noninteractive .blockified {
   display: block;
 }
+[ng-show="about"] ul {
+  list-style: upper-alpha;
+}
 .jumbotron {
   margin: 0px;
   padding: 0px;
