@@ -247,7 +247,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
               if (urlParams.img !== undefined) {
                 $scope.updatecurrentimg(urlParams.img);
               }
-              $timeout(function() { $('#myModal').modal('show'); });
+              $timeout(function() { $('#case').removeClass('hide'); });
             }
             break;
           case 'ulinks':
@@ -258,9 +258,6 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
             break;
         }
       }
-      $timeout(function() {
-        $('#disclaimerModal').modal('show');
-      });
     });
     $('#myModal').on('swipeleft','.currentimage',function() {
       $scope.$apply(function() {

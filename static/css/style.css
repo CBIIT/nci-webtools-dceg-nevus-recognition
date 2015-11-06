@@ -300,22 +300,12 @@ nav {
   line-height: 75px;
   font-size: 20px;
 }
-.modal-dialog {
-  width: 760px;
-}
-.modal-body {
-  padding: 0;
-  background: #000;
-}
 .casedescription {
   padding: 15px;
   width: 100%;
   margin: 0;
   background: white;
   overflow: hidden;
-}
-.modal-body ul {
-  list-style-type: none;
 }
 .casedescription li label {
   width: 8em;
@@ -348,15 +338,6 @@ nav {
   margin: 0px;
   padding: 15px;
   color: white;
-}
-.modal {
-  min-width: 320px;
-}
-.modal-header h2 {
-  margin: 0px;
-}
-.modal-body .disclaimer {
-  padding: 0px 0px 40px;
 }
 @media (min-width: 1201px) {
   .nav-block {
@@ -413,14 +394,6 @@ nav {
   }
 }
 @media (max-width: 768px) {
-  .modal-dialog {
-    margin: 0;
-    width: auto;
-  }
-  .modal-content {
-    border: none;
-    border-radius: 0;
-  }
   .currentimage {
     width: 100%;
     float: none;
@@ -482,4 +455,17 @@ nav {
   .item {
     width: 100%;
   }
+}
+.jquery-modal h2,
+.jquery-modal h4 {
+  margin: 10px 30px;
+}
+.jquery-modal .disclaimer {
+  padding: 0px;
+}
+.jquery-modal .body button {
+  margin: 2em auto;
+}
+.jquery-modal .header {
+  position: relative;
 }
