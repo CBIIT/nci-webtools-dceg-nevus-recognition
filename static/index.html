@@ -96,7 +96,7 @@
         <h3 class="searchbanner" ng-show="tool">Examples</h3>
         <div class="isotope" ng-show="searching || tool">
           <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
-            <a modal-target="#case" href="javascript:void(0);" ng-click="update(case,$index)">
+            <a adamant-modal-target="#case" href="javascript:void(0);" ng-click="update(case,$index)">
               <img alt="" src="./images/MissingImage.png" ng-src=".{{case.images[0].image}}" />
               <span class="type" ng-show="searching" ng-bind="case.typeSearch"></span>
               <span class="title">{{case.name || 'Untitled Case'}}</span>
@@ -199,9 +199,9 @@
         <span class="glyphicon glyphicon-chevron-up"></span>
       </button>
     </div>
-    <div id="case" class="jquery-modal" tabindex="-1">
+    <div id="case" tabindex="-1" adamant-modal>
       <div class="header">
-        <button aria-label="Close" class="close-icon" type="button" modal-close><span class="glyphicon glyphicon-remove"></span></button>
+        <button aria-label="Close" class="close-icon" type="button" adamant-modal-close><span class="glyphicon glyphicon-remove"></span></button>
         <h4>{{currentcase.title}}</h4>
       </div>
       <div class="body group">
@@ -236,7 +236,7 @@
         <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description"></p>
       </div>
     </div>
-    <div class="jquery-modal simple-modal-fadein simple-modal-show" id="disclaimerModal" tabindex="-1" modal-static>
+    <div class="adamant-show" id="disclaimerModal" tabindex="-1" adamant-modal-static>
       <div class="header">
         <h2>Disclaimer</h2>
       </div>
@@ -255,7 +255,7 @@
           <li>Photographs are standardized to ease  viewing. </li>
           <li>Rulers  in each photograph address the variations in relative size of the moles and  melanomas. The unit of measurement for these rulers are millimeters.</li>
         </ul>
-        <button type="button" modal-close>I Understand</button>
+        <button type="button" adamant-modal-close>I Understand</button>
       </div>
     </div>
   </div>
@@ -266,7 +266,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-sanitize.min.js"></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
   <script src='js/jquery.mobile-touchevents.js'></script>
-  <script src='js/cbiit-modal.js'></script>
+  <script src='/common/adamant-meow/adamant-modal/adamant-modal.js'></script>
   <script src="js/index.js"></script>
 </body>
 </html>

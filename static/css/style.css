@@ -339,6 +339,24 @@ nav {
   padding: 15px;
   color: white;
 }
+[adamant-modal],
+[adamant-modal-static] {
+  border-radius: 6px;
+  padding: 0px;
+}
+[adamant-modal-static] h2,
+[adamant-modal] h4 {
+  margin: 10px 30px;
+}
+[adamant-modal] .disclaimer {
+  padding: 0px;
+}
+[adamant-modal] .body button {
+  margin: 2em auto;
+}
+[adamant-modal] .header {
+  position: relative;
+}
 @media (min-width: 1201px) {
   .nav-block {
     float: right;
@@ -455,17 +473,4 @@ nav {
   .item {
     width: 100%;
   }
-}
-.jquery-modal h2,
-.jquery-modal h4 {
-  margin: 10px 30px;
-}
-.jquery-modal .disclaimer {
-  padding: 0px;
-}
-.jquery-modal .body button {
-  margin: 2em auto;
-}
-.jquery-modal .header {
-  position: relative;
 }
