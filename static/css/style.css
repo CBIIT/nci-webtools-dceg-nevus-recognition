@@ -307,6 +307,10 @@ nav {
   background: white;
   overflow: hidden;
 }
+.casedescription ul {
+  list-style: none;
+  padding-left: 3em;
+}
 .casedescription li label {
   width: 8em;
 }
@@ -329,15 +333,22 @@ nav {
   display: block;
   overflow: hidden;
 }
+.imgbox {
+  background: #000;
+}
 .currentimage {
-  width: 428px;
   float: left;
-  padding: 0px 15px 0px 0px;
+  margin: 0px 15px 0px 0px;
+  width: 428px;
 }
 .currentimagedescription {
+  color: #FFF;
   margin: 0px;
   padding: 15px;
-  color: white;
+}
+[adamant-modal] .header + .body,
+[adamant-modal-static] .header + .body {
+  border-top: 1px solid #CCC;
 }
 [adamant-modal],
 [adamant-modal-static] {

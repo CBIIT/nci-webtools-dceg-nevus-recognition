@@ -230,10 +230,10 @@
             <img src=".{{image.thumbnail}}" carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0" />
           </div>
         </div>
-        <div class="imgbox">
+        <div class="imgbox clearfix">
           <img alt="" class="currentimage" image-on-load="" src=".{{currentcase.images[currentimg].image}}" />
+          <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description"></p>
         </div>
-        <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description"></p>
       </div>
     </div>
     <div class="adamant-show" id="disclaimerModal" tabindex="-1" adamant-modal-static>
