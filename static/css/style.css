@@ -341,7 +341,6 @@ nav {
 }
 [adamant-modal],
 [adamant-modal-static] {
-  border-radius: 6px;
   padding: 0px;
 }
 [adamant-modal-static] h2,
@@ -474,3 +473,10 @@ nav {
     width: 100%;
   }
 }
+@media (min-width: 451px) {
+  [adamant-modal],
+  [adamant-modal-static] {
+    border-radius: 6px;
+  }
+}
+

@@ -26,7 +26,6 @@ var port = 8180;
 var mongohost = 'localhost';
 var mongoport = 27017;
 var databasename = 'nevus';
-
 app.get("/data.js", function(request, response) {
   var data = {};
   var database;
@@ -56,7 +55,6 @@ app.get("/data.js", function(request, response) {
     })
   });
 });
-
 if (ADMIN_ENABLED) {
   var basicAuth = require('basic-auth');
   var bodyParser = require('body-parser');

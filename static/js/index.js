@@ -247,7 +247,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
               if (urlParams.img !== undefined) {
                 $scope.updatecurrentimg(urlParams.img);
               }
-              $timeout(function() { $('#case').addClass('adamant-show'); });
+              $timeout(function() { $.adamant.modal.open('#case'); });
             }
             break;
           case 'ulinks':
