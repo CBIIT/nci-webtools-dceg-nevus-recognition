@@ -247,7 +247,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
               if (urlParams.img !== undefined) {
                 $scope.updatecurrentimg(urlParams.img);
               }
-              $timeout(function() { $('#myModal').modal('show'); });
+              $timeout(function() { $.adamant.modal.open('#case'); });
             }
             break;
           case 'ulinks':
@@ -258,13 +258,10 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
             break;
         }
       }
-      $timeout(function() {
-        $('#disclaimerModal').modal('show');
-      });
     });
     $('#myModal').on('swipeleft','.currentimage',function() {
       $scope.$apply(function() {
-        $scope.updatecurrentimg(Math.min($scope.currentimg+1,$scope.currentcase.images.length));
+        $scope.updatecurrentimg(Math.min($scope.currentimg+1,$scope.currentcase.images.length-1));
       });
     }).on('swiperight','.currentimage',function() {
       $scope.$apply(function() {

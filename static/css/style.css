@@ -226,6 +226,9 @@ nav {
 .noninteractive .blockified {
   display: block;
 }
+[ng-show="about"] ul {
+  list-style: upper-alpha;
+}
 .jumbotron {
   margin: 0px;
   padding: 0px;
@@ -297,13 +300,6 @@ nav {
   line-height: 75px;
   font-size: 20px;
 }
-.modal-dialog {
-  width: 760px;
-}
-.modal-body {
-  padding: 0;
-  background: #000;
-}
 .casedescription {
   padding: 15px;
   width: 100%;
@@ -311,8 +307,9 @@ nav {
   background: white;
   overflow: hidden;
 }
-.modal-body ul {
-  list-style-type: none;
+.casedescription ul {
+  list-style: none;
+  padding-left: 3em;
 }
 .casedescription li label {
   width: 8em;
@@ -336,24 +333,39 @@ nav {
   display: block;
   overflow: hidden;
 }
+.imgbox {
+  background: #000;
+}
 .currentimage {
-  width: 428px;
   float: left;
-  padding: 0px 15px 0px 0px;
+  margin: 0px 15px 0px 0px;
+  width: 428px;
 }
 .currentimagedescription {
+  color: #FFF;
   margin: 0px;
   padding: 15px;
-  color: white;
 }
-.modal {
-  min-width: 320px;
+[adamant-modal] .header + .body,
+[adamant-modal-static] .header + .body {
+  border-top: 1px solid #CCC;
 }
-.modal-header h2 {
-  margin: 0px;
+[adamant-modal],
+[adamant-modal-static] {
+  padding: 0px;
 }
-.modal-body .disclaimer {
-  padding: 0px 0px 40px;
+[adamant-modal-static] h2,
+[adamant-modal] h4 {
+  margin: 10px 30px;
+}
+[adamant-modal] .disclaimer {
+  padding: 0px;
+}
+[adamant-modal] .body button {
+  margin: 2em auto;
+}
+[adamant-modal] .header {
+  position: relative;
 }
 @media (min-width: 1201px) {
   .nav-block {
@@ -410,14 +422,6 @@ nav {
   }
 }
 @media (max-width: 768px) {
-  .modal-dialog {
-    margin: 0;
-    width: auto;
-  }
-  .modal-content {
-    border: none;
-    border-radius: 0;
-  }
   .currentimage {
     width: 100%;
     float: none;
@@ -480,3 +484,10 @@ nav {
     width: 100%;
   }
 }
+@media (min-width: 451px) {
+  [adamant-modal],
+  [adamant-modal-static] {
+    border-radius: 6px;
+  }
+}
+
