@@ -22,6 +22,10 @@ button:hover {
   background: #FFF;
   color: #023C4D;
 }
+.define {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
 nav {
   position: relative;
   height: 5em;

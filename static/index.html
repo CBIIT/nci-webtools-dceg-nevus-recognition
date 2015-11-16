@@ -44,8 +44,8 @@
         <h1>Moles, Dysplastic Nevi & Melanoma</h1>
       </div>
       <div class="noninteractive" ng-show="home">
-        <p>Dysplastic nevi (DN) are atypical moles. DN are important risk markers for melanoma, and precursor lesions for some melanomas.</p>
-        <p>This web-based educational tool includes photographs of 30 different DN. Epidemiologists, clinicians and staff at the National Cancer Institute developed the tool to help patients and other individuals recognize DN and melanomas that started in DN. The photographs were taken of participants in the <a href="https://clinicaltrials.gov/ct2/show/NCT00040352" target="_new">NCI Clinical, Laboratory, and Epidemiologic Characterization of Individuals and Families at High Risk of Melanoma</a>.</p>
+        <p><span class="define" data-term="nevus">Dysplastic nevi (DN)</span> are <span class="define" data-term="amole">atypical moles</span>. DN are important <span class="define" data-term="marker">risk markers</span> for <span class="define" data-term="melanoma">melanoma</span>, and precursor <span class="define" data-term="lesion">lesions</span> for some melanomas.</p>
+        <p>This web-based educational tool includes photographs of 30 different DN. <span class="define" data-term="epidemiologist">Epidemiologists</span>, clinicians and staff at the National Cancer Institute developed the tool to help patients and other individuals recognize DN and melanomas that started in DN. The photographs were taken of participants in the <a href="https://clinicaltrials.gov/ct2/show/NCT00040352" target="_new">NCI Clinical, Laboratory, and Epidemiologic Characterization of Individuals and Families at High Risk of Melanoma</a>.</p>
         <p>Nearly all 30 of the DN and melanomas were photographed over the course of many years. The pictures and accompanying clinical descriptions show how pigmented lesions evolve in this population of U.S. melanoma-prone families. The types of moles shown include normal, common acquired moles, dysplastic nevi (DN), and some melanomas that arose in DN.</p>
         <button class="startbutton" href="javascript:void(0);" ng-click="gotool()" class="tool"><h4>View Photographs</h4></button>
         <h4>Acknowledgements</h4>
@@ -153,7 +153,7 @@
         <h2>Disclaimer</h2>
         <div class="disclaimer">
           <ul>
-            <li>The photographs of the moles and  melanomas used in this tool were taken over more than a 35-year period from  participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>. </li>
+            <li>The photographs of the <span class="define" data-term="mole">moles</span> and  melanomas used in this tool were taken over more than a 35-year period from  participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>. </li>
             <li>The pictures show examples of the variability  in pigmented lesions in U.S. melanoma-prone families. </li>
             <li>Because most of the study participants  are Caucasians, the nevi and melanomas shown are not representative of nevi and  melanomas in individuals with darker skin. </li>
             <li>Melanomas and lesions suspicious for  melanoma vary widely in appearance; thus, the pictures should not be used to  diagnose melanoma. </li>
@@ -236,13 +236,13 @@
         </div>
       </div>
     </div>
-    <div class="adamant-show" id="disclaimerModal" tabindex="-1" adamant-modal-static>
+    <div class="adamant-showx" id="disclaimerModal" tabindex="-1" adamant-modal-static>
       <div class="header">
         <h2>Disclaimer</h2>
       </div>
       <div class="body disclaimer">
         <ul>
-          <li>The photographs of the moles and  melanomas used in this tool were taken over more than a 35-year period from  participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.</li>
+          <li>The photographs of the moles and melanomas used in this tool were taken over more than a 35-year period from  participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.</li>
           <li>The pictures show examples of the variability  in pigmented lesions in U.S. melanoma-prone families. </li>
           <li>Because most of the study participants  are Caucasians, the nevi and melanomas shown are not representative of nevi and  melanomas in individuals with darker skin.</li>
           <li>Melanomas and lesions suspicious for  melanoma vary widely in appearance; thus, the pictures should not be used to  diagnose melanoma. </li>
@@ -259,14 +259,17 @@
       </div>
     </div>
   </div>
-  <script src='./data.js'></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-sanitize.min.js"></script>
-  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-sanitize.min.js'></script>
+  <script src='/common/adamant-meow/adamant-modal/adamant-modal.js'></script>
+  <script src='/common/js/popover-functions.js'></script>
+  <script src='js/glossary.js'></script>
   <script src='js/jquery.mobile-touchevents.js'></script>
-  <script src='http://wobenshain.github.io/adamant-meow/adamant-modal/adamant-modal.js'></script>
-  <script src="js/index.js"></script>
+  <script src='data.js'></script>
+  <script src='js/index.js'></script>
 </body>
 </html>
