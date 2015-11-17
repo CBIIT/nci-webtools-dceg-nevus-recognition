@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' href='css/bootstrap.css'>
   <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css'>
   <link rel="stylesheet" href="/common/css/style.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -44,12 +45,12 @@
         <h1>Moles, Dysplastic Nevi & Melanoma</h1>
       </div>
       <div class="noninteractive" ng-show="home">
-        <p><span class="define" data-term="nevus">Dysplastic nevi (DN)</span> are <span class="define" data-term="amole">atypical moles</span>. DN are important <span class="define" data-term="marker">risk markers</span> for <span class="define" data-term="melanoma">melanoma</span>, and precursor <span class="define" data-term="lesion">lesions</span> for some melanomas.</p>
-        <p>This web-based educational tool includes photographs of 30 different DN. <span class="define" data-term="epidemiologist">Epidemiologists</span>, clinicians and staff at the National Cancer Institute developed the tool to help patients and other individuals recognize DN and melanomas that started in DN. The photographs were taken of participants in the <a href="https://clinicaltrials.gov/ct2/show/NCT00040352" target="_new">NCI Clinical, Laboratory, and Epidemiologic Characterization of Individuals and Families at High Risk of Melanoma</a>.</p>
-        <p>Nearly all 30 of the DN and melanomas were photographed over the course of many years. The pictures and accompanying clinical descriptions show how pigmented lesions evolve in this population of U.S. melanoma-prone families. The types of moles shown include normal, common acquired moles, dysplastic nevi (DN), and some melanomas that arose in DN.</p>
+        <p><span class="define" data-term="nevus">Dysplastic nevi (DN)</span> are <span class="define" data-term="atypical-mole">atypical moles</span>. DN are important risk <span class="define" data-term="marker">markers</span> for <span class="define" data-term="melanoma">melanoma</span>, and precursor <span class="define" data-term="lesion">lesions</span> for some melanomas.</p>
+        <p>This web-based educational tool includes photographs of 30 different DN. <span class="define" data-term="epidemiologist">Epidemiologists</span>, <span class="define" data-term="clinician">clinicians</span> and staff at the <span class="define" data-term="nci">National Cancer Institute</span> developed the tool to help patients and other individuals recognize DN and melanomas that started in DN. The photographs were taken of participants in the <a href="https://clinicaltrials.gov/ct2/show/NCT00040352" target="_new">NCI Clinical, Laboratory, and Epidemiologic Characterization of Individuals and Families at High Risk of Melanoma</a>.</p>
+        <p>Nearly all 30 of the DN and melanomas were photographed over the course of many years. The pictures and accompanying <span class="define" data-term="clinical">clinical</span> descriptions show how <span class="define" data-term="pigment">pigmented</span> lesions evolve in this population of U.S. melanoma-prone families. The types of moles shown include normal, common acquired moles, dysplastic nevi (DN), and some melanomas that arose in DN.</p>
         <button class="startbutton" href="javascript:void(0);" ng-click="gotool()" class="tool"><h4>View Photographs</h4></button>
         <h4>Acknowledgements</h4>
-          <p>We thank the study participants for their many years of participation, their willingness to be photographed during many skin examinations, and their generosity in allowing their pictures to be included.<p>
+          <p>We thank the study participants for their many years of participation, their willingness to be photographed during many skin examinations, and their generosity in allowing their pictures to be included.</p>
           <p>We would also like to thank John Crawford and Mary King, Clinical Center clinical photographers, for their expertise. The tool would not have been possible without the substantial commitment and cooperation of both the study participants and the clinical photographers.</p>
         <h4>More Information</h4>
         <div>
@@ -62,19 +63,19 @@
       </div>
       <div class="noninteractive" ng-show="about">
         <h2>About the Tool</h2>
-        <p>The Moles, Dysplastic Nevi &amp; Melanoma Tool presents photographs in three main groups of pigmented lesions:  <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN.</p>
+        <p>The <span class="define" data-term="mole">Moles</span>, <span class="define" data-term="nevus">Dysplastic Nevi</span> &amp; <span class="define" data-term="melanoma">Melanoma</span> Tool presents photographs in three main groups of <span class="define" data-term="pigment">pigmented</span> <span class="define" data-term="lesion">lesions</span>: <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN.</p>
         <p>The dysplastic nevi section is subdivided into: stable and fading DN, and DN evolving toward melanoma.</p>
-        <p>The case series show changes in individual pigmented lesions over a number of years and across the spectrum of changes typically seen in U.S. melanoma-prone families.  As a teaching aid, each case series includes a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN.</p>
+        <p>The <span class="define" data-term="case-series">case series</span> show changes in individual pigmented lesions over a number of years and across the spectrum of changes typically seen in U.S. melanoma-prone families.  As a teaching aid, each case series includes a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN.</p>
         <p>The tool also contains additional information and links to other resources about dysplastic nevi and the prevention and early detection of melanoma.</p>
         <h4>What is the "ABCDE" rule?</h4>
         <div>
           <span>The "ABCDE" rule describes the features of early melanoma. These features are:</span><br>
           <br>
           <ul>
-            <li><b>Asymmetry</b><span> - The shape of one half does not match the other half.</span></li>
+            <li><b class="define" data-term="asymmetry">Asymmetry</b><span> - The shape of one half does not match the other half.</span></li>
             <li><b>Border</b><span> that is irregular - The edges are often ragged, notched, or blurred in outline. The pigment may spread into the surrounding skin.</span></li>
             <li><b>Color</b><span> that is uneven - Shades of black, brown, and tan may be present. Areas of white, gray, red, pink, or blue may also be seen.</span></li>
-            <li><b>Diameter</b><span> - There is a change in size, usually an increase. Melanomas can be tiny, but most are larger than 6 millimeters wide (about 1/4 inch wide).</span></li>
+            <li><b class="define" data-term="diameter">Diameter</b><span> - There is a change in size, usually an increase. Melanomas can be tiny, but most are larger than 6 millimeters wide (about 1/4 inch wide).</span></li>
             <li><b>Evolving</b><span> - The mole has changed over the past few weeks or months.</span></li>
           </ul>
         </div>
@@ -85,7 +86,7 @@
         </div>
         <div class="type" ng-show="tool">
           <div id="typedescription">
-            <p class="fulldescription" bind-compiled-html="showfull?currenttype.description:currenttype.descriptionsummary"></p>
+            <p class="fulldescription" bind-compiled-html="(showfull?currenttype.descriptionsummary + currenttype.description:currenttype.descriptionsummary) | define"></p>
             <button class="readmore blur" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Show More' }}</button>
           </div>
           <div class="subgroup button-group" ng-show="currenttype.subgroups">
@@ -110,11 +111,11 @@
         <h2>Useful Links</h2>
         <p>
           <a href="http://www.cancer.gov/types/skin" target="_new" class="blockified">NCI Skin Cancer (including Melanoma)</a>
-          <span>National Cancer Institute homepage for skin cancer, including melanoma</span>
+          <span><span class="define" data-term="nci">National Cancer Institute</span> homepage for <span class="define" data-term="skin-cancer">skin cancer</span>, including <span class="define" data-term="melanoma">melanoma</span>.</span>
         </p>
         <p>
           <a href="http://www.cancer.gov/melanomarisktool/" target="_new" class="blockified">Melanoma Risk Assessment Tool</a>
-          <span>An interactive NCI tool to help estimate a person’s risk of developing invasive melanoma.</span>
+          <span>An interactive <span class="define" data-term="nci">NCI</span> tool to help estimate a person’s risk of developing invasive melanoma.</span>
         </p>
         <p>
           <a href="http://www.cancer.gov/publications/patient-education/anyone-can-get-skin-cancer" target="_new" class="blockified">Anyone Can Get Skin Cancer</a>
@@ -122,15 +123,15 @@
         </p>
         <p>
           <a href="http://www.cancer.gov/cancertopics/factsheet/Risk/moles" target="_new" class="blockified">Common Moles, Dysplastic Nevi, and Risk of Melanoma</a>
-          <span>NCI fact sheet on common moles, dysplastic nevi and melanoma</span>
+          <span>NCI fact sheet on common <span class="define" data-term="mole">moles</span>, <span class="define" data-term="nevus">dysplastic nevi</span>, and melanoma.</span>
         </p>
         <p>
           <a href="http://www.skinsight.com/info/for_professionals/skin-cancer-detection-informed/skin-cancer-education" target="_new" class="blockified">INFORMED Skin Cancer Education Series</a>
-          <span>The INternet curriculum FOR Melanoma Early Detection (INFORMED) program provides Web-based early-detection training for widespread use, and  training in dermoscopy (epiluminescence microscopy), which has been proven to increase diagnostic accuracy during the skin examination.</span>
+          <span>The INternet curriculum FOR Melanoma Early Detection (INFORMED) program provides Web-based early-detection training for widespread use, and training in dermoscopy (epiluminescence microscopy), which has been proven to increase diagnostic accuracy during the skin examination.</span>
         </p>
         <p>
           <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm309136.htm?source=govdelivery" target="_new" class="blockified">Sunscreen on Infants? Not Usually—Shade is Best</a>
-          <span>A pediatrician from the U.S. Food and Drug Administration (FDA) tells how to protect babies from dangerous ultraviolet rays.</span>
+          <span>A <span class="define" data-term="pediatrician">pediatrician</span> from the U.S. <span class="define" data-term="fda">Food and Drug Administration (FDA)</span> tells how to protect babies from dangerous <span class="define" data-term="uv">ultraviolet</span> rays.</span>
         </p>
         <p>
           <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm049090.htm?source=govdelivery" target="_new" class="blockified">Sun Safety: Save Your Skin!</a>
@@ -143,7 +144,7 @@
         </p>
         <p>
           <a href="https://www.youtube.com/watch?v=o9BqrSAHbTc" target="_new" class="blockified">How the Sun Sees You</a>
-          <span>A short film of people captured in the ultraviolet spectrum, which highlights freckles and sun damage unnoticeable to the naked eye.</span>
+          <span>A short film of people captured in the <span class="define" data-term="uv">ultraviolet spectrum</span>, which highlights freckles and sun damage unnoticeable to the naked eye.</span>
         </p>
         <h4>Publications</h4>
         <p>Tucker MA, Fraser MC, Goldstein AM, et al. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12115352" target="_new">Melanomas and Dysplastic Nevi: A natural history atlas</a>. Cancer. 2002 Jun 15;94(12):3192-209.</p>
@@ -153,18 +154,18 @@
         <h2>Disclaimer</h2>
         <div class="disclaimer">
           <ul>
-            <li>The photographs of the <span class="define" data-term="mole">moles</span> and  melanomas used in this tool were taken over more than a 35-year period from  participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>. </li>
-            <li>The pictures show examples of the variability  in pigmented lesions in U.S. melanoma-prone families. </li>
-            <li>Because most of the study participants  are Caucasians, the nevi and melanomas shown are not representative of nevi and  melanomas in individuals with darker skin. </li>
-            <li>Melanomas and lesions suspicious for  melanoma vary widely in appearance; thus, the pictures should not be used to  diagnose melanoma. </li>
-            <li>NCI does not provide specific medical  advice to users of its website. </li>
-            <li>NCI  urges users to consult with a qualified health care provider for diagnosis and  for answers to their personal medical questions.</li>
+            <li>The photographs of the <span class="define" data-term="mole">moles</span> and <span class="define" data-term="melanoma">melanomas</span> used in this tool were taken over more than a 35-year period from participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>. </li>
+            <li>The pictures show examples of the variability in <span class="define" data-term="pigment">pigmented</span> <span class="define" data-term="lesion">lesions</span> in U.S. melanoma-prone families.</li>
+            <li>Because most of the study participants are Caucasians, the <span class="define" data-term="nevus">nevi</span> and melanomas shown are not representative of nevi and melanomas in individuals with darker skin.</li>
+            <li>Melanomas and lesions suspicious for melanoma vary widely in appearance; thus, the pictures should not be used to diagnose melanoma. </li>
+            <li><span class="define" data-term="nci">NCI</span> does not provide specific medical advice to users of its website.</li>
+            <li>NCI urges users to consult with a qualified <span class="define" data-term="hcp">health care provider</span> for <span class="define" data-term="diagnosis">diagnosis</span> and for answers to their personal medical questions.</li>
           </ul>
           <h4>About the photos</h4>
           <ul>
-            <li>The photographs will have variations in  color due to the differences in photography equipment, lighting, and skin color  of the individual (e.g. sunburned or suntanned).</li>
-            <li>Photographs are standardized to ease  viewing. </li>
-            <li>Rulers  in each photograph address the variations in relative size of the moles and  melanomas. The unit of measurement for these rulers are millimeters.</li>
+            <li>The photographs will have variations in color due to the differences in photography equipment, lighting, and skin color of the individual (e.g. sunburned or suntanned).</li>
+            <li>Photographs are standardized to ease viewing. </li>
+            <li>Rulers in each photograph address the variations in relative size of the moles and melanomas. The unit of measurement for these rulers are millimeters.</li>
           </ul>
         </div>
       </div>
@@ -206,18 +207,18 @@
       </div>
       <div class="body group">
         <div class="casedescription">
-          <p ng-bind-html="currentcase.description"></p>
+          <p ng-bind-html="currentcase.description | define"></p>
           <div>
             <span><b>The "ABCDE" features for this case are as follows:</b></span>
             <ul>
-              <li><label><b>Asymmetry</b></label><span>{{currentcase.abcde.asymmetry}}</span></li>
-              <li><label><b>Border</b></label><span>{{currentcase.abcde.border}}</span></li>
-              <li><label><b>Color</b></label><span>{{currentcase.abcde.color}}</span></li>
-              <li><label><b>Diameter</b></label><span>{{currentcase.abcde.diameter}}</span></li>
-              <li><label><b>Evolving</b></label><span>{{currentcase.abcde.evolving}}</span></li>
+              <li><label><b class="define" data-term="asymmetry">Asymmetry</b></label><span>{{currentcase.abcde.asymmetry | define}}</span></li>
+              <li><label><b>Border</b></label><span>{{currentcase.abcde.border | define}}</span></li>
+              <li><label><b>Color</b></label><span>{{currentcase.abcde.color | define}}</span></li>
+              <li><label><b class="define" data-term="diameter">Diameter</b></label><span>{{currentcase.abcde.diameter | define}}</span></li>
+              <li><label><b>Evolving</b></label><span>{{currentcase.abcde.evolving | define}}</span></li>
             </ul>
           </div>
-          <p ng-show="currentcase.diagnosis"><label><b>{{currentcase.diagnosis.type | titleCase }} Diagnosis</b></label><span>{{currentcase.diagnosis.result}}</span></p>
+          <p ng-show="currentcase.diagnosis"><label><b>{{currentcase.diagnosis.type | titleCase }} <span class="define" data-term="diagnosis">Diagnosis</span></b></label><span>{{currentcase.diagnosis.result | define}}</span></p>
         </div>
         <div class="carousel">
           <div class="leftarrow blur" ng-click="scrollLeft()">
@@ -232,7 +233,7 @@
         </div>
         <div class="imgbox clearfix">
           <img alt="" class="currentimage" image-on-load="" src=".{{currentcase.images[currentimg].image}}" />
-          <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description"></p>
+          <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description | define"></p>
         </div>
       </div>
     </div>
@@ -242,18 +243,18 @@
       </div>
       <div class="body disclaimer">
         <ul>
-          <li>The photographs of the moles and melanomas used in this tool were taken over more than a 35-year period from  participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.</li>
-          <li>The pictures show examples of the variability  in pigmented lesions in U.S. melanoma-prone families. </li>
-          <li>Because most of the study participants  are Caucasians, the nevi and melanomas shown are not representative of nevi and  melanomas in individuals with darker skin.</li>
-          <li>Melanomas and lesions suspicious for  melanoma vary widely in appearance; thus, the pictures should not be used to  diagnose melanoma. </li>
-          <li>NCI does not provide specific medical  advice to users of its website. </li>
-          <li>NCI  urges users to consult with a qualified health care provider for diagnosis and  for answers to their personal medical questions. </li>
+          <li>The photographs of the <span class="define" data-term="mole">moles</span> and <span class="define" data-term="melanoma">melanomas</span> used in this tool were taken over more than a 35-year period from participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>. </li>
+          <li>The pictures show examples of the variability in <span class="define" data-term="pigment">pigmented</span> <span class="define" data-term="lesion">lesions</span> in U.S. melanoma-prone families.</li>
+          <li>Because most of the study participants are Caucasians, the <span class="define" data-term="nevus">nevi</span> and melanomas shown are not representative of nevi and melanomas in individuals with darker skin.</li>
+          <li>Melanomas and lesions suspicious for melanoma vary widely in appearance; thus, the pictures should not be used to diagnose melanoma. </li>
+          <li><span class="define" data-term="nci">NCI</span> does not provide specific medical advice to users of its website.</li>
+          <li>NCI urges users to consult with a qualified <span class="define" data-term="hcp">health care provider</span> for <span class="define" data-term="diagnosis">diagnosis</span> and for answers to their personal medical questions.</li>
         </ul>
-        <h4>About  the photos</h4>
+        <h4>About the photos</h4>
         <ul>
-          <li>The photographs will have variations in  color due to the differences in photography equipment, lighting, and skin color  of the individual (e.g. sunburned or suntanned).</li>
-          <li>Photographs are standardized to ease  viewing. </li>
-          <li>Rulers  in each photograph address the variations in relative size of the moles and  melanomas. The unit of measurement for these rulers are millimeters.</li>
+          <li>The photographs will have variations in color due to the differences in photography equipment, lighting, and skin color of the individual (e.g. sunburned or suntanned).</li>
+          <li>Photographs are standardized to ease viewing. </li>
+          <li>Rulers in each photograph address the variations in relative size of the moles and melanomas. The unit of measurement for these rulers are millimeters.</li>
         </ul>
         <button type="button" adamant-modal-close>I Understand</button>
       </div>

@@ -3,7 +3,6 @@ var data = {
     "type": "mole",
     "name": "Moles",
     "description":
-      "<h4>Basic Information</h4>" +
       "<ul>" +
         "<li>Growths on the skin that develop when pigment cells (melanocytes) grow in clusters</li>" +
         "<li>Also called \"common nevi\" or \"common acquired nevi\"</li>" +
@@ -31,7 +30,6 @@ var data = {
     "type": "dysplasticnevi",
     "name": "Dysplastic Nevi",
     "description":
-      "<h4>Basic Information</h4>"+
       "<ul>"+
         "<li>Called \"dysplastic\" nevi because under the microscope the pattern of cells is between common nevi and melanoma.</li>" +
         "<li>" +
@@ -82,7 +80,6 @@ var data = {
     "type": "melanoma",
     "name": "Melanoma",
     "description":
-      "<h4>Basic Information</h4>" +
       "<ul>" +
         "<li>A type of skin cancer that begins in melanocytes (cells that make the pigment melanin)</li>" +
         "<li>Early thin melanomas are curable by minimal surgery alone; advanced melanomas may spread to others parts of the body</li>" +
