@@ -83,7 +83,7 @@ var data = {
       "<ul>" +
         "<li>A type of skin cancer that begins in melanocytes (cells that make the pigment melanin)</li>" +
         "<li>Early thin melanomas are curable by minimal surgery alone; advanced melanomas may spread to others parts of the body</li>" +
-        "<li>Melanomas can vary greatly in how they look. Many show all of the <a href=\"javascript:void(0);\" ng-click=\"goabout()\">\"ABCDE\" features</a>. However, some may show only one or two of the \"ABCDE\" features</li>" +
+        "<li>Melanomas can vary greatly in how they look. Many show all of the <a href=\"javascript:void(0);\" ng-click=\"goabout()\" class=\"blur\">\"ABCDE\" features</a>. However, some may show only one or two of the \"ABCDE\" features</li>" +
       "</ul>" +
       "<h4>Warning Signs</h4>" +
       "<h4>Pay close attention to any irregular moles or dysplastic nevi, looking for any melanoma warning signs. If any moles have changed in any of the following ways, or if you are concerned about any of your moles, <u>see your doctor</u>:</h4>" +
@@ -541,7 +541,7 @@ var data = {
     "subgroup": "stable",
     "name": "Case 8",
     "title": "Dysplastic Nevi Case 8: Regressing (Disappearing) dysplastic nevus over almost 4 years",
-    "description": "Over 3½ years, this dysplastic nevus went from a 9 millimeter mole in greatest width to 3 millimeters. The mole was mostly flat, and had irregular, indistinct borders. It had a mixture of colors with darker brown in the center surrounded by an area that contains pink, tan and light brown. After the patient received <a href=\"http://www.cancer.gov/publications/dictionaries/cancer-terms?CdrID=45729\" target=\"_new\">immunotherapy</a> as a treatment for metastatic melanoma, the mole faded dramatically and decreased in size substantially to a 3 millimeter small pink smooth papule (bump) that is slightly reddened in the upper portion. The mole then became slightly less raised, less reddened, and more light pink and flesh colored.",
+    "description": "Over 3½ years, this dysplastic nevus went from a 9 millimeter mole in greatest width to 3 millimeters. The mole was mostly flat, and had irregular, indistinct borders. It had a mixture of colors with darker brown in the center surrounded by an area that contains pink, tan and light brown. After the patient received immunotherapy as a treatment for metastatic melanoma, the mole faded dramatically and decreased in size substantially to a 3 millimeter small pink smooth papule (bump) that is slightly reddened in the upper portion. The mole then became slightly less raised, less reddened, and more light pink and flesh colored.",
     "abcde": {
       "asymmetry": "present then disappears",
       "border": "irregular and indistinct before developing regular borders",
@@ -560,7 +560,7 @@ var data = {
       "thumbnail": "/images/DN8/DN8A-thumb.jpg"
     }, {
       "name": "Image 2",
-      "description": "<p>This picture shows the mole almost 3 years after Image 1. The mole had faded dramatically and decreased in size substantially. It is now 3 millimeters, a small pink smooth papule (bump) that appears as “mature” moles often look during the normal fading away process. The color is slightly reddened in the upper portion. The patient had received <a href=\"http://www.cancer.gov/publications/dictionaries/cancer-terms?CdrID=45729\" target=\"_new\">immunotherapy</a> as a treatment for melanoma that had spread. In addition to fighting the cancer cells, sometimes this type of treatment causes moles to fade a lot.</p>",
+      "description": "<p>This picture shows the mole almost 3 years after Image 1. The mole had faded dramatically and decreased in size substantially. It is now 3 millimeters, a small pink smooth papule (bump) that appears as “mature” moles often look during the normal fading away process. The color is slightly reddened in the upper portion. The patient had received immunotherapy as a treatment for melanoma that had spread. In addition to fighting the cancer cells, sometimes this type of treatment causes moles to fade a lot.</p>",
       "image": "/images/DN8/DN8B.jpg",
       "thumbnail": "/images/DN8/DN8B-thumb.jpg"
     }, {

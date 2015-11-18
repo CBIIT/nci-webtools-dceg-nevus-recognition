@@ -45,7 +45,7 @@
         <h1>Moles, Dysplastic Nevi & Melanoma</h1>
       </div>
       <div class="noninteractive" ng-show="home">
-        <p><span class="define" data-term="nevus">Dysplastic nevi (DN)</span> are <span class="define" data-term="atypical-mole">atypical moles</span>. DN are important risk <span class="define" data-term="marker">markers</span> for <span class="define" data-term="melanoma">melanoma</span>, and precursor <span class="define" data-term="lesion">lesions</span> for some melanomas.</p>
+        <p><span class="define" data-term="nevus">Dysplastic nevi (DN)</span> are <span class="define" data-term="nevus">atypical moles</span>. DN are important risk <span class="define" data-term="marker">markers</span> for <span class="define" data-term="melanoma">melanoma</span>, and precursor <span class="define" data-term="lesion">lesions</span> for some melanomas.</p>
         <p>This web-based educational tool includes photographs of 30 different DN. <span class="define" data-term="epidemiologist">Epidemiologists</span>, <span class="define" data-term="clinician">clinicians</span> and staff at the <span class="define" data-term="nci">National Cancer Institute</span> developed the tool to help patients and other individuals recognize DN and melanomas that started in DN. The photographs were taken of participants in the <a href="https://clinicaltrials.gov/ct2/show/NCT00040352" target="_new">NCI Clinical, Laboratory, and Epidemiologic Characterization of Individuals and Families at High Risk of Melanoma</a>.</p>
         <p>Nearly all 30 of the DN and melanomas were photographed over the course of many years. The pictures and accompanying <span class="define" data-term="clinical">clinical</span> descriptions show how <span class="define" data-term="pigment">pigmented</span> lesions evolve in this population of U.S. melanoma-prone families. The types of moles shown include normal, common acquired moles, dysplastic nevi (DN), and some melanomas that arose in DN.</p>
         <button class="startbutton" href="javascript:void(0);" ng-click="gotool()" class="tool"><h4>View Photographs</h4></button>
@@ -207,18 +207,18 @@
       </div>
       <div class="body group">
         <div class="casedescription">
-          <p ng-bind-html="currentcase.description | define"></p>
+          <p bind-compiled-html="currentcase.description | define"></p>
           <div>
             <span><b>The "ABCDE" features for this case are as follows:</b></span>
             <ul>
-              <li><label><b class="define" data-term="asymmetry">Asymmetry</b></label><span>{{currentcase.abcde.asymmetry | define}}</span></li>
-              <li><label><b>Border</b></label><span>{{currentcase.abcde.border | define}}</span></li>
-              <li><label><b>Color</b></label><span>{{currentcase.abcde.color | define}}</span></li>
-              <li><label><b class="define" data-term="diameter">Diameter</b></label><span>{{currentcase.abcde.diameter | define}}</span></li>
-              <li><label><b>Evolving</b></label><span>{{currentcase.abcde.evolving | define}}</span></li>
+              <li><label><b class="define" data-term="asymmetry">Asymmetry</b></label><span bind-compiled-html="currentcase.abcde.asymmetry | define"></span></li>
+              <li><label><b>Border</b></label><span bind-compiled-html="currentcase.abcde.border | define"></span></li>
+              <li><label><b>Color</b></label><span bind-compiled-html="currentcase.abcde.color | define"></span></li>
+              <li><label><b class="define" data-term="diameter">Diameter</b></label><span bind-compiled-html="currentcase.abcde.diameter | define"></span></li>
+              <li><label><b>Evolving</b></label><span bind-compiled-html="currentcase.abcde.evolving | define"></span></li>
             </ul>
           </div>
-          <p ng-show="currentcase.diagnosis"><label><b>{{currentcase.diagnosis.type | titleCase }} <span class="define" data-term="diagnosis">Diagnosis</span></b></label><span>{{currentcase.diagnosis.result | define}}</span></p>
+          <p ng-show="currentcase.diagnosis"><label><b bind-compiled-html="currentcase.diagnosis.type | titleCase | define"></b> <b class="define" data-term="diagnosis">Diagnosis</span></b></label><span bind-compiled-html="currentcase.diagnosis.result | define"></span></p>
         </div>
         <div class="carousel">
           <div class="leftarrow blur" ng-click="scrollLeft()">
@@ -233,11 +233,11 @@
         </div>
         <div class="imgbox clearfix">
           <img alt="" class="currentimage" image-on-load="" src=".{{currentcase.images[currentimg].image}}" />
-          <p class="currentimagedescription" ng-bind-html="currentcase.images[currentimg].description | define"></p>
+          <p class="currentimagedescription" bind-compiled-html="currentcase.images[currentimg].description | define"></p>
         </div>
       </div>
     </div>
-    <div class="adamant-showx" id="disclaimerModal" tabindex="-1" adamant-modal-static>
+    <div class="adamant-show" id="disclaimerModal" tabindex="-1" adamant-modal-static>
       <div class="header">
         <h2>Disclaimer</h2>
       </div>
