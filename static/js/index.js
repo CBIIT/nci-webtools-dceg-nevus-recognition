@@ -11,7 +11,7 @@ $(document).ready( function() {
   $('body, html').on('contextmenu', 'img', function(event) {
     event.preventDefault();
   });
-  $('#myModal').on('hidden.bs.modal', function() {
+  $('#case').on('adamant.modal.hidden', function() {
     var urlParams = window.history.state || {};
     delete urlParams.case;
     delete urlParams.img;
@@ -327,7 +327,20 @@ app.directive('carouselDir', function() {
 
 app.filter('titleCase', function() {
   return function(input) {
-    input = input || '';
-    return input.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    output = input || '';
+    return output.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   };
 })
+
+app.filter('define', function() {
+  return function(input) {
+    output = input || '';
+    for (var term in $_cancer_terms) {
+      var dynamic = $_cancer_terms[term].dynamic || [ term ];
+      for (var index in dynamic) {
+        output = output.replace(new RegExp('\\b('+dynamic[index]+')\\b','i'),'<span class="define" data-term="'+term+'">$1</span>');
+      }
+    }
+    return output;
+  };
+});
