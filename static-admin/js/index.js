@@ -219,7 +219,7 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
           $scope.currentcase.images = $scope.currentcase.images || [];
           $scope.currentcase.images.push(data);
           $scope.updatecurrentimg($scope.currentcase.images.length-1);
-          $('#uploadForm').modal('hide');
+          $.adamant.modal.close($('#uploadForm'));
         }
       });
     });
@@ -231,7 +231,7 @@ app.controller('nevusDataAdmin', function($scope, $compile, $http, $timeout) {
     });
   });
   $(window).load(function() {
-    $('#uploadForm').on('hidden.bs.modal', function() {
+    $('#uploadForm').on('adamant.modal.hidden', function() {
       delete $scope.fileUploadError;
     });
     $scope.$apply($scope.filterClick($scope.filters[0]));
@@ -289,5 +289,25 @@ app.directive('carouselDir', function() {
         }
       });
     }
+  };
+});
+
+app.filter('titleCase', function() {
+  return function(input) {
+    output = input || '';
+    return output.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  };
+})
+
+app.filter('define', function() {
+  return function(input) {
+    output = input || '';
+    for (var term in $_cancer_terms) {
+      var dynamic = $_cancer_terms[term].dynamic || [ term ];
+      for (var index in dynamic) {
+        output = output.replace(new RegExp('\\b('+dynamic[index]+')\\b','i'),'<span class="define" data-term="'+term+'">$1</span>');
+      }
+    }
+    return output;
   };
 });

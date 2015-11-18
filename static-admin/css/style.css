@@ -11,32 +11,32 @@
   overflow: hidden;
   min-height: 24px;
 }
-#myModal label, .aslabel {
+#case label, .aslabel {
   float: left;
   margin: 0px;
   padding: 0px;
 }
-#myModal select {
+#case select {
   height: 26px;
 }
-#myModal .modal-header {
+#case .header {
   font-size: 18px;
 }
-#myModal .modal-header label {
+#case .header label {
   width: 9em;
   font-weight: 500;
 }
-#myModal .modal-header textarea, #myModal .modal-header .textwrap {
+#case .header textarea, #case .header .textwrap {
   height: 26px;
 }
-#myModal .casedescription label {
+#case .casedescription label {
   font-size: 14px;
   width: 6em;
 }
-#myModal .casedescription textarea:first-child {
+#case .casedescription textarea:first-child {
   height: 80px;
 }
-#myModal textarea, #myModal input[type='text'] {
+#case textarea, #case input[type='text'] {
   width: 100%;
   border: none;
   resize: none;
@@ -52,8 +52,14 @@
   padding: 0px;
   line-height: 1.42857;
 }
-#myModal .textwrap * {
+#case .textwrap * {
   vertical-align: middle;
+}
+#case .imgbox .currentimagedescription {
+  background-color: #000;
+  height: 275px;
+  max-width: 232px;
+  color: #FFF;
 }
 .imgbox + .textwrap {
   padding: 0px;
@@ -86,7 +92,7 @@ button.save {
 .boundry {
   position: relative;
 }
-#myModal .boundry {
+#case .boundry {
   display: inline-block;
 }
 .boundry input[type='text'] {
@@ -105,4 +111,9 @@ button.save {
 }
 .item .boundry input[type='button'] {
   margin: 0px 20px;
+}
+@media (max-width: 768px) {
+  #case .imgbox .currentimagedescription {
+    max-width: 100%;
+  }
 }

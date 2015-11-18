@@ -259,7 +259,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
         }
       }
     });
-    $('#myModal').on('swipeleft','.currentimage',function() {
+    $('#case').on('swipeleft','.currentimage',function() {
       $scope.$apply(function() {
         $scope.updatecurrentimg(Math.min($scope.currentimg+1,$scope.currentcase.images.length-1));
       });
