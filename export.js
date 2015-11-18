@@ -12,6 +12,6 @@ for (var collIndex in collections) {
     data[collections[collIndex]].push(document);
   });
 }
-print('var ata = ');
+print('var data = ');
 printjson(data);
 print(';');
