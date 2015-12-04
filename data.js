@@ -1413,7 +1413,7 @@ var data =
 	"filters" : [
 		{
 			"type" : "mole",
-			"name" : "Moles",
+			"name" : "Common Moles",
 			"description" : "<ul><li>Growths on the skin that develop when pigment cells (melanocytes) grow in clusters</li><li>Also called \"common nevi\" or \"common acquired nevi\"</li><li><span>Appearance</span><ul><li>Size: Usually less than 5 millimeters or about ¼ inch (not as wide as a new pencil eraser)</li><li>Color: Usually have an even color; may be pink, tan, brown, black (in deeply pigmented individuals), or a color that is very close to a person’s normal skin tone</li><li>Shape: Usually round or oval</li><li>Border: Usually have a distinct edge that separates it from the rest of the skin</li><li>Surface: Begins as a flat, smooth spot on the skin. May become raised and form a smooth bump</li></ul></li><li>Average number for white adult: 10 - 40</li><li>Rarely develop into melanoma (or cancer)</li><li>Vast majority are stable and then disappear</li><li>Moles go through a \"life-cycle\": start as small freckle-like spots; gradually round up and form a bump; may lighten, become flesh-colored; become less elevated, flatten and eventually disappear</li><li>Life-cycle is a gradual process typically over many years</li><li>Some moles do not go through the entire \"life-cycle\"</li></ul>",
 			"descriptionsummary" : "<p>A common mole is a growth on the skin that develops when pigment cells (melanocytes) grow in clusters. Most adults have between 10 and 40 common moles. These growths are usually found above the waist on areas exposed to the sun. They are seldom found on the scalp, breast, or buttocks.</p>"
 		},

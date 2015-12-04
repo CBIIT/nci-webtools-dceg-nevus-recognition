@@ -279,6 +279,7 @@ nav {
   padding: 0;
   margin: 5px;
   box-shadow: 2px 2px 4px;
+  cursor: pointer;
 }
 .carousel img.active {
   margin:3px;
@@ -481,6 +482,7 @@ nav {
   .button-group div {
     display: table-cell;
     vertical-align: middle;
+    cursor : pointer;
   }
 }
 @media (max-width: 480px) {
