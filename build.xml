@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="NEVUS" default="replace" basedir=".">
+      <target name="replace" depends="enabled_exist,username_exist,password_exist">
+         <replace file="nevus.properties" token="@enabled@" value="${enabled}"/>
+	 <replace file="nevus.properties" token="@username@" value="${username}"/>
+	 <replace file="nevus.properties" token="@password@" value="${password}"/>
+      </target>
+      <target name="enabled_exist" unless="enabled">
+        <fail> Debug flag is not set, stop</fail>
+      </target>	
+      <target name="username_exist" unless="username">
+        <fail> Admin User Name  is not set, stop</fail>
+      </target>	
+      <target name="password_exist" unless="password">
+        <fail> Admin Password is not set, stop</fail>
+      </target>	
+</project>
