@@ -94,6 +94,13 @@ nav {
 #filters div {
   padding: .5em .1em;
   font-size: 1.5em;
+  border-right: 1px solid #023C4D;
+}
+#filters div ~ div {
+  border-left: 1px solid #023C4D;
+}
+#filters div:last-child {
+  border-right: 0px;
 }
 #filters .is-checked {
   background: #023C4D;
