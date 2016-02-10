@@ -55,6 +55,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   $scope.cases = data.cases;
   $scope.filters = data.filters;
   $scope.about = false;
+  $scope.audience = false;
   $scope.currentcase = {};
   $scope.currentimg = 0;
   $scope.currenttype = $scope.filters[0];
@@ -72,6 +73,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   }
   $scope.changePage = function() {
     $scope.about = false;
+    $scope.audience = false;
     $scope.home = false;
     $scope.tool = false;
     $scope.searching = false;
@@ -120,8 +122,15 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     $scope.about = true;
     newState({
       'page': 'about'
-    }, 'About the Tool')
+    }, 'About the Tool');
   };
+  $scope.goaudience = function() {
+    $scope.changePage();
+    $scope.audience = true;
+    newState({
+      'page': 'audience'
+    }, 'Intended Audience');
+  }
   $scope.gohome = function() {
     $scope.changePage();
     $scope.home = true;
@@ -221,6 +230,9 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
             break;
           case 'about':
             $scope.goabout();
+            break;
+          case 'audience':
+            $scope.goaudience();
             break;
           case 'tool':
             if (urlParams.filter !== undefined) {

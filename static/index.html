@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,7 +12,6 @@
   <link rel="stylesheet" href="/common/css/style.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <div class="app" ng-app="myApp" ng-controller="myCtrl">
     <div class="page-container">
@@ -23,6 +21,7 @@
           <ul class="nav navbar-nav">
             <li><a href="javascript:void(0);" ng-click="gohome()">Home</a></li>
             <li><a href="javascript:void(0);" ng-click="goabout()">About the Tool</a></li>
+            <li><a href="javascript:void(0);" ng-click="goaudience()">Intended Audience</a></li>
             <li><a href="javascript:void(0);" ng-click="gotool()">View Cases</a></li>
             <li><a href="javascript:void(0);" ng-click="goulinks()">More Information</a></li>
             <li><a href="javascript:void(0);" ng-click="godisclaimer()">Disclaimer</a></li>
@@ -45,54 +44,33 @@
         <h1>The ABCDEs of Recognizing Melanoma</h1>
       </div>
       <div class="noninteractive" ng-show="home">
-	    <h4>What is the Purpose of this Resource?</h4>
-		<p>Do you know the difference between a common mole, a dysplastic nevus, and a melanoma?</p>
-		<p>The National Cancer Institute has collected photographs of 30 different pigmented skin lesions, presented as case series, to help patients and other individuals recognize common moles, dysplastic nevi (DN), and melanomas that started from DN.  Each case series shows changes in an individual pigmented lesion (mole) over time and across the various mole changes typically seen in individuals from U.S. melanoma-prone families.</p>
-		<p>This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell), since they arise from different cell types in the skin they look very different from melanoma. For information on those types of skin cancer, visit the <a href="http://www.cancer.gov/types/skin" target="_new">NCI Skin Cancer (including Melanoma).</a></p>
-		<p>As a teaching aid, each case series includes a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).</p>
-		<h5><b>What is the "ABCDE" rule?</b></h5>
-		<div>
+        <h4>What is the Purpose of this Resource?</h4>
+        <p>Do you know the difference between a common mole, a dysplastic nevus, and a melanoma?</p>
+        <p>The National Cancer Institute has collected photographs of 30 different pigmented skin lesions, presented as case series, to help patients and other individuals recognize common moles, dysplastic nevi (DN), and melanomas that started from DN.  Each case series shows changes in an individual pigmented lesion (mole) over time and across the various mole changes typically seen in individuals from U.S. melanoma-prone families.</p>
+        <p>This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell), since they arise from different cell types in the skin they look very different from melanoma. For information on those types of skin cancer, visit the <a href="http://www.cancer.gov/types/skin" target="_new">NCI Skin Cancer (including Melanoma).</a></p>
+        <p>As a teaching aid, each case series includes a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).</p>
+        <h5><b>What is the "ABCDE" rule?</b></h5>
+        <div>
           <span>The "ABCDE" rule describes the features of early melanoma. These features are:</span>
-            <ol type="A">
+          <ol type="A">
             <li><b class="define" data-term="asymmetry">Asymmetry</b><span> - The shape of one half does not match the other half.</span></li>
             <li><b>Border</b><span> that is irregular - The edges are often ragged, notched, or blurred in outline. The pigment may spread into the surrounding skin.</span></li>
             <li><b>Color</b><span> that is uneven - Shades of black, brown, and tan may be present. Areas of white, gray, red, pink, or blue may also be seen.</span></li>
             <li><b class="define" data-term="diameter">Diameter</b><span> - There is a change in size, usually an increase. Melanomas can be tiny, but most are larger than 6 millimeters wide (about 1/4 inch wide).</span></li>
-            <li><b>Evolving</b><span> - The mole has changed over the past few weeks or months.</span></li>            </ol>
+            <li><b>Evolving</b><span> - The mole has changed over the past few weeks or months.</span></li>
+          </ol>
         </div>	
-		<h4>Who is the Intended Audience?</h4>
-		<p>The photographs included were taken of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.  This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore we are not able to provide images representative of other ethnicities.</p>
-	
-		<h5><b>Where can I find information on Skin Cancer in other Ethnicities?</b></h5>
-		<ul class="ng-scope">
-		<ul>
-		<li>NCI - <a href="http://www.cancer.gov/publications/patient-education/anyone-can-get-skin-cancer" target="_new">Anyone Can Get Skin Cancer</a></li>
-		<li>Skin Cancer Foundation - <a href="http://www.skincancer.org/prevention/skin-cancer-and-skin-of-color" target="_new">Skin Cancer and Skin of Color</a></li>
-		</ul>
-		</ul>
-		
-		<h5><b>Where can I find information about Non-Melanoma Skin Cancer?</b></h5>
-		<ul class="ng-scope">
-		<ul>
-		<li><a href="http://www.cancer.gov/types/skin" target="_new">NCI Skin Cancer (including Melanoma)</a></li>
-		<li>American Cencer Society - <a href="http://www.cancer.org/cancer/cancercauses/sunanduvexposure/skin-cancer-facts" target="_new">Skin Cancer Facts</a></li>
-		</ul>
-		</ul>
-		
         <button class="startbutton" href="javascript:void(0);" ng-click="gotool()" class="tool"><h4>View Photographs</h4></button>
         <h4>More Information</h4>
-		<ul class="ng-scope">
-		<ul>
-		<li>For a comprehensive source of cancer information, please go to: NCI's <a href="http://www.cancer.gov/publications/pdq" target="_new">Physician Data Query (PDQ®).</a></li>
-		<li>For information about the study, please go to: <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.</li>
-		<li>For question about this tool, or to report an issue, please contact: <a href="mailto:NevusToolSupport@mail.nih.gov" target="_new">NevusToolSupport@mail.nih.gov</a></li>
-		</ul>
-		</ul>
-		
-		<h4>Acknowledgements</h4>
-          <p>We thank the study participants for their many years of participation, their willingness to be photographed during many skin examinations, and their generosity in allowing their pictures to be included.</p>
-          <p>We would also like to thank John Crawford and Mary King, Clinical Center clinical photographers, for their expertise. The tool would not have been possible without the substantial commitment and cooperation of both the study participants and the clinical photographers.</p>
-		  </div>
+        <ul>
+          <li>For a comprehensive source of cancer information, please go to: NCI's <a href="http://www.cancer.gov/publications/pdq" target="_new">Physician Data Query (PDQ®).</a></li>
+          <li>For information about the study, please go to: <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.</li>
+          <li>For question about this tool, or to report an issue, please contact: <a href="mailto:NevusToolSupport@mail.nih.gov" target="_new">NevusToolSupport@mail.nih.gov</a></li>
+        </ul>        
+        <h4>Acknowledgements</h4>
+        <p>We thank the study participants for their many years of participation, their willingness to be photographed during many skin examinations, and their generosity in allowing their pictures to be included.</p>
+        <p>We would also like to thank John Crawford and Mary King, Clinical Center clinical photographers, for their expertise. The tool would not have been possible without the substantial commitment and cooperation of both the study participants and the clinical photographers.</p>
+      </div>
       <div class="noninteractive" ng-show="about">
         <h2>About the Tool</h2>
         <p>The <span class="define" data-term="mole">Moles</span>, <span class="define" data-term="nevus">Dysplastic Nevi</span> &amp; <span class="define" data-term="melanoma">Melanoma</span> Tool presents photographs in three main groups of <span class="define" data-term="pigment">pigmented</span> <span class="define" data-term="lesion">lesions</span>: <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN.</p>
@@ -111,6 +89,20 @@
             <li><b>Evolving</b><span> - The mole has changed over the past few weeks or months.</span></li>
           </ul>
         </div>
+      </div>
+      <div class="noninteractive" ng-show="audience">
+        <h4>Who is the Intended Audience?</h4>
+        <p>The photographs included were taken of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.  This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore we are not able to provide images representative of other ethnicities.</p>
+        <h5><b>Where can I find information on Skin Cancer in other Ethnicities?</b></h5>
+        <ul>
+          <li>NCI - <a href="http://www.cancer.gov/publications/patient-education/anyone-can-get-skin-cancer" target="_new">Anyone Can Get Skin Cancer</a></li>
+          <li>Skin Cancer Foundation - <a href="http://www.skincancer.org/prevention/skin-cancer-and-skin-of-color" target="_new">Skin Cancer and Skin of Color</a></li>
+        </ul>
+        <h5><b>Where can I find information about Non-Melanoma Skin Cancer?</b></h5>
+        <ul>
+          <li><a href="http://www.cancer.gov/types/skin" target="_new">NCI Skin Cancer (including Melanoma)</a></li>
+          <li>American Cencer Society - <a href="http://www.cancer.org/cancer/cancercauses/sunanduvexposure/skin-cancer-facts" target="_new">Skin Cancer Facts</a></li>
+        </ul>
       </div>
       <div class="contain" ng-show="searching || tool">
         <div class="button-group" id="filters" ng-class="{}">
