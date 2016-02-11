@@ -160,6 +160,10 @@ nav {
   margin: 10px 20px;
   font-size: 1.3em;
 }
+#incidenceGraph {
+  display: block;
+  width: 100%;
+}
 #typedescription {
   background: #023C4D;
   color: white;
