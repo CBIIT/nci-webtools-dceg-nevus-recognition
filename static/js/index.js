@@ -117,11 +117,6 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     newState(urlParams, 'Recognition Tool');
     isotopic(filterFns.by6);
   }
-  $scope.getCategoryThumbnail = function(type) {
-    return $scope.cases.filter(function(e,i,a) {
-      return e.type==type;
-    })[0].images[0].thumbnail;
-  }
   $scope.goabout = function() {
     $scope.changePage();
     $scope.about = true;
