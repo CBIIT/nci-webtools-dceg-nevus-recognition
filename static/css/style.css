@@ -23,8 +23,13 @@ button:hover {
   color: #023C4D;
 }
 .define {
-  text-decoration: underline;
+  font-style: italic;
   text-decoration-style: dotted;
+}
+em {
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: underline;
 }
 nav {
   position: relative;
@@ -244,6 +249,49 @@ nav {
 [ng-show="about"] ul {
   list-style: upper-alpha;
 }
+[ng-show="home"] {
+  padding: 20px 0px;
+}
+[ng-show="home"] .column > h4 {
+  color: blue;
+}
+.column {
+  padding: 0px;
+}
+.column > * {
+  padding: 10px 30px;
+}
+.info-bubble {
+  cursor: pointer;
+  background: white;
+  border: 5px solid blue;
+  border-radius: 20px;
+  margin: 20px auto;
+}
+.info-bubble h4 {
+  text-align: center;
+}
+.info-bubble:not(.open) > :not(:first-child) {
+  display: none;
+}
+.photolink {
+  background: #FFF;
+  border: 2px solid blue;
+  border-radius: 0px 20px 0px 20px;
+  cursor: pointer;
+  line-height: 1;
+  margin: 20px auto;
+  overflow: auto;
+  padding: 10px;
+}
+.photolink img {
+  display: block;
+  float: left;
+  padding: 10px 20px;
+}
+.photolink h5 {
+  font-weight: bold;
+}
 .jumbotron {
   margin: 0px;
   padding: 0px;
@@ -416,6 +464,21 @@ nav {
 @media screen and (max-width: 1100px){
   .jumbotron h1 {
     font-size: 3em;
+  }
+}
+@media (min-width: 1001px) {
+  [ng-show="home"] {
+    overflow: auto;
+  }
+  .column {
+    padding: 20px;
+    width: 50%;
+  }
+  .column:first-child {
+    float: left;
+  }
+  .column:last-child {
+    overflow: auto;
   }
 }
 @media (max-width: 1000px) {

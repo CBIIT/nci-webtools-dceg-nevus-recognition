@@ -24,7 +24,7 @@ $(document).ready( function() {
 
 var app = angular.module('myApp', ['ngSanitize']);
 
-app.controller('myCtrl', function($scope, $http, $timeout) {
+app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
   var pages=1, itemsperpage=6, numitems=0, search="";
   var filterFns = {
     by6: function(element) { return element.hasClass($scope.filterValue); },
@@ -41,7 +41,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
           $scope.showload = true;
         }
       }
-    }
+    };
   };
   var isotopic = function(trueFilter) {
     trueFilter = typeof trueFilter === undefined ? function(element) { return true; } : trueFilter;
@@ -51,7 +51,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
         filter: basicFilter(trueFilter)
       });
     });
-  }
+  };
   $scope.cases = data.cases;
   $scope.filters = data.filters;
   $scope.about = false;
@@ -70,7 +70,7 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
   $scope.subgrouptype = null;
   $scope.backToTop = function() {
     $('body,html').animate({scrollTop:0}, 1000);
-  }
+  };
   $scope.changePage = function() {
     $scope.about = false;
     $scope.audience = false;
@@ -116,6 +116,11 @@ app.controller('myCtrl', function($scope, $http, $timeout) {
     }
     newState(urlParams, 'Recognition Tool');
     isotopic(filterFns.by6);
+  }
+  $scope.getCategoryThumbnail = function(type) {
+    return $scope.cases.filter(function(e,i,a) {
+      return e.type==type;
+    })[0].images[0].thumbnail;
   }
   $scope.goabout = function() {
     $scope.changePage();
