@@ -243,6 +243,9 @@ nav {
 .noninteractive ul {
   padding-left: 2.5%;
 }
+.noninteractive > ul {
+  padding-left: 46px;
+}
 .noninteractive .blockified {
   display: block;
 }
