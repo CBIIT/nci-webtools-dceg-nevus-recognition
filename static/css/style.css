@@ -287,21 +287,38 @@ nav {
 }
 .photolink {
   background: #FFF;
-  border: 2px solid #023C4D;
-  border-radius: 0px 20px 0px 20px;
-  cursor: pointer;
+  border: 5px solid #023C4D;
+  border-radius: 20px;
   line-height: 1;
   margin: 20px auto;
-  overflow: auto;
   padding: 10px;
 }
+.photolink > div {
+  overflow: hidden;
+}
+.photolink > div > img ~ * {
+  overflow: hidden;
+}
 .photolink img {
+  cursor: pointer;
+  border: 1px solid #023C4D;
+  box-shadow: 2px 2px 2px;
   display: block;
   float: left;
-  padding: 10px 20px;
+  margin: 10px;
+}
+.photolink img:hover {
+  box-shadow: 3px 3px 3px #023C4D;
+}
+.photolink img:active {
+  box-shadow: 1px 1px 1px;
 }
 .photolink h5 {
   font-weight: bold;
+  margin: 10px;
+}
+.photolink p {
+  padding: 0px 0px 5px;
 }
 .jumbotron {
   margin: 0px;
