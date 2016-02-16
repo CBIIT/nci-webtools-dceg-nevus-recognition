@@ -100,6 +100,7 @@ nav {
   padding: .5em .1em;
   font-size: 1.5em;
   border-right: 1px solid #023C4D;
+  border-bottom: 1px solid #023C4D;
 }
 #filters div ~ div {
   border-left: 1px solid #023C4D;
@@ -462,7 +463,7 @@ nav {
 [adamant-modal] .header {
   position: relative;
 }
-@media (min-width: 1201px) {
+@media (min-width: 1281px) {
   .nav-block {
     float: right;
   }
@@ -470,7 +471,7 @@ nav {
     overflow: auto;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   nav {
     height: 8em;
   }
@@ -487,7 +488,7 @@ nav {
     line-height: 3em;
   }
 }
-@media (min-width: 681px) and (max-width: 1200px) {
+@media (min-width: 721px) and (max-width: 1280px) {
   .searchcont {
     float: right;
   }
@@ -548,7 +549,7 @@ nav {
     clear: both;
   }
 }
-@media (min-width: 681px) {
+@media (min-width: 721px) {
   .nav-block {
     height: 3em;
   }
@@ -568,7 +569,7 @@ nav {
     display: none;
   }
 }
-@media (max-width: 680px) {
+@media (max-width: 720px) {
   .nav-block {
     top: 8em;
   }
