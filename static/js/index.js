@@ -4,7 +4,7 @@ function newState(urlParams,title) {
     url += '&'+index+'='+urlParams[index];
   }
   url.length==0?void(0):url = '?'+url.substring(1,url.length);
-  window.history.replaceState==undefined?void(0):window.history.replaceState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, window.location.pathname+url);
+  window.history.pushState==undefined?void(0):window.history.pushState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, window.location.pathname+url);
 }
 
 $(document).ready( function() {
@@ -25,6 +25,66 @@ $(document).ready( function() {
 var app = angular.module('myApp', ['ngSanitize']);
 
 app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
+  var loadFunction = function() {
+    var match,
+      pl = /\+/g,  // Regex for replacing addition symbol with a space
+      search = /([^&=]+)=?([^&]*)/g,
+      decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+      query = window.location.search.substring(1);
+    var urlParams = {};
+    while (match = search.exec(query))
+      urlParams[decode(match[1])] = decode(match[2]);
+    $scope.$apply(function() {
+      if (urlParams.page == undefined)
+        urlParams.page = 'home';
+      $scope.changePage();
+      switch (urlParams.page) {
+        case 'home':
+          $scope.home = true;
+          break;
+        case 'about':
+          $scope.about = true;
+          break;
+        case 'audience':
+          $scope.audience = true;
+          break;
+        case 'tool':
+          if (urlParams.filter !== undefined) {
+            var filter = $scope.getFilterByName(urlParams.filter);
+            if (filter.subgroups !== undefined) {
+              var subgroup = filter.subgroups[0];
+              if (urlParams.subgrouptype !== undefined) {
+                for (var index in filter.subgroups) {
+                  if (filter.subgroups[index].type == urlParams.subgrouptype) {
+                    subgroup = filter.subgroups[index];
+                  }
+                }
+              }
+              $scope.filterClick(filter,subgroup,true);
+            } else {
+              $scope.filterClick(filter,undefined,true);
+            }
+          } else if (urlParams.search !== undefined) {
+            $scope.search = urlParams.search;
+            $scope.searchingfunc();
+          }
+          if (urlParams.case !== undefined) {
+            $scope.update($scope.cases[urlParams.case],urlParams.case);
+            if (urlParams.img !== undefined) {
+              $scope.updatecurrentimg(urlParams.img);
+            }
+            $timeout(function() { $.adamant.modal.open('#case'); });
+          }
+          break;
+        case 'ulinks':
+          $scope.ulinks = true;
+          break;
+        case 'disclaimer':
+          $scope.disclaimer = true;
+          break;
+      }
+    });
+  };
   var pages=1, itemsperpage=6, numitems=0, search="";
   var filterFns = {
     by6: function(element) { return element.hasClass($scope.filterValue); },
@@ -93,7 +153,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     }
     return $scope.filters[0];
   }
-  $scope.filterClick = function(filter, subgroup) {
+  $scope.filterClick = function(filter, subgroup, fromHistory) {
     var urlParams = window.history.state || {};
     urlParams.page = 'tool';
     delete urlParams.subgrouptype;
@@ -114,7 +174,8 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
       $scope.subgrouptype = filter.subgroups[0];
       urlParams.subgrouptype = filter.subgroups[0].type;
     }
-    newState(urlParams, 'Recognition Tool');
+    if (!fromHistory)
+      newState(urlParams, 'Recognition Tool');
     isotopic(filterFns.by6);
   }
   $scope.goabout = function() {
@@ -144,10 +205,6 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     if ($scope.filterValue == '') {
       $scope.filterClick($scope.getFilterByName('mole'));
     }
-    newState({
-      'page': 'tool',
-      'filter': $scope.filterValue
-    }, 'Recognition Tool');
   };
   $scope.goulinks = function() {
     $scope.changePage();
@@ -212,65 +269,11 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
       $scope.showbacktotop = $(window).scrollTop() > 500;
     });
   });
-  $(window).load( function() {
-    var match,
-      pl = /\+/g,  // Regex for replacing addition symbol with a space
-      search = /([^&=]+)=?([^&]*)/g,
-      decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-      query = window.location.search.substring(1);
-    var urlParams = {};
-    while (match = search.exec(query))
-      urlParams[decode(match[1])] = decode(match[2]);
-    newState(urlParams,document.title);
-    $scope.$apply(function() {
-      if (urlParams.page !== undefined) {
-        switch (urlParams.page) {
-          case 'home':
-            $scope.gohome();
-            break;
-          case 'about':
-            $scope.goabout();
-            break;
-          case 'audience':
-            $scope.goaudience();
-            break;
-          case 'tool':
-            if (urlParams.filter !== undefined) {
-              var filter = $scope.getFilterByName(urlParams.filter);
-              if (filter.subgroups !== undefined) {
-                var subgroup = filter.subgroups[0];
-                if (urlParams.subgrouptype !== undefined) {
-                  for (var index in filter.subgroups) {
-                    if (filter.subgroups[index].type == urlParams.subgrouptype) {
-                      subgroup = filter.subgroups[index];
-                    }
-                  }
-                }
-                $scope.filterClick(filter,subgroup);
-              } else {
-                $scope.filterClick(filter);
-              }
-            } else if (urlParams.search !== undefined) {
-              $scope.search = urlParams.search;
-              $scope.searchingfunc();
-            }
-            if (urlParams.case !== undefined) {
-              $scope.update($scope.cases[urlParams.case],urlParams.case);
-              if (urlParams.img !== undefined) {
-                $scope.updatecurrentimg(urlParams.img);
-              }
-              $timeout(function() { $.adamant.modal.open('#case'); });
-            }
-            break;
-          case 'ulinks':
-            $scope.goulinks();
-            break;
-          case 'disclaimer':
-            $scope.godisclaimer();
-            break;
-        }
-      }
-    });
+  $(window).bind('popstate',function() {
+    loadFunction();
+  });
+  $(window).load(function() {
+    loadFunction();
     $('#case').on('swipeleft','.currentimage',function() {
       $scope.$apply(function() {
         $scope.updatecurrentimg(Math.min($scope.currentimg+1,$scope.currentcase.images.length-1));
