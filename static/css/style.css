@@ -252,9 +252,6 @@ nav {
 [ng-show="home"] {
   padding: 20px 0px;
 }
-[ng-show="home"] .column > h4 {
-  color: blue;
-}
 .column {
   padding: 0px;
 }
@@ -264,9 +261,23 @@ nav {
 .info-bubble {
   cursor: pointer;
   background: white;
-  border: 5px solid blue;
+  border: 5px solid #023C4D;
   border-radius: 20px;
   margin: 20px auto;
+  position: relative;
+}
+.info-bubble + .info-bubble {
+  margin-top: 40px;
+}
+.info-bubble + .info-bubble:before {
+  content: '';
+  background: url("/images/arrow.svg") no-repeat top;
+  background-size: 30px;
+  height: 200px;
+  left: 0px;
+  position: absolute;
+  top: -40px;
+  width: 100%;
 }
 .info-bubble h4 {
   text-align: center;
@@ -276,7 +287,7 @@ nav {
 }
 .photolink {
   background: #FFF;
-  border: 2px solid blue;
+  border: 2px solid #023C4D;
   border-radius: 0px 20px 0px 20px;
   cursor: pointer;
   line-height: 1;
