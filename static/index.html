@@ -48,16 +48,8 @@
           <h4>Before You Get Started:</h4>
           <p>To make this resource as useful as possible, please make sure you review and understand the following information:</p>
           <div class="info-bubble" ng-class="{'open':purposeParagraph}" ng-click="purposeParagraph=!purposeParagraph">
-            <h4>What is the Purpose of this Resource?</h4>
+            <h4>What is the purpose of this resource?</h4>
             <p>The National Cancer Institute has collected photographs of 30 different pigmented skin lesions, presented as case series, to help patients and other individuals recognize common moles, dysplastic nevi (DN), and melanomas that started from DN.  Each case series shows changes in an individual pigmented lesion (mole) over time and across the various mole changes typically seen in individuals from U.S. melanoma-prone families.</p>
-          </div>
-          <div class="info-bubble" ng-class="{'open':audienceParagraph}" ng-click="audienceParagraph=!audienceParagraph">
-            <h4>Who is the intended audience?</h4>
-            <p>This resource is intended for patients and others in the lay public.  It only includes images of individuals who are at the highest risk of developing melanoma (i.e. Caucasians). <a href="javascript:void(0);" ng-click="goaudience()">Additional information, including resources for other racial and ethnic groups, can be found in the Intended Audience section.</a></p>
-          </div>
-          <div class="info-bubble" ng-class="{'open':informationParagraph}" ng-click="informationParagraph=!informationParagraph">
-            <h4>What information does this resource provide?</h4>
-            <p>This resource provides information about, and examples of: common moles, dysplastic nevi (atypical moles) and melanoma.  This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell), since they arise from different cell types in the skin they look very different from melanoma. <a href="javascript:void(0);" ng-click="goulinks()">Additional information, including  resources for other types of non-melanoma skin cancer, can be found in the About Tool section.</a></p>
           </div>
           <div class="info-bubble" ng-class="{'open':moletypesParagraph}" ng-click="moletypesParagraph=!moletypesParagraph">
             <h4>What are moles, dysplastic nevi and melanoma?</h4>
@@ -66,6 +58,14 @@
               <li><b>Dysplastic Nevi</b> - A type of mole that looks different from a common mole. A dysplastic nevus is often larger with borders that are not easy to see. Its color is usually uneven and can range from pink to dark brown. Parts of the mole may be raised above the skin surface. <em>A dysplastic nevus may develop into a type of skin cancer called malignant melanoma.</em></li>
               <li><b>Melanoma</b> - <em>A form of cancer</em> that begins in melanocytes (cells that make the pigment melanin). It may begin in a mole (skin melanoma), but can also begin in other pigmented tissues, such as in the eye or in the intestines.</li>
             </ul>
+          </div>
+          <div class="info-bubble" ng-class="{'open':audienceParagraph}" ng-click="audienceParagraph=!audienceParagraph">
+            <h4>Who is the intended audience?</h4>
+            <p>This resource is intended for patients and others in the lay public.  It only includes images of individuals who are at the highest risk of developing melanoma (i.e. Caucasians). <a href="javascript:void(0);" ng-click="goaudience()">Additional information, including resources for other racial and ethnic groups, can be found in the Intended Audience section.</a></p>
+          </div>
+          <div class="info-bubble" ng-class="{'open':informationParagraph}" ng-click="informationParagraph=!informationParagraph">
+            <h4>What information does this resource provide?</h4>
+            <p>This resource provides information about, and examples of: common moles, dysplastic nevi (atypical moles) and melanoma.  This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell), since they arise from different cell types in the skin they look very different from melanoma. <a href="javascript:void(0);" ng-click="goulinks()">Additional information, including  resources for other types of non-melanoma skin cancer, can be found in the About Tool section.</a></p>
           </div>
           <div class="info-bubble" ng-class="{'open':rulesParagraph}" ng-click="rulesParagraph=!rulesParagraph">
             <h4>What is the "ABCDE" rule?</h4>
@@ -80,22 +80,22 @@
           </div>
         </div>
         <div class="column">
-          <h4>View Photographs</h4>
-          <p>Please click on the images below to view examples of moles, dysplastic nevi, and melanoma. If you haven’t done so already, please familiarize yourself with the information found in the “Before You Get Started” section.</p>
+          <h4>View Photographs:</h4>
+          <p>Please click on the images below to view examples of moles, dysplastic nevi, and melanoma.</p>
           <div class="photolink">
             <div>
-              <img src="images/N1/N1A-thumb.jpg" ng-click="filterClick(getFilterByName('mole'))"/>
-              <h5>Common Moles</h2>
-              <p><em>A non-cancerous</em> growth on the skin that is formed by a cluster of melanocytes (cells that make a substance called melanin, which gives color to skin and eyes). A mole may be dark or flesh-colored and may be raised from the skin. Also called nevus.</p>
+              <img src="images/N1/N1A.jpg" width="146" height="109" ng-click="filterClick(getFilterByName('mole'))"/>
+              <h5>Common Moles</h5>
+              <p><em>A non-cancerous growth</em> on the skin that is formed by a cluster of melanocytes (cells that make a substance called melanin, which gives color to skin and eyes). A mole may be dark or flesh-colored and may be raised from the skin.</p>
             </div>
             <div>
-              <img src="images/DN10/DN10A-thumb.jpg" ng-click="filterClick(getFilterByName('dysplasticnevi'))"/>
-              <h5>Dysplastic Nevi</h2>
-              <p>A type of mole that looks different from a common mole. A dysplastic nevus is often larger with borders that are not easy to see. Its color is usually uneven and can range from pink to dark brown. Parts of the mole may be raised above the skin surface. <em>A dysplastic nevus may develop into a type of skin cancer called malignant melanoma.</em> Also called an atypical mole.</p>
+              <img src="images/DN10/DN10A.jpg" width="146" height="109" ng-click="filterClick(getFilterByName('dysplasticnevi'))"/>
+              <h5>Dysplastic Nevi</h5>
+              <p>A type of mole that <em>may develop into a type of skin cancer called malignant melanoma.</em> They look different from common moles. A dysplastic nevus is often larger with borders that are not easy to see. Its color is usually uneven and can range from pink to dark brown. Parts of the mole may be raised above the skin surface.</p>
             </div>
             <div>
-              <img src="images/M8/M8E-thumb.jpg" ng-click="filterClick(getFilterByName('melanoma'))"/>
-              <h5>Melanoma</h2>
+              <img src="images/M8/M8E.jpg" width="146" height="109" ng-click="filterClick(getFilterByName('melanoma'))"/>
+              <h5>Melanoma</h5>
               <p><em>A form of cancer</em> that begins in melanocytes (cells that make the pigment melanin). It may begin in a mole (skin melanoma), but can also begin in other pigmented tissues, such as in the eye or in the intestines.</p>
             </div>
           </div>
@@ -105,24 +105,26 @@
         <h2>About the Tool</h2>
         <p>The <span class="define" data-term="mole">Moles</span>, <span class="define" data-term="nevus">Dysplastic Nevi</span> &amp; <span class="define" data-term="melanoma">Melanoma</span> Tool presents photographs in three main groups of <span class="define" data-term="pigment">pigmented</span> <span class="define" data-term="lesion">lesions</span>: <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN.</p>
         <p>The dysplastic nevi section is subdivided into: stable and fading DN, and DN evolving toward melanoma.</p>
-        <p>The <span class="define" data-term="case-series">case series</span> show changes in individual pigmented lesions over a number of years and across the spectrum of changes typically seen in U.S. melanoma-prone families.  As a teaching aid, each case series includes a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN.</p>
-        <p>The tool also contains additional information and links to other resources about dysplastic nevi and the prevention and early detection of melanoma.</p>
-        <h4>What is the "ABCDE" rule?</h4>
+        <p>The <span class="define" data-term="case-series">case series</span> show changes in individual pigmented lesions over a number of years and across the spectrum of changes typically seen in U.S. melanoma-prone families.  As a teaching aid, each case series includes a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN.        </p>
+        
+        <h4>About the Study</h4>
         <div>
-          <span>The "ABCDE" rule describes the features of early melanoma. These features are:</span><br>
-          <br>
-          <ul>
-            <li><b class="define" data-term="asymmetry">Asymmetry</b><span> - The shape of one half does not match the other half.</span></li>
-            <li><b>Border</b><span> that is irregular - The edges are often ragged, notched, or blurred in outline. The pigment may spread into the surrounding skin.</span></li>
-            <li><b>Color</b><span> that is uneven - Shades of black, brown, and tan may be present. Areas of white, gray, red, pink, or blue may also be seen.</span></li>
-            <li><b class="define" data-term="diameter">Diameter</b><span> - There is a change in size, usually an increase. Melanomas can be tiny, but most are larger than 6 millimeters wide (about 1/4 inch wide).</span></li>
-            <li><b>Evolving</b><span> - The mole has changed over the past few weeks or months.</span></li>
-          </ul>
+       	  <p>For more information about the  study from which these cases were identified, please go to: <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">Clinical, Laboratory, and Epidemiologic Characterization of Individuals and Families at High Risk of Melanoma</a></p>
+          <p>
+          <h5>Publications</h5>
+          <p>Tucker MA, Fraser MC, Goldstein AM, et al. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12115352" target="_new">Melanomas and Dysplastic Nevi: A natural history atlas</a>. Cancer. 2002 Jun 15;94(12):3192-209.</p>
+          <p>Tucker MA, Halpern A, Holly EA, et al. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9145715" target="_new">Clinically recognized dysplastic nevi: a central risk factor for cutaneous melanoma</a>. JAMA: The Journal of the American Medical Association 1997; 277(18):1439–1444.</p></p>
+        </div>
+      <h4>Acknowledgements</h4>
+        <div>
+          <p>We thank the study participants for their many years of participation, their willingness to be photographed during many skin examinations, and their generosity in allowing their pictures to be included. </p>
+          <p>We would also like to thank John Crawford and Mary King, Clinical Center clinical photographers, for their expertise. The tool would not have been possible without the substantial commitment and cooperation of both the study participants and the clinical photographers. </p>
         </div>
       </div>
       <div class="noninteractive" ng-show="audience">
         <h4>Who is the Intended Audience?</h4>
-        <p>The photographs included were taken of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.  This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing melanoma. As described in the Figure below, Caucasians are at the highest risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore we are not able to provide images representative of other ethnicities.</p>
+        <p>The photographs included were taken of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.  This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing melanoma. As shown in  Figure 1, Caucasians are at the highest risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore we are not able to provide images representative of other ethnicities.</p>
+        <h5>Figure 1: Melanoma Incidence Rates in the U.S. (1975-2013)</h5>
         <img id="incidenceGraph" src="images/incidence.png" alt="Melanoma Incidence Rates in the U.S. (1975-2013)" title="Melanoma Incidence Rates in the U.S. (1975-2013)"/>
         <h5><b>Where can I find information on Skin Cancer in other Ethnicities?</b></h5>
         <ul>
@@ -181,6 +183,7 @@
           <a href="http://www.cancer.gov/cancertopics/factsheet/Risk/moles" target="_new" class="blockified">Common Moles, Dysplastic Nevi, and Risk of Melanoma</a>
           <span>NCI fact sheet on common <span class="define" data-term="mole">moles</span>, <span class="define" data-term="nevus">dysplastic nevi</span>, and melanoma.</span>
         </p>
+        
         <p>
           <a href="http://www.skinsight.com/info/for_professionals/skin-cancer-detection-informed/skin-cancer-education" target="_new" class="blockified">INFORMED Skin Cancer Education Series</a>
           <span>The INternet curriculum FOR Melanoma Early Detection (INFORMED) program provides Web-based early-detection training for widespread use, and training in dermoscopy (epiluminescence microscopy), which has been proven to increase diagnostic accuracy during the skin examination.</span>
@@ -193,6 +196,10 @@
           <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm049090.htm?source=govdelivery" target="_new" class="blockified">Sun Safety: Save Your Skin!</a>
           <span>Advice from the FDA on how to protect your skin from the sun in all seasons.</span>
         </p>
+        <p>
+          <a href="http://www.cancer.gov/publications/pdq" target="_new" class="blockified">NCI Physician Data Query (PDQ)</a>
+          <span>A comprehensive source of cancer information.</span>
+        </p>
         <h4>Educational Videos</h4>
         <p>
           <a href="http://dcmf.ca/" target="_new" class="blockified">Dear 16-year-old Me</a>
@@ -200,11 +207,7 @@
         </p>
         <p>
           <a href="https://www.youtube.com/watch?v=o9BqrSAHbTc" target="_new" class="blockified">How the Sun Sees You</a>
-          <span>A short film of people captured in the <span class="define" data-term="uv">ultraviolet spectrum</span>, which highlights freckles and sun damage unnoticeable to the naked eye.</span>
-        </p>
-        <h4>Publications</h4>
-        <p>Tucker MA, Fraser MC, Goldstein AM, et al. <a href="http://www.ncbi.nlm.nih.gov/pubmed/12115352" target="_new">Melanomas and Dysplastic Nevi: A natural history atlas</a>. Cancer. 2002 Jun 15;94(12):3192-209.</p>
-        <p>Tucker MA, Halpern A, Holly EA, et al. <a href="http://www.ncbi.nlm.nih.gov/pubmed/9145715" target="_new">Clinically recognized dysplastic nevi: a central risk factor for cutaneous melanoma</a>. JAMA: The Journal of the American Medical Association 1997; 277(18):1439–1444.</p>
+        <span>A short film of people captured in the <span class="define" data-term="uv">ultraviolet spectrum</span>, which highlights freckles and sun damage unnoticeable to the naked eye.</span></p>
       </div>
       <div class="noninteractive" ng-show="disclaimer">
         <h2>Disclaimer</h2>
