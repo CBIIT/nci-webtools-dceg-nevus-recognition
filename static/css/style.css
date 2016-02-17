@@ -268,16 +268,16 @@ nav {
   border: 5px solid #023C4D;
   border-radius: 20px;
   margin: 20px auto;
-  position: relative;
 }
 .info-bubble + .info-bubble {
   margin-top: 40px;
+  position: relative;
 }
 .info-bubble + .info-bubble:before {
   content: '';
   background: url("../images/arrow.svg") no-repeat top;
   background-size: 30px;
-  height: 200px;
+  height: 30px;
   left: 0px;
   position: absolute;
   top: -40px;
