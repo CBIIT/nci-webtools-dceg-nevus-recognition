@@ -8,6 +8,7 @@ function newState(urlParams,title) {
 }
 
 $(document).ready( function() {
+  $.adamant.modal.fadeTime = 250;
   $('body, html').on('contextmenu', 'img', function(event) {
     event.preventDefault();
   });

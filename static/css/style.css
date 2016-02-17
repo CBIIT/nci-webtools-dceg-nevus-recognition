@@ -617,4 +617,11 @@ nav {
     border-radius: 6px;
   }
 }
-
+[adamant-modal].adamant-fadein,
+[adamant-modal-static].adamant-fadein {
+  transition: .25s linear;
+}
+[adamant-modal].adamant-fadeout,
+[adamant-modal-static].adamant-fadeout {
+  transition: .25s linear;
+}
