@@ -551,7 +551,7 @@ nav {
 }
 @media (min-width: 721px) {
   .nav-block {
-    height: 3em;
+    min-height: 3em;
   }
   .nav-block.collapse {
     display: block;
@@ -570,13 +570,28 @@ nav {
   }
 }
 @media (max-width: 720px) {
+  nav {
+    height: auto;
+    padding-top: 8em;
+  }
+  #brand {
+    position: absolute;
+    top: 0em;
+  }
   .nav-block {
-    top: 8em;
+    position: relative;
+    top: 0px;
   }
   .searchcont {
     position: absolute;
     height: 3em;
+    top: 5em;
     width: 100%;
+  }
+  .toggle-block {
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
 }
 @media (min-width: 481px) {
