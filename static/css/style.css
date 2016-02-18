@@ -289,6 +289,28 @@ nav {
 .info-bubble:not(.open) > :not(:first-child) {
   display: none;
 }
+.info-bubble.abcde ol {
+  display: table;
+  margin: 0px auto;
+  max-width: 320px;
+  padding-left: 0px;
+}
+.info-bubble.abcde ol li {
+  display: table-row;
+}
+.info-bubble.abcde ol li > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.info-bubble.abcde ol img {
+  margin: 10px;
+}
+.info-bubble.abcde ol p:first-letter {
+  font-size: 28px;
+}
+.info-bubble.abcde ol b {
+  font-size: 16px;
+}
 .photolink { 
   background: #FFF;
   border: 5px solid #023C4D;
