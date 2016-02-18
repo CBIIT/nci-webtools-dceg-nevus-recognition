@@ -96,17 +96,17 @@ nav {
 .search-box:not(:valid) ~ .close-icon {
   display: none;
 }
+#filters {
+  border-top: 1px solid #023C4D;
+}
 #filters div {
-  padding: .5em .1em;
+  background: #FFF;
+  border: 1px solid #023C4D;
+  border-width: 0px 1px 1px 0px;
   font-size: 1.5em;
-  border-right: 1px solid #023C4D;
-  border-bottom: 1px solid #023C4D;
-}
-#filters div ~ div {
-  border-left: 1px solid #023C4D;
-}
-#filters div:last-child {
-  border-right: 0px;
+  padding: .5em .5em;
+  position: relative;
+  text-align: left;
 }
 #filters .is-checked {
   background: #023C4D;
@@ -618,6 +618,20 @@ nav {
   }
 }
 @media (min-width: 481px) {
+  #filters div {
+    border-radius: 0px 20px 0px 0px;
+  }
+  #filters div.is-checked:before {
+    background: #023C4D;
+    content: '';
+    display: block;
+    height: 20px;
+    position: absolute;
+    left: -20px;
+    top: 0px;
+    width: 20px;
+    z-index: -1;
+  }
   .button-group {
     display: table;
     width: 100%;
