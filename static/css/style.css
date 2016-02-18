@@ -268,16 +268,16 @@ nav {
   border: 5px solid #023C4D;
   border-radius: 20px;
   margin: 20px auto;
-  position: relative;
 }
 .info-bubble + .info-bubble {
   margin-top: 40px;
+  position: relative;
 }
 .info-bubble + .info-bubble:before {
   content: '';
   background: url("../images/arrow.svg") no-repeat top;
   background-size: 30px;
-  height: 200px;
+  height: 30px;
   left: 0px;
   position: absolute;
   top: -40px;
@@ -552,7 +552,7 @@ nav {
 }
 @media (min-width: 721px) {
   .nav-block {
-    height: 3em;
+    min-height: 3em;
   }
   .nav-block.collapse {
     display: block;
@@ -571,13 +571,28 @@ nav {
   }
 }
 @media (max-width: 720px) {
+  nav {
+    height: auto;
+    padding-top: 8em;
+  }
+  #brand {
+    position: absolute;
+    top: 0em;
+  }
   .nav-block {
-    top: 8em;
+    position: relative;
+    top: 0px;
   }
   .searchcont {
     position: absolute;
     height: 3em;
+    top: 5em;
     width: 100%;
+  }
+  .toggle-block {
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
 }
 @media (min-width: 481px) {
@@ -603,4 +618,11 @@ nav {
     border-radius: 6px;
   }
 }
-
+[adamant-modal].adamant-fadein,
+[adamant-modal-static].adamant-fadein {
+  transition: .25s linear;
+}
+[adamant-modal].adamant-fadeout,
+[adamant-modal-static].adamant-fadeout {
+  transition: .25s linear;
+}

@@ -8,6 +8,7 @@ function newState(urlParams,title) {
 }
 
 $(document).ready( function() {
+  $.adamant.modal.fadeTime = 250;
   $('body, html').on('contextmenu', 'img', function(event) {
     event.preventDefault();
   });
@@ -139,6 +140,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     $scope.searching = false;
     $scope.ulinks = false;
     $scope.disclaimer = false;
+    $('body,html').animate({scrollTop:0}, 100);
   };
   $scope.clearsearch = function() {
     $scope.search = "";
@@ -185,7 +187,10 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
       'page': 'about'
     }, 'About the Tool');
   };
-  $scope.goaudience = function() {
+  $scope.goaudience = function(e) {
+    if (e !== undefined) {
+      e.stopPropagation();
+    }
     $scope.changePage();
     $scope.audience = true;
     newState({
@@ -206,7 +211,10 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
       $scope.filterClick($scope.getFilterByName('mole'));
     }
   };
-  $scope.goulinks = function() {
+  $scope.goulinks = function(e) {
+    if (e !== undefined) {
+      e.stopPropagation();
+    }
     $scope.changePage();
     $scope.ulinks = true;
     newState({
