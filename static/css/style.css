@@ -292,8 +292,8 @@ nav {
 .info-bubble.abcde ol {
   display: table;
   margin: 0px auto;
-  max-width: 320px;
   padding-left: 0px;
+  width: 80%;
 }
 .info-bubble.abcde ol li {
   display: table-row;
@@ -303,7 +303,7 @@ nav {
   vertical-align: middle;
 }
 .info-bubble.abcde ol img {
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
 }
 .info-bubble.abcde ol p:first-letter {
   font-size: 28px;
