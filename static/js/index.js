@@ -133,6 +133,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     $('body,html').animate({scrollTop:0}, 1000);
   };
   $scope.changePage = function() {
+    $scope.showfull = false;
     $scope.about = false;
     $scope.audience = false;
     $scope.home = false;
@@ -159,8 +160,10 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     var urlParams = window.history.state || {};
     urlParams.page = 'tool';
     delete urlParams.subgrouptype;
-    $scope.changePage();
-    $scope.tool = true;
+    if (!$scope.tool || subgroup == undefined) {
+      $scope.changePage();
+      $scope.tool = true;
+    }
     $scope.filterValue = filter.type;
     $scope.currenttype = filter;
     urlParams.filter = $scope.filterValue;
