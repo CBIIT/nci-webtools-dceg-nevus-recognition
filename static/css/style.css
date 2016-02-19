@@ -98,19 +98,36 @@ nav {
 }
 #filters {
   border-top: 1px solid #023C4D;
+  overflow: hidden;
 }
 #filters div {
   background: #FFF;
   border: 1px solid #023C4D;
+  border-radius: 0px 20px 0px 0px;
   border-width: 0px 1px 1px 0px;
+  float: left;
   font-size: 1.5em;
   padding: .5em .5em;
   position: relative;
   text-align: left;
 }
+#filters div:before {
+  background: #FFF;
+  content: '';
+  display: block;
+  height: 20px;
+  position: absolute;
+  left: -20px;
+  top: 0px;
+  width: 20px;
+  z-index: -1;
+}
 #filters .is-checked {
   background: #023C4D;
   color: white;
+}
+#filters div.is-checked:before {
+  background: #023C4D;
 }
 .subgroup {
   max-width: 800px;
@@ -618,20 +635,6 @@ nav {
   }
 }
 @media (min-width: 481px) {
-  #filters div {
-    border-radius: 0px 20px 0px 0px;
-  }
-  #filters div.is-checked:before {
-    background: #023C4D;
-    content: '';
-    display: block;
-    height: 20px;
-    position: absolute;
-    left: -20px;
-    top: 0px;
-    width: 20px;
-    z-index: -1;
-  }
   .button-group {
     display: table;
     width: 100%;
@@ -644,6 +647,9 @@ nav {
   }
 }
 @media (max-width: 480px) {
+  #filters {
+    font-size: 10px;
+  }
   .item {
     width: 100%;
   }
