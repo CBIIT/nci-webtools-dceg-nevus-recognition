@@ -4,7 +4,9 @@ function newState(urlParams,title) {
     url += '&'+index+'='+urlParams[index];
   }
   url.length==0?void(0):url = '?'+url.substring(1,url.length);
-  window.history.pushState==undefined?void(0):window.history.pushState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, window.location.pathname+url);
+  try {
+    window.history.pushState==undefined?void(0):window.history.pushState(urlParams, "Moles, Dysplastic Nevi & Melanoma - "+title, window.location.pathname+url);
+  } catch (e) {}
 }
 
 $(document).ready( function() {
