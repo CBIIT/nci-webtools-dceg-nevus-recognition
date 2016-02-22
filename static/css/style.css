@@ -139,7 +139,7 @@ nav {
   border-bottom: 5px solid transparent;
 }
 .subgroup .is-checked {
-  border-bottom: 5px solid #8782BB;
+  border-bottom: 5px solid #cc092f;
 }
 .group:after {
   content: '';
