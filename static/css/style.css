@@ -99,14 +99,13 @@ nav {
 #filters {
   border-top: 1px solid #023C4D;
   overflow: hidden;
-  padding-left: .2em;
-  padding-top: .2em;
+  margin-left: .3em;
+  padding-top: .3em;
 }
 #filters div {
   background: #FFF;
   border: 1px solid #023C4D;
   border-radius: 10px 10px 0px 0px;
-  border-width: 1px 1px 1px 0px;
   float: left;
   font-size: 1.5em;
   padding: .5em .7em .5em .5em;
