@@ -287,6 +287,9 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
   });
   $(window).load(function() {
     loadFunction();
+    $timeout(function() {
+      $('#disclaimerModal').modal('show');
+    });
     $('#case').on('swipeleft','.currentimage',function() {
       $scope.$apply(function() {
         $scope.updatecurrentimg(Math.min($scope.currentimg+1,$scope.currentcase.images.length-1));

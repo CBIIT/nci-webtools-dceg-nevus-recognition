@@ -483,26 +483,27 @@ nav {
   margin: 0px;
   padding: 15px;
 }
-[adamant-modal] .header + .body,
-[adamant-modal-static] .header + .body {
-  border-top: 1px solid #CCC;
-}
-[adamant-modal],
-[adamant-modal-static] {
+#case .header + .body {
   padding: 0px;
 }
-[adamant-modal-static] h2,
-[adamant-modal] h4 {
+.modal .modal-dialog {
+  background: #FFF;
+  min-width: 320px;
+}
+.modal .header + .body {
+  border-top: 1px solid #CCC;
+  padding: 20px;
+}
+.modal .header {
+  padding: 15px;
+  position: relative;
+}
+.modal h2,
+.modal h4 {
   margin: 10px 30px;
 }
-[adamant-modal] .disclaimer {
-  padding: 0px;
-}
-[adamant-modal] .body button {
+.modal .body button {
   margin: 2em auto;
-}
-[adamant-modal] .header {
-  position: relative;
 }
 @media (min-width: 1281px) {
   .nav-block {
@@ -656,16 +657,12 @@ nav {
   }
 }
 @media (min-width: 451px) {
-  [adamant-modal],
-  [adamant-modal-static] {
+  .modal .modal-dialog {
     border-radius: 6px;
   }
 }
-[adamant-modal].adamant-fadein,
-[adamant-modal-static].adamant-fadein {
-  transition: .25s linear;
-}
-[adamant-modal].adamant-fadeout,
-[adamant-modal-static].adamant-fadeout {
-  transition: .25s linear;
+@media (max-width: 450px) {
+  .modal .modal-dialog {
+    margin: 0px;
+  }
 }
