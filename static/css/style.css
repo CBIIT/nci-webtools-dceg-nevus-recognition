@@ -99,12 +99,13 @@ nav {
 #filters {
   border-top: 1px solid #023C4D;
   overflow: hidden;
+  padding: .1em;
 }
 #filters div {
   background: #FFF;
   border: 1px solid #023C4D;
   border-radius: 10px 10px 0px 0px;
-  border-width: 0px 1px 1px 0px;
+  border-width: 1px 1px 1px 0px;
   float: left;
   font-size: 1.5em;
   padding: .5em .7em .5em .5em;
@@ -112,7 +113,7 @@ nav {
   text-align: left;
 }
 #filters div:before {
-  background: #FFF;
+  background: #F4F3F3;
   content: '';
   display: block;
   height: 20px;
@@ -127,7 +128,7 @@ nav {
   color: white;
 }
 #filters div.is-checked:before {
-  background: #023C4D;
+  background: #F4F3F3;
 }
 .subgroup {
   max-width: 800px;
