@@ -103,7 +103,7 @@ nav {
 #filters div {
   background: #FFF;
   border: 1px solid #023C4D;
-  border-radius: 0px 10px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
   border-width: 0px 1px 1px 0px;
   float: left;
   font-size: 1.5em;
@@ -310,7 +310,7 @@ nav {
   display: table;
   margin: 0px auto;
   padding-left: 0px;
-  width: 80%;
+  width: 95%;
 }
 .info-bubble.abcde ol li {
   display: table-row;
