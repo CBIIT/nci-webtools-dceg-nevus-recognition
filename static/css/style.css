@@ -651,7 +651,7 @@ nav {
 }
 @media (max-width: 480px) {
   #filters {
-    font-size: 8px;
+    font-size: 9px;
   }
   .item {
     width: 100%;
