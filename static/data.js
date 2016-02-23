@@ -1430,7 +1430,7 @@ var data =
 				},
 				{
 					"type" : "stable",
-					"name" : "Stable and Fading DN"
+					"name" : "Stable and Fading"
 				},
 				{
 					"type" : "unstable",

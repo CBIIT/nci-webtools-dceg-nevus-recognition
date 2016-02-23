@@ -99,48 +99,41 @@ nav {
 #filters {
   overflow: hidden;
   padding-left: .5em;
-  padding-top: .3em;
+  background: #C9CBD4;
 }
 #filters div {
   background: #FFF;
   border: 1px solid #023C4D;
   border-radius: 10px 10px 0px 0px;
   border-width: 1px 1px 0px 1px;
-  float: left;
-  margin-right: .2em;
   font-size: 1.5em;
   padding: .3em .3em .3em .3em;
-  position: relative;
-  text-align: left;
+  text-align: center;
+  float: left;
+  margin-right: .2em;
 }
-#filters div:before {
-  background: #F4F3F3;
-  content: '';
-  display: block;
-  height: 20px;
-  position: absolute;
-  left: -20px;
-  top: 0px;
-  width: 20px;
-  z-index: -1;
-}
+
 #filters .is-checked {
   background: #023C4D;
   color: white;
 }
-#filters div.is-checked:before {
-  background: #F4F3F3;
-}
+
 .subgroup {
-  max-width: 800px;
-  margin: 0px auto;
+  overflow: hidden;
+  background: #023C4D;
 }
 .subgroup div {
+  background: #FFF;
   font-size: 1.4em;
-  border-bottom: 5px solid transparent;
+  border: 1px solid #023C4D;
+  padding: .3em .3em .3em .3em;
+  color: #CCC;
+  text-align: center;
 }
 .subgroup .is-checked {
-  border-bottom: 5px solid #cc092f;
+  color: #444;
+  background: #F4F3F3;
+  border-bottom: 1px solid #F4F3F3;
 }
 .group:after {
   content: '';
@@ -193,7 +186,7 @@ nav {
   background: #023C4D;
   color: white;
   padding: 20px;
-  text-align: right;
+  text-align: center;
   overflow:hidden;
 }
 #typedescription * {
@@ -205,7 +198,7 @@ nav {
 }
 #typedescription p, #typedescription ul {
   width:100%;
-  padding-left: 3.5%
+  
 }
 .type .readmore {
   display: inline;
@@ -639,7 +632,8 @@ nav {
 }
 @media (min-width: 481px) {
   .button-group {
-    display: table;
+    background: #023C4D;
+	display: table;
     width: 100%;
     table-layout: fixed;
   }
@@ -656,6 +650,13 @@ nav {
   .item {
     width: 100%;
   }
+}
+@media (max-width: 480px) {
+  #subgroup {
+    font-size: 10px;
+	
+  }
+  
 }
 @media (min-width: 451px) {
   .modal .modal-dialog {
