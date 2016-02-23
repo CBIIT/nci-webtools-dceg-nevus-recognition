@@ -165,9 +165,9 @@
       <div class="type" ng-show="tool">
         <div id="typedescription">
           <p class="fulldescription" bind-compiled-html="(showfull?currenttype.descriptionsummary + currenttype.description:currenttype.descriptionsummary) | define"></p>
-          <button class="readmore blur" ng-click="showfull=!showfull">{{showfull ? 'Show Less' : 'Show More' }}</button>
+          <button class="readmore blur" ng-click="showfull=!showfull">{{showfull ? 'Show Less Information' : 'Show More Information' }}</button>
         </div>
-        <div class="subgroup button-group" ng-show="currenttype.subgroups">
+        <div class="subgroup button-group" ng-show="currenttype.subgroups" id="subgroup">
           <div class="button blur" ng-class="{'is-checked':subgrouptype.type==subgroup.type}" ng-click="filterClick(currenttype,subgroup)" ng-repeat="subgroup in currenttype.subgroups">{{subgroup.name}}</div>
         </div>
       </div>
