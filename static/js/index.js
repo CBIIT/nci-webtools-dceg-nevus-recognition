@@ -10,11 +10,10 @@ function newState(urlParams,title) {
 }
 
 $(document).ready( function() {
-  $.adamant.modal.fadeTime = 250;
   $('body, html').on('contextmenu', 'img', function(event) {
     event.preventDefault();
   });
-  $('#case').on('adamant.modal.hidden', function() {
+  $('#case').on('hidden.bs.modal', function() {
     var urlParams = window.history.state || {};
     delete urlParams.case;
     delete urlParams.img;
@@ -76,7 +75,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
             if (urlParams.img !== undefined) {
               $scope.updatecurrentimg(urlParams.img);
             }
-            $timeout(function() { $.adamant.modal.open('#case'); });
+            $timeout(function() { $('#case').modal('show'); });
           }
           break;
         case 'ulinks':
