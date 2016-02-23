@@ -107,7 +107,7 @@ nav {
   border-radius: 10px 10px 0px 0px;
   border-width: 1px 1px 0px 1px;
   cursor: pointer;
-  float: left;
+  float: leeft;
   margin-right: .2em;
   font-size: 1.5em;
   padding: .3em;
@@ -650,11 +650,9 @@ nav {
   }
 }
 @media (max-width: 480px) {
-  #subgroup {
+  .subgroup {
     font-size: 10px;
-	
   }
-  
 }
 @media (min-width: 451px) {
   .modal .modal-dialog {
