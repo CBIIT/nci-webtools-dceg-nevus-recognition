@@ -458,7 +458,7 @@ var data =
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole 3 months after Image 4. The mole shows continuous growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular asymmetric shape and dark coloration.</p><div><span>The mole shows all of the ABCDE changes:</span><ul><li>A - asymmetric (1/2 does not match the other ½)</li><li>B - the border is more irregular</li><li>C - an enlarging very dark brown area</li><li>D - larger than a pencil eraser; an increasing diameter</li><li>E - over 3 years, the mole continued to change in size, color, shape, and surface</li></ul></div><p>The mole was removed because it was changing in ways suspicious for melanoma.</p>",
+					"description" : "<p>This picture shows the mole 3 months after Image 4. The mole shows continuous growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular asymmetric shape and dark coloration.</p><div><span>The mole shows all of the ABCDE changes and removed because it was changing in ways suspicious for melanoma.</p>",
 					"image" : "/images/DN7/DN7E.jpg",
 					"thumbnail" : "/images/DN7/DN7E-thumb.jpg"
 				}
