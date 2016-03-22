@@ -174,7 +174,7 @@
       <h3 class="searchbanner" ng-show="searching">Search Results</h3>
       <h3 class="searchbanner" ng-show="tool">Examples</h3>
       <div class="isotope" ng-show="searching || tool">
-        <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
+        <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases | orderBy: '+order'">
           <a data-target="#case" data-toggle="modal"href="javascript:void(0);" ng-click="update(case,$index)">
             <img alt="" src="./images/MissingImage.png" ng-src=".{{case.images[0].image}}" />
             <span class="type" ng-show="searching" ng-bind="case.typeSearch"></span>

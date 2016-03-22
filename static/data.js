@@ -80,39 +80,6 @@ var data =
 			]
 		},
 		{
-			"order" : 22,
-			"type" : "melanoma",
-			"typeSearch" : "Melanoma",
-			"name" : "Case 4",
-			"title" : "Melanoma Case 4: New and enlarging dysplastic nevus that developed changes suspicious for melanoma",
-			"description" : "The patient reported that the mole was new and had grown much larger during the previous 6 months. The mole is large (7 millimeters wide), and contains a mixture of reds and browns. The area of very dark brown color in the right central part is especially concerning in a patient with very fair skin. The borders are indistinct and quite irregular. The mole is larger, darker, and more irregular than any of the moles nearby. The mole was removed because it was new, and had changed in size, color, and shape during a very short period of time.",
-			"abcde" : {
-				"asymmetry" : "asymmetric (½ does not match the other ½)",
-				"border" : "the border is slightly irregular",
-				"color" : "a mixture of colors including a very dark brown area",
-				"diameter" : "the mole was new and greatly increased in size over just 6 months",
-				"evolving" : "this new mole had changed in size, color, and shape during a very short period of time"
-			},
-			"diagnosis" : {
-				"type" : "pathology",
-				"result" : "Early melanoma that started in a dysplastic nevus"
-			},
-			"images" : [
-				{
-					"name" : "Image 1",
-					"description" : "<p>This picture shows part of the left arm in a raised position. The lesion of interest is near the armpit. The lesion is large and irregular, and part of it is very dark brown. It is larger, darker, and more irregular than any of the moles nearby. The patient reported that the mole was new and had grown larger during the previous 6 months.</p>",
-					"image" : "/images/M4/M4A.jpg",
-					"thumbnail" : "/images/M4/M4A-thumb.jpg"
-				},
-				{
-					"name" : "Image 2",
-					"description" : "<p>This image was taken at the same time-point as image 1.  The mole was removed because of its rapid appearance and growth.</p>",
-					"image" : "/images/M4/M4B.jpg",
-					"thumbnail" : "/images/M4/M4B-thumb.jpg"
-				}
-			]
-		},
-		{
 			"order" : 3,
 			"type" : "dysplasticnevi",
 			"typeSearch" : "Dysplastic Nevi",
@@ -845,45 +812,6 @@ var data =
 			]
 		},
 		{
-			"order" : 21,
-			"type" : "melanoma",
-			"typeSearch" : "Melanoma",
-			"name" : "Case 3",
-			"title" : "Melanoma Case 3: Changing dysplastic nevus suspicious for melanoma",
-			"description" : "Two relatively small nevi were on the left abdomen at about 4 o’clock from the navel. Two years later, the mole closer to the navel had become very prominent and was circled as #60. (The smaller, more distant mole did not change.) The nevus was 8 millimeters in diameter. It had very indistinct borders, an irregular outline, and an asymmetric shape. The color varied from reddish dark brown to a very dark brown in the center portion. The lesion was removed because it was changing in ways very suspicious for melanoma (rapid growth, dark coloration, and asymmetric shape).",
-			"abcde" : {
-				"asymmetry" : "asymmetric (½ does not match the other ½)",
-				"border" : "the borders are irregular and indistinct",
-				"color" : "mixture of colors from reddened dark brown to a very dark brown in the center portion",
-				"diameter" : "the lesion is bigger than a pencil eraser",
-				"evolving" : "the lesion had changed rapidly in size, color, and shape."
-			},
-			"diagnosis" : {
-				"type" : "pathology",
-				"result" : "Early melanoma that started in a dysplastic nevus"
-			},
-			"images" : [
-				{
-					"name" : "Image 1",
-					"description" : "<p>This picture shows a relatively small mole on the left abdomen.</p>",
-					"image" : "/images/M3/M3A.jpg",
-					"thumbnail" : "/images/M3/M3A-thumb.jpg"
-				},
-				{
-					"name" : "Image 2",
-					"description" : "<p>This picture shows the same view taken 2 years later. The mole has become very prominent and is now circled as #60.</p>",
-					"image" : "/images/M3/M3B.jpg",
-					"thumbnail" : "/images/M3/M3B-thumb.jpg"
-				},
-				{
-					"name" : "Image 3",
-					"description" : "<p>This picture shows a close-up of lesion #60 taken at the same time-point  as image 2.</p><p>The mole was removed because it was changing in ways very suspicious for melanoma. The mole showed several of the warning signs for melanoma.</p>",
-					"image" : "/images/M3/M3C.jpg",
-					"thumbnail" : "/images/M3/M3C-thumb.jpg"
-				}
-			]
-		},
-		{
 			"order" : 18,
 			"type" : "dysplasticnevi",
 			"typeSearch" : "Dysplastic Nevi",
@@ -1028,6 +956,78 @@ var data =
 					"description" : "<p>This image is a close-up view taken at the same time-point as image 3.  The mole was removed because it was changing in ways suspicious for melanoma. The mole showed several of the warning signs for melanoma.</p>",
 					"image" : "/images/M2/M2D.jpg",
 					"thumbnail" : "/images/M2/M2D-thumb.jpg"
+				}
+			]
+		},
+		{
+			"order" : 21,
+			"type" : "melanoma",
+			"typeSearch" : "Melanoma",
+			"name" : "Case 3",
+			"title" : "Melanoma Case 3: Changing dysplastic nevus suspicious for melanoma",
+			"description" : "Two relatively small nevi were on the left abdomen at about 4 o’clock from the navel. Two years later, the mole closer to the navel had become very prominent and was circled as #60. (The smaller, more distant mole did not change.) The nevus was 8 millimeters in diameter. It had very indistinct borders, an irregular outline, and an asymmetric shape. The color varied from reddish dark brown to a very dark brown in the center portion. The lesion was removed because it was changing in ways very suspicious for melanoma (rapid growth, dark coloration, and asymmetric shape).",
+			"abcde" : {
+				"asymmetry" : "asymmetric (½ does not match the other ½)",
+				"border" : "the borders are irregular and indistinct",
+				"color" : "mixture of colors from reddened dark brown to a very dark brown in the center portion",
+				"diameter" : "the lesion is bigger than a pencil eraser",
+				"evolving" : "the lesion had changed rapidly in size, color, and shape."
+			},
+			"diagnosis" : {
+				"type" : "pathology",
+				"result" : "Early melanoma that started in a dysplastic nevus"
+			},
+			"images" : [
+				{
+					"name" : "Image 1",
+					"description" : "<p>This picture shows a relatively small mole on the left abdomen.</p>",
+					"image" : "/images/M3/M3A.jpg",
+					"thumbnail" : "/images/M3/M3A-thumb.jpg"
+				},
+				{
+					"name" : "Image 2",
+					"description" : "<p>This picture shows the same view taken 2 years later. The mole has become very prominent and is now circled as #60.</p>",
+					"image" : "/images/M3/M3B.jpg",
+					"thumbnail" : "/images/M3/M3B-thumb.jpg"
+				},
+				{
+					"name" : "Image 3",
+					"description" : "<p>This picture shows a close-up of lesion #60 taken at the same time-point  as image 2.</p><p>The mole was removed because it was changing in ways very suspicious for melanoma. The mole showed several of the warning signs for melanoma.</p>",
+					"image" : "/images/M3/M3C.jpg",
+					"thumbnail" : "/images/M3/M3C-thumb.jpg"
+				}
+			]
+		},
+		{
+			"order" : 22,
+			"type" : "melanoma",
+			"typeSearch" : "Melanoma",
+			"name" : "Case 4",
+			"title" : "Melanoma Case 4: New and enlarging dysplastic nevus that developed changes suspicious for melanoma",
+			"description" : "The patient reported that the mole was new and had grown much larger during the previous 6 months. The mole is large (7 millimeters wide), and contains a mixture of reds and browns. The area of very dark brown color in the right central part is especially concerning in a patient with very fair skin. The borders are indistinct and quite irregular. The mole is larger, darker, and more irregular than any of the moles nearby. The mole was removed because it was new, and had changed in size, color, and shape during a very short period of time.",
+			"abcde" : {
+				"asymmetry" : "asymmetric (½ does not match the other ½)",
+				"border" : "the border is slightly irregular",
+				"color" : "a mixture of colors including a very dark brown area",
+				"diameter" : "the mole was new and greatly increased in size over just 6 months",
+				"evolving" : "this new mole had changed in size, color, and shape during a very short period of time"
+			},
+			"diagnosis" : {
+				"type" : "pathology",
+				"result" : "Early melanoma that started in a dysplastic nevus"
+			},
+			"images" : [
+				{
+					"name" : "Image 1",
+					"description" : "<p>This picture shows part of the left arm in a raised position. The lesion of interest is near the armpit. The lesion is large and irregular, and part of it is very dark brown. It is larger, darker, and more irregular than any of the moles nearby. The patient reported that the mole was new and had grown larger during the previous 6 months.</p>",
+					"image" : "/images/M4/M4A.jpg",
+					"thumbnail" : "/images/M4/M4A-thumb.jpg"
+				},
+				{
+					"name" : "Image 2",
+					"description" : "<p>This image was taken at the same time-point as image 1.  The mole was removed because of its rapid appearance and growth.</p>",
+					"image" : "/images/M4/M4B.jpg",
+					"thumbnail" : "/images/M4/M4B-thumb.jpg"
 				}
 			]
 		},
