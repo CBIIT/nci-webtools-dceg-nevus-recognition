@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,7 +15,7 @@
 <body>
   <div class="app" ng-app="myApp" ng-controller="myCtrl">
     <nav class="navbar-default">
-      <a href="http://dceg.cancer.gov" id="brand">&nbsp;</a>
+        <a href="http://dceg.cancer.gov"><span id="brand" alt="DCEG Home"></span></a>
       <div class="nav-block collapse">
         <ul class="nav navbar-nav">
           <li><a href="javascript:void(0);" ng-click="gohome()">Home</a></li>
@@ -35,8 +35,9 @@
         </button>
       </div>
       <form class="searchcont">
+          <label for="search" class='sr-only'>Search:</label>
         <input class="form-control search-box" id="search" type="text" name="focus" required ng-change="searchingfunc()" ng-model="search" placeholder="Search" />
-        <button class="close-icon" type="reset" ng-click="clearsearch()"><span class="glyphicon glyphicon-remove"></span></button>
+        <button class="close-icon" type="reset" ng-click="clearsearch()"><span>x</span></button>
       </form>
     </nav>
     <div class="jumbotron">
@@ -71,23 +72,23 @@
           <span>The "ABCDE" rule describes the features of early melanoma. These features are:</span>
           <ol>
             <li>
-              <div><img src="images/asymmetry.jpg"/></div>
+              <div><img src="images/asymmetry.jpg" alt="Asymmetry"/></div>
               <p><b>Asymmetry</b><span> - The shape of one half does not match the other half.</span></p>
             </li>
             <li>
-              <div><img src="images/border.jpg"/></div>
+              <div><img src="images/border.jpg" alt="border"/></div>
               <p><b>Border</b><span> that is irregular - The edges are often ragged, notched, or blurred in outline. The pigment may spread into the surrounding skin.</span></p>
             </li>
             <li>
-              <div><img src="images/color.jpg"/></div>
+              <div><img src="images/color.jpg" alt="color"/></div>
               <p><b>Color</b><span> that is uneven - Shades of black, brown, and tan may be present. Areas of white, gray, red, pink, or blue may also be seen.</span></p>
             </li>
             <li>
-              <div><img src="images/diameter.jpg"/></div>
+              <div><img src="images/diameter.jpg" alt="diameter"/></div>
               <p><b>Diameter</b><span> - There is a change in size, usually an increase. Melanomas can be tiny, but most are larger than 6 millimeters wide (about 1/4 inch wide).</span></p>
             </li>
             <li>
-              <div><img src="images/evolving.jpg"/></div>
+              <div><img src="images/evolving.jpg" alt="evolving"/></div>
               <p><b>Evolving</b><span> - The mole has changed over the past few weeks or months.</span></p>
             </li>
           </ol>
@@ -120,7 +121,7 @@
       <p>The <span class="define" data-term="mole">Moles</span>, <span class="define" data-term="nevus">Dysplastic Nevi</span> &amp; <span class="define" data-term="melanoma">Melanoma</span> Tool presents photographs in three main groups of <span class="define" data-term="pigment">pigmented</span> <span class="define" data-term="lesion">lesions</span>: <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN.</p>
       <p>The dysplastic nevi section is subdivided into: stable and fading DN, and DN evolving toward melanoma.</p>
       <p>The <span class="define" data-term="case-series">case series</span> show changes in individual pigmented lesions over a number of years and across the spectrum of changes typically seen in U.S. melanoma-prone families.  As a teaching aid, each case series includes a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN.        </p>
-      
+
       <h4>About the Study</h4>
       <div>
         <p>For more information about the  study from which these cases were identified, please go to: <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">Clinical, Laboratory, and Epidemiologic Characterization of Individuals and Families at High Risk of Melanoma</a></p>
@@ -203,7 +204,7 @@
         <a href="http://www.cancer.gov/cancertopics/factsheet/Risk/moles" target="_new" class="blockified">Common Moles, Dysplastic Nevi, and Risk of Melanoma</a>
         <span>NCI fact sheet on common <span class="define" data-term="mole">moles</span>, <span class="define" data-term="nevus">dysplastic nevi</span>, and melanoma.</span>
       </p>
-      
+
       <p>
         <a href="http://www.skinsight.com/info/for_professionals/skin-cancer-detection-informed/skin-cancer-education" target="_new" class="blockified">INFORMED Skin Cancer Education Series</a>
         <span>The INternet curriculum FOR Melanoma Early Detection (INFORMED) program provides Web-based early-detection training for widespread use, and training in dermoscopy (epiluminescence microscopy), which has been proven to increase diagnostic accuracy during the skin examination.</span>
@@ -276,12 +277,12 @@
       </div>
     </footer>
     <button class="backtotop blur" ng-show="showbacktotop" ng-click="backToTop()">
-      <span class="glyphicon glyphicon-chevron-up"></span>
+      <span class="glyphicon glyphicon-chevron-up" alt="^"></span>
     </button>
     <div class="modal fade" id="case" role="dialog" tabindex="-1">
       <div class="modal-dialog" role="document">
         <div class="header">
-          <button aria-label="Close" class="close-icon" type="button" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+          <button aria-label="Close" class="close-icon" type="button" data-dismiss="modal">x</button>
           <h4>{{currentcase.title}}</h4>
         </div>
         <div class="body group">
