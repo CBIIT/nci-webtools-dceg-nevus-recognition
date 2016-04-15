@@ -22,6 +22,12 @@ $(document).ready( function() {
   $('.app').on('click', '.blur', function() {
     $(this).blur();
   });
+  $(document).on('keypress','[tabindex][ng-click]',function(e) {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      e.preventDefault();
+      $(e.target).trigger('click');
+    }
+  });
 });
 
 var app = angular.module('myApp', ['ngSanitize']);

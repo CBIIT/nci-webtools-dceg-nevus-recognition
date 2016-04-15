@@ -669,3 +669,6 @@ nav {
     margin: 0px;
   }
 }
+[tabindex]:active,[tabindex]:hover {
+  outline: none;
+}
