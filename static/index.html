@@ -45,7 +45,7 @@
     </div>
     <div class="noninteractive" ng-show="home">
       <div class="column">
-        <h4>Before You Get Started</h4>
+        <h3>Before You Get Started</h3>
         <p>To make this resource as useful as possible, please make sure you review and understand the following information.</p>
         <div tabindex="0" class="info-bubble" ng-class="{'open':purposeParagraph}" ng-click="purposeParagraph=!purposeParagraph">
           <h4>What is the purpose of this resource?</h4>
@@ -55,17 +55,17 @@
           <h4>What are moles, dysplastic nevi and melanoma?</h4>
           <ul>
             <li><b>Common Moles</b> - <em>A non-cancerous</em> growth on the skin that is formed by a cluster of melanocytes (cells that make a substance called melanin, which gives color to skin and eyes). A mole may be dark or flesh-colored and may be raised from the skin.</li>
-            <li><b>Dysplastic Nevi</b> - A type of mole that <em>may develop into a type of skin cancer called malignant melanoma</em>. They look different from common moles. A dysplastic nevus is often larger with borders that are not easy to see. Its color is usually uneven and can range from pink to dark brown. Parts of the mole may be raised above the skin surface.</li>
+            <li><b>Dysplastic Nevi (DN)</b> - A type of mole that <em>may develop into a type of skin cancer called malignant melanoma</em>. They look different from common moles. A DN is often larger with borders that are not easy to see. Its color is usually uneven and can range from pink to dark brown. Parts of the mole may be raised above the skin surface.</li>
             <li><b>Melanoma</b> - <em>A form of cancer</em> that begins in melanocytes (cells that make the pigment melanin). It may begin in a mole (skin melanoma), but can also begin in other pigmented tissues, such as in the eye or in the intestines.</li>
           </ul>
         </div>
         <div tabindex="0" class="info-bubble" ng-class="{'open':audienceParagraph}" ng-click="audienceParagraph=!audienceParagraph">
           <h4>Who is the intended audience?</h4>
-          <p>This resource is intended for patients and others in the lay public.  It only includes images of individuals who are at the highest risk of developing melanoma (i.e. Caucasians). Additional information, including resources for other racial and ethnic groups, can be found in the <a ng-click="goaudience($event)">Intended Audience section.</a></p>
+          <p>This resource is intended for patients and others in the lay public.  It only includes images of individuals who are at the highest risk of developing melanoma (i.e. Caucasians). Additional information, including resources for other racial and ethnic groups, can be found in the <a ng-click="goaudience($event)">Intended Audience section</a>.</p>
         </div>
         <div tabindex="0" class="info-bubble" ng-class="{'open':informationParagraph}" ng-click="informationParagraph=!informationParagraph">
           <h4>What information does this resource provide?</h4>
-          <p>This resource provides information about and examples of: common moles, dysplastic nevi (atypical moles) and melanoma.  This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell). Since they arise from different cell types in the skin, they look very different from melanoma. Additional information, including  resources for other types of non-melanoma skin cancer, can be found in the <a href="javascript:void(0);" ng-click="goabout($event)">About Tool section.</a></p>
+          <p>This resource provides information about and examples of: common moles, dysplastic nevi (atypical moles) and melanoma.  This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell). Since they arise from different cell types in the skin, they look very different from melanoma. Additional information, including  resources for other types of non-melanoma skin cancer, can be found in the <a ng-click="goaudience($event)">Intended Audience section</a>.</p>
         </div>
         <div tabindex="0" class="info-bubble abcde" ng-class="{'open':rulesParagraph}" ng-click="rulesParagraph=!rulesParagraph">
           <h4>What is the "ABCDE" rule?</h4>
@@ -95,22 +95,22 @@
         </div>
       </div>
       <div class="column">
-        <h4>View Photographs</h4>
+        <h3>View Photographs</h3>
         <p>Please click on the images below to view examples of moles, dysplastic nevi, and melanoma.</p>
         <div class="photolink">
           <div>
             <img tabindex="0" src="images/N1/N1A.jpg" width="146" height="109" ng-click="filterClick(getFilterByName('mole'))" alt="examples of common moles" />
-            <h5>Common Moles</h5>
+            <h4>Common Moles</h4>
             <p>A non-cancerous growth on the skin that is formed by a cluster of melanocytes (cells that make a substance called melanin, which gives color to skin and eyes). A mole may be dark or flesh-colored and may be raised from the skin.</p>
           </div>
           <div>
             <img tabindex="0" src="images/DN10/DN10A.jpg" width="146" height="109" ng-click="filterClick(getFilterByName('dysplasticnevi'))" alt="examples of dysplastic nevi" />
-            <h5>Dysplastic Nevi</h5>
+            <h4>Dysplastic Nevi (DN)</h4>
             <p>A type of mole that may develop into a type of skin cancer called malignant melanoma. They look different from common moles. A dysplastic nevus is often larger with borders that are not easy to see. Its color is usually uneven and can range from pink to dark brown. Parts of the mole may be raised above the skin surface.</p>
           </div>
           <div>
             <img tabindex="0" src="images/M8/M8E.jpg" width="146" height="109" ng-click="filterClick(getFilterByName('melanoma'))" alt="examples of melanoma" />
-            <h5>Melanoma</h5>
+            <h4>Melanoma</h4>
             <p>A form of cancer that begins in melanocytes (cells that make the pigment melanin). It may begin in a mole (skin melanoma), but can also begin in other pigmented tissues, such as in the eye or in the intestines.</p>
           </div>
         </div>
@@ -119,7 +119,7 @@
     <div class="noninteractive" ng-show="about">
       <h2>About the Tool</h2>
       <p>The Moles to Melanoma Tool presents photographs in three main groups of <span class="define" data-term="pigment">pigmented</span> <span class="define" data-term="lesion">lesions</span>: <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN.</p>
-      <p>The dysplastic nevi section is subdivided into two broad categories: stable and fading DN, and DN evolving toward melanoma.</p>
+      <p>The DN section is subdivided into two broad categories: stable and fading, and evolving toward melanoma.</p>
       <p>Each case series shows changes in an individual pigmented lesion over a number of years and across the spectrum of changes typically seen in U.S. melanoma-prone families.  We include a description of the “ABCDE” features for each type of pigmented lesion (moles, DN, and melanomas).  Although the “ABCDE” rules were made for identifying early melanoma, they can also be used to describe DN.        </p>
 
       <h4>About the Study</h4>
@@ -138,15 +138,11 @@
         <p>We thank the study participants for their many years of participation, their willingness to be photographed during skin examinations, and their generosity in allowing their pictures to be included in this resource. </p>
         <p>We would also like to thank John Crawford and Mary King, NIH Clinical Center clinical photographers, for their expertise. The tool would not have been possible without the substantial commitment and cooperation of both the study participants and the clinical photographers. </p>
       </div>
-    <div>
-          <h4>Where can I find information about Non-Melanoma Skin Cancer?</h4>
-      <p>This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell), since they arise from different cell types in the skin they look very different from melanoma. For information on those types of skin cancer, visit the following websites:  <a href="http://www.cancer.gov/types/skin" target="_new">National Cancer Institute: Skin Cancer (including Melanoma)</a> &amp; <a href="http://www.cancer.org/cancer/cancercauses/sunanduvexposure/skin-cancer-facts" target="_new">American Cencer Society: Skin Cancer Facts</a>.</p>
-</div>
     </div>
     <div class="noninteractive" ng-show="audience">
       <h4>Who is the Intended Audience?</h4>
-      <p>The photographs included were taken of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.  This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing melanoma. As shown in  Figure 1, Caucasians are at the highest risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore this tool does not provide images representative of other ethnicities.</p>
-      <h5><b>Figure 1: Join-point analyses of cutaneous melanoma incidence by race/ethnicity in the U.S. Surveillance, Epidemiology and End Results Program 1975-2012</b></h5>
+      <p>The photographs in this tool show moles on the skin of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.  This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing this form of skin cancer. As shown in  Figure 1, Caucasians are at the highest risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore this tool does not provide images representative of other ethnicities.</p>
+      <h5><b>Figure 1: Melanoma incidence by race/ethnicity in the U.S. Surveillance, Epidemiology and End Results Program 1975-2012</b></h5>
       <h5><img id="incidenceGraph" src="images/incidence.png" alt="Melanoma Incidence Rates in the U.S. (1975-2013)" title="Melanoma Incidence Rates in the U.S. (1975-2013)"/></h5>
             <h6>Reference: Howlader N, Noone AM, Krapcho M, Garshell J, Miller D, Altekruse SF, Kosary CL, Yu M, Ruhl J, Tatalovich Z, Mariotto A, Lewis DR, Chen HS, Feuer EJ, Cronin KA (eds). SEER Cancer Statistics Review, 1975-2012, National Cancer Institute. Bethesda, MD, <a href="http://seer.cancer.gov/csr/1975_2012/" target="_new">http://seer.cancer.gov/csr/1975_2012/</a> , based on November 2014 SEER data submission, posted to the SEER web site, April 2015</h6>
             <h6>Data points are not included for clarity of presentation, but may be found at <a href="http://seer.cancer.gov/csr/1975_2012/sections.html" target="_new">http://seer.cancer.gov/csr/1975_2012/sections.html</a> Figure 16.2.</h6>
@@ -158,6 +154,10 @@
         <li>Skin Cancer Foundation - <a href="http://www.skincancer.org/prevention/skin-cancer-and-skin-of-color" target="_new">Skin Cancer and Skin of Color</a></li>
       </ul>
     </div>
+    <div>
+          <h4>Where can I find information about Non-Melanoma Skin Cancer?</h4>
+      <p>This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell), since they arise from different cell types in the skin they look very different from melanoma. For information on those types of skin cancer, visit the following websites:  <a href="http://www.cancer.gov/types/skin" target="_new">National Cancer Institute - Skin Cancer (including Melanoma)</a> &amp; <a href="http://www.cancer.org/cancer/cancercauses/sunanduvexposure/skin-cancer-facts" target="_new">American Cancer Society - Skin Cancer Facts</a>.</p>
+</div>
     </div>
     <div class="contain" ng-show="searching || tool">
       <div class="button-group" id="filters">
@@ -289,7 +289,8 @@
           <div class="casedescription">
             <p bind-compiled-html="currentcase.description | define"></p>
             <div>
-              <span><b>The "ABCDE" features for this case are as follows:</b></span>
+              <span><b>"ABCDE" features:</b></span>
+              <p>
               <ul>
                 <li><label><b class="define" data-term="asymmetry">Asymmetry</b></label><span bind-compiled-html="currentcase.abcde.asymmetry | define"></span></li>
                 <li><label><b>Border</b></label><span bind-compiled-html="currentcase.abcde.border | define"></span></li>
