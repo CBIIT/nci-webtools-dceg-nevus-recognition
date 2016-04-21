@@ -12,7 +12,7 @@ var data =
 				"asymmetry" : "none",
 				"border" : "no irregularity",
 				"color" : "even",
-				"diameter" : "6 millimeters, larger than many moles",
+				"diameter" : "6 millimeters",
 				"evolving" : "not changing"
 			},
 			"diagnosis" : {
@@ -28,7 +28,7 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole almost 30 years later. The mole looks essentially the same in size, color, and appearance as compared to the previous picture. The mole is a totally round tan colored bump with a smooth and regular border. Even though the mole is large and elevated, all of the features of the mole look totally normal.</p>",
+					"description" : "<p>This picture shows the mole almost 30 years later. The mole looks essentially the same in size, color, and appearance. All of the features of the mole look normal.</p>",
 					"image" : "/images/N1/N1B.jpg",
 					"thumbnail" : "/images/N1/N1B-thumb.jpg"
 				}
@@ -42,10 +42,10 @@ var data =
 			"title" : "Mole Case 2: Stable then regressing (fading) normal mole",
 			"description" : "Over 17 years, this common mole remained stable and then regressed (began fading away). It increased in size from about 2 millimetersto 3 millimeters, became more elevated, lightened, and then faded to flesh-color.",
 			"abcde" : {
-				"asymmetry" : "minimal; the previously darker area on the right side is lighter, but still present",
-				"border" : "the indistinct borders have disappeared; the borders are currently regular and symmetric",
+				"asymmetry" : "minimal; the darker area on the right side becomes lighter",
+				"border" : "indistinct borders disappear; borders become regular and symmetric",
 				"color" : "minimally uneven",
-				"diameter" : "small",
+				"diameter" : "small, between 2-3 millimeters",
 				"evolving" : "regressing"
 			},
 			"diagnosis" : {
@@ -55,25 +55,25 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows a small light tan mole with indistinct and irregular borders. In comparison to its appearance 5 years previously, the mole had minimally enlarged and developed less distinct edges. There is a tiny bump (papule) in the right upper portion which is slightly darker than the rest of the mole.</p>",
+					"description" : "<p>This picture shows a small light tan mole with indistinct and irregular borders. There is a tiny bump (papule) in the right upper portion that is slightly darker than the rest of the mole.</p>",
 					"image" : "/images/N2/N2A.jpg",
 					"thumbnail" : "/images/N2/N2A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>Four years after Image 1, the mole had become more raised. The papule had become more prominent.</p>",
+					"description" : "<p>After four years, the mole became more raised. The papule became more prominent.</p>",
 					"image" : "/images/N2/N2B.jpg",
 					"thumbnail" : "/images/N2/N2B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the mole 3 years after Image 2. The mole had become more dome-shaped. The darker brown area in the upper right portion had lightened.</p>",
+					"description" : "<p>After 12 years, the mole became more dome-shaped. The darker brown area in the upper right portion lightened.</p>",
 					"image" : "/images/N2/N2C.jpg",
 					"thumbnail" : "/images/N2/N2C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole 5 years after Image 3. The mole had faded to flesh-colored. Although a tiny area of tan can still be seen in the right portion, the mole is barely visible.</p>",
+					"description" : "<p>After 17 years, the mole faded to flesh color, although a tiny area of tan can still be seen in the right portion.</p>",
 					"image" : "/images/N2/N2D.jpg",
 					"thumbnail" : "/images/N2/N2D-thumb.jpg"
 				}
@@ -868,18 +868,18 @@ var data =
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 1",
-			"title" : "Melanoma Case 1: New and enlarging dysplastic nevus that developed changes suspicious for melanoma",
-			"description" : "Compared to the first picture taken 10 years earlier, a new and unusual mole had developed on the arch of the foot in an area of skin that was previously normal. The mole had steadily increased in size and irregularity. The mole was 10 millimeters wide, and larger and more irregular than any of the moles nearby. The mole was mostly flat with an irregular darker border, and a mixture of light brown to very dark brown with some lighter color in the center. The mole was removed because it displayed several of the warning signs for melanoma (changes in size, color, and shape).",
+			"title" : "Melanoma Case 1: New and enlarging DN that developed changes suspicious for melanoma",
+			"description" : "A new and unusual mole developed on the arch of the foot in an area of skin that was previously normal. The mole steadily increased in size and irregularity. It was 10 millimeters in diameter, and larger and more irregular than any of the moles nearby. The mole was mostly flat with an irregular darker border, and a mixture of light brown to very dark brown with some lighter color in the center. It was removed because it displayed several of the warning signs for melanoma (changes in size, color, and shape).",
 			"abcde" : {
 				"asymmetry" : "slightly asymmetric (½ does not match the other ½)",
 				"border" : "the border is slightly irregular",
-				"color" : "There are multiple colors (shades of lighter to very dark browns and black. The border is darker than the rest of the lesion. There is slight loss of color around the mole.",
-				"diameter" : "The lesion is larger than a normal mole (insert size)",
-				"evolving" : "The lesion was changing in size, color, shape"
+				"color" : "multiple colors (shades of lighter to very dark browns and black); border is darker than the rest of the lesion; there is slight loss of color around the mole",
+				"diameter" : "the lesion is larger than a normal mole (insert size)",
+				"evolving" : "the lesion was changing in size, color, shape"
 			},
 			"diagnosis" : {
 				"type" : "pathology",
-				"result" : "Early, thin melanoma that started in a dysplastic nevus."
+				"result" : "Early, thin melanoma that started in a DN."
 			},
 			"images" : [
 				{
@@ -890,13 +890,13 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>Approximately 10 years after image 1 was taken, a new mole developed in an area of skin that was previously normal.</p>",
+					"description" : "<p>Approximately ten years after image 1, a new mole developed in an area of skin that was previously normal.</p>",
 					"image" : "/images/M1/M1B.jpg",
 					"thumbnail" : "/images/M1/M1B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This image shows the mole taken at the same time-point as image 2.  It had steadily increased in size and irregularity.</p>",
+					"description" : "<p>This image shows the mole taken at the same time-point as image 2.</p>",
 					"image" : "/images/M1/M1C.jpg",
 					"thumbnail" : "/images/M1/M1C-thumb.jpg"
 				},
@@ -919,18 +919,18 @@ var data =
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 2",
-			"title" : "Melanoma Case 2: Changing dysplastic nevus suspicious for melanoma",
-			"description" : "Over 2 years, this dysplastic nevus changed in size, color, shape and surface. It was predominantly flat with some tiny bumps in the center, and uniformly tan with a triangular shape and indistinct borders. The nevus then enlarged slightly to 6 millimeters x 5 millimeters and developed a new black slightly raised area and a fine scale on the surface. The mole was removed because it was changing in ways highly suspicious for melanoma.",
+			"title" : "Melanoma Case 2: Changing DN suspicious for melanoma",
+			"description" : "Over two years, this DN changed in size, color, shape and surface. It was predominantly flat with some tiny bumps in the center, and uniformly tan with a triangular shape and indistinct borders. The nevus then enlarged slightly to 6 millimeters by 5 millimeters and developed a new black slightly raised area and a fine scale on the surface. The mole was removed because it was changing in ways highly suspicious for melanoma.",
 			"abcde" : {
 				"asymmetry" : "slightly asymmetric (½ does not match the other ½)",
 				"border" : "the border is slightly irregular",
-				"color" : "a new black area, slightly elevated/bump developed (see arrow)",
+				"color" : "a new black area, slightly elevated/bump developed",
 				"diameter" : "the mole had increased in diameter/size",
-				"evolving" : "The mole had changed in size, color, shape and surface."
+				"evolving" : "the mole had changed in size, color, shape and surface."
 			},
 			"diagnosis" : {
 				"type" : "pathology",
-				"result" : "Early melanoma that started in a dysplastic nevus"
+				"result" : "Early melanoma that started in a DN"
 			},
 			"images" : [
 				{
@@ -941,19 +941,19 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This image is a close-up view taken at the same time-point as image 1.  This mole is tan and flat. It is slightly larger than a pencil eraser. It has a triangular shape with fuzzy borders. This mole is a dysplastic nevus because of its large size, flat surface, and indistinct borders.</p>",
+					"description" : "<p>This image is a close-up view taken at the same time-point as image 1.  This mole is tan and flat. It is slightly larger than a pencil eraser. It has a triangular shape with fuzzy borders.</p>",
 					"image" : "/images/M2/M2B.jpg",
 					"thumbnail" : "/images/M2/M2B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This image is an overview showing the dysplastic nevus on the inner thigh taken 2 years later than images 1 and 2. The mole had grown slightly bigger and developed a new black area.</p>",
+					"description" : "<p>Two years later, the mole had grown slightly bigger and developed a new black area.</p>",
 					"image" : "/images/M2/M2C.jpg",
 					"thumbnail" : "/images/M2/M2C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This image is a close-up view taken at the same time-point as image 3.  The mole was removed because it was changing in ways suspicious for melanoma. The mole showed several of the warning signs for melanoma.</p>",
+					"description" : "<p>This image is a close-up view taken at the same time-point as image 3.  The mole was removed because it was changing in ways suspicious for melanoma. The mole was removed because it showed several of the warning signs for melanoma.</p>",
 					"image" : "/images/M2/M2D.jpg",
 					"thumbnail" : "/images/M2/M2D-thumb.jpg"
 				}
@@ -964,7 +964,7 @@ var data =
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 3",
-			"title" : "Melanoma Case 3: Changing dysplastic nevus suspicious for melanoma",
+			"title" : "Melanoma Case 3: Changing DN suspicious for melanoma",
 			"description" : "Two relatively small nevi were on the left abdomen at about 4 o’clock from the navel. Two years later, the mole closer to the navel had become very prominent and was circled as #60. (The smaller, more distant mole did not change.) The nevus was 8 millimeters in diameter. It had very indistinct borders, an irregular outline, and an asymmetric shape. The color varied from reddish dark brown to a very dark brown in the center portion. The lesion was removed because it was changing in ways very suspicious for melanoma (rapid growth, dark coloration, and asymmetric shape).",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
@@ -975,7 +975,7 @@ var data =
 			},
 			"diagnosis" : {
 				"type" : "pathology",
-				"result" : "Early melanoma that started in a dysplastic nevus"
+				"result" : "Early melanoma that started in a DN"
 			},
 			"images" : [
 				{
@@ -986,7 +986,7 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the same view taken 2 years later. The mole has become very prominent and is now circled as #60.</p>",
+					"description" : "<p>Two years later, the mole has become very prominent and is now circled as #60.</p>",
 					"image" : "/images/M3/M3B.jpg",
 					"thumbnail" : "/images/M3/M3B-thumb.jpg"
 				},
@@ -1003,8 +1003,8 @@ var data =
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 4",
-			"title" : "Melanoma Case 4: New and enlarging dysplastic nevus that developed changes suspicious for melanoma",
-			"description" : "The patient reported that the mole was new and had grown much larger during the previous 6 months. The mole is large (7 millimeters wide), and contains a mixture of reds and browns. The area of very dark brown color in the right central part is especially concerning in a patient with very fair skin. The borders are indistinct and quite irregular. The mole is larger, darker, and more irregular than any of the moles nearby. The mole was removed because it was new, and had changed in size, color, and shape during a very short period of time.",
+			"title" : "Melanoma Case 4: New and enlarging DN that developed changes suspicious for melanoma",
+			"description" : "The patient reported that the mole was new and had grown much larger during the previous six months. The mole is large (7 millimeters in diameter), and contains a mixture of reds and browns. The area of very dark brown color in the right central part is especially concerning in a patient with very fair skin. The borders are indistinct and quite irregular. The mole is larger, darker, and more irregular than any of the moles nearby. The mole was removed because it was new, and had changed in size, color, and shape during a very short period of time.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "the border is slightly irregular",
@@ -1014,12 +1014,12 @@ var data =
 			},
 			"diagnosis" : {
 				"type" : "pathology",
-				"result" : "Early melanoma that started in a dysplastic nevus"
+				"result" : "Early melanoma that started in a DN"
 			},
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows part of the left arm in a raised position. The lesion of interest is near the armpit. The lesion is large and irregular, and part of it is very dark brown. It is larger, darker, and more irregular than any of the moles nearby. The patient reported that the mole was new and had grown larger during the previous 6 months.</p>",
+					"description" : "<p>This picture shows part of the left arm in a raised position. The lesion of interest is near the armpit. The lesion is large and irregular, and part of it is very dark brown. It is larger, darker, and more irregular than any of the moles nearby. The patient reported that the mole was new and had grown larger during the previous six months.</p>",
 					"image" : "/images/M4/M4A.jpg",
 					"thumbnail" : "/images/M4/M4A-thumb.jpg"
 				},
@@ -1036,8 +1036,8 @@ var data =
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 5",
-			"title" : "Melanoma Case 5: Enlarging dysplastic nevus that developed changes suspicious for melanoma",
-			"description" : "The dysplastic nevus of interest (marked with an arrow and then circled as #30) was stable and appeared mainly unchanged for many years. Typical for dysplastic nevi, it was partially flat and had an irregular outline and indistinct borders. It contained multiple shades of tan and brown. It then increased in size to about 8 millimeters in greatest diameter and darkened when most other moles had faded. The mole was removed 5 months after the picture shown in Image 5 because it continued to darken over a short period of time.",
+			"title" : "Melanoma Case 5: Enlarging DN that developed changes suspicious for melanoma",
+			"description" : "The DN of interest (marked with an arrow and then circled as #30) was stable and appeared mainly unchanged for many years. The DN was partially flat and had an irregular outline and indistinct borders. It contained multiple shades of tan and brown. Over two years, it increased in size to about 8 millimeters in diameter and darkened when most other moles had faded. The mole was removed five months after the picture shown in image 5 because it continued to darken over a short period of time.",
 			"abcde" : {
 				"asymmetry" : "slightly asymmetric (½ does not match the other ½);",
 				"border" : "the border is slightly irregular",
@@ -1052,31 +1052,31 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows several moles on the patient's upper back. Several of the moles are dysplastic moles, such as the large atypical moles inside circles 1, 2, 6, and 7. An arrow marks a small mole below the right shoulder. This is the mole of interest that will be described more in this series of pictures.</p>",
+					"description" : "<p>This picture shows several moles on the patient's upper back. Several of the moles are DN, such as the large atypical moles inside circles 1, 2, 6, and 7. An arrow marks a small mole below the right shoulder which is the mole of interest.</p>",
 					"image" : "/images/M5/M5A.jpg",
 					"thumbnail" : "/images/M5/M5A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This patient developed some new moles since the previous picture was taken 8 years earlier. The dysplastic moles, the large atypical moles inside circles 1, 2, 6, and 7, and the mole of interest (marked with an arrow) appear mainly unchanged compared to the previous picture.</p>",
+					"description" : "<p>Eight years after image 1, this patient developed some new moles. The dysplastic moles, the large atypical moles inside circles 1, 2, 6, and 7, and the mole of interest (marked with an arrow) appear mainly unchanged compared to the previous picture.</p>",
 					"image" : "/images/M5/M5B.jpg",
 					"thumbnail" : "/images/M5/M5B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the right side of the back taken almost 4 years later than the image 2. The patient has developed some more new moles and several moles have enlarged. The mole of interest, a dysplastic mole marked with an arrow has increased in size.</p>",
+					"description" : "<p>Twelve years later, the patient has developed additional moles and several have enlarged. The mole of interest, marked with an arrow, has increased in size.</p>",
 					"image" : "/images/M5/M5C.jpg",
 					"thumbnail" : "/images/M5/M5C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the right upper back taken almost 2 years later. Compared to the previous picture (Image 3), the mole of interest now circled as #30, is darker.</p>",
+					"description" : "<p>Two years after image 3, the mole of interest (#30) is darker.</p>",
 					"image" : "/images/M5/M5D.jpg",
 					"thumbnail" : "/images/M5/M5D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows a close-up view of the mole of interest. The mole is darker than image 3, taken 2 years earlier. A small raised area has grown in the central lower portion of the lesion.</p><p>The mole was removed because it continued to darken over a short period of time.</p>",
+					"description" : "<p>This picture shows a close-up view of the mole of interest. The mole is darker and a small raised area has grown in the central lower portion of the lesion.</p><p>The mole was removed because it continued to darken over a short period of time.</p>",
 					"image" : "/images/M5/M5E.jpg",
 					"thumbnail" : "/images/M5/M5E-thumb.jpg"
 				}
@@ -1087,8 +1087,8 @@ var data =
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 6",
-			"title" : "Melanoma Case 6: Enlarging dysplastic nevus that developed changes suspicious for melanoma",
-			"description" : "Over 2½ years, the small tan mole of interest changed in size, color, shape and surface. It grew to about 8 millimeters in greatest diameter. A very dark brown portion developed at top of the mole. Then most of the rest of the mole darkened considerably while the central area lightened greatly. It was darker than all of the other moles and quite irregular in shape. The mole was removed because it was changing in ways suspicious for melanoma.",
+			"title" : "Melanoma Case 6: Enlarging DN that developed changes suspicious for melanoma",
+			"description" : "Over two and a half years, the small tan mole of interest changed in size, color, shape and surface. It grew to about 8 millimeters in diameter. A very dark brown portion developed at top of the mole. Then most of the rest of the mole darkened considerably while the central area lightened greatly. It was darker than all of the other moles and quite irregular in shape. The mole was removed because it was changing in ways suspicious for melanoma.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "the border is irregular",
@@ -1098,24 +1098,24 @@ var data =
 			},
 			"diagnosis" : {
 				"type" : "pathology",
-				"result" : "Melanoma arising in a dysplastic nevus"
+				"result" : "Melanoma arising in a DN"
 			},
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows an overview of the abdomen. There is an increased number of moles, including some normal moles and some dysplastic moles. The mole of interest is marked with an arrow. The mole is small and uniform tan in color. It looks similar to many of the patient's other moles.</p>",
+					"description" : "<p>This picture shows the patient's abdomen. There are a large number of moles, including some normal moles and some dysplastic moles. The mole of interest is marked with an arrow. The mole is small and uniform tan in color. It looks similar to many of the patient's other moles.</p>",
 					"image" : "/images/M6/M6A.jpg",
 					"thumbnail" : "/images/M6/M6A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows an overview of the same area almost 2 years later. The mole of interest has increased in size. A new and very dark brown extension developed at top of the mole.</p>",
+					"description" : "<p>Two years later, the mole has increased in size and developed a new and very dark brown extension at top.</p>",
 					"image" : "/images/M6/M6B.jpg",
 					"thumbnail" : "/images/M6/M6B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows an overview of the same area 6 months later. The mole of interest has continued to increase in size. The mole has darkened greatly, especially across the top border. There is a slightly reddened area around the base of the mole.</p>",
+					"description" : "<p>Siz months later, the mole has continued to increase in size and darkened greatly, especially across the top border. There is a slightly reddened area around the base of the mole.</p>",
 					"image" : "/images/M6/M6C.jpg",
 					"thumbnail" : "/images/M6/M6C-thumb.jpg"
 				},
@@ -1133,7 +1133,7 @@ var data =
 			"typeSearch" : "Melanoma",
 			"name" : "Case 7",
 			"title" : "Melanoma Case 7: Changing nevus suspicious for melanoma",
-			"description" : "Over 2 years, the small tan mole of interest changed in size, shape, color, and surface. It enlarged slightly from 3 millimeters to 4 millimeters. The outline was very irregular, the shape was extremely asymmetric, and the edges were indistinct. As the mole enlarged, the outline became more symmetric. Much of the mole darkened significantly, and a new small area of very deep pigmentation developed on the left border. The mole was removed because of the progressive increase in size, and the development of the larger deeply pigmented and very deeply pigmented areas.",
+			"description" : "Over two years, the small tan mole of interest changed in size, shape, color, and surface. It enlarged slightly from 3 millimeters to 4 millimeters. The outline was very irregular, the shape was extremely asymmetric, and the edges were indistinct. As the mole enlarged, the outline became more symmetric. Much of the mole darkened significantly, and a new small area of very deep pigmentation developed on the left border. The mole was removed because of the progressive increase in size, and the development of the larger deeply pigmented and very deeply pigmented areas.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "the border is irregular",
@@ -1148,31 +1148,31 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows an overview of the upper arm which has many freckles and moles. An arrow points to a small mole which is the mole of interest. It looks similar to many other moles this person has.</p>",
+					"description" : "<p>This picture shows an overview of the upper arm which has many freckles and moles. An arrow points to a small mole which is the mole of interest. It looks similar to the many other moles.</p>",
 					"image" : "/images/M7/M7A.jpg",
 					"thumbnail" : "/images/M7/M7A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the same view1 year later. The mole of interest is now circled as # 90. In comparison to the previous overview (Image 1), the mole has darkened significantly and enlarged slightly.</p>",
+					"description" : "<p>This picture shows the same view one year later. The mole of interest is now circled as # 90. In comparison to the previous overview (Image 1), the mole has darkened significantly and enlarged slightly.</p>",
 					"image" : "/images/M7/M7B.jpg",
 					"thumbnail" : "/images/M7/M7B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows a close-up view of the mole taken at the same time-point as image 2.  The mole is small, about ½ the size of a pencil eraser. The outline of the mole is very irregular and the shape is extremely asymmetric. The edges are indistinct. The mole consists of two colors, dark brown and a lighter tan in the lower part of the mole.</p>",
+					"description" : "<p>This picture shows a close-up view of the mole taken at the same time-point as image 2.  The mole is small, about half the size of a pencil eraser. The outline of the mole is very irregular and the shape is extremely asymmetric. The edges are indistinct. The mole consists of two colors, dark brown and a lighter tan in the lower part of the mole.</p>",
 					"image" : "/images/M7/M7C.jpg",
 					"thumbnail" : "/images/M7/M7C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the same mole 4 months later. The mole is still the same size, but the outline has changed. It has become more regularly shaped, but the edges are still indistinct. The mole has become more evenly colored, uniformly dark brown instead of being two colors.</p>",
+					"description" : "<p>This picture shows the same mole four months later. The mole is still the same size, but the outline has changed. It has become more regularly shaped, but the edges are still indistinct. The mole has become more evenly colored, uniformly dark brown instead of being two colors.</p>",
 					"image" : "/images/M7/M7D.jpg",
 					"thumbnail" : "/images/M7/M7D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole 7 months later. The mole has increased in size slightly and darkened greatly, especially across the bottom border.</p><p>The mole was removed because it was changing in ways suspicious for melanoma.</p>",
+					"description" : "<p>This picture shows the mole seven months later. The mole has increased in size slightly and darkened greatly, especially across the bottom border.</p><p>The mole was removed because it was changing in ways suspicious for melanoma.</p>",
 					"image" : "/images/M7/M7E.jpg",
 					"thumbnail" : "/images/M7/M7E-thumb.jpg"
 				}
@@ -1183,8 +1183,8 @@ var data =
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 8",
-			"title" : "Melanoma Case 8: Changing dysplastic nevus highly suspicious for melanoma",
-			"description" : "Over 1 year, this large irregular multiple-color dysplastic nevus changed in size, shape, color, and surface. The mole doubled in greatest diameter from 7 millimeters to 14 millimeters. The outline became more irregular. The color darkened markedly. The previously small symmetric area of dark brown pigmentation area on the right side dramatically increased in size and developed a purple cast. Two areas raised up to form small dark purple-brown bumps with fine scales. This changing mole was removed because it was highly suspicious for melanoma.",
+			"title" : "Melanoma Case 8: Changing DN highly suspicious for melanoma",
+			"description" : "Over one year, this large irregular multiple-color dysplastic nevus changed in size, shape, color, and surface. The mole doubled in diameter from 7 millimeters to 14 millimeters. The outline became more irregular. The color darkened markedly. The previously small symmetric area of dark brown pigmentation area on the right side dramatically increased in size and developed a purple cast. Two areas raised up to form small dark purple-brown bumps with fine scales. This changing mole was removed because it was highly suspicious for melanoma.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "the border became more irregular",
@@ -1205,7 +1205,7 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the same view 5 years later. The mole of interest is now circled as #141. It has enlarged significantly since the picture shown in Image 1 was taken.</p>",
+					"description" : "<p>After five years, the mole of interest (circled as #141) has enlarged significantly.</p>",
 					"image" : "/images/M8/M8B.jpg",
 					"thumbnail" : "/images/M8/M8B-thumb.jpg"
 				},
@@ -1217,13 +1217,13 @@ var data =
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the upper arm almost 1 year after Images 2 and 3. Mole #141 has become very prominent. It has greatly enlarged, darkened, and become more irregular in shape. Because this changing mole appears so different than all of this individual's other moles, one could say that it looks like an \"ugly-duckling\" mole.</p>",
+					"description" : "<p>After six months, mole #141 has become very prominent. It has greatly enlarged, darkened, and become more irregular in shape. Because this changing mole appears so different from this individual's other moles, one could say that it looks like an \"ugly-duckling\" mole.</p>",
 					"image" : "/images/M8/M8D.jpg",
 					"thumbnail" : "/images/M8/M8D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows a close-up of mole #141 taken at the same time as Image 4 and almost 1 year after Images 2 and 3. The mole has increased in size and darkened markedly. The outline has become more irregular. The area on the right side has dramatically increased in size and has a purple cast. The surface has developed a fine scale and 2 areas have raised up to form small bumps.</p><p>This changing mole was removed because it was highly suspicious for melanoma.</p>",
+					"description" : "<p>This picture shows a close-up of mole #141 taken at the same time as image 4 and almost one year after images 2 and 3. The mole has increased in size and darkened markedly. The outline has become more irregular. The area on the right side has dramatically increased in size and has a purple cast. The surface has developed a fine scale and two areas have raised up to form small bumps.</p><p>After six years, this changing mole was removed because it was highly suspicious for melanoma.</p>",
 					"image" : "/images/M8/M8E.jpg",
 					"thumbnail" : "/images/M8/M8E-thumb.jpg"
 				}
@@ -1235,7 +1235,7 @@ var data =
 			"typeSearch" : "Melanoma",
 			"name" : "Case 9",
 			"title" : "Melanoma Case 9: Changing nevus suspicious for melanoma",
-			"description" : "Over 3 years, a new 4 millimeter mole that was darker than all of the patient’s other moles developed in an area of previously clear skin. The mole was very dark and slightly reddened around the base. The shape was slightly irregular and the borders were indistinct. Approximately 6 months later, the mole had increased to 5 millimeters and darkened more. The surface of the mole changed because some of the normal skin line markings disappeared. The mole was removed because it was changing in ways suspicious for melanoma.",
+			"description" : "Over three years, a new 4 millimeter mole that was darker than all of the patient’s other moles developed in an area of previously clear skin. The mole was very dark and slightly reddened around the base. The shape was slightly irregular and the borders were indistinct. Approximately six months later, the mole had increased to 5 millimeters and darkened more. The surface of the mole changed because some of the normal skin line markings disappeared. The mole was removed because it was changing in ways suspicious for melanoma.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "the border is irregular",
@@ -1250,13 +1250,13 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows an overview of the left lower back which is quite tanned. Several small normal moles and some large dysplastic moles can be seen. An arrow points to an area of clear skin where there is no mole.</p>",
+					"description" : "<p>This picture shows an overview of the left lower back, which is quite tanned. Several small normal moles and some large dysplastic moles can be seen. An arrow points to an area of clear skin where there is no mole.</p>",
 					"image" : "/images/M9/M9A.jpg",
 					"thumbnail" : "/images/M9/M9A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the same view 3 years later. The tan has faded and the skin is now its natural color. A new mole developed in the area of previously clear skin. The new mole is circled as #122. It is darker than all of the other moles.</p>",
+					"description" : "<p>Three years later, the tan has faded and the skin is now its natural color. A new mole developed in the area of previously clear skin. The new mole is circled as #122. It is darker than all of the other moles.</p>",
 					"image" : "/images/M9/M9B.jpg",
 					"thumbnail" : "/images/M9/M9B-thumb.jpg"
 				},
@@ -1268,7 +1268,7 @@ var data =
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole approximately 6 months later. The mole has increased in size slightly and darkened more. The surface of the mole changed because some of the normal skin line markings have disappeared.</p><p>The mole was removed because it was changing in ways suspicious for melanoma.</p>",
+					"description" : "<p>Approximately six months later, the mole has increased in size slightly and darkened more. The surface of the mole changed because some of the normal skin line markings have disappeared.</p><p>After three and a half years, the mole was removed because it was changing in ways suspicious for melanoma.</p>",
 					"image" : "/images/M9/M9D.jpg",
 					"thumbnail" : "/images/M9/M9D-thumb.jpg"
 				}
@@ -1280,7 +1280,7 @@ var data =
 			"typeSearch" : "Melanoma",
 			"name" : "Case 10",
 			"title" : "Melanoma Case 10: Changing nevus suspicious for melanoma",
-			"description" : "Over 2½ years, this small mole changed in size, color, shape and surface. It enlarged slightly to a maximum diameter of 4 millimeters. The color of the entire mole continued to darken, and the upper part became very dark brown. The mole was slightly abnormal in outline and became more irregular when the “tail” extending from the right side became more prominent. Some of the normal skin markings disappeared. The mole was removed because it was changing in ways suspicious for melanoma.",
+			"description" : "Over two and a half years, this small mole changed in size, color, shape and surface. It enlarged slightly to a maximum diameter of 4 millimeters. The color of the entire mole continued to darken, and the upper part became very dark brown. The mole was slightly abnormal in outline and became more irregular when the “tail” extending from the right side became more prominent. Some of the normal skin markings disappeared. The mole was removed because it was changing in ways suspicious for melanoma.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "the border is more irregular",
@@ -1307,13 +1307,13 @@ var data =
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the upper thigh 6 months after Image 2 was taken. Mole #129 has darkened and enlarged slightly.</p>",
+					"description" : "<p>Six months later, mole #129 has darkened and enlarged slightly.</p>",
 					"image" : "/images/M10/M10C.jpg",
 					"thumbnail" : "/images/M10/M10C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows a close-up of mole #129 taken at the same time as in Image 3. The mole has enlarged slightly. The upper part of the mole is now very dark brown. The \"tail\" extending from the right side is more prominent.</p><p>Although the mole is slightly smaller than a pencil eraser, it was removed because it was changing in ways suspicious for melanoma.</p>",
+					"description" : "<p>This picture shows a close-up of mole #129 taken at the same time as in image 3. The mole has enlarged slightly. The upper part of the mole is now very dark brown. The \"tail\" extending from the right side is more prominent.</p><p>Although the mole is slightly smaller than a pencil eraser, it was removed because it was changing in ways suspicious for melanoma.</p>",
 					"image" : "/images/M10/M10D.jpg",
 					"thumbnail" : "/images/M10/M10D-thumb.jpg"
 				}
@@ -1325,7 +1325,7 @@ var data =
 			"typeSearch" : "Melanoma",
 			"name" : "Case 11",
 			"title" : "Melanoma Case 11: Changing nevus suspicious for melanoma",
-			"description" : "Over 18 years, this mole was stable for many years before undergoing changes suspicious for melanoma. Initially, the mole was tan, 4 millimeters in greatest diameter, and slightly irregular in outline with a border that faded into the surrounding skin. As the mole enlarged, it developed some color variation with tiny darker brown areas in the upper and middle portions of the lesion. The dark areas continued to enlarge to about 5 millimeters (of the 7 millimeter mole size) and darken greatly while the lower part of the mole was fading. These changes in size and color occurred during a time when almost all of the patient’s other moles were fading. This mole was removed because of the continued increase in size, the enlarging area of very dark brown, and the border becoming more irregular.",
+			"description" : "Over 18 years, this mole was mostly stable before undergoing changes suspicious for melanoma. Initially, the mole was tan, 4 millimeters in greatest diameter, and slightly irregular in outline with a border that faded into the surrounding skin. As the mole enlarged, it developed some color variation with tiny darker brown areas in the upper and middle portions of the lesion. The dark areas continued to enlarge to about 5 millimeters (of the 7 millimeter mole size) and darken greatly while the lower part of the mole was fading. These changes in size and color occurred during a time when almost all of the patient’s other moles were fading. This mole was removed because of the continued increase in size, the enlarging area of very dark brown, and the border becoming more irregular.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "the border became more irregular",
@@ -1335,36 +1335,36 @@ var data =
 			},
 			"diagnosis" : {
 				"type" : "pathology",
-				"result" : "Moderately thin melanoma arising in a clinical dysplastic nevus"
+				"result" : "Moderately thin melanoma arising in a clinical DN"
 			},
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows 2 tan moles inside the circle. Both moles have slightly irregular borders which fade into the surrounding skin. The upper mole is the mole of interest.</p>",
+					"description" : "<p>This picture shows two tan moles inside a circle. Both moles have slightly irregular borders which fade into the surrounding skin. The upper mole is the mole of interest.</p>",
 					"image" : "/images/M11/M11A.jpg",
 					"thumbnail" : "/images/M11/M11A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the same view almost 7 years later. The mole of interest has enlarged slightly since the picture shown in Image 1 was taken. The mole shows some color variation with tiny darker brown areas in the upper and middle portions of the lesion. The lower mole has faded greatly and is disappearing.</p>",
+					"description" : "<p>Almost seven years later, the mole of interest has enlarged slightly since the picture shown in Image 1 was taken. The mole shows some color variation with tiny darker brown areas in the upper and middle portions of the lesion. The lower mole has faded greatly and is disappearing.</p>",
 					"image" : "/images/M11/M11B.jpg",
 					"thumbnail" : "/images/M11/M11B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the same view 5 years later. The mole of interest has enlarged slightly and darkened greatly. The darker brown color is in the upper part of the mole. The lower mole has disappeared.</p>",
+					"description" : "<p>Twelve years later, the mole of interest has enlarged slightly and darkened greatly. The darker brown color is in the upper part of the mole. The lower mole has disappeared.</p>",
 					"image" : "/images/M11/M11C.jpg",
 					"thumbnail" : "/images/M11/M11C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole of interest 4 years after Image 3. The darker brown area in the upper part of the mole has enlarged slightly and become more noticeable.</p>",
+					"description" : "<p>Sixteen years later, the darker brown area in the upper part of the mole has enlarged slightly and become more noticeable.</p>",
 					"image" : "/images/M11/M11D.jpg",
 					"thumbnail" : "/images/M11/M11D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole of interest 2 years after Image 4. The dark area in the upper part of the mole has continued to enlarge to almost the size of a pencil eraser. The lower portion of the nevus is fading.</p><p>This mole was removed because of the continued increase in size and the enlarging area of dark brown color. These changes in size and color occurred during a time when almost all of the patient’s other moles were fading.</p>",
+					"description" : "<p>Eighteen years later, the dark area in the upper part of the mole has continued to enlarge to almost the size of a pencil eraser. The lower portion of the nevus is fading.</p><p>This mole was removed because of the continued increase in size and the enlarging area of dark brown color. These changes in size and color occurred during a time when almost all of the patient’s other moles were fading.</p>",
 					"image" : "/images/M11/M11E.jpg",
 					"thumbnail" : "/images/M11/M11E-thumb.jpg"
 				}
@@ -1376,7 +1376,7 @@ var data =
 			"typeSearch" : "Melanoma",
 			"name" : "Case 12",
 			"title" : "Melanoma Case 12: Changing nevus suspicious for melanoma",
-			"description" : "This mole changed in size, color, and shape over 6 months, a very short period of time. The mole was slightly irregular in outline and quite long in one direction. The color was an even brown before a new black area developed in the center beside the new extremely dark brown area in the lower left portion of the mole. The lesion was removed because of its rapid growth to almost 8 millimeters and high suspicion for melanoma.",
+			"description" : "This mole changed in size, color, and shape over six months, a very short period of time. The mole was slightly irregular in outline and quite long in one direction. The color was an even brown before a new black area developed in the center beside the new extremely dark brown area in the lower left portion of the mole. The lesion was removed because of its rapid growth to almost 8 millimeters and high suspicion for melanoma.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "irregular and indistinct borders",
@@ -1386,24 +1386,24 @@ var data =
 			},
 			"diagnosis" : {
 				"type" : "pathology",
-				"result" : "Moderately thin melanoma arising in a clinical dysplastic nevus"
+				"result" : "Moderately thin melanoma arising in a clinical DN"
 			},
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows an overview of the right chest area. An arrow marks the mole of interest. The mole is slightly irregular in outline and quite long in one direction. The mole is brown with even coloring.</p>",
+					"description" : "<p>This picture shows an overview of the right chest. An arrow marks the mole of interest. The mole is slightly irregular in outline and quite long in one direction. The mole is brown with even coloring.</p>",
 					"image" : "/images/M12/M12A.jpg",
 					"thumbnail" : "/images/M12/M12A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the same view taken 6 months later. The mole of interest is now circled as #101. A large new dark area has developed in the lower left portion of the mole.</p>",
+					"description" : "<p>TSix months later, the mole of interest (circled as #101) has a large new dark area in the lower left portion of the mole.</p>",
 					"image" : "/images/M12/M12B.jpg",
 					"thumbnail" : "/images/M12/M12B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows a close-up of mole #101 taken at the same time as the overview shown in Image 2. In the lower portion of the mole, there is a new black area in the center which is beside the new extremely dark brown area. The borders on the upper and right portions are quite indistinct and fade into the surrounding skin.</p><p>The mole was removed because it was changing in ways very suspicious for melanoma. The mole showed several of the warning signs for melanoma.</p>",
+					"description" : "<p>This picture shows a close-up of mole #101 taken at the same time as the overview shown in image 2. In the lower portion of the mole, there is a new black area in the center which is beside the new extremely dark brown area. The borders on the upper and right portions are quite indistinct and fade into the surrounding skin.</p><p>The mole was removed because it was changing in ways very suspicious for melanoma. The mole showed several of the warning signs for melanoma.</p>",
 					"image" : "/images/M12/M12C.jpg",
 					"thumbnail" : "/images/M12/M12C-thumb.jpg"
 				}
@@ -1414,12 +1414,12 @@ var data =
 		{
 			"type" : "mole",
 			"name" : "Common Moles",
-			"description" : "<ul><li>Growths on the skin that develop when pigment cells (melanocytes) grow in clusters</li><li>Also called \"common nevi\" or \"common acquired nevi\"</li><li><span>Appearance</span><ul><li>Size: Usually less than 5 millimeters or about ¼ inch (not as wide as a new pencil eraser)</li><li>Color: Usually have an even color; may be pink, tan, brown, black (in deeply pigmented individuals), or a color that is very close to a person’s normal skin tone</li><li>Shape: Usually round or oval</li><li>Border: Usually have a distinct edge that separates it from the rest of the skin</li><li>Surface: Begins as a flat, smooth spot on the skin. May become raised and form a smooth bump</li></ul></li><li>Average number for white adult: 10 - 40</li><li>Rarely develop into melanoma (or cancer)</li><li>Vast majority are stable and then disappear</li><li>Moles go through a \"life-cycle\": start as small freckle-like spots; gradually round up and form a bump; may lighten, become flesh-colored; become less elevated, flatten and eventually disappear</li><li>Life-cycle is a gradual process typically over many years</li><li>Some moles do not go through the entire \"life-cycle\"</li></ul>",
-			"descriptionsummary" : "<p>A common mole is <em>a non-cancerous growth on the skin</em> that is formed by a cluster of melanocytes (cells that make a substance called melanin, which gives color to skin and eyes). A mole may be dark or flesh-colored and may be raised from the skin. Most adults have between 10 and 40 common moles. These growths are usually found above the waist on areas exposed to the sun. They are seldom found on the scalp, breast, or buttocks.</p>"
+			"description" : "<ul><li>Common moles are growths on the skin that develop when pigment cells (melanocytes) grow in clusters; also called \"common nevi\" or \"common acquired nevi\"</li><li><span>Appearance (using ABCDE rule)</span><ul><li>Asymmetry: Usually symmetrical, round or oval</li><li>Border: Usually have a distinct edge that separates it from the rest of the skin</li><li>Shape: Usually round or oval</li><li>Color: Usually have an even color; may be pink, tan, brown, black (in deeply pigmented individuals), or a color that is very close to a person’s normal skin tone</li><li>Diameter: Usually less than 5 millimeters or about ¼ inch (smaller than a pencil eraser)</li><li>Evolving: Moles go through a life-cycle. Often they start as small freckle-like spots; gradually round up and form a bump; may lighten, become flesh-colored; become less elevated, flatten and eventually disappear. Life-cycle is a gradual process typically over many years. Some moles do not go through the entire life-cycle. Vast majority are stable and then disappear; rarely develop into melanoma (or cancer). Rarely develop into melanoma (or cancer)</ul></li></ul>",
+			"descriptionsummary" : "<p>A common mole is <em>a non-cancerous growth on the skin</em> that is formed by a cluster of melanocytes (cells that make a substance called melanin, which gives color to skin and eyes). A mole may be dark or flesh-colored and may be raised from the skin. Most adults have between 10 and 40 common moles. These growths are usually found above the waist on areas exposed to the sun. Common moles are seldom found on the scalp, breast, or buttocks.</p>"
 		},
 		{
 			"type" : "dysplasticnevi",
-			"name" : "Dysplastic Nevi",
+			"name" : "Dysplastic Nevi (DN)",
 			"description" : "<ul><li>Called \"dysplastic\" nevi because under the microscope the pattern of cells is between common nevi and melanoma.</li><li><span>Also clinically recognized on the skin because they are large (greater than 5 millimeters or ¼ inch), flat (totally or partially), unusual appearing moles with:</span><ul><li>irregular shape</li><li>indistinct (blurry) borders</li><li>mixture of colors (tan, brown, and red or pink shades)</li></ul></li><li>DN range from looking like almost normal nevi to looking like early melanoma</li><li>The clinical features of DN may share similar characteristics of early melanoma. <a href=\"javascript:void(0);\" ng-click=\"goabout()\" class=\"blur\">The \"ABCDE\" rules</a> were made for identifying early melanoma, but can also be used to describe DN.</li><li>Identify some individuals who are at increased risk of developing melanoma</li><li>Most common sites for dysplastic nevi are on sun-exposed areas, especially intermittently exposed, such as the back</li><li><span>Majority are stable and then disappear</span><ul><li>typically develop from common moles and eventually disappear</li></ul></li><li>Associated with larger numbers of common moles</li><li>Many people have a few DN; occur in approximately 10% of adult populations of northern European descent</li><li>Frequently found in melanoma-prone families in North America, Europe, and Australia</li><li>Melanomas may develop from dysplastic nevi</li><li><span>Risk of melanoma</span><ul><li>greatest for people who have a large number of dysplastic nevi</li><li>especially high for people with a family history of both DN and melanoma</li></ul></li></ul>",
 			"descriptionsummary" : "<p>A dysplastic nevus is a type of mole that <em>may develop into a type of skin cancer called malignant melanoma</em>. They look different from common moles. A dysplastic nevus is often larger with borders that are not easy to see. Its color is usually uneven and can range from pink to dark brown. Parts of the mole may be raised above the skin surface. Some doctors use the term \"atypical mole\" to refer to a dysplastic nevus. </p>",
 			"subgroups" : [
@@ -1441,8 +1441,8 @@ var data =
 		{
 			"type" : "melanoma",
 			"name" : "Melanomas",
-			"description" : "<ul><li>A type of skin cancer that begins in melanocytes (cells that make the pigment melanin)</li><li>Early thin melanomas are curable by minimal surgery alone; advanced melanomas may spread to others parts of the body</li><li>Melanomas can vary greatly in how they look. Many show all of the <a href=\"javascript:void(0);\" ng-click=\"goabout()\">\"ABCDE\" features</a>. However, some may show only one or two of the \"ABCDE\" features</li></ul><div tabindex=\"0\" class=\"partial-collapse\" ng-class=\"{'show':collapseWarning}\" ng-click=\"collapseWarning = !collapseWarning\"><h4><span class=\"glyphicon\" ng-class=\"{'glyphicon-plus-sign':!collapseWarning,'glyphicon-minus-sign':collapseWarning}\"></span>Warning Signs</h4><h4>Pay close attention to any irregular moles or dysplastic nevi, looking for any melanoma warning signs. If any moles have changed in any of the following ways, or if you are concerned about any of your moles, <u>see your doctor</u>:</h4><ul><li>Large size, rapid growth, or change in size</li><li>Change in color or development of a black, much darker brown, red or white area</li><li>Irregular border or changes in outline</li><li>New scaliness, bleeding, or very shiny surface</li><li>New firm nodule or texture</li><li>New loss of color or areas of blue in skin surrounding a mole</li><li>Unusual sensations or onset of a new feeling within a mole (for example, feeling itchy)</li><li>Sudden appearance of a new pigmented spot or new shiny nodule in previously-normal skin</li></ul></div><div tabindex=\"0\" class=\"partial-collapse\" ng-class=\"{'show':collapseGuidelines}\" ng-click=\"collapseGuidelines = !collapseGuidelines\"><h4><span class=\"glyphicon\" ng-class=\"{'glyphicon-plus-sign':!collapseGuidelines,'glyphicon-minus-sign':collapseGuidelines}\"></span>Guidelines for Individuals at Increased Risk of Melanoma</h4><ul><li><span>Examine your skin thoroughly on a monthly basis. In order to do this effectively, you should:</span><ul><li>Familiarize yourself with your skin and all of your moles.</li><li>Be sure to examine your scalp.</li><li>Use mirrors to see your hard-to-see areas.</li><li>Photographs of your skin and a body diagram are useful for comparison to determine if any moles have changed or if any new ones have appeared. Make notes of any changes or questions. If you are concerned, call your doctor.</li></ul></li><li><span>Get routine, regular examinations by your health-care provider</span><ul><li>Point out any moles that you think have changed, or any areas on your skin that worry you. (See Melanoma Warning Signs)</li></ul></li><li><span>Watch moles extra carefully during hormonal changes</span><ul><li>Increased mole activity often occurs in adolescence, and in women who are pregnant, or taking oral contraceptives or post-menopausal estrogen replacement therapy.</li></ul></li><li><span>Avoid excessive sun and ultraviolet (UV) radiation exposure</span><ul><li>Minimize sun exposure between 10AM and 4PM (daylight savings time)</li><li>Seek shade when outdoors</li><li>Avoid sunburns; do not suntan</li><li>Do not use sunlamps, sunbeds or tanning parlors</li><li>Use sunscreens regularly (broad spectrum with UVA and UVB radiation protection and sun protection factor [SPF] of 30 or higher). Reapply at least every 2 hours or more frequently if perspiring or swimming.</li><li>Wear protective clothing [hats with wide brims, long sleeves and long pants made of tightly woven fabrics, or fabrics with a Ultraviolet Protection Factor (UPF) of 50+</li><li>Wear sunglasses that block 99-100% UV radiation</li><li>Remember that UV radiation can penetrate light clothing, windshields, and windows. It reflects from water, sand, snow, and concrete.</li><li>Keep infants out of the sun. Be sure children are protected when outdoors.</li></ul></li></ul></div>",
-			"descriptionsummary" : "<p>Melanoma is <em>a form of cancer</em> that begins in melanocytes (cells that make the pigment melanin). It may begin in a mole (skin melanoma), but can also begin in other pigmented tissues, such as in the eye or in the intestines. It is potentially dangerous because it can invade nearby tissues and spread to other parts of the body, such as the lung, liver, bone, or brain. The earlier that melanoma is detected and removed, the more likely that treatment will be successful.</p>"
+			"description" : "<ul><li>A type of skin cancer that begins in melanocytes (cells that make the pigment melanin).</li><li>Early, thin melanomas are curable by minimal surgery alone. Advanced melanomas may spread to others parts of the body and treatments such as additional surgery, chemotherapy, radiation therapy, biologic therapy, targeted therapy and/or new types of treatment being tested in clinical trials may be used.</li><li>Melanomas can vary greatly in how they look. Many show all of the \"ABCDE\" features</a>. However, some may show only one or two of those features</li></ul><div tabindex=\"0\" class=\"partial-collapse\" ng-class=\"{'show':collapseWarning}\" ng-click=\"collapseWarning = !collapseWarning\"><h4><span class=\"glyphicon\" ng-class=\"{'glyphicon-plus-sign':!collapseWarning,'glyphicon-minus-sign':collapseWarning}\"></span>Warning Signs</h4><h4>Pay close attention to any irregular moles or dysplastic nevi. Look for melanoma warning signs. If any moles have changed in any of the following ways, or if you are concerned about any of your moles, <u>see your doctor</u>.</h4><ul><li>Large size, rapid growth, or change in size</li><li>Change in color or development of a black, much darker brown, red or white area</li><li>Irregular border or changes in outline</li><li>New or change in texture (scaly), bleeding, or very shiny surface</li><li>New firm nodule or texture</li><li>New loss of color or areas of blue in skin surrounding a mole</li><li>Unusual sensations or onset of a new feeling within a mole (for example, feeling itchy)</li><li>Sudden appearance of a new pigmented spot or new shiny nodule in previously-normal skin</li></ul></div><div tabindex=\"0\" class=\"partial-collapse\" ng-class=\"{'show':collapseGuidelines}\" ng-click=\"collapseGuidelines = !collapseGuidelines\"><h4><span class=\"glyphicon\" ng-class=\"{'glyphicon-plus-sign':!collapseGuidelines,'glyphicon-minus-sign':collapseGuidelines}\"></span>Guidelines for Individuals at Increased Risk of Melanoma</h4><ul><li><span>Examine your skin thoroughly on a monthly basis. In order to do this effectively, you should:</span><ul><li>Familiarize yourself with your skin and all of your moles.</li><li>Examine your scalp.</li><li>Use mirrors for hard-to-see areas.</li><li>Compare photographs of your skin and a body diagram to determine if any moles have changed or if any new ones have appeared. Make notes of any changes or questions. If you are concerned, call your doctor.</li></ul></li><li><span>Get routine, regular examinations by your health-care provider</span><ul><li>Point out any moles that you think have changed, or any areas on your skin that worry you. (See Melanoma Warning Signs)</li></ul></li><li><span>Watch moles extra carefully during periods of major hormonal changes</span><ul><li>Increased mole activity often occurs in adolescence, and in women who are pregnant, or taking oral contraceptives or post-menopausal estrogen replacement therapy.</li></ul></li><li><span>Avoid excessive sun and ultraviolet (UV) radiation exposure</span><ul><li>Minimize sun exposure between 10AM and 4PM</li><li>Seek shade</li><li>Avoid sunburns; do not suntan</li><li>Do not use sunlamps, sunbeds or tanning parlors</li><li>Use sunscreens regularly (broad spectrum with UVA and UVB radiation protection and sun protection factor [SPF] of 30 or higher). Reapply at least every 2 hours or more frequently if perspiring or swimming.</li><li>Wear protective clothing (hats with wide brims, long sleeves and long pants made of tightly woven fabrics, or fabrics with a Ultraviolet Protection Factor [UPF] of 50+)</li><li>Wear sunglasses that block 99-100% UV radiation</li><li>Remember that UV radiation can penetrate light clothing, windshields, and windows. It reflects from water, sand, snow, and concrete.</li><li>Keep infants out of the sun. Be sure children are protected when outdoors.</li></ul></li></ul></div>",
+			"descriptionsummary" : "<p>Melanoma is <em>a form of cancer</em> that begins in melanocytes (cells that make the pigment melanin). It may begin in a mole (skin melanoma), but can also begin in other pigmented tissues, such as in the eye or the intestines. Melanoma is potentially dangerous because it can spread to nearby tissues and other parts of the body, such as the lung, liver, bone, or brain. The earlier that melanoma is detected and removed, the more likely that treatment will be successful.</p>"
 		}
 	]
 }
