@@ -495,6 +495,12 @@ nav {
 .modal .body button {
   margin: 2em auto;
 }
+.partial-collapse:not(.show) > * ~ * {
+  display: none;
+}
+.partial-collapse .glyphicon {
+  padding-right: 1em;
+}
 @media (min-width: 1281px) {
   .nav-block {
     float: right;
