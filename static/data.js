@@ -7,7 +7,7 @@ var data =
 			"typeSearch" : "Mole",
 			"name" : "Case 1",
 			"title" : "Mole Case 1: Stable normal mole",
-			"description" : "Over 30 years, this common mole remained the same size (about 6 millimeters), color, shape, and elevation (height) above the skin.",
+			"description" : "Over thirty years, this common mole remained the same size (about 6 millimeters), color, shape, and elevation (height) above the skin.",
 			"abcde" : {
 				"asymmetry" : "none",
 				"border" : "no irregularity",
@@ -28,7 +28,7 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole almost 30 years later. The mole looks essentially the same in size, color, and appearance. All of the features of the mole look normal.</p>",
+					"description" : "<p>This picture shows the mole almost thirty years later. The mole looks essentially the same in size, color, and appearance. All of the features of the mole look normal.</p>",
 					"image" : "/images/N1/N1B.jpg",
 					"thumbnail" : "/images/N1/N1B-thumb.jpg"
 				}
@@ -40,7 +40,7 @@ var data =
 			"typeSearch" : "Mole",
 			"name" : "Case 2",
 			"title" : "Mole Case 2: Stable then regressing (fading) normal mole",
-			"description" : "Over 17 years, this common mole remained stable and then regressed (began fading away). It increased in size from about 2 millimetersto 3 millimeters, became more elevated, lightened, and then faded to flesh-color.",
+			"description" : "Over seventeen years, this common mole remained stable and then regressed (began fading away). It increased in size from about 2 millimetersto 3 millimeters, became more elevated, lightened, and then faded to flesh-color.",
 			"abcde" : {
 				"asymmetry" : "minimal; the darker area on the right side becomes lighter",
 				"border" : "indistinct borders disappear; borders become regular and symmetric",
@@ -61,19 +61,19 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>After four years, the mole became more raised. The papule became more prominent.</p>",
+					"description" : "<p>Four years after image 1, the mole became more raised. The papule became more prominent.</p>",
 					"image" : "/images/N2/N2B.jpg",
 					"thumbnail" : "/images/N2/N2B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>After 12 years, the mole became more dome-shaped. The darker brown area in the upper right portion lightened.</p>",
+					"description" : "<p>Twelve years after image 1, the mole became more dome-shaped. The darker brown area in the upper right portion lightened.</p>",
 					"image" : "/images/N2/N2C.jpg",
 					"thumbnail" : "/images/N2/N2C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>After 17 years, the mole faded to flesh color, although a tiny area of tan can still be seen in the right portion.</p>",
+					"description" : "<p>Seventeen years after image 1, the mole faded to flesh color, although a tiny area of tan can still be seen in the right portion.</p>",
 					"image" : "/images/N2/N2D.jpg",
 					"thumbnail" : "/images/N2/N2D-thumb.jpg"
 				}
@@ -101,13 +101,13 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows a mole smaller than a pencil eraser; mostly flat, but with a slightly raised center. The borders are slightly irregular. The color is dark brown in the center and lighter brown around the edges.</p>",
+					"description" : "<p>This picture shows a mole smaller than a pencil eraser; mostly flat, but with a slightly raised center. The borders are slightly irregular. The color is dark brown in the center and lighter brown around the edges. At this point, the mole does not meet criteria for a DN.</p>",
 					"image" : "/images/DN1/DN1A.jpg",
 					"thumbnail" : "/images/DN1/DN1A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>After six months mole became lighter.</p>",
+					"description" : "<p>After six months mole became lighter and slightly larger (4 millimeters).</p>",
 					"image" : "/images/DN1/DN1B.jpg",
 					"thumbnail" : "/images/DN1/DN1B-thumb.jpg"
 				},
@@ -125,7 +125,7 @@ var data =
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>After five years the DN became lighter. The central loss of color increased and became more pronounced. The base of the mole is quite red. The patient said the mole was itching. The DN was removed because of the  continuing changes in color and the patient’s report of itching.</p>",
+					"description" : "<p>After five years the DN became lighter. The central loss of color increased and became more pronounced. The base of the mole is quite red. The patient said the mole was itching. The DN was removed because of the continuing changes in color and the patient’s report of itching.</p>",
 					"image" : "/images/DN1/DN1E.jpg",
 					"thumbnail" : "/images/DN1/DN1E-thumb.jpg"
 				}
@@ -159,13 +159,13 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>(Close up, taken at the same time as image 1) The mole shows several characteristics of a dysplastic nevus: large size (larger than a pencil eraser), partially flat, irregular asymmetric outline, and indistinct borders. The mole has minimal mixture of colors and a large central papule (bump), but meets criteria for being called a DN.</p>",
+					"description" : "<p>(Close up, taken at the same time as image 1) The mole shows several characteristics of a DN: large size (larger than a pencil eraser), partially flat, irregular asymmetric outline, and indistinct borders. The mole has minimal mixture of colors and a large central papule (bump), but meets criteria for being called a DN.</p>",
 					"image" : "/images/DN2/DN2B.jpg",
 					"thumbnail" : "/images/DN2/DN2B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>After five years the mole flattened, decreased in size and faded dramatically. The papule became a much smaller, now very small, pink, and only slightly elevated. Most of the rest of the mole is flat and the borders are blurrier.</p>",
+					"description" : "<p>After five years the mole flattened, decreased in size and faded dramatically. The papule became a much smaller, now very small, pink, and only slightly elevated. Most of the rest of the mole is flat and the borders are blurrier. The mole no longer meets the criteria for DN.</p>",
 					"image" : "/images/DN2/DN2C.jpg",
 					"thumbnail" : "/images/DN2/DN2C-thumb.jpg"
 				},
@@ -205,31 +205,31 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows a large irregularly shaped and partially flat mole. It is 14 millimeters wide. It has scalloped borders that fade into the surrounding skin. The mole contains a mixture of shades from tan to dark brown and a pink area in the upper right center. Because of these atypical features, the mole is a dysplastic nevus.</p>",
+					"description" : "<p>This picture shows a large irregularly shaped and partially flat mole. It is 14 millimeters wide. It has scalloped borders that fade into the surrounding skin. The mole contains a mixture of shades from tan to dark brown and a pink area in the upper right center. Because of these atypical features, the mole is a DN.</p>",
 					"image" : "/images/DN3/DN3A.jpg",
 					"thumbnail" : "/images/DN3/DN3A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>After eight years the DN  grew bigger and less oblong shaped. The DN is still quite irregular in outline, but some brown pigment has filled in areas that were previously more scalloped-shaped. The raised surfaces in the left and lower right central areas have developed a pebbly texture.</p>",
+					"description" : "<p>After eight years the DN grew bigger and less oblong-shaped. The DN is still quite irregular in outline, but some brown pigment has filled in areas that were previously more scalloped-shaped. The raised surfaces in the left and lower right central areas have developed a pebbly texture.</p>",
 					"image" : "/images/DN3/DN3B.jpg",
 					"thumbnail" : "/images/DN3/DN3B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>After fifteen years most of the mole became lighter. The shape became more irregular because some of the pigment (the brown color of the mole) at the edge of the mole began to \“break up\” (fade and go away). The lighter pigment in the right upper area is almost flesh color.</p>",
+					"description" : "<p>After fifteen years most of the DN became lighter. The shape became more irregular because some of the pigment (the brown color of the DN) at the edge of the DN began to \“break up\” (fade and go away). The lighter pigment in the right upper area is almost flesh color.</p>",
 					"image" : "/images/DN3/DN3C.jpg",
 					"thumbnail" : "/images/DN3/DN3C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>After twenty-one years, the mole faded dramatically and the size  decreased slightly. All of the color that was previously brown lightened to shades of pink and red. The shape  became less irregular.</p>",
+					"description" : "<p>After twenty-one years, the DN faded dramatically and the size  decreased slightly. All of the color that was previously brown lightened to shades of pink and red. The shape  became less irregular. Despite the fading and shrinking of the DN, it still makes criteria to be called DN.</p>",
 					"image" : "/images/DN3/DN3D.jpg",
 					"thumbnail" : "/images/DN3/DN3D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>After twenty-six years, the mole has become smaller and faded to light pink. The lighter area in the right lower portion  became a flesh-colored almost flat bump which is barely visible.</p>",
+					"description" : "<p>After twenty-six years, the mole has become smaller and faded to light pink. The lighter area in the right lower portion became a flesh-colored almost flat bump which is barely visible.</p>",
 					"image" : "/images/DN3/DN3E.jpg",
 					"thumbnail" : "/images/DN3/DN3E-thumb.jpg"
 				}
@@ -263,19 +263,19 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the moles eight years later. Both have lightened and become more uniform in color. Mole A has become more irregular in shape because the pigment is receding in the lower right quarter. Mole B has become less raised.</p>",
+					"description" : "<p>This picture shows the moles eight years later. Both have lightened and become more uniform in color. Mole A has become more irregular in shape because the pigment is receding in the lower right quarter. Mole B has become less raised. Neither meets criteria for DN.</p>",
 					"image" : "/images/DN4/DN4B.jpg",
 					"thumbnail" : "/images/DN4/DN4B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the moles almost three and a half years after image 2. Both moles are slightly smaller. In mole A, some of the previously brown area at the 5 o’clock position has faded to normal skin color. Mole B has become more raised and has formed a papule at the 6 o’clock position.</p>",
+					"description" : "<p>This picture shows the moles eleven and a half years after image 1. Both moles are slightly smaller. In mole A, some of the previously brown area at the 5 o’clock position has faded to normal skin color. Mole B has become more raised and has formed a papule at the 6 o’clock position.</p>",
 					"image" : "/images/DN4/DN4C.jpg",
 					"thumbnail" : "/images/DN4/DN4C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the moles ten years after image 3. Both moles had faded dramatically and become smaller than a pencil eraser. Mole B has become flat and is barely visible.</p>",
+					"description" : "<p>This picture shows the moles twenty-two years after image 1. Both moles had faded dramatically and become smaller than a pencil eraser. Mole B has become flat and is barely visible.</p>",
 					"image" : "/images/DN4/DN4D.jpg",
 					"thumbnail" : "/images/DN4/DN4D-thumb.jpg"
 				}
@@ -309,25 +309,25 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole four years after than image 1. The mole has grown slightly and is now about the size of a pencil eraser. It is slightly irregular in outline and has indistinct borders.</p>",
+					"description" : "<p>This picture shows the mole four years after image 1. The mole has grown slightly and is now almost the size of a pencil eraser. It is slightly irregular in outline and has indistinct borders, but does not meet criteria for a DN.</p>",
 					"image" : "/images/DN5/DN5B.jpg",
 					"thumbnail" : "/images/DN5/DN5B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the mole two years after image 2. The mole grew slightly but is still about the size of a pencil eraser. It has become more irregular in outline.</p>",
+					"description" : "<p>This picture shows the mole six years after image 1. The mole is larger than the size of a pencil eraser. It has become more irregular in outline, with the lower half becoming darker and wider.  It has become a DN.</p>",
 					"image" : "/images/DN5/DN5C.jpg",
 					"thumbnail" : "/images/DN5/DN5C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole one year after image 3. The portion of the mole at the 8 o’clock position has grown outward slightly. The color of the mole has lightened.</p>",
+					"description" : "<p>This picture shows the DN seven years after image 1. The portion of the DN at the 8 o’clock position has expanded outward. The color of the mole has lightened.</p>",
 					"image" : "/images/DN5/DN5D.jpg",
 					"thumbnail" : "/images/DN5/DN5D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole 1 year after image 4. It has grown slightly and the color has turned darker. The mole was removed because it was getting darker (after having lightened) and was growing slightly larger.</p>",
+					"description" : "<p>This picture shows the DN eight years after image 1. It has grown larger and the color has turned darker in the middle. The mole was removed because it was getting darker (after having lightened) and was growing larger.</p>",
 					"image" : "/images/DN5/DN5E.jpg",
 					"thumbnail" : "/images/DN5/DN5E-thumb.jpg"
 				}
@@ -340,7 +340,7 @@ var data =
 			"subgroup" : "unstable",
 			"name" : "Case 6",
 			"title" : "Dysplastic Nevi Case 6: Regressing (fading) and then changing DN suspicious for melanoma",
-			"description" : "Over four years, this DN increased in diameter from 8 millimeters to 9 millimeters. The mole is partially flat and has an irregular shape and indistinct border. It contains a mixture of tan to dark brown colors which lightened and then darkened. The upper central and right side lightened considerably with an arc of very light color across the central portion. The shape became more irregular as the pigment receded (color faded). Then, much of the nevus darkened considerably and a new area of very dark brown color developed that extends inwardly at the 4 o’clock to 5 o’clock position. The mole was removed because it had changed in color over the past year.",
+			"description" : "Over four and a half years, this DN increased in diameter from 8 millimeters to 9 millimeters. The mole is partially flat and has an irregular shape and indistinct border. It contains a mixture of tan to dark brown colors which lightened and then darkened. The upper central and right side lightened considerably with an arc of very light color across the central portion. The shape became more irregular as the pigment receded (color faded). Then, much of the nevus darkened considerably and a new area of very dark brown color developed that extends inwardly at the 4 o’clock to 5 o’clock position. The mole was removed because it had changed in color over the past year.",
 			"abcde" : {
 				"asymmetry" : "present and increases",
 				"border" : "indistinct and becomes more irregular",
@@ -367,13 +367,13 @@ var data =
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the DN three years after Image 2. The mole has lightened considerably. Across the central portion is an arc of very light color.</p>",
+					"description" : "<p>This picture shows the DN three and a half years after image 1. The mole has lightened considerably. Across the central portion is an arc of very light color.</p>",
 					"image" : "/images/DN6/DN6C.jpg",
 					"thumbnail" : "/images/DN6/DN6C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the DN ten months after image 3. Much of the mole has darkened considerably. There is a new very dark brown area that extends inwardly at the 4 o’clock to 5 o’clock position.</p><p>The DN was removed because it had changed in color over the past year.</p>",
+					"description" : "<p>This picture shows the DN 4.five years after image 1. The lower part of the DN has darkened considerably. There is a new very dark brown area that extends inwardly at the 4 o’clock to 5 o’clock position.</p><p>The DN was removed because it had darkened in color over the past year.</p>",
 					"image" : "/images/DN6/DN6D.jpg",
 					"thumbnail" : "/images/DN6/DN6D-thumb.jpg"
 				}
@@ -386,12 +386,12 @@ var data =
 			"subgroup" : "unstable",
 			"name" : "Case 7",
 			"title" : "Dysplastic Nevi Case 7: Changing DN suspicious for melanoma",
-			"description" : "Over three years, this DN increased from 3 millimeters to 7 millimeters in diameter. It has an irregular shape and indistinct borders and contains multiple shades of brown. The color became more variable, darker in the center and lighter at the edges. The borders became more indistinct and more irregular. As the mole continued to enlarge it also changed in shape and outline. The mole showed increasing continuous growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular asymmetric shape and dark coloration. The mole was removed because it was changing in ways suspicious for melanoma.",
+			"description" : "Over almost three years, this DN increased from 4 millimeters to 8 millimeters in diameter. It has an irregular shape and indistinct borders and contains multiple shades of brown. The color became more variable, darker in the center and lighter at the edges. The borders became more indistinct and more irregular. As the mole continued to enlarge it also changed in shape and outline. The mole showed increasing continuous growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular asymmetric shape and dark coloration. The mole was removed because it was changing in ways suspicious for melanoma.",
 			"abcde" : {
 				"asymmetry" : "present and increases",
 				"border" : "indistinct and becomes more irregular",
 				"color" : "uneven and develops an enlarging very dark brown area",
-				"diameter" : "large; increases to 7 millimeters",
+				"diameter" : "large; increases to 8 millimeters",
 				"evolving" : "over 3 years, the mole continued to change in size, color, shape, and surface"
 			},
 			"diagnosis" : {
@@ -407,25 +407,25 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole fifteen months after than image 1. The mole had continued to grow, but is still slightly smaller than a pencil eraser. The borders have become more indistinct and more irregular in shape. The color is more variable, darker in the center and lighter at the edges.</p>",
+					"description" : "<p>This picture shows the mole fifteen months after than image 1. The mole had continued to grow, but is still slightly smaller than a pencil eraser. The borders have become more indistinct and more irregular in outline. The color is more variable, darker in the center and lighter at the edges.</p>",
 					"image" : "/images/DN7/DN7B.jpg",
 					"thumbnail" : "/images/DN7/DN7B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the mole one year after image 2. The mole has continued to enlarge and change in shape and outline. The mole is about the size of a pencil eraser. A pebbled surface has been developing in the central area, which is darker than the surrounding flatter part of the mole.</p>",
+					"description" : "<p>This picture shows the mole two years after image 1. The mole has continued to enlarge and change in shape and outline. The mole is larger than the size of a pencil eraser. A pebbled surface has been developing in the central area, which is darker than the surrounding flatter part of the mole. It meets criteria for a DN.</p>",
 					"image" : "/images/DN7/DN7C.jpg",
 					"thumbnail" : "/images/DN7/DN7C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole four months after image 3 and during a time when the person was tanning intensely. The mole has continued to grow and change in shape. More of the central area has developed a pebbly surface.</p>",
+					"description" : "<p>This picture shows the DN two and a half years after image 1 during a time when the person was tanning intensely. The mole has continued to grow and change in shape and color. More of the central area has developed a pebbly surface.</p>",
 					"image" : "/images/DN7/DN7D.jpg",
 					"thumbnail" : "/images/DN7/DN7D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole three months after image 4. The mole shows continuous growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular asymmetric shape and dark coloration.</p><div><span>The DN shows all of the ABCDE changes and removed because it was changing in ways suspicious for melanoma.</p>",
+					"description" : "<p>This picture shows the mole two years and 9 months years after image 1. The mole shows continued growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular, asymmetric shape and dark coloration.</p><div><span>The DN was removed because it was changing in ways suspicious for melanoma.</p>",
 					"image" : "/images/DN7/DN7E.jpg",
 					"thumbnail" : "/images/DN7/DN7E-thumb.jpg"
 				}
@@ -438,12 +438,12 @@ var data =
 			"subgroup" : "stable",
 			"name" : "Case 8",
 			"title" : "Dysplastic Nevi Case 8: Regressing (Disappearing) DN",
-			"description" : "Over three and a half years, this DN went from 9 millimeters to 3 millimeters. The mole was mostly flat, and had irregular, indistinct borders. It had a mixture of colors with darker brown in the center surrounded by an area of pink, tan and light brown. After the patient received immunotherapy as a treatment for metastatic melanoma, the mole faded dramatically and decreased in size substantially to a 3 millimeter small pink smooth papule (bump) that is slightly reddened in the upper portion. The mole then became slightly less raised, less reddened, and more light pink and flesh colored.",
+			"description" : "Over almost 4 years, this DN went from 8 millimeters in diameter to 3 millimeters. The DN was mostly flat, and had irregular, indistinct borders. It had a mixture of colors with darker brown in the center surrounded by an area of pink, tan and light brown. After the patient received immunotherapy as a treatment for metastatic melanoma, the DN faded dramatically and decreased in size substantially to a 3 millimeter small pink smooth papule (bump) that is slightly reddened in the upper portion. The mole then became slightly less raised, less reddened, and more light pink and flesh colored.",
 			"abcde" : {
 				"asymmetry" : "present then disappears",
 				"border" : "irregular and indistinct before developing regular borders",
 				"color" : "uneven (variable) before fading",
-				"diameter" : "large (9 millimeters) then decreases",
+				"diameter" : "large (8 millimeters) then decreases",
 				"evolving" : "disappearing over time "
 			},
 			"diagnosis" : {
@@ -453,19 +453,19 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows a DN that is almost as big as two pencil erasers beside each other. The DN is mostly flat, and has irregular, indistinct borders. It has a mixture of colors with darker brown in the center surrounded by an area that contains pink, tan and light brown.</p>",
+					"description" : "<p>This picture shows a DN that is larger by half than a pencil eraser. The DN is mostly flat, and has irregular, indistinct borders. It has a mixture of colors with darker brown in the center surrounded by an area that contains pink, tan and light brown.</p>",
 					"image" : "/images/DN8/DN8A.jpg",
 					"thumbnail" : "/images/DN8/DN8A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole almost three years after image 1. It no longer meets the criteria for DN. The mole had faded dramatically and decreased in size substantially. It is now 3 millimeters, a small pink smooth papule (bump) that appears as “mature” moles often look during the normal fading away process. The color is slightly reddened in the upper portion. The patient had received immunotherapy as a treatment for melanoma that had spread. In addition to fighting the cancer cells, sometimes this type of treatment causes moles to fade a lot.</p>",
+					"description" : "<p>This picture shows the mole two years and 9 months  after image 1. It no longer meets criteria for DN.  The mole has faded dramatically and decreased in size substantially. It is now 3 millimeters, a small pink smooth papule (bump) that appears as “mature” moles often look during the normal fading away process. The papule is likely the remnant of the elevated portion of the center of the DN in image 1.  The color is slightly reddened in the upper portion. The patient had received immunotherapy as a treatment for melanoma that had spread. In addition to fighting the cancer cells, sometimes this type of treatment causes moles, especially DN, to fade a lot.</p>",
 					"image" : "/images/DN8/DN8B.jpg",
 					"thumbnail" : "/images/DN8/DN8B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the mole one year after image 2. The mole has become slightly less raised. It is now more light pink and flesh colored.</p>",
+					"description" : "<p>This picture shows the mole three years and nine months after image 1. The mole has become slightly less raised. It is now lighter pink and flesh colored.</p>",
 					"image" : "/images/DN8/DN8C.jpg",
 					"thumbnail" : "/images/DN8/DN8C-thumb.jpg"
 				}
@@ -478,12 +478,12 @@ var data =
 			"subgroup" : "stable",
 			"name" : "Case 9",
 			"title" : "Dysplastic Nevi Case 9: Regressing (Disappearing) DN",
-			"description" : "Over twenty-eight years, this DN decreased in size from 8 millimeters to 7 millimeters and became barely visible. The mole contained light brown in the left lower portion and pink which became mostly tan in the rest of the mole. The mole was partially flat and before fading, became more irregular in outline with borders that became more indistinct (blurry). Much of the surface developed a pebbly texture which faded. The color in the entire mole lightened, including the bottom area which was the darkest part of the mole. Most of the rest of the mole faded to flesh color and became barely visible.",
+			"description" : "Over twenty-eight years, this DN decreased in size from 9 millimeters to 7 millimeters and became barely visible. The mole contained light brown in the left lower portion and pink which became mostly tan in the rest of the mole. The mole was partially flat and before fading, became more irregular in outline with borders that became more indistinct (blurry). Much of the surface developed a pebbly texture which faded. The color in the entire mole lightened, including the bottom area which was the darkest part of the mole. Most of the rest of the mole faded to flesh color and became barely visible.",
 			"abcde" : {
 				"asymmetry" : "present then mostly disappears",
 				"border" : "irregular and indistinct",
 				"color" : "uneven (variable) before fading",
-				"diameter" : "large (8 millimeters) then decreases slightly",
+				"diameter" : "large (9 millimeters) then decreases slightly",
 				"evolving" : "regressing"
 			},
 			"diagnosis" : {
@@ -499,25 +499,25 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the DN almost three years after image 1. The borders of the mole are becoming more indistinct and irregular. Most of the area on the right side that was previously pink has become tan. Except for the center area, more of the surface has developed a pebbly texture.</p>",
+					"description" : "<p>This picture shows the DN almost three years after image 1. It is larger than in image 1 and is almost as wide as two pencil erasers beside each other. The borders of the DN are becoming more indistinct and irregular. Most of the area on the right side that was previously pink has become tan. Except for the center area, more of the surface has developed a pebbly texture.</p>",
 					"image" : "/images/DN9/DN9B.jpg",
 					"thumbnail" : "/images/DN9/DN9B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the DN nine years after image 2. The mole had lightened and become more flat. The borders are becoming fuzzier. The surface has lost some of its pebbly texture.</p>",
+					"description" : "<p>This picture shows the DN twelve years after image 1. The DN has lightened, and become smaller in diameter and flatter than in image 2. The borders are becoming fuzzier. The surface has lost some of its pebbly texture.</p>",
 					"image" : "/images/DN9/DN9C.jpg",
 					"thumbnail" : "/images/DN9/DN9C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole eleven years after image 3. Except for the bottom area which was the darkest part of the mole, the mole faded substantially and is barely visible. Most of the color in the upper portion has faded to flesh tones.</p>",
+					"description" : "<p>This picture shows the mole twenty-three years after image 1. Except for the bottom area which was the darkest part of the mole, the mole faded substantially and is barely visible. Most of the color in the upper portion has faded to flesh tones. The mole no longer meets criteria for DN.</p>",
 					"image" : "/images/DN9/DN9D.jpg",
 					"thumbnail" : "/images/DN9/DN9D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>Almost five years after image 4, the mole had faded and disappeared even more. The slightly raised light pink area has become smaller. A leftover area of the upper portion of the mole is barely visible.</p>",
+					"description" : "<p>This picture shows the mole twenty-eight years after image 1. The mole had faded and disappeared even more. The slightly raised light pink area has become smaller. A leftover area of the upper portion of the mole is barely visible.</p>",
 					"image" : "/images/DN9/DN9E.jpg",
 					"thumbnail" : "/images/DN9/DN9E-thumb.jpg"
 				}
@@ -530,12 +530,12 @@ var data =
 			"subgroup" : "stable",
 			"name" : "Case 10",
 			"title" : "Dysplastic Nevi Case 10: Stable then regressing (fading) DN",
-			"description" : "Over twenty-five years, this DN, which was about 6 millimeters, changed in shape and became longer (8 millimeters), then narrower (3 millimeters). The mixture of pink, red, and light brown became more tan and less reddened, and then darkened to shades of brown before fading to more pink and red. The surface was partially flat. Small papules (bumps) that formed in the upper left and the lower central portion, and an elevated rim that developed at the upper left border became less prominent as the mole faded. The borders were indistinct (blurry) and became even more indistinct before the mole started fading and becoming smaller in width.",
+			"description" : "Over twenty-five years, this DN, which was about 6 x 5 millimeters, changed in shape and became longer (9 x 5 millimeters), and then smaller (8 x 3 millimeters). The mixture of pink, red, and light brown became more tan and less reddened, and then darkened to shades of brown before fading to more pink and red. The surface was partially flat. Small papules (bumps) that formed in the upper left and the lower central portion, and an elevated rim that developed at the upper left border became less prominent as the mole faded. The borders were indistinct (blurry) and became even more indistinct before the mole started fading and becoming smaller in width.",
 			"abcde" : {
 				"asymmetry" : "present then mostly disappears",
-				"border" : "irregular and increasingly indistinct before fading; elevated rim developed at upper left border became less prominent as the mole faded",
+				"border" : "irregular and increasingly indistinct before fading; elevated rim developed at upper left border became less prominent as the DN faded",
 				"color" : "uneven (variable) then darkens before fading",
-				"diameter" : "enlarges to 8 millimeters then narrows to 3 millimeters",
+				"diameter" : "enlarges to 8 x 5 millimeters then narrows to 3 millimeters",
 				"evolving" : "regressing "
 			},
 			"diagnosis" : {
@@ -545,31 +545,31 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows a mole which is about the size of a pencil eraser. The mole is partially flat and quite irregular in outline. The borders are indistinct. The mole contains a mixture of pink, red, and light brown. The mole meets the criteria for DN.</p>",
+					"description" : "<p>This picture shows a mole which is a little larger than the size of a pencil eraser. The mole is partially flat and quite irregular in outline. The borders are indistinct. The mole contains a mixture of pink, red, and light brown. The mole meets criteria for DN.</p>",
 					"image" : "/images/DN10/DN10A.jpg",
 					"thumbnail" : "/images/DN10/DN10A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the DN two years after image 1. A small papule (bump) had formed in the upper left area. A smaller and lighter papule had formed in the lower central portion of the lesion. The mole changed in shape with new growth outward at the 2 o’clock to 3 o’clock area. Much of the mole still appears quite reddened.</p>",
+					"description" : "<p>This picture shows the DN two years after image 1. A small papule (bump) has formed in the upper left area. A smaller and lighter papule has formed in the lower central portion of the lesion. The DN changed in shape with new growth outward at the 2 o’clock to 3 o’clock area. Much of the DN still appears quite reddened.</p>",
 					"image" : "/images/DN10/DN10B.jpg",
 					"thumbnail" : "/images/DN10/DN10B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the mole 7 years after image 2. The mole had changed in shape and is now longer than it is wide. The borders are more indistinct. A small raised area is now visible on the upper left border. The mole is more tan and less reddened. The color in the lower portion has lightened.</p>",
+					"description" : "<p>This picture shows the DN nine years after image 1. The DN has changed in shape and is now longer than it is wide (9 x 5 mm). The borders are more indistinct. A small raised area is now visible on the upper left border. The mole is tanner and less reddened. The color in the lower portion has lightened.</p>",
 					"image" : "/images/DN10/DN10C.jpg",
 					"thumbnail" : "/images/DN10/DN10C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole five years after image 3. The mole is now shades of brown. The papule in the upper left area had enlarged and darkened considerably. An elevated rim developed at the 9 o’clock to almost 12 o’clock position.</p>",
+					"description" : "<p>This picture shows the DN fourteen years after image 1. The DN is now shades of brown. The papule in the upper left area has enlarged and darkened. An elevated rim has developed at the 9 o’clock to almost 12 o’clock position.</p>",
 					"image" : "/images/DN10/DN10D.jpg",
 					"thumbnail" : "/images/DN10/DN10D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole eleven years after image 4. The mole had faded and become slightly smaller in width. The shape changed by the mole becoming more narrow. The flat area surrounding the papule is more pink to red. The papule has lightened and become less prominent.</p>",
+					"description" : "<p>This picture shows the DN twenty-five years after image 1. The DN has faded and become slightly smaller (8 x 3 mm). The shape changed by the DN becoming narrower. The flat area surrounding the papule is pinker to red. The papule has lightened and become less prominent.</p>",
 					"image" : "/images/DN10/DN10E.jpg",
 					"thumbnail" : "/images/DN10/DN10E-thumb.jpg"
 				}
@@ -582,12 +582,12 @@ var data =
 			"subgroup" : "stable",
 			"name" : "Case 11",
 			"title" : "Dysplastic Nevi Case 11: Stable then regressing (fading) DN",
-			"description" : "Over twenty-three years, this DN increased in diameter from 7 millimeters to 11 millimeters before regressing and becoming slightly smaller. The mole contained shades of pink, red, tan, and light brown, which darkened slightly before lightening considerably. Some of the color faded completely. The outline remained slightly irregular. The shape became more oval before the mole started fading. The borders remained very indistinct. The surface was partially flat with a pebbly texture that became more and then less prominent. The tiny papule in the central portion became less prominent before it enlarged and developed a darker rim and depressed center. A slightly pebbly texture remained on most of the flattened surface surrounding the papule.",
+			"description" : "Over twenty-three years, this DN increased in diameter from 7 millimeters to 10 millimeters before regressing and becoming slightly smaller. The DN contained shades of pink, red, tan, and light brown, which darkened slightly before lightening considerably. Some of the color faded completely. The outline remained slightly irregular. The shape became more oval before the DN started fading. The borders remained very indistinct. The surface was partially flat with a pebbly texture that became more and then less prominent. The tiny papule in the central portion became less prominent before it enlarged and developed a darker rim and depressed center. A slightly pebbly texture remained on most of the flattened surface surrounding the papule.",
 			"abcde" : {
 				"asymmetry" : "mild",
 				"border" : "indistinct",
 				"color" : "uneven (variable); darkens slightly before fading",
-				"diameter" : "large; increases to 11 millimeters before fading and becoming slightly smaller",
+				"diameter" : "large; increases to 10 millimeters before fading and becoming slightly smaller",
 				"evolving" : "fading"
 			},
 			"diagnosis" : {
@@ -597,31 +597,31 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows a mole that is mostly flat and slightly irregular in outline. The borders are very indistinct. The mole has a slightly pebbly surface with a small papule (bump) in the center.</p>",
+					"description" : "<p>This picture shows a mole that is larger in diameter than a pencil eraser, mostly flat and slightly irregular in outline, with color varying from lighter to darker tan. The borders are very indistinct. The mole has a slightly pebbly surface with a small papule (bump) in the center.  Although this mole is not as irregular as some others, it meets criteria for DN.</p>",
 					"image" : "/images/DN11/DN11A.jpg",
 					"thumbnail" : "/images/DN11/DN11A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole seven years after image 1. The mole has enlarged some. More of the surface has developed a pebbly texture.</p>",
+					"description" : "<p>This picture shows the DN seven years after image 1. The DN has enlarged to the diameter of two pencil erasers. Much of this growth is in the area from 7-9 o’clock. More of the surface has developed a pebbly texture.</p>",
 					"image" : "/images/DN11/DN11B.jpg",
 					"thumbnail" : "/images/DN11/DN11B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>Five years after image 2, the mole appears minimally changed. The pebbly texture of the surface is slightly more prominent.</p>",
+					"description" : "<p>FTwelve years after image 1, the DN appears minimally changed. The pebbly texture of the surface is slightly more prominent and the border between 7 and 9 o’clock is a bit more distinct.</p>",
 					"image" : "/images/DN11/DN11C.jpg",
 					"thumbnail" : "/images/DN11/DN11C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture was taken six and a half years after image 3. The mole had changed in several ways. The borders are still quite indistinct, but the shape has become more round. The mole has lightened considerably. Most of the surface around papule has flattened. Some of the pigment [color] in the right side has faded completely. There has been some new pigment spreading from the bottom area.</p>",
+					"description" : "<p>This picture was taken eighteen and a half years after image 1. The DN has changed in several ways. The borders are still quite indistinct, but the shape has become more round and now measures 8 x 6 mm. The mole has lightened somewhat, but the pattern of pigment has changed, with a lighter background with clumps of darker tan.  Most of the surface around the papule has flattened.</p>",
 					"image" : "/images/DN11/DN11D.jpg",
 					"thumbnail" : "/images/DN11/DN11D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole almost five years after image 4. The papule, now quite prominent, has doubled in size and has a darker rim and depressed center. A slightly pebbly texture remains on the flattened surface surrounding the papule. The outermost rim is flat. One way to describe the mole is that it has a \"fried egg\" appearance.</p>",
+					"description" : "<p>This picture shows the DN twenty-three years after image 1. The DN is still larger than a pencil eraser and has irregular, indistinct borders. The papule, now quite prominent, has doubled in size and has a darker rim and depressed center. A slightly pebbly texture remains on the flattened surface surrounding the papule. The outermost rim is flat. One way to describe the mole is that it has a \"fried egg\" appearance.  It still meets criteria for DN.</p>",
 					"image" : "/images/DN11/DN11E.jpg",
 					"thumbnail" : "/images/DN11/DN11E-thumb.jpg"
 				}
@@ -634,7 +634,7 @@ var data =
 			"subgroup" : "stable",
 			"name" : "Case 12",
 			"title" : "Dysplastic Nevi Case 12: Stable then regressing (fading/disappearing) DN",
-			"description" : "Over twenty-three years, this DN increased in diameter from 5 millimeters to 9 millimeters. The nevus went from being a mixture of brown colors, partially flat with indistinct borders and an irregular shape and outline to a much lighter arch-shaped mole with even more indistinct borders. The small papule in the left central portion became less prominent and faded.",
+			"description" : "Over almost twenty-four years, this DN increased in diameter from 5 millimeters to 9 millimeters. The nevus went from being a mixture of brown colors, partially flat with indistinct borders and an irregular shape and outline to a much lighter arch-shaped mole with even more indistinct borders. The small papule in the left central portion became less prominent and faded.",
 			"abcde" : {
 				"asymmetry" : "present and increases",
 				"border" : "irregular and indistinct",
@@ -649,19 +649,19 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows an irregular mole which is slightly smaller than a pencil eraser. The mole is partially flat with indistinct borders. The mole has an irregular shape and outline. It contains a mixture of brown colors. The small papule (bump) in the left central portion is darker than the rest of the mole.</p>",
+					"description" : "<p>This picture shows a mole which is the size of a pencil eraser. The mole is partially flat with indistinct borders and an irregular shape and outline. It contains a mixture of brown colors. The small papule (bump) in the left central portion is darker than the rest of the mole. The mole meets criteria for a DN.</p>",
 					"image" : "/images/DN12/DN12A.jpg",
 					"thumbnail" : "/images/DN12/DN12A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole four years after image 1. The mole had enlarged in size and become more irregular in shape. New areas of light brown have spread from the 2 o’clock, 8 o’clock and 11 o’clock positions. The borders have become more indistinct. The entire mole has lightened, and the papule has become less prominent. The mole meets criteria for DN.</p>",
+					"description" : "<p>This picture shows the DN four years after image 1. The DN has enlarged in size and become more irregular in shape. New areas of light brown have spread from the 2, 4,  8, and 11 o’clock positions. The borders have become more indistinct. The entire mole has lightened, and the papule has become less prominent.</p>",
 					"image" : "/images/DN12/DN12B.jpg",
 					"thumbnail" : "/images/DN12/DN12B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>Almost twenty years after image 2, the entire mole had faded dramatically, and some of the areas that were previously brown have become the color of the normal skin. The mole is now arch-shaped. The borders are still quite indistinct. It no longer meets criteria for DN.</p>",
+					"description" : "<p>Almost twenty-four years after image 1, the entire mole has faded dramatically, and some of the areas that were previously brown have become the color of the normal skin. The mole is now arch-shaped. The borders are still quite indistinct. It no longer meets criteria for DN.</p>",
 					"image" : "/images/DN12/DN12C.jpg",
 					"thumbnail" : "/images/DN12/DN12C-thumb.jpg"
 				}
@@ -689,25 +689,25 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows an irregular mole that is slightly bigger than a pencil eraser. It is partially flat and irregular in outline with indistinct borders. The mole contains a mixture of brown shades. The flat base of the mole is lighter than the darker brown raised pebbly part of the mole’s surface. The mole meets criteria for DN. Note the small light pink area near the 8 o’clock to 9 o’clock position.</p>",
+					"description" : "<p>This picture shows an irregular mole that is slightly bigger than a pencil eraser. It is partially flat and irregular in outline with indistinct borders. The mole contains a mixture of brown shades. The flat base of the mole is lighter than the darker brown raised pebbly part of the mole’s surface. The mole meets criteria for DN. Note the small light pink-tan area near the 8 o’clock to 9 o’clock position.</p>",
 					"image" : "/images/DN13/DN13A.jpg",
 					"thumbnail" : "/images/DN13/DN13A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole five5 years after image 1. It had slightly increased in size. The tiny pink area at the 9 o’clock position increased to 3 millimeters and fused [grew together] with the larger mole so that the larger mole appears to have changed in shape. The length of the mole is about two pencil erasers beside each other. The pebbly appearance of the surface of the larger mole has enlarged and darkened.</p>",
+					"description" : "<p>This picture shows the DN five years after image 1. It has slightly increased in size. The tiny pink-tan area at the 9 o’clock position increased to 3 millimeters and fused [grew together] with the larger mole so that the larger mole appears to have changed in shape. The length of the mole is larger than two pencil erasers beside each other. The pebbly appearance of the surface of the larger mole has enlarged and darkened. The borders are still indistinct and irregular.</p>",
 					"image" : "/images/DN13/DN13B.jpg",
 					"thumbnail" : "/images/DN13/DN13B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the mole six years after image 2. The mole had flattened and faded substantially. The color of the base of the mole had become more pink. There are areas of brown mainly in the upper central part of the mole. The smaller attached mole became raised and now appears as a pink papule (bump).</p>",
+					"description" : "<p>This picture shows the DN eleven and a half years after image 1. The DN has flattened and faded substantially. The color of the base of the DN has become pinker. There are areas of brown mainly in the upper central part of the DN. The smaller attached mole became raised and now appears as a pink papule (bump).</p>",
 					"image" : "/images/DN13/DN13C.jpg",
 					"thumbnail" : "/images/DN13/DN13C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole five years after image 3. The mole had continued to fade. The pink papule near the 9 o’clock position is barely visible.</p>",
+					"description" : "<p>This picture shows the DN sixteen years after image 1. The DN has continued to fade, but still meets criteria for DN. The pink papule near the 9 o’clock position is barely visible.</p>",
 					"image" : "/images/DN13/DN13D.jpg",
 					"thumbnail" : "/images/DN13/DN13D-thumb.jpg"
 				}
@@ -720,7 +720,7 @@ var data =
 			"subgroup" : "stable",
 			"name" : "Case 14",
 			"title" : "Dysplastic Nevi Case 14: Evolving and regressing (fading) DN",
-			"description" : "Over sixteen years, this DN changed in size, shape, surface, and color. It increased in greatest width from 5 millimeters to 11 millimeters. It contained a mix of brown colors with darker brown in the lower central area surrounded by a lighter shade of brown. The raised area near the 6 o’clock position became very dark brown before the entire nevus lightened substantially, with the central portion fading to almost the color of the normal skin. The mole initially had a slightly irregular outline. It changed in shape when it grew outward in several areas, developed scalloped borders in the right lower quarter, and when it faded substantially. The borders were indistinct and became even more indistinct as the mole was fading away. The surface was mostly raised and had a slightly pebbly appearance before becoming flatter as the mole faded.",
+			"description" : "Over sixteen years, this DN changed in size, shape, surface, and color. It increased in greatest width from 5 millimeters to 11 millimeters. It  contained a mix of brown colors with darker brown in the lower central area surrounded by a lighter shade of brown. The raised area near the 6 o’clock position became very dark brown before the entire nevus lightened substantially, with the central portion fading to almost the color of the normal skin. The mole initially had a slightly irregular outline. It changed in shape when it grew outward in several areas, developed scalloped borders in the right lower quarter, and when it faded substantially. The borders were indistinct and became even more indistinct as the mole was fading away. The surface was mostly raised and had a slightly pebbly appearance before becoming flatter as the mole faded.",
 			"abcde" : {
 				"asymmetry" : "present and increases",
 				"border" : "indistinct and becomes more irregular",
@@ -735,25 +735,25 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows a mole that is about the size of a pencil eraser. The mole has a slightly irregular outline and indistinct borders. It has a slight mix of brown colors with darker brown in the lower central area surrounded by a lighter shade of brown. The mole is mostly raised and has a slightly pebbly appearance. The edges are flatter and a lighter shade of brown.</p>",
+					"description" : "<p>This picture shows a mole that is about the size of a pencil eraser. The mole has a slightly irregular outline and indistinct borders. It has a slight mix of brown colors with darker brown in the lower central area surrounded by a lighter shade of brown. The mole is mostly raised and has a slightly pebbly appearance. The edges are flatter and a lighter shade of brown.  It does not quite meet criteria for DN.</p>",
 					"image" : "/images/DN14/DN14A.jpg",
 					"thumbnail" : "/images/DN14/DN14A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole five years after image 1. The mole had enlarged slightly. It also changed in shape and color. The mole had grown outward from the 6 o’clock to 2 o’clock positions. It now has scalloped borders in the right lower quarter. The upper central portion from 9 o’clock to 12 o’clock has lightened to pink. The raised area near the 6 o’clock position has become very dark brown.</p>",
+					"description" : "<p>This picture shows the mole five years after image 1. The mole has enlarged to 1.5 pencil erasers. It also changed in shape and color variation. The mole has grown outward into an irregular shape with scalloped borders in the right lower quarter. The upper central portion from 9 o’clock to 12 o’clock has lightened to tan. The raised area near the 6 o’clock position has become dark brown. The mole now meets criteria for DN.</p>",
 					"image" : "/images/DN14/DN14B.jpg",
 					"thumbnail" : "/images/DN14/DN14B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the mole six years after image 2. The mole had had changed in size, shape, surface, and color. The mole grew slightly bigger so now it about as wide as two pencil erasers beside each other. The outline changed because of mole growth outward at the 11 o’clock, one o’clock, and 5 o’clock positions. The mole became flatter and lightened substantially. The central portion is now pink. The borders of the mole have become more indistinct.</p>",
+					"description" : "<p>This picture shows the DN eleven years after image 1. The DN has changed in size, shape, surface, and color. The DN enlarged to as wide as two pencil erasers beside each other. The outline changed because of mole growth outward at the 11,, 1, and5 o’clock positions. The DN became flatter and lightened substantially. The central portion is now pink. The borders of the mole have become more indistinct.</p>",
 					"image" : "/images/DN14/DN14C.jpg",
 					"thumbnail" : "/images/DN14/DN14C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole five years after image 3. The mole had changed in shape, surface, and color. The outline has changed because the mole is fading away, particularly at the one o’clock and 4 o’clock positions. The central part of the mole has faded to almost the color of the normal skin. The mole has become flatter.</p>",
+					"description" : "<p>This picture shows the DN sixteen years after image 1. The DN has changed in shape, surface, and color. The outline has changed because the DN is fading away, particularly at the 1 and 4 o’clock positions. The central part of the mole has faded to almost the color of the normal skin. The mole has become flatter, but still meets criteria for DN.</p>",
 					"image" : "/images/DN14/DN14D.jpg",
 					"thumbnail" : "/images/DN14/DN14D-thumb.jpg"
 				}
@@ -781,31 +781,31 @@ var data =
 			"images" : [
 				{
 					"name" : "Image 1",
-					"description" : "<p>This picture shows a mole that is partially flat and about half the size of a pencil eraser. The mole is slightly irregular in outline. It contains a slight mixture of medium to dark brown colors. The central part of the mole is elevated and has a slightly pebbly surface.</p>",
+					"description" : "<p>This picture shows a mole that is partially flat and about half the size of a pencil eraser. The mole is slightly irregular in outline. It contains a slight mixture of medium to dark brown colors. The central part of the mole is elevated and has a slightly pebbly surface. This mole is too small to meet criteria for DN.</p>",
 					"image" : "/images/DN15/DN15A.jpg",
 					"thumbnail" : "/images/DN15/DN15A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole two years after image 1. The mole almost doubled in size. The mole has become mostly raised with a pebbly surface. The edges of the mole are flat, lighter in color, and have more indistinct borders.</p>",
+					"description" : "<p>This picture shows the mole two years after image 1. The mole almost doubled in size and is the size of a pencil eraser. The mole has become irregular in shape, mostly raised with a pebbly surface, with some differences in color. The edges of the mole are flat, lighter in color, and have more indistinct borders.  The mole now meets criteria for DN.</p>",
 					"image" : "/images/DN15/DN15B.jpg",
 					"thumbnail" : "/images/DN15/DN15B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the mole two years after image 2. The mole has become slightly lighter and more irregular in outline. The mole grew outward in the 7 o’clock to 8 o’clock position. The borders are more indistinct.</p>",
+					"description" : "<p>This picture shows the DN four years after image 1. The mole has become slightly lighter and more irregular in outline, with more indistinct borders. The DN grew outward in the 7 o’clock to 8 o’clock position.</p>",
 					"image" : "/images/DN15/DN15C.jpg",
 					"thumbnail" : "/images/DN15/DN15C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole six years after image 3. The mole had lightened considerably and changed slightly in shape. The part of the mole that had projected outward near the 7 o’clock to 8 o’clock position (seen in Image 3) had faded.</p>",
+					"description" : "<p>This picture shows the mole ten years after image 1. The mole has lightened considerably, the borders are more distinct, it is mostly elevated, and it has changed slightly in shape. The part of the mole that had projected outward near the 7 o’clock to 8 o’clock position (seen in image 3) has faded.  The mole no longer meets criteria for DN.</p>",
 					"image" : "/images/DN15/DN15D.jpg",
 					"thumbnail" : "/images/DN15/DN15D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole three years after image 4. The mole had become slightly smaller. It faded substantially and became more uniform in color, now more pink and red. Most of the mole’s surface is still raised. Except for the area from the 12 o’clock to 3 o’clock position, the edge around the mole has flattened and the borders are indistinct.</p>",
+					"description" : "<p>This picture shows the mole 2three years after image 1. The mole has become smaller. It faded substantially and became more uniform in color, now more pink and red. Most of the mole’s surface is still raised. Except for the area from the 12 o’clock to 3 o’clock position, the edge around the mole has flattened and the borders are indistinct.</p>",
 					"image" : "/images/DN15/DN15E.jpg",
 					"thumbnail" : "/images/DN15/DN15E-thumb.jpg"
 				}
@@ -845,19 +845,19 @@ var data =
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>Three months after image 2, the papule at the bottom of the DN is less apparent. The color in the upper part of the DN has lightened.</p>",
+					"description" : "<p>Three months later, the papule at the bottom of the DN is less apparent. The color in the upper part of the DN has lightened.</p>",
 					"image" : "/images/DN16/DN16C.jpg",
 					"thumbnail" : "/images/DN16/DN16C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture was taken seven months after image 3. The shape of the DN has changed and the outline has become much more irregular. The upper portion of the DN has filled in considerably. It has expanded to the left and the bottom portion has also grown. The DN has increased in size.</p>",
+					"description" : "<p>This picture was taken almost two years after image 1. The shape of the DN has changed and the outline has become much more irregular. The upper portion of the DN has filled in considerably. It has expanded to the left and the bottom portion has also grown. The DN has increased in size. The color is also more varied with more dark brown.</p>",
 					"image" : "/images/DN16/DN16D.jpg",
 					"thumbnail" : "/images/DN16/DN16D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>Three months after image 4, the DN is substantially darker. It has developed new areas of darker pigment in the upper and lower portions. The papule that had been at the bottom of the mole has almost completely disappeared.</p><p>The DN was removed because of the continuous changes over time: increasing size and the new dark areas.</p>",
+					"description" : "<p>Three months later, the DN is substantially darker. It has developed new areas of darker pigment in the upper and lower portions. The papule that had been at the bottom of the mole has almost completely disappeared.</p><p>The DN was removed because of the continuous changes – increasing size and the new increasingly dark areas – over time.</p>",
 					"image" : "/images/DN16/DN16E.jpg",
 					"thumbnail" : "/images/DN16/DN16E-thumb.jpg"
 				}
@@ -1414,14 +1414,14 @@ var data =
 		{
 			"type" : "mole",
 			"name" : "Common Moles",
-			"description" : "<ul><li>Common moles are growths on the skin that develop when pigment cells (melanocytes) grow in clusters; also called \"common nevi\" or \"common acquired nevi\"</li><li><span>Appearance (using ABCDE rule)</span><ul><li>Asymmetry: Usually symmetrical, round or oval</li><li>Border: Usually have a distinct edge that separates it from the rest of the skin</li><li>Shape: Usually round or oval</li><li>Color: Usually have an even color; may be pink, tan, brown, black (in deeply pigmented individuals), or a color that is very close to a person’s normal skin tone</li><li>Diameter: Usually less than 5 millimeters or about ¼ inch (smaller than a pencil eraser)</li><li>Evolving: Moles go through a life-cycle. Often they start as small freckle-like spots; gradually round up and form a bump; may lighten, become flesh-colored; become less elevated, flatten and eventually disappear. Life-cycle is a gradual process typically over many years. Some moles do not go through the entire life-cycle. Vast majority are stable and then disappear; rarely develop into melanoma (or cancer). Rarely develop into melanoma (or cancer)</ul></li></ul>",
+			"description" : "<ul><li>Common moles are growths on the skin that develop when pigment cells (melanocytes) grow in clusters; also called \"common nevi\" or \"common acquired nevi\"</li><li><span>Appearance (using ABCDE rules)</span><ul><li>Asymmetry: Usually symmetrical, round or oval</li><li>Border: Usually have a distinct edge that separates it from the rest of the skin</li><li>Shape: Usually round or oval</li><li>Color: Usually have an even color; may be pink, tan, brown, black (in deeply pigmented individuals), or a color that is very close to a person’s normal skin tone</li><li>Diameter: Usually less than 5 millimeters or about ¼ inch (smaller than a pencil eraser)</li><li>Evolving: Moles go through a life-cycle. Often they start as small freckle-like spots; gradually round up and form a bump; may lighten, become flesh-colored; become less elevated, flatten and eventually disappear. Life-cycle is a gradual process typically over many years. Some moles do not go through the entire life-cycle. Vast majority are stable and then disappear; rarely develop into melanoma (or cancer). </ul></li></ul>",
 			"descriptionsummary" : "<p>A common mole is <em>a non-cancerous growth on the skin</em> that is formed by a cluster of melanocytes (cells that make a substance called melanin, which gives color to skin and eyes). A mole may be dark or flesh-colored and may be raised from the skin. Most adults have between 10 and 40 common moles. These growths are usually found above the waist on areas exposed to the sun. Common moles are seldom found on the scalp, breast, or buttocks.</p>"
 		},
 		{
 			"type" : "dysplasticnevi",
 			"name" : "Dysplastic Nevi (DN)",
-			"description" : "<ul><li>The word \"dysplastic\" in its name refers to the look and pattern of cells in the nevi as they appear under a microscope</li><li>Appearance (according to ABCDE rules)<ul><li>Asymmetry: irregular shape</li><li>Border: indistinct (blurry) borders</li><li>Color: mixture of colors (tan, brown, and red or pink shades)</li><li>Diameter: greater than 5 millimeters or ¼ inch and have a flat part</li><li>Evolving: Majority are stable and then disappear; typically start to show these features when small, show all features by the size of most moles, s become larger than most moles and eventually disappear</li></ul></li><li>The \"ABCDE\" rules were made for identifying early melanoma, but can also be used to describe DN</li><li>Clinicians use the number of DN to identify some individuals who are at increased risk of developing melanoma</li><li>DN most likely found on sun-exposed areas, especially intermittently exposed, such as the back, but are also frequent on chest, arms and legs</li><li>Approximately 10% of adult populations of northern European descent have at least one DN</li><li>DN are frequently found in melanoma-prone families in North America, Europe, and Australia</li><li>Melanomas may develop from DN</li><li>Risk of melanoma is high for people who have a large number of DN; especially high for people with a family history of both DN and melanoma</li></ul>",
-			"descriptionsummary" : "<p>A dysplastic nevus (DN) is <em>a mole that may develop into malignant melanoma</em>, a  skin cancer starting in pigment cells. DN look different from common moles. DN are often larger than common moles (more than 5 mm) and have borders that are not easy to see. Their color is usually uneven and can range from pink to dark brown. Similar to common moles, parts of the DN may be raised above the skin surface. Some doctors use the term \"atypical mole\" to refer to DN.</p>",
+			"description" : "<ul><li>The word \"dysplastic\" in its name refers to the look and pattern of cells in the nevi as they appear under a microscope</li><li>Appearance (according to ABCDE rules)<ul><li>Asymmetry: irregular shape</li><li>Border: indistinct (blurry) borders</li><li>Color: mixture of colors (tan, brown, and red or pink shades)</li><li>Diameter: greater than 5 millimeters or ¼ inch and have a flat part</li><li>Evolving: Majority are stable and then disappear; typically start to show these features when small and show all features by the time they reach the size of most moles; become larger than most moles and eventually disappear</li></ul></li><li>The \"ABCDE\" rules were made for identifying early melanoma, but can also be used to describe DN</li><li>Clinicians use the number of DN to identify some individuals who are at increased risk of developing melanoma</li><li>DN most likely found on sun-exposed areas, especially intermittently exposed, such as the back, but are also frequent on chest, arms and legs</li><li>Approximately 10% of adult populations of northern European descent have at least one DN</li><li>DN are frequently found in melanoma-prone families in North America, Europe, and Australia</li><li>Melanomas may develop from DN</li><li>Risk of melanoma is high for people who have a large number of DN; especially high for people with a family history of both DN and melanoma</li></ul>",
+			"descriptionsummary" : "<p>A dysplastic nevus (DN) is <em>a mole that may develop into malignant melanoma</em>, a skin cancer starting in pigment cells. DN look different from common moles. DN are often larger than common moles (more than 5 mm) and have borders that are not easy to see. Their color is usually uneven and can range from pink to dark brown. Similar to common moles, parts of the DN may be raised above the skin surface. Some doctors use the term \"atypical mole\" to refer to DN.</p>",
 			"subgroups" : [
 				{
 					"type" : "dysplasticnevi",
@@ -1441,7 +1441,7 @@ var data =
 		{
 			"type" : "melanoma",
 			"name" : "Melanomas",
-			"description" : "<ul><li>A type of skin cancer that begins in melanocytes (cells that make the pigment melanin)</li><li>Early, thin melanomas are curable by minimal surgery alone</li><li>Advanced melanomas may spread to others parts of the body and treatments such as additional surgery, chemotherapy, radiation therapy, immunotherapy and/or new types of treatment being tested in clinical trials may be used</li><li>Melanomas can vary greatly in how they look. Many show all of the \"ABCDE\" features; however, some may show only one or two of those features</li></ul><div tabindex=\"0\" class=\"partial-collapse\" ng-class=\"{'show':collapseWarning}\" ng-click=\"collapseWarning = !collapseWarning\"><h4><span class=\"glyphicon\" ng-class=\"{'glyphicon-plus-sign':!collapseWarning,'glyphicon-minus-sign':collapseWarning}\"></span>Warning Signs</h4><h4>Pay close attention to any irregular moles or dysplastic nevi (DN) on your skin. Look for melanoma warning signs. If any moles have changed in any of the following ways, or if you are concerned about any of your moles, <u>see your doctor</u>.</h4><ul><li>Large size, rapid growth, or change in size</li><li>Change in color or development of a black, much darker brown, red or white area</li><li>Irregular border or changes in outline</li><li>New or change in texture (scaly), bleeding, or very shiny surface</li><li>New firm nodule or texture</li><li>New loss of color or areas of blue in skin surrounding a mole</li><li>Unusual sensations or onset of a new feeling within a mole (for example, feeling itchy)</li><li>Sudden appearance of a new pigmented spot or new shiny nodule in previously-normal skin</li></ul></div><div tabindex=\"0\" class=\"partial-collapse\" ng-class=\"{'show':collapseGuidelines}\" ng-click=\"collapseGuidelines = !collapseGuidelines\"><h4><span class=\"glyphicon\" ng-class=\"{'glyphicon-plus-sign':!collapseGuidelines,'glyphicon-minus-sign':collapseGuidelines}\"></span>Guidelines for Individuals at Increased Risk of Melanoma</h4><ul><li><span>Examine your skin thoroughly on a monthly basis. In order to do this effectively, you should:</span><ul><li>Familiarize yourself with your skin and all of your moles.</li><li>Examine your scalp.</li><li>Use mirrors for hard-to-see areas.</li><li>Compare photographs of your skin and a body diagram to determine if any moles have changed or if any new ones have appeared. Make notes of any changes or questions. If you are concerned, call your doctor.</li></ul></li><li><span>Get routine, regular examinations by your health-care provider</span><ul><li>Point out any moles that you think have changed, or any areas on your skin that worry you. (See Melanoma Warning Signs)</li></ul></li><li><span>Watch moles extra carefully during periods of major hormonal changes</span><ul><li>Increased mole activity often occurs in adolescence, and in women who are pregnant, or taking oral contraceptives or post-menopausal estrogen replacement therapy.</li></ul></li><li><span>Avoid excessive sun and ultraviolet (UV) radiation exposure</span><ul><li>Minimize sun exposure between 10AM and 4PM</li><li>Seek shade</li><li>Avoid sunburns; do not suntan</li><li>Do not use sunlamps, sunbeds or tanning parlors</li><li>Use sunscreens regularly (broad spectrum with UVA and UVB radiation protection and sun protection factor [SPF] of 30 or higher). Reapply at least every 2 hours or more frequently if perspiring or swimming.</li><li>Wear protective clothing (hats with wide brims, long sleeves and long pants made of tightly woven fabrics, or fabrics with a Ultraviolet Protection Factor [UPF] of 50+)</li><li>Wear sunglasses that block 99-100% UV radiation</li><li>Remember that UV radiation can penetrate light clothing, windshields, and windows. It reflects from water, sand, snow, and concrete.</li><li>Keep infants out of the sun. Be sure children are protected when outdoors.</li></ul></li></ul></div>",
+			"description" : "<ul><li>A type of skin cancer that begins in melanocytes (cells that make the pigment melanin)</li><li>Early, thin melanomas are curable by minimal surgery alone</li><li>Advanced melanomas may spread to others parts of the body and treatments such as additional surgery, chemotherapy, radiation therapy, immunotherapy and/or new types of treatment being tested in clinical trials may be used</li><li>Appearance of early melanoma (according to ABCDE rules)<ul><li>Asymmetry: Often irregular and asymmetrical (the shape of one half does not match the other half)</li><li>Border: Usually irregular. Edges often ragged, notched, or blurred in outline. The pigment may spread into the surrounding skin.</li><li>Color: Usually uneven in color.  Shades of black, brown, and tan may be present. May also have areas of white, gray, red, pink, or blue.</li><li>Diameter: Change in size, usually an increase. Melanomas can be tiny, but most are larger than 6 millimeters wide (about ¼ inch wide). The surface may appear scaly.</li><li>Evolving: The mole has changed in size, shape, and/or color over the past few weeks or months.  Development of a new mole that has any of the ABCDE features in an area of previously normal skin.</li></ul><li>Melanomas can vary greatly in how they look. Many show all of the \"ABCDE\" features; however, some may show only one or two of those features</li></ul><div tabindex=\"0\" class=\"partial-collapse\" ng-class=\"{'show':collapseWarning}\" ng-click=\"collapseWarning = !collapseWarning\"><h4><span class=\"glyphicon\" ng-class=\"{'glyphicon-plus-sign':!collapseWarning,'glyphicon-minus-sign':collapseWarning}\"></span>Warning Signs</h4><h4>Pay close attention to any irregular moles or dysplastic nevi (DN) on your skin. Look for melanoma warning signs. If any moles have changed in any of the following ways, or if you are concerned about any of your moles, <u>see your doctor</u>.</h4><ul><li>Large size, rapid growth, or change in size</li><li>Change in color or development of a black, much darker brown, red or white area</li><li>Irregular border or changes in outline</li><li>New or change in texture (scaly), bleeding, or very shiny surface</li><li>New firm nodule or texture</li><li>New loss of color or areas of blue in skin surrounding a mole</li><li>Unusual sensations or onset of a new feeling within a mole (for example, feeling itchy)</li><li>Sudden appearance of a new pigmented spot or new shiny nodule in previously-normal skin</li></ul></div><div tabindex=\"0\" class=\"partial-collapse\" ng-class=\"{'show':collapseGuidelines}\" ng-click=\"collapseGuidelines = !collapseGuidelines\"><h4><span class=\"glyphicon\" ng-class=\"{'glyphicon-plus-sign':!collapseGuidelines,'glyphicon-minus-sign':collapseGuidelines}\"></span>Guidelines for Individuals at Increased Risk of Melanoma</h4><ul><li><span>Examine your skin thoroughly on a monthly basis. In order to do this effectively, you should:</span><ul><li>Familiarize yourself with your skin and all of your moles.</li><li>Examine your scalp.</li><li>Use mirrors for hard-to-see areas.</li><li>Compare photographs of your skin and a body diagram to determine if any moles have changed or if any new ones have appeared. Make notes of any changes or questions. If you are concerned, call your doctor.</li></ul></li><li><span>Get routine, regular examinations by your health-care provider</span><ul><li>Point out any moles that you think have changed, or any areas on your skin that worry you. (See Melanoma Warning Signs)</li></ul></li><li><span>Watch moles extra carefully during periods of major hormonal changes</span><ul><li>Increased mole activity often occurs in adolescence, and in women who are pregnant, or taking oral contraceptives or post-menopausal estrogen replacement therapy.</li></ul></li><li><span>Avoid excessive sun and ultraviolet (UV) radiation exposure</span><ul><li>Minimize sun exposure between 10AM and 4PM</li><li>Seek shade</li><li>Avoid sunburns; do not suntan</li><li>Do not use sunlamps, sunbeds or tanning parlors</li><li>Use sunscreens regularly (broad spectrum with UVA and UVB radiation protection and sun protection factor [SPF] of 30 or higher). Reapply at least every 2 hours or more frequently if perspiring or swimming.</li><li>Wear protective clothing (hats with wide brims, long sleeves and long pants made of tightly woven fabrics, or fabrics with a Ultraviolet Protection Factor [UPF] of 50+)</li><li>Wear sunglasses that block 99-100% UV radiation</li><li>Remember that UV radiation can penetrate light clothing, windshields, and windows. It reflects from water, sand, snow, and concrete.</li><li>Keep infants out of the sun. Be sure children are protected when outdoors.</li></ul></li></ul></div>",
 			"descriptionsummary" : "<p>Melanoma is <em>a form of cancer</em> that begins in melanocytes (cells that make the pigment melanin). It may begin in a mole (skin melanoma), but infrequently can also begin in other pigmented tissues, such as in the eye or the intestines. Melanoma is potentially dangerous because it can spread to nearby tissues and other parts of the body, such as the lung, liver, bone, or brain. The earlier that melanoma is detected and removed, the more likely that treatment will be successful.</p>"
 		}
 	]
