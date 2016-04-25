@@ -557,7 +557,7 @@ var data =
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the DN nine years after image 1. The DN has changed in shape and is now longer than it is wide (9 x 5 mm). The borders are more indistinct. A small raised area is now visible on the upper left border. The mole is tanner and less reddened. The color in the lower portion has lightened.</p>",
+					"description" : "<p>This picture shows the DN nine years after image 1. The DN has changed in shape and is now longer than it is wide (9 x 5 millimeters). The borders are more indistinct. A small raised area is now visible on the upper left border. The mole is tanner and less reddened. The color in the lower portion has lightened.</p>",
 					"image" : "/images/DN10/DN10C.jpg",
 					"thumbnail" : "/images/DN10/DN10C-thumb.jpg"
 				},
@@ -569,7 +569,7 @@ var data =
 				},
 				{
 					"name" : "Image 5",
-					"description" : "<p>This picture shows the DN twenty-five years after image 1. The DN has faded and become slightly smaller (8 x 3 mm). The shape changed by the DN becoming narrower. The flat area surrounding the papule is pinker to red. The papule has lightened and become less prominent.</p>",
+					"description" : "<p>This picture shows the DN twenty-five years after image 1. The DN has faded and become slightly smaller (8 x 3 millimeters). The shape changed by the DN becoming narrower. The flat area surrounding the papule is pinker to red. The papule has lightened and become less prominent.</p>",
 					"image" : "/images/DN10/DN10E.jpg",
 					"thumbnail" : "/images/DN10/DN10E-thumb.jpg"
 				}
@@ -615,7 +615,7 @@ var data =
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture was taken eighteen and a half years after image 1. The DN has changed in several ways. The borders are still quite indistinct, but the shape has become more round and now measures 8 x 6 mm. The mole has lightened somewhat, but the pattern of pigment has changed, with a lighter background with clumps of darker tan.  Most of the surface around the papule has flattened.</p>",
+					"description" : "<p>This picture was taken eighteen and a half years after image 1. The DN has changed in several ways. The borders are still quite indistinct, but the shape has become more round and now measures 8 x 6 millimeters. The mole has lightened somewhat, but the pattern of pigment has changed, with a lighter background with clumps of darker tan.  Most of the surface around the papule has flattened.</p>",
 					"image" : "/images/DN11/DN11D.jpg",
 					"thumbnail" : "/images/DN11/DN11D-thumb.jpg"
 				},
@@ -1421,7 +1421,7 @@ var data =
 			"type" : "dysplasticnevi",
 			"name" : "Dysplastic Nevi (DN)",
 			"description" : "<ul><li>The word \"dysplastic\" in its name refers to the look and pattern of cells in the nevi as they appear under a microscope</li><li>Appearance (according to ABCDE rules)<ul><li>Asymmetry: irregular shape</li><li>Border: indistinct (blurry) borders</li><li>Color: mixture of colors (tan, brown, and red or pink shades)</li><li>Diameter: greater than 5 millimeters or ¼ inch and have a flat part</li><li>Evolving: Majority are stable and then disappear; typically start to show these features when small and show all features by the time they reach the size of most moles; become larger than most moles and eventually disappear</li></ul></li><li>The \"ABCDE\" rules were made for identifying early melanoma, but can also be used to describe DN</li><li>Clinicians use the number of DN to identify some individuals who are at increased risk of developing melanoma</li><li>DN most likely found on sun-exposed areas, especially intermittently exposed, such as the back, but are also frequent on chest, arms and legs</li><li>Approximately 10% of adult populations of northern European descent have at least one DN</li><li>DN are frequently found in melanoma-prone families in North America, Europe, and Australia</li><li>Melanomas may develop from DN</li><li>Risk of melanoma is high for people who have a large number of DN; especially high for people with a family history of both DN and melanoma</li></ul>",
-			"descriptionsummary" : "<p>A dysplastic nevus (DN) is <em>a mole that may develop into malignant melanoma</em>, a skin cancer starting in pigment cells. DN look different from common moles. DN are often larger than common moles (more than 5 mm) and have borders that are not easy to see. Their color is usually uneven and can range from pink to dark brown. Similar to common moles, parts of the DN may be raised above the skin surface. Some doctors use the term \"atypical mole\" to refer to DN.</p>",
+			"descriptionsummary" : "<p>A dysplastic nevus (DN) is <em>a mole that may develop into malignant melanoma</em>, a skin cancer starting in pigment cells. DN look different from common moles. DN are often larger than common moles (more than 5 millimeters) and have borders that are not easy to see. Their color is usually uneven and can range from pink to dark brown. Similar to common moles, parts of the DN may be raised above the skin surface. Some doctors use the term \"atypical mole\" to refer to DN.</p>",
 			"subgroups" : [
 				{
 					"type" : "dysplasticnevi",
