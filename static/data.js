@@ -609,7 +609,7 @@ var data =
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>FTwelve years after image 1, the DN appears minimally changed. The pebbly texture of the surface is slightly more prominent and the border between 7 and 9 o’clock is a bit more distinct.</p>",
+					"description" : "<p>Twelve years after image 1, the DN appears minimally changed. The pebbly texture of the surface is slightly more prominent and the border between 7 and 9 o’clock is a bit more distinct.</p>",
 					"image" : "/images/DN11/DN11C.jpg",
 					"thumbnail" : "/images/DN11/DN11C-thumb.jpg"
 				},
@@ -725,7 +725,7 @@ var data =
 				"asymmetry" : "present and increases",
 				"border" : "indistinct and becomes more irregular",
 				"color" : "becomes more uneven (variable) before fading",
-				"diameter" : "increases to 9 millimeters before fading and becoming slightly smaller",
+				"diameter" : "increases to 11 millimeters before fading and becoming slightly smaller",
 				"evolving" : "changes in size, shape, surface, and color before fading "
 			},
 			"diagnosis" : {
@@ -747,7 +747,7 @@ var data =
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>This picture shows the DN eleven years after image 1. The DN has changed in size, shape, surface, and color. The DN enlarged to as wide as two pencil erasers beside each other. The outline changed because of mole growth outward at the 11,, 1, and5 o’clock positions. The DN became flatter and lightened substantially. The central portion is now pink. The borders of the mole have become more indistinct.</p>",
+					"description" : "<p>This picture shows the DN eleven years after image 1. The DN has changed in size, shape, surface, and color. The DN enlarged to as wide as two pencil erasers beside each other. The outline changed because of mole growth outward at the 11, 1, and 5 o’clock positions. The DN became flatter and lightened substantially. The central portion is now pink. The borders of the mole have become more indistinct.</p>",
 					"image" : "/images/DN14/DN14C.jpg",
 					"thumbnail" : "/images/DN14/DN14C-thumb.jpg"
 				},
@@ -1115,13 +1115,13 @@ var data =
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>Siz months later, the mole has continued to increase in size and darkened greatly, especially across the top border. There is a slightly reddened area around the base of the mole.</p>",
+					"description" : "<p>Six months later, the mole has continued to increase in size and darkened greatly, especially across the top border. There is a slightly reddened area around the base of the mole.</p>",
 					"image" : "/images/M6/M6C.jpg",
 					"thumbnail" : "/images/M6/M6C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows a close-up view of the mole taken at the same time-point as image 3.  The mole, now quite irregular and slightly bigger than a pencil eraser. The upper portion is very dark.</p><p>The mole was removed because it was changing in ways suspicious for melanoma.</p>",
+					"description" : "<p>This picture shows a close-up view of the mole taken at the same time-point as image 3.  The mole is now quite irregular and slightly bigger than a pencil eraser. The upper portion is very dark.</p><p>The mole was removed because it was changing in ways suspicious for melanoma.</p>",
 					"image" : "/images/M6/M6D.jpg",
 					"thumbnail" : "/images/M6/M6D-thumb.jpg"
 				}
@@ -1154,7 +1154,7 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>This picture shows the same view one year later. The mole of interest is now circled as # 90. In comparison to the previous overview (Image 1), the mole has darkened significantly and enlarged slightly.</p>",
+					"description" : "<p>This picture shows the same view one year later. The mole of interest is now circled as #90. In comparison to the previous overview (image 1), the mole has darkened significantly and enlarged slightly.</p>",
 					"image" : "/images/M7/M7B.jpg",
 					"thumbnail" : "/images/M7/M7B-thumb.jpg"
 				},
