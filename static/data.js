@@ -1088,12 +1088,12 @@ var data =
 			"typeSearch" : "Melanoma",
 			"name" : "Case 6",
 			"title" : "Melanoma Case 6: Enlarging DN that developed changes suspicious for melanoma",
-			"description" : "Over two and a half years, the small tan mole of interest changed in size, color, shape and surface. It grew to about 8 millimeters in diameter. A very dark brown portion developed at top of the mole. Then most of the rest of the mole darkened considerably while the central area lightened greatly. It was darker than all of the other moles and quite irregular in shape. The mole was removed because it was changing in ways suspicious for melanoma.",
+			"description" : "Over two and a half years, the small tan mole of interest developed into a DN which changed in size, color, shape and surface. It grew to about 8 millimeters in diameter. A very dark brown portion developed at top of the mole. Then most of the rest of the mole darkened considerably while the central area lightened greatly. It was darker than all of the other moles and quite irregular in shape. The mole was removed because it was changing in ways suspicious for melanoma.",
 			"abcde" : {
 				"asymmetry" : "asymmetric (½ does not match the other ½)",
 				"border" : "the border is irregular",
 				"color" : "an enlarging very dark area and a mixture of colors",
-				"diameter" : "increased in diameter/size",
+				"diameter" : "increased in diameter to 8 millimeters",
 				"evolving" : "the mole had changed in size, color, shape and surface."
 			},
 			"diagnosis" : {
@@ -1109,19 +1109,19 @@ var data =
 				},
 				{
 					"name" : "Image 2",
-					"description" : "<p>Two years later, the mole has increased in size and developed a new and very dark brown extension at top.</p>",
+					"description" : "<p>Two years later, the mole has increased in size, became slightly irregular in outline, and developed a new and very dark brown extension at top.</p>",
 					"image" : "/images/M6/M6B.jpg",
 					"thumbnail" : "/images/M6/M6B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
-					"description" : "<p>Six months later, the mole has continued to increase in size and darkened greatly, especially across the top border. There is a slightly reddened area around the base of the mole.</p>",
+					"description" : "<p>Six months later, the mole has continued to increase in size and darkened greatly, especially across the top border. There is a slightly reddened area around the base of the DN.</p>",
 					"image" : "/images/M6/M6C.jpg",
 					"thumbnail" : "/images/M6/M6C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
-					"description" : "<p>This picture shows a close-up view of the mole taken at the same time-point as image 3.  The mole is now quite irregular and slightly bigger than a pencil eraser. The upper portion is very dark.</p><p>The mole was removed because it was changing in ways suspicious for melanoma.</p>",
+					"description" : "<p>This picture shows a close-up view of the DN taken at the same time-point as image 3.  The DN is now quite irregular and slightly bigger than a pencil eraser. The upper portion is very dark.  It clearly meets criteria for at least a DN, but was highly suspicious for melanoma.</p><p>The DN was removed because it was changing in ways suspicious for melanoma.</p>",
 					"image" : "/images/M6/M6D.jpg",
 					"thumbnail" : "/images/M6/M6D-thumb.jpg"
 				}
