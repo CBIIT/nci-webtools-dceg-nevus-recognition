@@ -759,65 +759,14 @@ var data =
 				}
 			]
 		},
+		
 		{
 			"order" : 17,
 			"type" : "dysplasticnevi",
 			"typeSearch" : "Dysplastic Nevi",
-			"subgroup" : "stable",
-			"name" : "Case 15",
-			"title" : "Dysplastic Nevi Case 15: Evolving and regressing (fading) DN",
-			"description" : "Over twenty-three years, this DN changed in size, shape, surface, and color. Initially, the mole had minimally atypical features, but then evolved into a DN. The nevus increased from 3 millimeters to 5 millimeters in diameter before becoming slightly smaller. It contained a slight mixture of medium to dark brown colors before lightening and fading substantially, becoming pink and red and more uniform in color. It was mostly raised with a pebbly surface; the edges were flat, with indistinct borders, and lighter in color. Except for the area from the 12 o’clock to 3 o’clock positions, the edge around the nevus became flatter. The outline was slightly irregular and became more irregular before the nevus began fading.",
-			"abcde" : {
-				"asymmetry" : "mild",
-				"border" : "indistinct and becomes more irregular",
-				"color" : "uneven (variable) before fading",
-				"diameter" : "increases to 5 millimeters before fading",
-				"evolving" : "fading"
-			},
-			"diagnosis" : {
-				"type" : "clinical",
-				"result" : "DN that is becoming a common mole"
-			},
-			"images" : [
-				{
-					"name" : "Image 1",
-					"description" : "<p>This picture shows a mole that is partially flat and about half the size of a pencil eraser. The mole is slightly irregular in outline. It contains a slight mixture of medium to dark brown colors. The central part of the mole is elevated and has a slightly pebbly surface. This mole is too small to meet criteria for DN.</p>",
-					"image" : "/images/DN15/DN15A.jpg",
-					"thumbnail" : "/images/DN15/DN15A-thumb.jpg"
-				},
-				{
-					"name" : "Image 2",
-					"description" : "<p>This picture shows the mole two years after image 1. The mole almost doubled in size and is the size of a pencil eraser. The mole has become irregular in shape, mostly raised with a pebbly surface, with some differences in color. The edges of the mole are flat, lighter in color, and have more indistinct borders.  The mole now meets criteria for DN.</p>",
-					"image" : "/images/DN15/DN15B.jpg",
-					"thumbnail" : "/images/DN15/DN15B-thumb.jpg"
-				},
-				{
-					"name" : "Image 3",
-					"description" : "<p>This picture shows the DN four years after image 1. The mole has become slightly lighter and more irregular in outline, with more indistinct borders. The DN grew outward in the 7 o’clock to 8 o’clock position.</p>",
-					"image" : "/images/DN15/DN15C.jpg",
-					"thumbnail" : "/images/DN15/DN15C-thumb.jpg"
-				},
-				{
-					"name" : "Image 4",
-					"description" : "<p>This picture shows the mole ten years after image 1. The mole has lightened considerably, the borders are more distinct, it is mostly elevated, and it has changed slightly in shape. The part of the mole that had projected outward near the 7 o’clock to 8 o’clock position (seen in image 3) has faded.  The mole no longer meets criteria for DN.</p>",
-					"image" : "/images/DN15/DN15D.jpg",
-					"thumbnail" : "/images/DN15/DN15D-thumb.jpg"
-				},
-				{
-					"name" : "Image 5",
-					"description" : "<p>This picture shows the mole 2three years after image 1. The mole has become smaller. It faded substantially and became more uniform in color, now more pink and red. Most of the mole’s surface is still raised. Except for the area from the 12 o’clock to 3 o’clock position, the edge around the mole has flattened and the borders are indistinct.</p>",
-					"image" : "/images/DN15/DN15E.jpg",
-					"thumbnail" : "/images/DN15/DN15E-thumb.jpg"
-				}
-			]
-		},
-		{
-			"order" : 18,
-			"type" : "dysplasticnevi",
-			"typeSearch" : "Dysplastic Nevi",
 			"subgroup" : "unstable",
-			"name" : "Case 16",
-			"title" : "Dysplastic Nevi Case 16: A changing DN suspicious for melanoma",
+			"name" : "Case 15",
+			"title" : "Dysplastic Nevi Case 15: A changing DN suspicious for melanoma",
 			"description" : "Over two years, this DN increased in diameter from 7 millimeters to 9 millimeters. The mole was partially flat, quite irregular in outline and shape, and had indistinct borders. The mixture of pink to dark brown colors lightened and then turned substantially darker in a very short period of time. As it was growing darker and larger, the shape changed, with the outline becoming much more irregular. New areas of darker pigment developed in the upper and lower portions. The small papule (bump) that had developed near the bottom almost completely disappeared. The mole was removed because of the continuous changes: increasing size, the shape becoming more irregular and new dark areas.",
 			"abcde" : {
 				"asymmetry" : "present and increases",
@@ -834,37 +783,37 @@ var data =
 				{
 					"name" : "Image 1",
 					"description" : "<p>This picture shows an irregular mole which is 7 millimeters wide, slightly bigger than a pencil eraser. The mole is quite irregular in outline and shape and has indistinct borders. The mole contains a mixture of colors from pink to dark brown, with lines of dark brown throughout the mole. It meets criteria for DN.</p>",
-					"image" : "/images/DN16/DN16A.jpg",
-					"thumbnail" : "/images/DN16/DN16A-thumb.jpg"
+					"image" : "/images/DN15/DN15A.jpg",
+					"thumbnail" : "/images/DN15/DN15A-thumb.jpg"
 				},
 				{
 					"name" : "Image 2",
 					"description" : "<p>This picture shows the DN one year after image 1. The DN has changed in outline; much of it has lightened. A small papule (bump) developed at about the 6 o’clock portion of the DN.</p>",
-					"image" : "/images/DN16/DN16B.jpg",
-					"thumbnail" : "/images/DN16/DN16B-thumb.jpg"
+					"image" : "/images/DN15/DN15B.jpg",
+					"thumbnail" : "/images/DN15/DN15B-thumb.jpg"
 				},
 				{
 					"name" : "Image 3",
 					"description" : "<p>Three months later, the papule at the bottom of the DN is less apparent. The color in the upper part of the DN has lightened.</p>",
-					"image" : "/images/DN16/DN16C.jpg",
-					"thumbnail" : "/images/DN16/DN16C-thumb.jpg"
+					"image" : "/images/DN15/DN15C.jpg",
+					"thumbnail" : "/images/DN15/DN15C-thumb.jpg"
 				},
 				{
 					"name" : "Image 4",
 					"description" : "<p>This picture was taken almost two years after image 1. The shape of the DN has changed and the outline has become much more irregular. The upper portion of the DN has filled in considerably. It has expanded to the left and the bottom portion has also grown. The DN has increased in size. The color is also more varied with more dark brown.</p>",
-					"image" : "/images/DN16/DN16D.jpg",
-					"thumbnail" : "/images/DN16/DN16D-thumb.jpg"
+					"image" : "/images/DN15/DN15D.jpg",
+					"thumbnail" : "/images/DN15/DN15D-thumb.jpg"
 				},
 				{
 					"name" : "Image 5",
 					"description" : "<p>Three months later, the DN is substantially darker. It has developed new areas of darker pigment in the upper and lower portions. The papule that had been at the bottom of the mole has almost completely disappeared.</p><p>The DN was removed because of the continuous changes – increasing size and the new increasingly dark areas – over time.</p>",
-					"image" : "/images/DN16/DN16E.jpg",
-					"thumbnail" : "/images/DN16/DN16E-thumb.jpg"
+					"image" : "/images/DN15/DN15E.jpg",
+					"thumbnail" : "/images/DN15/DN15E-thumb.jpg"
 				}
 			]
 		},
 		{
-			"order" : 19,
+			"order" : 18,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 1",
@@ -915,7 +864,7 @@ var data =
 			]
 		},
 		{
-			"order" : 20,
+			"order" : 19,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 2",
@@ -960,7 +909,7 @@ var data =
 			]
 		},
 		{
-			"order" : 21,
+			"order" : 20,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 3",
@@ -999,7 +948,7 @@ var data =
 			]
 		},
 		{
-			"order" : 22,
+			"order" : 21,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 4",
@@ -1032,7 +981,7 @@ var data =
 			]
 		},
 		{
-			"order" : 23,
+			"order" : 22,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 5",
@@ -1083,7 +1032,7 @@ var data =
 			]
 		},
 		{
-			"order" : 24,
+			"order" : 23,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 6",
@@ -1128,7 +1077,7 @@ var data =
 			]
 		},
 		{
-			"order" : 25,
+			"order" : 24,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 7",
@@ -1179,7 +1128,7 @@ var data =
 			]
 		},
 		{
-			"order" : 26,
+			"order" : 25,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 8",
@@ -1230,7 +1179,7 @@ var data =
 			]
 		},
 		{
-			"order" : 27,
+			"order" : 26,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 9",
@@ -1275,7 +1224,7 @@ var data =
 			]
 		},
 		{
-			"order" : 28,
+			"order" : 27,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 10",
@@ -1320,7 +1269,7 @@ var data =
 			]
 		},
 		{
-			"order" : 29,
+			"order" : 28,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 11",
@@ -1371,7 +1320,7 @@ var data =
 			]
 		},
 		{
-			"order" : 30,
+			"order" : 29,
 			"type" : "melanoma",
 			"typeSearch" : "Melanoma",
 			"name" : "Case 12",
