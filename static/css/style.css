@@ -5,12 +5,12 @@ body {
 button {
   display: block;
   margin: 0px auto;
-	padding:.5em 2em;
+    padding:.5em 2em;
   border: 2px solid #000;
-	border-radius: 7px;
+    border-radius: 7px;
   box-shadow: 2px 2px 5px grey;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
   background: #023C4D;
   color: #FFF;
   transition: all .3s;
@@ -53,6 +53,12 @@ nav {
 .navbar-nav li a {
   padding: 0px 15px;
   line-height: 5em;
+}
+.navbar-nav > li > a {
+  color: #444 !important;
+}
+.navbar-nav > li > a:hover {
+    text-decoration: underline;
 }
 .toggle-block {
   height: 5em;
@@ -194,7 +200,7 @@ nav {
 }
 #typedescription p, #typedescription ul {
   width:100%;
-  
+
 }
 .type .readmore {
   display: inline;
@@ -319,7 +325,7 @@ nav {
 .info-bubble.abcde ol b {
   font-size: 16px;
 }
-.photolink { 
+.photolink {
   background: #FFF;
   border: 5px solid #023C4D;
   border-radius: 20px;
@@ -501,6 +507,14 @@ nav {
 .partial-collapse .glyphicon {
   padding-right: 1em;
 }
+#rem_notice a {
+    text-decoration: underline;
+    color: inherit;
+}
+#rem_notice a:hover {
+    text-decoration: none;
+}
+
 @media (min-width: 1281px) {
   .nav-block {
     float: right;
@@ -642,7 +656,7 @@ nav {
 @media (min-width: 320px) {
   .button-group {
     background: #023C4D;
-	display: table;
+    display: table;
     width: 100%;
     table-layout: fixed;
   }
