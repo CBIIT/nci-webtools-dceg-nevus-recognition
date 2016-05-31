@@ -1,3 +1,15 @@
+*:focus {
+  border: 2px inset darkblue;
+}
+
+a {
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 body {
   background: #F4F3F3;
   min-width: 320px;
@@ -53,11 +65,14 @@ nav {
 .navbar-nav li a {
   padding: 0px 15px;
   line-height: 5em;
+  display: block;
 }
-.navbar-nav > li > a {
+.navbar-nav > li > a, .footer li a {
   color: #444 !important;
+  font-weight: normal;
 }
 .navbar-nav > li > a:hover {
+    color:#BB0E3D;
     text-decoration: underline;
 }
 .toggle-block {
@@ -129,7 +144,6 @@ nav {
   border: 1px solid #023C4D;
   border-radius: 10px 10px 0px 0px;
   padding: .3em .3em .3em .3em;
-  color: #CCC;
   text-align: center;
 }
 .subgroup .is-checked {
@@ -246,6 +260,7 @@ nav {
 .noninteractive {
   padding: 40px 0;
 }
+
 .noninteractive > * {
   text-align: left;
   max-width: 900px;
@@ -296,6 +311,9 @@ nav {
   position: absolute;
   top: -40px;
   width: 100%;
+}
+.info-bubble a {
+    color: #023C4D;
 }
 .info-bubble h4 {
   text-align: center;
@@ -506,6 +524,13 @@ nav {
 }
 .partial-collapse .glyphicon {
   padding-right: 1em;
+}
+.disclaimer a, .noninteractive a {
+    color: #23527c;
+    text-decoration: underline;
+}
+.disclaimer a:hover, .noninteractive a:hover{
+    text-decoration: none;
 }
 #rem_notice a {
     text-decoration: underline;

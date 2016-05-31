@@ -19,6 +19,30 @@ $(document).ready( function() {
     delete urlParams.img;
     newState(urlParams, 'Recognition Tool');
   });
+
+  $("[role='tab']").not(".is-checked").attr("aria-expanded", false);
+  $(".is-checked[role='tab']").attr("aria-expanded", true);
+
+  $("[role='tab'], .partial-collapse").on("click", function() {
+    if(this.attributes.role.value == "tab" && $(this).hasClass('is-checked')) {
+        $(this).attr("aria-expanded", true);
+        $(this).siblings().attr("aria-expanded", false);
+    if($(this).hasClass("partial-collapse")){
+        if($(this).hasClass("show"))
+            $(this).attr("aria-expanded", true);
+        else
+            $(this).attr("aria-expanded", false);
+    }
+    }
+  });
+
+  $("[role='tab']").on("show.bs.collapse", function(){
+    $(this).attr("aria-expanded", true);
+  });
+
+  $("[role='tab']").on("hide.bs.collapse", function(){
+    $(this).attr("aria-expanded", false);
+  });
   $('.app').on('click', '.blur', function() {
     $(this).blur();
   });
@@ -167,7 +191,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     var urlParams = window.history.state || {};
     urlParams.page = 'tool';
     delete urlParams.subgrouptype;
-    if (!$scope.tool || subgroup == undefined) {
+    if (!$scope.tool || subgroup === undefined) {
       $scope.changePage();
       $scope.tool = true;
     }
@@ -217,7 +241,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
   $scope.gotool = function() {
     $scope.changePage();
     $scope.tool = true;
-    if ($scope.filterValue == '') {
+    if ($scope.filterValue === '') {
       $scope.filterClick($scope.getFilterByName('mole'));
     }
   };
