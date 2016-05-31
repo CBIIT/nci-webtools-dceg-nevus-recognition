@@ -217,6 +217,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
   $scope.goabout = function() {
     $scope.changePage();
     $scope.about = true;
+    $("#about").children().first().focus();
     newState({
       'page': 'about'
     }, 'About the Tool');
@@ -227,6 +228,8 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     }
     $scope.changePage();
     $scope.audience = true;
+
+    $("#audience").children().first().focus();
     newState({
       'page': 'audience'
     }, 'Intended Audience');
@@ -234,6 +237,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
   $scope.gohome = function() {
     $scope.changePage();
     $scope.home = true;
+    $("#home").children().first().focus();
     newState({
       'page': 'home'
     }, 'Home');
@@ -241,6 +245,7 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
   $scope.gotool = function() {
     $scope.changePage();
     $scope.tool = true;
+
     if ($scope.filterValue === '') {
       $scope.filterClick($scope.getFilterByName('mole'));
     }
@@ -251,6 +256,8 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
     }
     $scope.changePage();
     $scope.ulinks = true;
+
+    $("#ulinks").children().first().focus();
     newState({
       'page': 'ulinks'
     }, 'Useful Links');
@@ -258,6 +265,8 @@ app.controller('myCtrl', function($rootScope, $scope, $http, $timeout) {
   $scope.godisclaimer = function() {
     $scope.changePage();
     $scope.disclaimer = true;
+
+    $("#disclaimer").children().first().focus();
     newState({
       'page': 'disclaimer'
     }, 'Disclaimer');

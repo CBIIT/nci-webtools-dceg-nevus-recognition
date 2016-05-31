@@ -1,5 +1,5 @@
 *:focus {
-  border: 2px inset darkblue;
+  outline: 2px inset darkblue;
 }
 
 a {
