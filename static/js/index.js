@@ -21,19 +21,21 @@ $(document).ready( function() {
   });
 
   $("[role='tab']").not(".is-checked").attr("aria-expanded", false);
+  $(".info-bubble").not(".open").attr("aria-expanded", false);
   $(".is-checked[role='tab']").attr("aria-expanded", true);
 
-  $("[role='tab'], .partial-collapse").on("click", function() {
-    if(this.attributes.role.value == "tab" && $(this).hasClass('is-checked')) {
+  $("[role='tab'], .partial-collapse, .info-bubble ").on("click", function() {
+    if($(this).hasClass('is-checked')) {
         $(this).attr("aria-expanded", true);
         $(this).siblings().attr("aria-expanded", false);
-    if($(this).hasClass("partial-collapse")){
-        if($(this).hasClass("show"))
+    }
+    if($(this).hasClass("partial-collapse") || $(this).hasClass("info-bubble")) {
+        if($(this).hasClass("show") || $(this).hasClass("open") )
             $(this).attr("aria-expanded", true);
         else
             $(this).attr("aria-expanded", false);
     }
-    }
+
   });
 
   $("[role='tab']").on("show.bs.collapse", function(){
