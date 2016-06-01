@@ -33,12 +33,12 @@
       </form>
       <div class="nav-block collapse">
         <ul role="menu" class="nav navbar-nav">
-          <li role="menuitem"><a href="javascript:void(0);" ng-click="gohome()" tabindex="0">Home</a></li>
-          <li><a href="javascript:void(0);" ng-click="goabout()" tabindex="0">About the Tool</a></li>
-          <li role="menuitem"><a href="javascript:void(0);" ng-click="goaudience()" tabindex="0">Intended Audience</a></li>
-          <li role="menuitem"><a href="javascript:void(0);" ng-click="gotool()" tabindex="0">View Cases</a></li>
-          <li role="menuitem"><a href="javascript:void(0);" ng-click="goulinks()" tabindex="0">More Information</a></li>
-          <li role="menuitem"><a href="javascript:void(0);" ng-click="godisclaimer()" tabindex="0">Disclaimer</a></li>
+          <li role="menuitem"><a href="javascript:void(0);" ng-click="gohome()" tabindex="0" aria-controls="home">Home</a></li>
+          <li><a href="javascript:void(0);" ng-click="goabout()" tabindex="0" aria-controls="about">About the Tool</a></li>
+          <li role="menuitem"><a href="javascript:void(0);" ng-click="goaudience()" tabindex="0" aria-controls="audience">Intended Audience</a></li>
+          <li role="menuitem"><a href="javascript:void(0);" ng-click="gotool()" tabindex="0" aria-controls="cases">View Cases</a></li>
+          <li role="menuitem"><a href="javascript:void(0);" ng-click="goulinks()" tabindex="0" aria-controls="ulinks">More Information</a></li>
+          <li role="menuitem"><a href="javascript:void(0);" ng-click="godisclaimer()" tabindex="0" aria-controls="disclaimer">Disclaimer</a></li>
         </ul>
       </div>
     </nav>
@@ -46,7 +46,7 @@
       <h1 title="Moles to Melanoma Recognizing the A B C D E Features">Moles to Melanoma: Recognizing the ABCDE Features</h1>
     </div>
     <div class="hide" id="skipTo"></div>
-    <div tabindex="-1" class="noninteractive" id="home" ng-show="home">
+    <div tabindex="-1" role="region" aria-live="assertive" class="noninteractive" id="home" ng-show="home">
       <div class="column">
         <h2>Before You Get Started</h2>
         <p>To make this resource as useful as possible, please make sure you review and understand the following information.</p>
@@ -117,7 +117,7 @@
         </div>
       </div>
     </div>
-    <div tabindex="-1" class="noninteractive" id="about" ng-show="about">
+    <div tabindex="-1" role="region" aria-live="assertive" class="noninteractive" id="about" ng-show="about">
       <h2>About the Tool</h2>
       <p>The Moles to Melanoma Tool presents photographs in three main groups of <span class="define" data-term="pigment">pigmented</span> <span class="define" data-term="lesion">lesions</span>: <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('mole'))">common moles</a>; <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('dysplasticnevi'))">dysplastic nevi (DN)</a>; and <a href="javascript:void(0);" ng-click="filterClick(getFilterByName('melanoma'))">melanomas</a> that arose from DN.</p>
       <p>The DN section is subdivided into two broad categories: stable and fading, and evolving toward melanoma.</p>
@@ -140,27 +140,27 @@
         <p>We would also like to thank John Crawford and Mary King, NIH Clinical Center clinical photographers, for their expertise. The tool would not have been possible without the substantial commitment and cooperation of both the study participants and the clinical photographers. </p>
       </div>
     </div>
-    <div tabindex="-1" class="noninteractive" id="audience" ng-show="audience">
-      <h2>Who is the Intended Audience?</h2>
-      <p>The photographs in this tool show moles on the skin of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.  This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing this form of skin cancer. As shown in  Figure 1, Caucasians are at the highest risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore this tool does not provide images representative of other ethnicities.</p>
-      <h5><b>Figure 1: Melanoma incidence by race/ethnicity in the U.S. Surveillance, Epidemiology and End Results Program 1975-2012</b></h5>
-      <h5><img id="incidenceGraph" src="images/incidence.png" alt="Melanoma Incidence Rates per one hundred thousand people in the U.S. between 1975 and 2013" title="Melanoma Incidence Rates in the U.S. (1975-2013)"/></h5>
-            <h6>Reference: Howlader N, Noone AM, Krapcho M, Garshell J, Miller D, Altekruse SF, Kosary CL, Yu M, Ruhl J, Tatalovich Z, Mariotto A, Lewis DR, Chen HS, Feuer EJ, Cronin KA (eds). SEER Cancer Statistics Review, 1975-2012, National Cancer Institute. Bethesda, MD, <a href="http://seer.cancer.gov/csr/1975_2012/" target="_new">http://seer.cancer.gov/csr/1975_2012/</a> , based on November 2014 SEER data submission, posted to the SEER web site, April 2015</h6>
-            <h6>Data points are not included for clarity of presentation, but may be found at <a href="http://seer.cancer.gov/csr/1975_2012/sections.html" target="_new">http://seer.cancer.gov/csr/1975_2012/sections.html</a> Figure 16.2.</h6>
+    <div tabindex="-1" role="region" aria-live="assertive" class="noninteractive" id="audience" ng-show="audience">
+          <h2>Who is the Intended Audience?</h2>
+          <p>The photographs in this tool show moles on the skin of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>.  This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing this form of skin cancer. As shown in  Figure 1, Caucasians are at the highest risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore this tool does not provide images representative of other ethnicities.</p>
+          <h5><b>Figure 1: Melanoma incidence by race/ethnicity in the U.S. Surveillance, Epidemiology and End Results Program 1975-2012</b></h5>
+          <h5><img id="incidenceGraph" src="images/incidence.png" alt="Melanoma Incidence Rates per one hundred thousand people in the U.S. between 1975 and 2013" title="Melanoma Incidence Rates in the U.S. (1975-2013)"/></h5>
+                <h6>Reference: Howlader N, Noone AM, Krapcho M, Garshell J, Miller D, Altekruse SF, Kosary CL, Yu M, Ruhl J, Tatalovich Z, Mariotto A, Lewis DR, Chen HS, Feuer EJ, Cronin KA (eds). SEER Cancer Statistics Review, 1975-2012, National Cancer Institute. Bethesda, MD, <a href="http://seer.cancer.gov/csr/1975_2012/" target="_new">http://seer.cancer.gov/csr/1975_2012/</a> , based on November 2014 SEER data submission, posted to the SEER web site, April 2015</h6>
+                <h6>Data points are not included for clarity of presentation, but may be found at <a href="http://seer.cancer.gov/csr/1975_2012/sections.html" target="_new">http://seer.cancer.gov/csr/1975_2012/sections.html</a> Figure 16.2.</h6>
 
-      <div>
-      <h3>Where can I find information on Skin Cancer in other Ethnicities?</h3>
-      <ul>
-        <li>NCI - <a href="http://www.cancer.gov/publications/patient-education/anyone-can-get-skin-cancer" target="_new">Anyone Can Get Skin Cancer</a>, includes images of skin cancer in people with darker skin</li>
-        <li>Skin Cancer Foundation - <a href="http://www.skincancer.org/prevention/skin-cancer-and-skin-of-color" target="_new">Skin Cancer and Skin of Color</a></li>
-      </ul>
+          <div>
+          <h3>Where can I find information on Skin Cancer in other Ethnicities?</h3>
+          <ul>
+            <li>NCI - <a href="http://www.cancer.gov/publications/patient-education/anyone-can-get-skin-cancer" target="_new">Anyone Can Get Skin Cancer</a>, includes images of skin cancer in people with darker skin</li>
+            <li>Skin Cancer Foundation - <a href="http://www.skincancer.org/prevention/skin-cancer-and-skin-of-color" target="_new">Skin Cancer and Skin of Color</a></li>
+          </ul>
+        </div>
+        <div>
+              <h3>Where can I find information about Non-Melanoma Skin Cancer?</h3>
+          <p>This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell), since they arise from different cell types in the skin they look very different from melanoma. For information on those types of skin cancer, visit the following websites:  <a href="http://www.cancer.gov/types/skin" target="_new">National Cancer Institute - Skin Cancer (including Melanoma)</a> &amp; <a href="http://www.cancer.org/cancer/cancercauses/sunanduvexposure/skin-cancer-facts" target="_new">American Cancer Society - Skin Cancer Facts</a>.</p>
     </div>
-    <div>
-          <h3>Where can I find information about Non-Melanoma Skin Cancer?</h3>
-      <p>This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell), since they arise from different cell types in the skin they look very different from melanoma. For information on those types of skin cancer, visit the following websites:  <a href="http://www.cancer.gov/types/skin" target="_new">National Cancer Institute - Skin Cancer (including Melanoma)</a> &amp; <a href="http://www.cancer.org/cancer/cancercauses/sunanduvexposure/skin-cancer-facts" target="_new">American Cancer Society - Skin Cancer Facts</a>.</p>
-</div>
     </div>
-    <div tabindex="-1" class="contain" ng-show="searching || tool">
+    <div tabindex="-1" id="cases" role="region" aria-live="assertive"  class="contain" ng-show="searching || tool">
       <div class="button-group" id="filters" role="tablist">
         <div role="tab"  tabindex="0" class="button blur" ng-class="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick(filter)" ng-repeat="filter in filters">{{filter.name}}</div>
       </div>
@@ -187,7 +187,7 @@
       </div>
       <button role="button" type="button" class="loadmore" ng-click="loadMore()" ng-show="showload">Load More</button>
     </div>
-    <div tabindex="-1" class="noninteractive" id="ulinks" ng-show="ulinks">
+    <div tabindex="-1" role="region" aria-live="assertive" class="noninteractive" id="ulinks" ng-show="ulinks">
       <h2>More Information</h2>
       <p>
         <a href="http://www.cancer.gov/types/skin" target="_new" class="blockified">NCI Skin Cancer (including Melanoma)</a>
@@ -231,7 +231,7 @@
         <a href="https://www.youtube.com/watch?v=o9BqrSAHbTc" target="_new" class="blockified">How the Sun Sees You</a>
       <span>A short film of people captured in the <span class="define" data-term="uv">ultraviolet spectrum</span>, which highlights freckles and sun damage unnoticeable to the naked eye.</span></p>
     </div>
-    <div tabindex="-1" class="noninteractive" id="disclaimer" ng-show="disclaimer">
+    <div tabindex="-1" role="region" aria-live="assertive" class="noninteractive" id="disclaimer" ng-show="disclaimer">
       <h2>Disclaimer</h2>
       <div class="disclaimer">
         <ul>
