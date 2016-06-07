@@ -465,6 +465,10 @@ nav {
 .casedescription li label {
   width: 8em;
 }
+.casedescription ul li b, .casedescription .define {
+    margin-right: 5px;
+}
+
 .casedescription label:after {
   content: ':';
 }
