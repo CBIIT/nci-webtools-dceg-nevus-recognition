@@ -1,6 +1,6 @@
-:focus {
-  outline: 2px inset darkblue;
-box-shadow: 1px 2px 2px darkblue;
+*:focus {
+  outline: 4px inset red;
+box-shadow: 3px 2px 2px red;
 }
 
 a {

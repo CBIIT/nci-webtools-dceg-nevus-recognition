@@ -19,27 +19,32 @@ $(document).ready(function () {
         delete urlParams.img;
         newState(urlParams, 'Recognition Tool');
     });
-
+   
     $("[role='tab']").not(".is-checked").attr("aria-expanded", false);
-    $(".info-bubble").not(".open").attr("aria-expanded", false);
     $(".is-checked[role='tab']").attr("aria-expanded", true);
 
-    $("[role='tab'], .partial-collapse, .info-bubble").on("click keypress", function () {
+    $("[role='tab'], .partial-collapse, .info-bubble").on("click keypress", function (e) {
         if (e.keyCode == 13 || e.keyCode == 32) {
             e.preventDefault();
-            $(e.target).trigger('click');
+//            $(e.target).trigger('click');
         }
-        if ($(this).hasClass('is-checked')) {
-            $(this).attr("aria-expanded", true);
-            $(this).siblings().attr("aria-expanded", false);
-        }
-        if ($(this).hasClass("partial-collapse") || $(this).hasClass("info-bubble")) {
-            if ($(this).hasClass("show") || $(this).hasClass("open"))
+            if ($(this).hasClass('is-checked')) {
                 $(this).attr("aria-expanded", true);
-            else
-                $(this).attr("aria-expanded", false);
-        }
+                $(this).siblings().attr("aria-expanded", false);
+            }
+            if ($(this).hasClass("partial-collapse")) {
+                if ($(this).hasClass("show"))
+                    $(this).attr("aria-expanded", true);
+                else
+                    $(this).attr("aria-expanded", false);
+            }
+            if ($(this).hasClass("info-bubble")) {
+                if ($(this).hasClass("open"))
+                    $(this).attr("aria-expanded", true);
+                else
+                    $(this).attr("aria-expanded", false);
 
+            }
     });
 
     $("[role='tab']").on("show.bs.collapse", function () {
@@ -52,7 +57,7 @@ $(document).ready(function () {
     $('.app').on('click', '.blur', function () {
         $(this).blur();
     });
-    $(document).on('keypress', '[tabindex][ng-click]', function (e) {
+    $(document).on('keypress', '[tabindex][ng-click], button[data-dismiss="modal"]', function (e) {
         if (e.keyCode == 13 || e.keyCode == 32) {
             e.preventDefault();
             $(e.target).trigger('click');
