@@ -165,7 +165,7 @@
             </div>
         </div>
         <div tabindex="-1" id="cases" role="region" aria-live="assertive" class="contain" ng-show="searching || tool">
-            <div class="button-group" id="filters" role="tablist">
+            <div class="button-group" id="filters">
                 <div role="button" tabindex="0" class="button blur" ng-class="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick(filter)" ng-repeat="filter in filters">{{filter.name}}</div>
             </div>
             <div class="type" ng-show="tool">
