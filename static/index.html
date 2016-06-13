@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <a class="sr-only sr-only-focusable" href="#skipTo">Skip to Content</a>
+    <a class="sr-only sr-only-focusable" href="#skipTo" tabindex="0">Skip to Content</a>
     <div class="app" ng-app="myApp" ng-controller="myCtrl">
         <nav class="navbar-default">
             <a href="http://dceg.cancer.gov">
@@ -29,8 +29,8 @@
                 </button>
             </div>
             <form role="search" class="searchcont">
-                <input class="form-control search-box" id="search" type="text" name="focus" required ng-change="searchingfunc()" ng-model="search" placeholder="Search" tabindex="0" aria-label="Search"/>
-                <button class="close-icon" type="reset" ng-click="clearsearch()"><span>x</span></button>
+                <input class="form-control search-box" id="search" type="text" name="focus" required ng-change="searchingfunc()" ng-model="search" placeholder="Search" tabindex="0" aria-label="Search" />
+                <button aria-label="clear search" class="close-icon" type="reset" ng-click="clearsearch()"><span>x</span></button>
             </form>
             <div class="nav-block collapse">
                 <ul role="menu" class="nav navbar-nav">
@@ -148,7 +148,7 @@
             <h2>Who is the Intended Audience?</h2>
             <p>The photographs in this tool show moles on the skin of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>. This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing this form of skin cancer. As shown in Figure 1, Caucasians are at the highest risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore this tool does not provide images representative of other ethnicities.</p>
             <h5><b>Figure 1: Melanoma incidence by race/ethnicity in the U.S. Surveillance, Epidemiology and End Results Program 1975-2012</b></h5>
-            <h5><img id="incidenceGraph" src="images/incidence.png" title="Graph shpwing the melanoma Incidence Rates per one hundred thousand people in the U.S. between 1975 and 2013. In that time period, caucasians were found to have developed melanoma at a higher rate compared to individuals of other races and ethnicities" alt="Melanoma Incidence Rates in the U.S. (1975-2013)"/></h5>
+            <img id="incidenceGraph" src="images/incidence.png" alt="Graph showing the melanoma Incidence Rates per one hundred thousand people in the U.S. between 1975 and 2013. In that time period, caucasians were found to have developed melanoma at a higher rate compared to individuals of other races and ethnicities"/>
             <h6>Reference: Howlader N, Noone AM, Krapcho M, Garshell J, Miller D, Altekruse SF, Kosary CL, Yu M, Ruhl J, Tatalovich Z, Mariotto A, Lewis DR, Chen HS, Feuer EJ, Cronin KA (eds). SEER Cancer Statistics Review, 1975-2012, National Cancer Institute. Bethesda, MD, <a href="http://seer.cancer.gov/csr/1975_2012/" target="_new">http://seer.cancer.gov/csr/1975_2012/</a> , based on November 2014 SEER data submission, posted to the SEER web site, April 2015</h6>
             <h6>Data points are not included for clarity of presentation, but may be found at <a href="http://seer.cancer.gov/csr/1975_2012/sections.html" target="_new">http://seer.cancer.gov/csr/1975_2012/sections.html</a> Figure 16.2.</h6>
 
@@ -178,48 +178,48 @@
                 </div>
             </div>
             <h2 class="searchbanner" ng-show="searching">Search Results</h2>
-      <h2 class="searchbanner" ng-show="tool">Examples</h2>
-      <div class="isotope" ng-show="searching || tool">
-        <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases | orderBy: '+order'">
-          <a data-target="#case" data-toggle="modal"href="javascript:void(0);" ng-click="update(case,$index)">
-            <img alt="" src="./images/MissingImage.png" ng-src=".{{case.images[0].image}}" />
-            <span class="type" ng-show="searching" ng-bind="case.typeSearch"></span>
-            <span class="title">{{case.name || 'Untitled Case'}}</span>
-          </a>
-          <div class="sr-only" ng-bind="case.description"></div>
+            <h2 class="searchbanner" ng-show="tool">Examples</h2>
+            <div class="isotope" ng-show="searching || tool">
+                <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases | orderBy: '+order'">
+                    <a data-target="#case" data-toggle="modal" href="javascript:void(0);" ng-click="update(case,$index)">
+                        <img alt="{{case.name || 'Untitled Case'}}, {{ case.description }}" src="./images/MissingImage.png" ng-src=".{{case.images[0].image}}" />
+                        <span class="type" ng-show="searching" ng-bind="case.typeSearch"></span>
+                        <span class="title">{{case.name || 'Untitled Case'}}</span>
+                    </a>
+                    <div class="sr-only" ng-bind="case.description"></div>
+                </div>
+            </div>
+            <button role="button" type="button" class="loadmore" ng-click="loadMore()" ng-show="showload">Load More</button>
         </div>
-      </div>
-      <button role="button" type="button" class="loadmore" ng-click="loadMore()" ng-show="showload">Load More</button>
-    </div>
-    <div tabindex="-1" role="region" aria-live="assertive" class="noninteractive" id="ulinks" ng-show="ulinks">
-      <h2>More Information</h2>
+        <div tabindex="-1" role="region" aria-live="assertive" class="noninteractive" id="ulinks" ng-show="ulinks">
+            <h2>More Information</h2>
             <p>
-                <a href="http://www.cancer.gov/types/skin" target="_new" class="blockified">NCI Skin Cancer (including Melanoma)</a>
+                <a href="http://www.cancer.gov/types/skin" target="_new" class="blockified" role="link">NCI Skin Cancer (including Melanoma)</a>
                 <span><span class="define" data-term="nci">National Cancer Institute</span> homepage for <span class="define" data-term="skin-cancer">skin cancer</span>, including <span class="define" data-term="melanoma">melanoma</span>.</span>
             </p>
             <p>
-                <a href="http://www.cancer.gov/melanomarisktool/" target="_new" class="blockified">Melanoma Risk Assessment Tool</a>
+                <a href="http://www.cancer.gov/melanomarisktool/" target="_new" class="blockified" role="link">Melanoma Risk Assessment Tool</a>
                 <span>An interactive <span class="define" data-term="nci">NCI</span> tool to help estimate a person’s risk of developing invasive melanoma.</span>
             </p>
             <p>
-                <a href="http://www.cancer.gov/publications/patient-education/anyone-can-get-skin-cancer" target="_new" class="blockified">Anyone Can Get Skin Cancer</a>
+                <a href="http://www.cancer.gov/publications/patient-education/anyone-can-get-skin-cancer" target="_new" class="blockified" role="link">Anyone Can Get Skin Cancer</a>
                 <span>An NCI brochure developed to dispel the belief that only people with light skin are at risk for skin cancer. Although people with light skin have greater risk than people with darker skin, people with darker skin can also be at risk.</span>
             </p>
             <p>
-                <a href="http://www.cancer.gov/cancertopics/factsheet/Risk/moles" target="_new" class="blockified">Common Moles, Dysplastic Nevi, and Risk of Melanoma</a>
+                <a href="http://www.cancer.gov/cancertopics/factsheet/Risk/moles" target="_new" class="blockified" role="link">Common Moles, Dysplastic Nevi, and Risk of Melanoma</a>
                 <span>NCI fact sheet on common <span class="define" data-term="mole">moles</span>, <span class="define" data-term="nevus">dysplastic nevi</span>, and melanoma.</span>
             </p>
 
             <p>
-                <a href="http://www.skinsight.com/info/for_professionals/skin-cancer-detection-informed/skin-cancer-education" target="_new" class="blockified">INFORMED Skin Cancer Education Series</a>
+                <a href="http://www.skinsight.com/info/for_professionals/skin-cancer-detection-informed/skin-cancer-education" target="_new" class="blockified" role="link">INFORMED Skin Cancer Education Series</a>
                 <span>The INternet curriculum FOR Melanoma Early Detection (INFORMED) program provides Web-based early-detection training for widespread use, and training in dermoscopy (epiluminescence microscopy), which has been proven to increase diagnostic accuracy during the skin examination.</span>
             </p>
             <p>
-                <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm309136.htm?source=govdelivery" target="_new" class="blockified">Sunscreen on Infants? Not Usually—Shade is Best</a>
+                <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm309136.htm?source=govdelivery" target="_new" class="blockified" role="link">Sunscreen on Infants? Not Usually—Shade is Best</a>
                 <span>A <span class="define" data-term="pediatrician">pediatrician</span> from the U.S. <span class="define" data-term="fda">Food and Drug Administration (FDA)</span> tells how to protect babies from dangerous <span class="define" data-term="uv">ultraviolet</span> rays.</span>
             </p>
             <p>
-                <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm049090.htm?source=govdelivery" target="_new" class="blockified">Sun Safety: Save Your Skin!</a>
+                <a href="http://www.fda.gov/ForConsumers/ConsumerUpdates/ucm049090.htm?source=govdelivery" target="_new" class="blockified" role="link">Sun Safety: Save Your Skin!</a>
                 <span>Advice from the FDA on how to protect your skin from the sun in all seasons.</span>
             </p>
             <p>
@@ -284,9 +284,8 @@
                 <div id="rem_notice">Site is currently under section 508 review. This site is undergoing remediation for compliance with section 508. The remediation will be completed by July 7, 2016. In the interim, should you require any accessibility assistance with any content, please contact us at <a href="mailto:cancer.gov_staff@mail.nih.gov">cancer.gov_staff@mail.nih.gov</a>. Thank you! </div>
             </div>
         </footer>
-        <button type="button" class="backtotop blur" ng-show="showbacktotop" ng-click="backToTop()" value="to top">
+        <button type="button" class="backtotop blur" ng-show="showbacktotop" ng-click="backToTop()" value="to top" aria-label="back to top">
             <span class="glyphicon glyphicon-chevron-up" alt="to top"></span>
-            <span class="sr-only">back to top</span>
         </button>
         <div class="modal fade" id="case" role="dialog" tabindex="-1">
             <div class="modal-dialog" role="document">
@@ -318,11 +317,11 @@
                             <span class="glyphicon glyphicon-chevron-right"></span>
                         </div>
                         <div class="images">
-                            <img src=".{{image.thumbnail}}" carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0" />
+                            <img alt="{{image.name || 'Untitled thumbnail'}}, {{ image.description}}" src=".{{image.thumbnail}}" carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" ng-repeat="image in currentcase.images" class="blur" tabindex="0" />
                         </div>
                     </div>
                     <div class="imgbox clearfix">
-                        <img alt="" class="currentimage" image-on-load="" src=".{{currentcase.images[currentimg].image}}" />
+                        <img alt="{{currentcase.images[currentimg].description}}" class="currentimage" image-on-load="" src=".{{currentcase.images[currentimg].image}}" />
                         <p class="currentimagedescription" bind-compiled-html="currentcase.images[currentimg].description | define"></p>
                     </div>
                 </div>
