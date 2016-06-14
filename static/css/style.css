@@ -96,7 +96,7 @@ nav {
 }
 .searchcont {
 	position: relative;
-	padding: 10px 15px;
+	padding: 0px 5px;
 	height: 5em;
 }
 .search-box {
@@ -335,8 +335,15 @@ nav {
 .info-bubble a {
 	color: #023C4D;
 }
-.info-bubble h4 {
+.info-bubble h3 {
 	text-align: center;
+    font-size: 18px;
+    margin: 10px auto;
+}
+.photolink h5 {
+    font-size: 18px;
+    margin: 10px auto;
+	
 }
 .info-bubble:not(.open) > :not(:first-child) {
 	display: none;
@@ -610,7 +617,8 @@ nav {
   .searchcont {
     overflow: auto;
     float: left;
-    max-width: 25%
+    max-width: 25%;
+    min-width: 23%;
   }
 }
 @media (max-width: 1280px) {
