@@ -1,8 +1,8 @@
-*:focus {
-	outline: 4px inset red;
-	box-shadow: 3px 2px 2px red;
-	-moz-box-shadow: 3px 2px 2px red;
-	-webkit-box-shadow: 3px 2px 2px red;
+*:focus, img:focus, a:focus img, a:focus {
+	outline: 4px solid #0400ff;
+	box-shadow: 3px 2px 2px #0400ff;
+	-moz-box-shadow: 3px 2px 2px #0400ff;
+	-webkit-box-shadow: 3px 2px 2px #0400ff;
 }
 a {
 	font-weight: bold;
