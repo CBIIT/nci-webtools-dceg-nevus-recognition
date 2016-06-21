@@ -1,15 +1,17 @@
 *:focus,
 a:focus,
 .form-control:focus {
-    outline: 2px solid #BB0E3D;
-    box-shadow: 2px 2px 2px #BB0E3D;
-    -moz-box-shadow: 2px 2px 2px #BB0E3D;
-    -webkit-box-shadow: 2px 2px 2px #BB0E3D;
+    outline: 1px solid inherit;
+    box-shadow: 1px 1px 1px inherit;
+    -moz-box-shadow: 1px 1px 1px inherit;
+    -webkit-box-shadow: 1px 1px 1px inherit;
 }
 
-.img-hover {
-    background-color: #000
+.img-hover img:focus,
+.images img.active {
+    opacity: 0.4;
 }
+
 a {
     font-weight: bold;
 }
@@ -65,6 +67,7 @@ em {
 nav {
     position: relative;
     height: 5em;
+    background: linear-gradient(to bottom, #363636 0%, #4a4a4a 100%);
 }
 
 #brand {
@@ -77,26 +80,42 @@ nav {
 }
 
 .nav-block {
-    background: #F8F8F8;
+    background: transparent;
 }
 
 .navbar-nav {
     float: none;
 }
 
-.navbar-nav li a {
-    padding: 0px 10px;
+.navbar-default .navbar-nav > li > a {
+    padding: 0px 5px;
     line-height: 5em;
     display: block;
+    color: #FFF;
 }
 
-.navbar-nav > li > a,
 .footer li a {
-    color: #444 !important;
+    color: #444;
     font-weight: normal;
 }
 
-.navbar-nav > li > a:hover {
+.navbar-default .navbar-nav li a:focus,
+.navbar-default .navbar-nav li a:hover {
+    background: #FFFFFF;
+    border-bottom: none;
+}
+
+.navbar-default .navbar-nav li a.active,
+.navbar-default .navbar-nav li a.active:focus {
+    background-color: #FFFFFF;
+    color: #565656;
+    margin-bottom: -5px;
+    border-bottom: #14819b 5px inset;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav li > a.active {
+    background: #FFFFFF;
     color: #BB0E3D;
     text-decoration: underline;
 }
@@ -120,7 +139,7 @@ nav {
 
 .searchcont {
     position: relative;
-    padding: 0px 5px;
+    padding: 0px;
     height: 5em;
 }
 
@@ -481,9 +500,9 @@ nav {
     margin: 10px;
 }
 
-.photolink .img-hover:hover, 
+.photolink .img-hover:hover,
 .photolink .img-hover:focus,
-.item > a:hover img, 
+.item > a:hover img,
 .item > a:focus img {
     background-color: #000;
     opacity: 0.4;
@@ -493,7 +512,6 @@ nav {
     box-shadow: 3px 3px 3px #023C4D;
     -moz-box-shadow: 3px 3px 3px #023C4D;
     -webkit-box-shadow: 3px 3px 3px #023C4D;
-    
 }
 
 .photolink img:active {
@@ -529,7 +547,7 @@ nav {
     font-weight: 300;
     font-size: 3.5em;
     line-height: 1;
-    padding: .5em 4em .5em 1em;
+    padding: .5em 5em .5em 1em;
     transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
@@ -739,8 +757,8 @@ nav {
     .searchcont {
         overflow: auto;
         float: left;
-        max-width: 25%;
-        min-width: 23%;
+        max-width: 100%;
+        min-width: 20%;
     }
 }
 
@@ -757,7 +775,7 @@ nav {
     .navbar-nav {
         display: inline-block;
     }
-    .navbar-nav li a {
+    .navbar-default .navbar-nav > li > a {
         line-height: 3em;
     }
 }

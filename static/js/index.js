@@ -19,32 +19,32 @@ $(document).ready(function () {
         delete urlParams.img;
         newState(urlParams, 'Recognition Tool');
     });
-   
+
     $("[role='tab']").not(".is-checked").attr("aria-expanded", false);
     $(".is-checked[role='tab']").attr("aria-expanded", true);
 
     $("[role='tab'], .partial-collapse, .info-bubble").on("click keypress", function (e) {
         if (e.keyCode == 13 || e.keyCode == 32) {
             e.preventDefault();
-//            $(e.target).trigger('click');
+            //            $(e.target).trigger('click');
         }
-            if ($(this).hasClass('is-checked')) {
+        if ($(this).hasClass('is-checked')) {
+            $(this).attr("aria-expanded", true);
+            $(this).siblings().attr("aria-expanded", false);
+        }
+        if ($(this).hasClass("partial-collapse")) {
+            if ($(this).hasClass("show"))
                 $(this).attr("aria-expanded", true);
-                $(this).siblings().attr("aria-expanded", false);
-            }
-            if ($(this).hasClass("partial-collapse")) {
-                if ($(this).hasClass("show"))
-                    $(this).attr("aria-expanded", true);
-                else
-                    $(this).attr("aria-expanded", false);
-            }
-            if ($(this).hasClass("info-bubble")) {
-                if ($(this).hasClass("open"))
-                    $(this).attr("aria-expanded", true);
-                else
-                    $(this).attr("aria-expanded", false);
+            else
+                $(this).attr("aria-expanded", false);
+        }
+        if ($(this).hasClass("info-bubble")) {
+            if ($(this).hasClass("open"))
+                $(this).attr("aria-expanded", true);
+            else
+                $(this).attr("aria-expanded", false);
 
-            }
+        }
     });
 
     $("[role='tab']").on("show.bs.collapse", function () {
@@ -69,13 +69,12 @@ var app = angular.module('myApp', ['ngSanitize']);
 
 app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
     var loadFunction = function () {
-        var match
-            , pl = /\+/g, // Regex for replacing addition symbol with a space
-            search = /([^&=]+)=?([^&]*)/g
-            , decode = function (s) {
+        var match, pl = /\+/g, // Regex for replacing addition symbol with a space
+            search = /([^&=]+)=?([^&]*)/g,
+            decode = function (s) {
                 return decodeURIComponent(s.replace(pl, " "));
-            }
-            , query = window.location.search.substring(1);
+            },
+            query = window.location.search.substring(1);
         var urlParams = {};
         while (match = search.exec(query))
             urlParams[decode(match[1])] = decode(match[2]);
@@ -86,12 +85,15 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
             switch (urlParams.page) {
             case 'home':
                 $scope.home = true;
+                $("[aria-controls='home']").addClass('active');
                 break;
             case 'about':
                 $scope.about = true;
+                $("[aria-controls='about']").addClass('active');
                 break;
             case 'audience':
                 $scope.audience = true;
+                $("[aria-controls='audience']").addClass('active');
                 break;
             case 'tool':
                 if (urlParams.filter !== undefined) {
@@ -122,25 +124,28 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
                         $('#case').modal('show');
                     });
                 }
+                $("[aria-controls='cases']").addClass('active');
                 break;
             case 'ulinks':
                 $scope.ulinks = true;
+                $("[aria-controls='ulinks']").addClass('active');
                 break;
             case 'disclaimer':
                 $scope.disclaimer = true;
+                $("[aria-controls='disclaimer']").addClass('active');
                 break;
             }
         });
     };
-    var pages = 1
-        , itemsperpage = 6
-        , numitems = 0
-        , search = "";
+    var pages = 1,
+        itemsperpage = 6,
+        numitems = 0,
+        search = "";
     var filterFns = {
         by6: function (element) {
             return element.hasClass($scope.filterValue);
-        }
-        , searchby6: function (element) {
+        },
+        searchby6: function (element) {
             return search ? element.text().match(search) : true;
         }
     };
@@ -163,8 +168,8 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
         } : trueFilter;
         $timeout(function () {
             $container.isotope({
-                itemSelector: '.item'
-                , filter: basicFilter(trueFilter)
+                itemSelector: '.item',
+                filter: basicFilter(trueFilter)
             });
         });
     };
@@ -198,6 +203,9 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
         $scope.searching = false;
         $scope.ulinks = false;
         $scope.disclaimer = false;
+
+        $(".nav.navbar-nav li a").removeClass("active");
+
         $('body,html').animate({
             scrollTop: 0
         }, 100);
@@ -221,6 +229,7 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
         delete urlParams.subgrouptype;
         if (!$scope.tool || subgroup === undefined) {
             $scope.changePage();
+            $("[aria-controls='cases']").addClass('active');
             $scope.tool = true;
         }
         $scope.filterValue = filter.type;
@@ -244,6 +253,8 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
     }
     $scope.goabout = function () {
         $scope.changePage();
+
+        $("[aria-controls='about']").addClass('active');
         $scope.about = true;
         $("#about").children().first().focus();
         newState({
@@ -255,6 +266,8 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
             e.stopPropagation();
         }
         $scope.changePage();
+
+        $("[aria-controls='audience']").addClass('active');
         $scope.audience = true;
 
         $("#audience").children().first().focus();
@@ -264,6 +277,7 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
     }
     $scope.gohome = function () {
         $scope.changePage();
+        $("[aria-controls='home']").addClass('active');
         $scope.home = true;
         $("#home").children().first().focus();
         newState({
@@ -272,6 +286,7 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
     };
     $scope.gotool = function () {
         $scope.changePage();
+        $("[aria-controls='cases']").addClass('active');
         $scope.tool = true;
 
         if ($scope.filterValue === '') {
@@ -283,8 +298,9 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
             e.stopPropagation();
         }
         $scope.changePage();
-        $scope.ulinks = true;
 
+        $scope.ulinks = true;
+        $("[aria-controls='ulinks']").addClass('active');
         $("#ulinks").children().first().focus();
         newState({
             'page': 'ulinks'
@@ -292,8 +308,10 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
     };
     $scope.godisclaimer = function () {
         $scope.changePage();
+
         $scope.disclaimer = true;
 
+        $("[aria-controls='disclaimer']").addClass('active');
         $("#disclaimer").children().first().focus();
         newState({
             'page': 'disclaimer'
@@ -321,14 +339,16 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
         }
         $scope.currenttype = null;
         $scope.changePage();
+        
+        $("[aria-controls='cases']").addClass('active');
         $scope.searching = true;
         search = new RegExp($scope.search, 'gi');
         numitems = 0;
         pages = 1;
         $scope.showload = false;
         newState({
-            'page': 'tool'
-            , 'search': $scope.search
+            'page': 'tool',
+            'search': $scope.search
         }, 'Recognition Tool');
         isotopic(filterFns.searchby6);
     }
@@ -377,8 +397,8 @@ app.directive('bindCompiledHtml', function ($compile) {
         scope.$watch(
             function (scope) {
                 return scope.$eval(attrs.bindCompiledHtml);
-            }
-            , function (value) {
+            },
+            function (value) {
                 element.html(value);
                 $compile(element.contents())(scope)
             }
@@ -388,8 +408,8 @@ app.directive('bindCompiledHtml', function ($compile) {
 
 app.directive('imageOnLoad', function () {
     return {
-        restrict: 'A'
-        , link: function (scope, element) {
+        restrict: 'A',
+        link: function (scope, element) {
             element.on('load', function () {
                 // Set visibility: true + remove spinner overlay
                 $('.spinnerbox').removeClass('spinner-show');
