@@ -23,10 +23,10 @@ $(document).ready(function () {
     $("[role='tab']").not(".is-checked").attr("aria-expanded", false);
     $(".is-checked[role='tab']").attr("aria-expanded", true);
 
-    $("[role='tab'], .partial-collapse, .info-bubble").on("click keypress", function (e) {
+    $("[role='tab'], .partial-collapse").on("click keypress", function (e) {
         if (e.keyCode == 13 || e.keyCode == 32) {
             e.preventDefault();
-            //            $(e.target).trigger('click');
+            $(e.target).trigger('click');
         }
         if ($(this).hasClass('is-checked')) {
             $(this).attr("aria-expanded", true);
@@ -38,20 +38,17 @@ $(document).ready(function () {
             else
                 $(this).attr("aria-expanded", false);
         }
-        if ($(this).hasClass("info-bubble")) {
-            $(".info-bubble").not
-            $.each($(".info-bubble").not(this), function (i, el) {
-                if ($(el).attr("aria-expanded") == "true") {
-                    $(el).removeClass("open");
-                    $(el).attr("aria-expanded", false);
-                }
-            });
+    });
 
-            if ($(this).hasClass("open"))
-                $(this).attr("aria-expanded", true);
-            else
-                $(this).attr("aria-expanded", false);
-        }
+    $(".info-bubble").on("click keypress", function (e) {
+        $.each($(".info-bubble").not(this), function (i, el) {
+            $(el).removeClass("open");
+            $(el).attr("aria-expanded", false);
+        });
+
+        $(this).attr("aria-expanded", true);
+        if(!$(this).hasClass("open") )
+            $(this).addClass("open");
     });
 
     $("[role='tab']").on("show.bs.collapse", function () {
@@ -89,17 +86,22 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
             if (urlParams.page == undefined)
                 urlParams.page = 'home';
             $scope.changePage();
+
             switch (urlParams.page) {
             case 'home':
                 $scope.home = true;
+                $("[aria-controls='home']").addClass('active');
                 break;
             case 'about':
                 $scope.about = true;
+                $("[aria-controls='about']").addClass('active');
                 break;
             case 'audience':
                 $scope.audience = true;
+                $("[aria-controls='audience']").addClass('active');
                 break;
             case 'tool':
+                $("[aria-controls='cases']").addClass('active');
                 if (urlParams.filter !== undefined) {
                     var filter = $scope.getFilterByName(urlParams.filter);
                     if (filter.subgroups !== undefined) {
@@ -131,9 +133,11 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
                 break;
             case 'ulinks':
                 $scope.ulinks = true;
+                $("[aria-controls='ulinks']").addClass('active');
                 break;
             case 'disclaimer':
                 $scope.disclaimer = true;
+                $("[aria-controls='disclaimer']").addClass('active');
                 break;
             }
         });
@@ -230,6 +234,7 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
         delete urlParams.subgrouptype;
         if (!$scope.tool || subgroup === undefined) {
             $scope.changePage();
+            $("[aria-controls='cases']").addClass('active');
             $scope.tool = true;
         }
         $scope.filterValue = filter.type;

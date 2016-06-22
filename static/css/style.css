@@ -82,11 +82,12 @@ nav {
     background: linear-gradient(to bottom, #363636 0%, #4a4a4a 100%);
 }
 
-.navbar-nav {
+.navbar-nav, .nav-justified {
     float: none;
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav > li > a, 
+.navbar-default .nav-justified > li > a {
     padding: 0px 0.5em;
     line-height: 5em;
     display: block;
@@ -99,13 +100,17 @@ nav {
 }
 
 .navbar-default .navbar-nav li a:focus,
-.navbar-default .navbar-nav li a:hover {
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .nav-justified li a:focus,
+.navbar-default .nav-justified li a:hover {
     background: #FFFFFF;
     border-bottom: none;
 }
 
 .navbar-default .navbar-nav li a.active,
-.navbar-default .navbar-nav li a.active:focus {
+.navbar-default .navbar-nav li a.active:focus,
+.navbar-default .nav-justified li a.active,
+.navbar-default .nav-justified li a.active:focus {
     background-color: #FFFFFF;
     color: #565656;
     margin-bottom: -5px;
@@ -113,7 +118,9 @@ nav {
 }
 
 .navbar-nav > li > a:hover,
-.navbar-nav li > a.active {
+.navbar-nav li > a.active, 
+.nav-justified > li > a:hover,
+.nav-justified li > a.active {
     background: #FFFFFF;
     color: #BB0E3D;
     text-decoration: none;
@@ -438,9 +445,9 @@ nav {
 .info-bubble:not(.open) >:not(:first-child) {
     display: none;
 }
-.info-bubble.open > :not(:first-child) p {
-    display: block;
-	
+
+.info-bubble:focus, .info-bubble.open {
+    border-radius: 0px;
 }
 
 .info-bubble.abcde ol {
@@ -469,10 +476,6 @@ nav {
 
 .info-bubble.abcde ol b {
     font-size: 16px;
-}
-
-.info-bubble:focus, .info-bubble.open {
-    border-radius: 0px;
 }
 
 .photolink {
@@ -777,8 +780,16 @@ nav {
         top: 5em;
         text-align: center;
     }
+    .nav-block ul {
+        width: inherit;
+    }
+    .nav-block ul li {
+        width: 14%;
+    }
+    
     .navbar-nav {
-        display: inline-block;
+        display: flex;
+        justify-content: space-around;
     }
     .navbar-default .navbar-nav > li > a {
         line-height: 3em;
@@ -790,7 +801,7 @@ nav {
         float: right;
     }
     .navbar-default .navbar-nav > li > a {
-        padding: 0 1em;
+        padding: 0;
     }
 }
 
@@ -892,9 +903,22 @@ nav {
         position: absolute;
         top: 0em;
     }
+    
+    .navbar-nav {
+        display: block;
+        margin: 0 auto;
+    }
     .nav-block {
         position: relative;
         top: 0px;
+    }
+    .nav-block ul li {
+        width: 100%;
+    }
+    .navbar-default .navbar-nav li a.active, 
+    .navbar-default .navbar-nav li a.active:focus {
+        margin: 0 auto;
+        border: none;
     }
     .searchcont {
         position: absolute;
