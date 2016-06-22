@@ -39,11 +39,18 @@ $(document).ready(function () {
                 $(this).attr("aria-expanded", false);
         }
         if ($(this).hasClass("info-bubble")) {
+            $(".info-bubble").not
+            $.each($(".info-bubble").not(this), function (i, el) {
+                if ($(el).attr("aria-expanded") == "true") {
+                    $(el).removeClass("open");
+                    $(el).attr("aria-expanded", false);
+                }
+            });
+
             if ($(this).hasClass("open"))
                 $(this).attr("aria-expanded", true);
             else
                 $(this).attr("aria-expanded", false);
-
         }
     });
 
@@ -85,15 +92,12 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
             switch (urlParams.page) {
             case 'home':
                 $scope.home = true;
-                $("[aria-controls='home']").addClass('active');
                 break;
             case 'about':
                 $scope.about = true;
-                $("[aria-controls='about']").addClass('active');
                 break;
             case 'audience':
                 $scope.audience = true;
-                $("[aria-controls='audience']").addClass('active');
                 break;
             case 'tool':
                 if (urlParams.filter !== undefined) {
@@ -124,15 +128,12 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
                         $('#case').modal('show');
                     });
                 }
-                $("[aria-controls='cases']").addClass('active');
                 break;
             case 'ulinks':
                 $scope.ulinks = true;
-                $("[aria-controls='ulinks']").addClass('active');
                 break;
             case 'disclaimer':
                 $scope.disclaimer = true;
-                $("[aria-controls='disclaimer']").addClass('active');
                 break;
             }
         });
@@ -229,7 +230,6 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
         delete urlParams.subgrouptype;
         if (!$scope.tool || subgroup === undefined) {
             $scope.changePage();
-            $("[aria-controls='cases']").addClass('active');
             $scope.tool = true;
         }
         $scope.filterValue = filter.type;
@@ -339,8 +339,6 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
         }
         $scope.currenttype = null;
         $scope.changePage();
-        
-        $("[aria-controls='cases']").addClass('active');
         $scope.searching = true;
         search = new RegExp($scope.search, 'gi');
         numitems = 0;

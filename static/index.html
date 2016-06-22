@@ -18,7 +18,7 @@
     <a class="sr-only sr-only-focusable" href="#skipTo" tabindex="0">Skip to Content</a>
     <div class="app" ng-app="myApp" ng-controller="myCtrl">
         <nav class="navbar-default">
-            <a href="http://dceg.cancer.gov" tabindex="0"  role="link" ><img id="brand" src="images/DCEG-logo-wt.svg" alt="link DCEG Home" /></a>
+            <a href="http://dceg.cancer.gov" tabindex="0" role="link"><img id="brand" src="images/DCEG-logo-wt.svg" alt="link DCEG Home" /></a>
             <div class="toggle-block">
                 <button aria-expanded="false" class="navbar-toggle" data-target=".nav-block" data-toggle="collapse" type="button">
                     <span class="sr-only">Toggle navigation</span>
@@ -55,6 +55,8 @@
 
           <p>The National Cancer Institute has collected photographs of 29 different pigmented skin lesions, presented as case series, to help patients and other individuals recognize common moles, dysplastic nevi (DN), and melanomas that started from DN.  Each case series shows changes in an individual pigmented lesion (mole) over time and across the various mole changes typically seen in individuals from U.S. melanoma-prone families.</p></span>
                 </div>
+                <div class="spacer">
+                </div>
                 <div tabindex="0" role="link" aria-expanded="false" class="info-bubble" ng-class="{'open':moletypesParagraph}" ng-click="moletypesParagraph=!moletypesParagraph">
                     <h3>What are moles, dysplastic nevi and melanoma?</h3><span role="button">
           <ul>
@@ -63,13 +65,20 @@
             <li><b>Melanoma</b> - <em>A form of cancer</em> that begins in melanocytes (cells that make the pigment melanin). It may begin in a mole (skin melanoma), but can also begin in other pigmented tissues, such as in the eye or in the intestines.</li>
           </ul></span>
                 </div>
+                <div class="spacer">
+                </div>
                 <div tabindex="0" role="link" aria-expanded="false" class="info-bubble" ng-class="{'open':audienceParagraph}" ng-click="audienceParagraph=!audienceParagraph">
                     <h3>Who is the intended audience?</h3><span role="button">
           <p>This resource is intended for patients and others in the lay public.  It only includes images of individuals who are at the highest risk of developing melanoma (i.e. Caucasians). Additional information, including resources for other racial and ethnic groups, can be found in the <a ng-click="goaudience($event)">Intended Audience section</a>.</p></span>
                 </div>
+                <div class="spacer">
+                </div>
                 <div tabindex="0" role="link" aria-expanded="false" class="info-bubble" ng-class="{'open':informationParagraph}" ng-click="informationParagraph=!informationParagraph">
                     <h3>What information does this resource provide?</h3><span role="button">
           <p>This resource provides information about and examples of: common moles, dysplastic nevi (atypical moles) and melanoma.  This collection does not include any pictures of non-melanoma types of skin cancer (e.g. basal cell or squamous cell). Since they arise from different cell types in the skin, they look very different from melanoma. Additional information, including  resources for other types of non-melanoma skin cancer, can be found in the <a ng-click="goaudience($event)">Intended Audience section</a>.</p></span>
+                </div>
+
+                <div class="spacer">
                 </div>
                 <div tabindex="0" role="link" aria-expanded="false" class="info-bubble abcde" ng-class="{'open':rulesParagraph}" ng-click="rulesParagraph=!rulesParagraph">
                     <h3>What is the "ABCDE" rule?</h3>
@@ -147,7 +156,7 @@
             <h2>Who is the Intended Audience?</h2>
             <p>The photographs in this tool show moles on the skin of participants enrolled in the <a href="https://clinicaltrials.gov/show/NCT00040352" target="_new">NCI Familial Melanoma Study</a>. This study only includes individuals in U.S. melanoma-prone families who are at high-risk of developing this form of skin cancer. As shown in Figure 1, Caucasians are at the highest risk of developing melanoma. To date, this study has not identified or enrolled any non-Caucasian families; therefore this tool does not provide images representative of other ethnicities.</p>
             <h5><b>Figure 1: Melanoma incidence by race/ethnicity in the U.S. Surveillance, Epidemiology and End Results Program 1975-2012</b></h5>
-            <img id="incidenceGraph" src="images/incidence.png" alt="Graph showing the melanoma Incidence Rates per one hundred thousand people in the U.S. between 1975 and 2013. In that time period, caucasians were found to have developed melanoma at a higher rate compared to individuals of other races and ethnicities"/>
+            <img id="incidenceGraph" src="images/incidence.png" alt="Graph showing the melanoma Incidence Rates per one hundred thousand people in the U.S. between 1975 and 2013. In that time period, caucasians were found to have developed melanoma at a higher rate compared to individuals of other races and ethnicities" />
             <h6>Reference: Howlader N, Noone AM, Krapcho M, Garshell J, Miller D, Altekruse SF, Kosary CL, Yu M, Ruhl J, Tatalovich Z, Mariotto A, Lewis DR, Chen HS, Feuer EJ, Cronin KA (eds). SEER Cancer Statistics Review, 1975-2012, National Cancer Institute. Bethesda, MD, <a href="http://seer.cancer.gov/csr/1975_2012/" target="_new">http://seer.cancer.gov/csr/1975_2012/</a> , based on November 2014 SEER data submission, posted to the SEER web site, April 2015</h6>
             <h6>Data points are not included for clarity of presentation, but may be found at <a href="http://seer.cancer.gov/csr/1975_2012/sections.html" target="_new">http://seer.cancer.gov/csr/1975_2012/sections.html</a> Figure 16.2.</h6>
 
@@ -279,8 +288,6 @@
                     <li><a href="http://usa.gov" target="_blank">USA.gov</a></li>
                 </ul>
                 <div class="text-center">NIH ... Turning Discovery Into Health<sup>®</sup></div>
-                <br/>
-                <div id="rem_notice">Site is currently under section 508 review. This site is undergoing remediation for compliance with section 508. The remediation will be completed by July 7, 2016. In the interim, should you require any accessibility assistance with any content, please contact us at <a href="mailto:cancer.gov_staff@mail.nih.gov">cancer.gov_staff@mail.nih.gov</a>. Thank you! </div>
             </div>
         </footer>
         <button type="button" class="backtotop blur" ng-show="showbacktotop" ng-click="backToTop()" value="to top" aria-label="back to top">
