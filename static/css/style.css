@@ -7,8 +7,7 @@ a:focus,
     -webkit-box-shadow: 1px 1px 1px inherit;
 }
 
-#typedescription *:focus{
-	
+#typedescription *:focus {
     outline: 1px solid lightblue;
     box-shadow: 1px 1px 1px lightblue;
     -moz-box-shadow: 1px 1px 1px lightblue;
@@ -90,11 +89,12 @@ nav {
     background: linear-gradient(to bottom, #363636 0%, #4a4a4a 100%);
 }
 
-.navbar-nav, .nav-justified {
+.navbar-nav,
+.nav-justified {
     float: none;
 }
 
-.navbar-default .navbar-nav > li > a, 
+.navbar-default .navbar-nav > li > a,
 .navbar-default .nav-justified > li > a {
     padding: 0px 0.5em;
     line-height: 5em;
@@ -126,7 +126,7 @@ nav {
 }
 
 .navbar-nav > li > a:hover,
-.navbar-nav li > a.active, 
+.navbar-nav li > a.active,
 .nav-justified > li > a:hover,
 .nav-justified li > a.active {
     background: #FFFFFF;
@@ -454,7 +454,8 @@ nav {
     display: none;
 }
 
-.info-bubble:focus, .info-bubble.open {
+.info-bubble:focus,
+.info-bubble.open {
     border-radius: 0px;
 }
 
@@ -769,7 +770,17 @@ nav {
 @media (min-width: 1331px) {
     .nav-block {
         float: right;
+        width: 50%;
     }
+    .navbar-nav {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .navbar-default .navbar-nav > li > a {
+        padding: 0 10px;
+    }
+    
     .searchcont {
         overflow: auto;
         float: left;
@@ -778,7 +789,7 @@ nav {
     }
 }
 
-@media (max-width: 1330px) {
+@media (max-width: 1420px) {
     nav {
         height: 8em;
     }
@@ -794,7 +805,6 @@ nav {
     .nav-block ul li {
         width: 14%;
     }
-    
     .navbar-nav {
         display: flex;
         justify-content: space-around;
@@ -804,9 +814,10 @@ nav {
     }
 }
 
-@media (min-width: 951px) and (max-width: 1330px) {
+@media (min-width: 951px) and (max-width: 1420px) {
     .searchcont {
         float: right;
+        padding: 0px 15px;
     }
     .navbar-default .navbar-nav > li > a {
         padding: 0;
@@ -911,7 +922,6 @@ nav {
         position: absolute;
         top: 0em;
     }
-    
     .navbar-nav {
         display: block;
         margin: 0 auto;
@@ -923,7 +933,7 @@ nav {
     .nav-block ul li {
         width: 100%;
     }
-    .navbar-default .navbar-nav li a.active, 
+    .navbar-default .navbar-nav li a.active,
     .navbar-default .navbar-nav li a.active:focus {
         margin: 0 auto;
         border: none;
@@ -933,7 +943,6 @@ nav {
         height: 3em;
         top: 5em;
         width: 100%;
-        padding: 0px 15px;
     }
     .toggle-block {
         position: absolute;
