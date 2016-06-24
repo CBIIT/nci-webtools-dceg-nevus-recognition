@@ -22,7 +22,11 @@ $(document).ready(function () {
 
     $("[role='tab']").not(".is-checked").attr("aria-expanded", false);
     $(".is-checked[role='tab']").attr("aria-expanded", true);
-
+    
+    /*
+        specifying aria-expanded on collapsible elements, to signify the element's visible state 
+    */
+    
     $("[role='tab'], .partial-collapse").on("click keypress", function (e) {
         if (e.keyCode == 13 || e.keyCode == 32) {
             e.preventDefault();
@@ -234,6 +238,7 @@ app.controller('myCtrl', function ($rootScope, $scope, $http, $timeout) {
         delete urlParams.subgrouptype;
         if (!$scope.tool || subgroup === undefined) {
             $scope.changePage();
+            // highlighting cases link on change
             $("[aria-controls='cases']").addClass('active');
             $scope.tool = true;
         }

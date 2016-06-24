@@ -1,6 +1,8 @@
+
 *:focus,
 a:focus,
-.form-control:focus {
+.form-control:focus { 
+    /* making sure it is clear which elements have focus */
     outline: 1px solid inherit;
     box-shadow: 1px 1px 1px inherit;
     -moz-box-shadow: 1px 1px 1px inherit;
@@ -73,7 +75,7 @@ em {
 nav {
     position: relative;
     height: 5em;
-    background: linear-gradient(to bottom, #363636 0%, #4a4a4a 100%);
+    background: transparent;
 }
 
 #brand {
@@ -86,7 +88,7 @@ nav {
 }
 
 .nav-block {
-    background: linear-gradient(to bottom, #363636 0%, #4a4a4a 100%);
+    background: transparent;
 }
 
 .navbar-nav,
@@ -99,7 +101,8 @@ nav {
     padding: 0px 0.5em;
     line-height: 5em;
     display: block;
-    color: #FFF;
+    color: inherit;
+    
 }
 
 .footer li a {
@@ -111,18 +114,23 @@ nav {
 .navbar-default .navbar-nav li a:hover,
 .navbar-default .nav-justified li a:focus,
 .navbar-default .nav-justified li a:hover {
-    background: #FFFFFF;
+    background: transparent;
     border-bottom: none;
+}
+
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .nav-justified li a:hover {
+    text-decoration: underline;
 }
 
 .navbar-default .navbar-nav li a.active,
 .navbar-default .navbar-nav li a.active:focus,
 .navbar-default .nav-justified li a.active,
 .navbar-default .nav-justified li a.active:focus {
-    background-color: #FFFFFF;
-    color: #565656;
+    background-color: #023C4D;
+    color: #FFF;
     margin-bottom: -5px;
-    border-bottom: #023C4D 5px inset;
+    border-bottom: #fff 5px inset;
 }
 
 .navbar-nav > li > a:hover,
@@ -429,6 +437,10 @@ nav {
     font-size: 18px;
     margin: 10px auto;
 }
+
+/**
+    moving arrow into it's own element
+**/
 
 .info-bubble + .spacer {
     margin: 0 auto;
@@ -773,6 +785,7 @@ nav {
         width: 50%;
     }
     .navbar-nav {
+        /* making links span across the width of the parent element */
         display: flex;
         justify-content: space-around;
     }
