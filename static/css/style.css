@@ -104,10 +104,18 @@ nav {
     color: inherit;
     
 }
+.footer {
+    color: #FFF;
+    padding: 3em 0;
+    background: #123E57;
+    min-height: 280px;
+    line-height: 2.5;
+    font-size: 16px;
+}
 
-.footer li a {
-    color: #444;
-    font-weight: normal;
+.footer ul li a {
+    color: #FFF;
+    font-weight: bold;
 }
 
 .navbar-default .navbar-nav li a:focus,
@@ -352,6 +360,19 @@ nav {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
 }
+
+button.backtotop {
+    border: 2px solid #023C4D;
+    background:#FFF ;
+    color: #023C4D;
+}
+
+button.backtotop:hover {
+    border: 2px solid #000;
+    background: #023C4D;
+    color: #FFF;
+}
+
 
 .disclaimer {
     text-align: left;
