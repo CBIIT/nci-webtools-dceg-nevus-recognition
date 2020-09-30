@@ -1,12 +1,22 @@
 
 // handles showing/filtering case images
-app.controller('AppController', function ($rootScope, $window, $scope, $route) {
+app.controller('AppController', function ($rootScope, $scope, $timeout, $uibModal) {
     // use alias for current context
     var c = this;
     c.isNavCollapsed = false;
     c.scrollTopVisible = false;
     c.scrollTopThreshold = 200;
 
+    $timeout(function() {
+        c.disclaimerModal = $uibModal.open({
+            animation: false,
+            templateUrl: 'templates/disclaimer-modal.html',
+            controllerAs: 'c',
+            size: 'lg',
+        });
+    }, 100);
+
+    // show/hide scroll to top
     angular.element(window).on('scroll', function() {
         var scrollTopVisible = +(window.scrollY || window.pageYOffset || 0) > c.scrollTopThreshold;
         // only $apply scope when the value needs to change
