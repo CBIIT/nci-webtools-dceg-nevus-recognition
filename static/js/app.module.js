@@ -82,9 +82,10 @@ app.directive('ngRouteActiveClass', function ($location) {
     }
 });
 
+// compiles and sanitizes html from a provided expression
+// also processes secondary (custom) directives if needed
 app.directive('ngCompileHtml', function ($sce, $compile, $http) {
     return {
-        // priority: 0,
         restrict: 'A',
         link: function(scope, element, attrs) {
             var unwatch = scope.$watch(
@@ -92,8 +93,8 @@ app.directive('ngCompileHtml', function ($sce, $compile, $http) {
                     return $sce.parseAsHtml(attrs.ngCompileHtml)(scope);
                 },
                 function(value) {
+                    // special case: define-terms is set
                     if (element[0].hasAttribute('define-terms')) {
-                        // special case - element also has 'define-terms' directive
                         defineTerms($http, value).then(resolve);
                     } else {
                         resolve(value);
@@ -113,24 +114,11 @@ app.directive('ngCompileHtml', function ($sce, $compile, $http) {
 // defines terms within a specific element
 app.directive('defineTerms', function($http) {
     return {
-        // priority: 10,
         restrict: 'A',
         link: function(scope, element, attrs) {
             defineTerms($http, element.html()).then(function(html) {
                 element.html(html);
             });
-
-
-/*            if (attrs.ngCompileHtml) {
-                var unwatch = scope.$watch(function(scope) {
-                    return $sce.parseAsHtml(attrs.ngCompileHtml)(scope);
-                },
-                function(value) {
-                    element.html(value);
-                    $compile(element.contents())(scope);
-                    unwatch();
-                });
-            } */
         }
     }
 });
@@ -144,6 +132,8 @@ app.filter('titleCase', function () {
     };
 });
 
+// replaces terms within html with <attr> elements, which contain the definition
+// as a part of their title attribute
 function defineTerms($http, html) {
     return $http.get('data/glossary.json', {cache: true}).then(function(response) {
         // define longest terms first
