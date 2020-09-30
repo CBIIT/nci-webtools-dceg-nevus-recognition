@@ -1,3 +1,7 @@
+body {
+    min-width: 550px;
+}
+
 /** Containers */
 @media (min-width: 1680px) {
     .container.xl {
@@ -112,6 +116,12 @@ html.no-details details > summary {
     background-position: center right;
     background-size: contain;
     background-repeat: no-repeat;    
+}
+
+@media(max-width: 1599px) {
+    .banner {
+        background-image: none;
+    }
 }
 
 .btn {
