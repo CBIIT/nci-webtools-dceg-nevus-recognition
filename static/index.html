@@ -9,6 +9,7 @@
     <meta name="description" content="This tool is intended to help educate the public about the appearance and features of common moles, atypical moles (dysplastic nevi), and melanomas." />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ui-bootstrap4@3.0.6/dist/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62346354-17"></script>
     <script src="https://assets.adobedtm.com/f1bfa9f7170c81b1a9a9ecdcc6c5215ee0b03c84/satelliteLib-4b219b82c4737db0e1797b6c511cf10c802c95cb.js"></script>
@@ -16,18 +17,28 @@
 
 <body ng-app="app" ng-controller="AppController as ac" class="bg-light">
     <a class="sr-only sr-only-focusable" ng-anchor="#main">Skip to Content</a>
-    <nav class="navbar navbar-expand-xl navbar-light-contrast py-0" role="navigation">
+    <nav class="navbar navbar-expand-xxl navbar-light-contrast py-0" role="navigation">
         <a class="navbar-brand" href="https://dceg.cancer.gov">
             <img src="images/DCEG-logo.svg" class="flex-shrink" height="70" width="420" alt="link DCEG Home">
         </a>
+
         <button class="navbar-toggler" type="button" ng-click="ac.isNavCollapsed = !ac.isNavCollapsed" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fas fa-ellipsis-v"></i>
         </button>
-        <form class="form-inline" ng-controller="SearchController as sc">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search" ng-model="sc.search" ng-model-options="{ debounce: 250 }">
-        </form>
         <div class="collapse navbar-collapse" uib-collapse="ac.isNavCollapsed">
-            <ul class="navbar-nav custom ml-auto">
+            <ul class="navbar-nav custom flex-auto">
+                <li class="nav-item flex-grow d-flex">
+                    <form class="form-inline flex-grow" ng-controller="SearchController as sc">
+                        <input 
+                            class="form-control w-100 mr-xxl-3 mx-0"
+                            type="search" 
+                            placeholder="Search" 
+                            aria-label="Search" 
+                            ng-model="sc.search" 
+                            ng-model-options="{ debounce: 250 }">
+                    </form>
+                </li>                
+    
                 <li class="nav-item">
                     <a class="nav-link" href="#!/home" ng-route-active-class="active">Home</a>
                 </li>
@@ -54,7 +65,15 @@
     </header>
     <main id="main" tabindex="0" ng-view></main>
     <footer class="py-3 bg-dark text-light text-center">
-        <scroll-top></scroll-top>
+
+        <button 
+            ng-cloak
+            ng-show="ac.scrollTopVisible" 
+            class="btn btn-light border rounded-circle fixed-bottom-right-1" 
+            ng-click="ac.scrollToSmooth(0, 0)">
+            <i class="fas fa-chevron-up"></i>
+            <span class="sr-only">Back to top</span>
+        </button>
         <div class="container-xl pt-3">
             <ul class="list-inline list-inline-separators text-center mb-3">
                 <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://www.cancer.gov/" title="Home" target="_blank">Home</a></li>
