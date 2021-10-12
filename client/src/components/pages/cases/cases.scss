@@ -1,0 +1,13 @@
+.active-secondary-navlinks {
+  box-shadow: none !important;
+  color: 'black';
+
+  &:after {
+    content: '';
+    display: block;
+    padding-top: 2px;
+    width: 100%;
+    border-bottom: 3px solid #bb0e3d !important;
+    margin-bottom: -5px;
+  }
+}

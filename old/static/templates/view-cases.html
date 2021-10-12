@@ -1,0 +1,109 @@
+<!-- Usually, we want to avoid using ng-init to initialize $scope variables, but in this case
+     it is permissible since we are using it to apply filters and to generate url parameters -->
+<div
+  ng-init="
+    cases = c.search 
+        ? c.searchCases(c.search) 
+        : c.getCases(c.filter, c.subgroup);
+    params = c.search 
+        ? 'search=' + c.search 
+        : 'filter=' + c.filter.type + (
+            c.subgroup 
+                ? '&subgrouptype=' + c.subgroup.type 
+                : '');
+"
+></div>
+
+<!-- Filter Tabs -->
+<ul className="nav nav-tabs nav-fill bg-secondary-light">
+  <li
+    ng-repeat="filter in c.filters"
+    className="nav-item"
+    ng-style="{'width': (100 / c.filters.length) + '%'}"
+  >
+    <a
+      className="nav-link font-weight-bold border-secondary h-100"
+      ng-className="{
+                'active bg-dark text-light border-dark': filter == c.filter && !c.search, 
+                'bg-white': filter !== c.filter || c.search}"
+      href="#/view-cases?filter={{filter.type}}"
+    >
+      {{ filter.name }}
+    </a>
+  </li>
+</ul>
+
+<!-- Filter Description -->
+<div className="bg-dark text-light py-3" ng-if="!c.search">
+  <div className="container xl">
+    <p ng-compile-html="c.filter.descriptionsummary"></p>
+    <p ng-if="c.showMoreInformation" ng-compile-html="c.filter.description"></p>
+    <div className="text-center my-3">
+      <a
+        className="btn btn-light text-uppercase"
+        href="#/view-cases?{{params}}&info={{c.showMoreInformation ? 0 : 1}}"
+      >
+        Show {{ c.showMoreInformation ? 'Less' : 'More' }} Information
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Filter Subgroup Tabs -->
+<ul ng-if="c.filter.subgroups" className="nav nav-tabs nav-fill bg-dark">
+  <li
+    ng-repeat="subgroup in c.filter.subgroups"
+    className="nav-item"
+    ng-style="{'width': (100 / c.filter.subgroups.length) + '%'}"
+  >
+    <a
+      className="nav-link font-weight-bold border-secondary h-100"
+      ng-className="{'active bg-light border-bottom-0': subgroup == c.subgroup, 'bg-white': subgroup !== c.subgroup}"
+      href="#/view-cases?filter={{c.filter.type}}&subgrouptype={{subgroup.type}}&info={{c.showMoreInformation ? 1 : 0}}"
+    >
+      {{ subgroup.name }}
+    </a>
+  </li>
+</ul>
+
+<div className="container xl py-5">
+  <h2 className="text-center pb-4">
+    {{ c.search ? 'Search Results' : 'Examples' }}
+  </h2>
+
+  <!-- Case Image Grid -->
+  <div className="row mb-3">
+    <div
+      className="col-md-6 col-lg-4 mb-5"
+      ng-repeat="case in cases |  limitTo : c.showImageLimit"
+      ng-init="caseIndex = c.cases.indexOf(case)"
+    >
+      <a
+        className="card shadow image-highlight"
+        ng-href="#/view-cases?{{params}}&limit={{c.showImageLimit}}&info={{c.showMoreInformation ? 1 : 0}}&case={{caseIndex}}&img=0"
+      >
+        <img
+          ng-src="{{case.images[0].image}}"
+          className="card-img-top"
+          alt="{{case.title}}"
+          no-context-menu
+        />
+        <div className="card-body text-center">
+          <div className="card-text text-dark font-weight-bold text-uppercase">
+            {{ case.name }}
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Show More Images button -->
+  <div className="text-center mb-3" ng-if="c.showImageLimit < cases.length">
+    <a
+      className="btn btn-dark text-uppercase"
+      ng-href="#/view-cases?{{params}}&limit={{c.showImageLimit + 6}}&info={{c.showMoreInformation ? 1 : 0}}"
+    >
+      Show More Images
+    </a>
+  </div>
+</div>

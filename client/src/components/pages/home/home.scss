@@ -1,0 +1,9 @@
+.banner {
+  background-position: center right;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @media (max-width: 1599px) {
+    background-image: none !important;
+  }
+}
