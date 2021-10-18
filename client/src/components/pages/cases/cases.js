@@ -12,13 +12,18 @@ export default function Cases({ filters, cases }) {
   const subgrouptype = params.get('subgrouptype') || filter;
 
   const selectedFilter = filters.filter((f) => f.type === filter)[0];
-  const selectedCases = cases
-    .filter((c) => c.type === filter)
-    .filter((c) =>
-      selectedFilter.subgroups
-        ? c.subgroup == subgrouptype || subgrouptype == filter
-        : true
-    );
+  const selectedCases = search
+    ? cases.filter((c) => {
+        var content = JSON.stringify(c).toLowerCase();
+        return content.includes(search.toLowerCase());
+      })
+    : cases
+        .filter((c) => c.type === filter)
+        .filter((c) =>
+          selectedFilter.subgroups
+            ? c.subgroup == subgrouptype || subgrouptype == filter
+            : true
+        );
 
   const tabs = [
     { name: 'Common Moles', id: 'mole' },
@@ -32,7 +37,7 @@ export default function Cases({ filters, cases }) {
         <Nav
           variant="pills"
           defaultActiveKey="mole"
-          activeKey={filter}
+          activeKey={!search && filter}
           className="justify-content-center"
         >
           {tabs.map(({ name, id }) => (
@@ -131,9 +136,15 @@ export default function Cases({ filters, cases }) {
             <Button
               as="a"
               className="text-uppercase"
-              href={`#/view-cases&filter=${filter}${
-                selectedFilter.subgroups ? `&subgrouptype=${subgrouptype}` : ''
-              }&limit=${limit + 6}&info=${info}`}
+              href={`#/view-cases${
+                search
+                  ? `&search=${search}`
+                  : `&filter=${filter}${
+                      selectedFilter.subgroups
+                        ? `&subgrouptype=${subgrouptype}`
+                        : ''
+                    }`
+              }&limit=${parseInt(limit) + 6}&info=${info}`}
             >
               Show More Images
             </Button>
