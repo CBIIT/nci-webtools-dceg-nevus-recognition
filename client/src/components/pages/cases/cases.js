@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container, Row, Col, Button, Nav, Card } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import './cases.scss';
 
-export default function Cases({ match, filters, cases }) {
-  const rawParams = match.params.params || '&filter=mole';
-  const params = new URLSearchParams(rawParams);
-  const filter = params.get('filter');
-  const info = params.get('info');
-  const search = params.get('search');
-  const limit = params.get('limit');
+export default function Cases({ filters, cases }) {
+  const params = new URLSearchParams(window.location.hash);
+  const filter = params.get('filter') || 'mole';
+  const info = params.get('info') || 0;
+  const search = params.get('search') || '';
+  const limit = params.get('limit') || 6;
+  const subgrouptype = params.get('subgrouptype') || filter;
+
+  const selectedFilter = filters.filter((f) => f.type === filter)[0];
+  const selectedCases = cases
+    .filter((c) => c.type === filter)
+    .filter((c) =>
+      selectedFilter.subgroups
+        ? c.subgroup == subgrouptype || subgrouptype == filter
+        : true
+    );
 
   const tabs = [
     { name: 'Common Moles', id: 'mole' },
@@ -17,14 +26,8 @@ export default function Cases({ match, filters, cases }) {
     { name: 'Melanomas', id: 'melanoma' },
   ];
 
-  const selectedFilter = filters.filter((e) => e.type === filter)[0];
-  const selectedCases = cases.filter((e) => e.type === filter);
-
-  const [imageLimit, setImageLimit] = useState(limit || 6);
-  console.log(selectedFilter);
-
   return (
-    <Card className="border-0">
+    <Card className="border-0 bg-light">
       <Card.Header>
         <Nav
           variant="pills"
@@ -51,16 +54,38 @@ export default function Cases({ match, filters, cases }) {
               <div className="text-center my-3">
                 <a
                   className="btn btn-light text-uppercase"
-                  href={`#/view-cases${rawParams.replace(
-                    /&info=.{1}/,
-                    ''
-                  )}&info=${info == 1 ? 0 : 1}`}
+                  href={`#/view-cases&filter=${filter}&info=${
+                    info == 1 ? 0 : 1
+                  }`}
                 >
                   Show {info == 1 ? 'Less' : 'More'} Information
                 </a>
               </div>
             </Container>
           </div>
+        )}
+
+        {/* Subgroup Tabs */}
+        {selectedFilter.subgroups && (
+          <ul className="nav nav-tabs nav-fill bg-light">
+            {selectedFilter.subgroups.map((sub) => (
+              <li
+                className="nav-item"
+                style={{ width: 100 / selectedFilter.subgroups.length + '%' }}
+              >
+                <a
+                  className={`nav-link font-weight-bold border-secondary h-100 ${
+                    subgrouptype == sub.type
+                      ? 'bg-light border-bottom-0'
+                      : 'bg-white'
+                  }`}
+                  href={`#/view-cases&filter=${filter}&subgrouptype=${sub.type}&info=${info}`}
+                >
+                  {sub.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         )}
 
         {/* Case Image Grid */}
@@ -71,20 +96,22 @@ export default function Cases({ match, filters, cases }) {
           <Row className="mb-3">
             {selectedCases.map(
               (c, index) =>
-                index < imageLimit && (
+                index < limit && (
                   <Col md="6" lg="4" className="mb-5">
                     <Card
                       as="a"
                       className="shadow image-highlight"
-                      href={`#/view-cases&${rawParams}&limit=${imageLimit}&info=${
-                        info ? 1 : 0
-                      }&case=${index}&img=0`}
+                      href={`#/view-cases&filter=${filter}${
+                        selectedFilter.subgroups
+                          ? `&subgrouptype=${subgrouptype}`
+                          : ''
+                      }&limit=${limit}&info=${info}&case=${index}&img=0`}
                     >
                       <img
                         src={'/assets/' + c.images[0].image}
                         className="card-img-top"
                         alt={c.title}
-                        no-context-menu
+                        onContextMenu={(e) => e.preventDefault()}
                       />
                       <Card.Body className="text-center">
                         <div className="card-text text-dark font-weight-bold text-uppercase">
@@ -99,15 +126,14 @@ export default function Cases({ match, filters, cases }) {
         </Container>
 
         {/* Show More Images Button */}
-        {imageLimit < selectedCases.length && (
+        {limit < selectedCases.length && (
           <div className="text-center mb-3">
             <Button
               as="a"
               className="text-uppercase"
-              onClick={() => setImageLimit(imageLimit + 6)}
-              href={`#/view-cases?${rawParams}&limit=${imageLimit + 6}&info=${
-                info ? 1 : 0
-              }`}
+              href={`#/view-cases&filter=${filter}${
+                selectedFilter.subgroups ? `&subgrouptype=${subgrouptype}` : ''
+              }&limit=${limit + 6}&info=${info}`}
             >
               Show More Images
             </Button>

@@ -8,6 +8,7 @@ import Cases from './pages/cases/cases';
 import Information from './pages/information/information';
 import Disclaimer from './pages/disclaimer/disclaimer';
 import DisclaimerModal from './controls/disclaimerModal/disclaimerModal';
+import ImageModal from './controls/imageModal/imageModal';
 // data
 import filters from '../data/filters.json';
 import cases from '../data/cases.json';
@@ -44,6 +45,7 @@ export default function App() {
   return (
     <Router>
       <DisclaimerModal />
+      <ImageModal filters={filters} cases={cases} />
       <Navbar links={tabs} />
       <Route path="/" exact={true} component={Home} />
       <Route path="/about" component={About} />
