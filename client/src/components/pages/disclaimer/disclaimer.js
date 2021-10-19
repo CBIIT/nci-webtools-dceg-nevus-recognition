@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Disclaimer() {
   return (
-    <div className="container-xxl py-4">
+    <div className="container-xxl py-4" style={{ minHeight: '500px' }}>
       <h2>Disclaimer</h2>
       <ul>
         <li define-terms>

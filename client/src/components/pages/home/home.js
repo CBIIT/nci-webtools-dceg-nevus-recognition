@@ -222,12 +222,12 @@ export default function Home() {
                   src="/assets/images/N1/N1A.jpg"
                   className="col-md-5 object-cover"
                   alt="mole"
-                  no-context-menu
+                  onContextMenu={(e) => e.preventDefault()}
                 />
                 <div className="col-md-7">
                   <div className="card-body">
                     <h5 className="card-title">Common Moles</h5>
-                    <p className="card-text text-black font-weight-normal">
+                    <p className="card-text text-black fw-normal">
                       A non-cancerous growth on the skin that is formed by a
                       cluster of melanocytes (cells that make a substance called
                       melanin, which gives color to skin and eyes). A mole may
@@ -246,12 +246,12 @@ export default function Home() {
                   src="/assets/images/DN10/DN10A.jpg"
                   className="col-md-5 object-cover"
                   alt="dysplastic nevi"
-                  no-context-menu
+                  onContextMenu={(e) => e.preventDefault()}
                 />
                 <div className="col-md-7">
                   <div className="card-body">
                     <h5 className="card-title">Dysplastic Nevi (DN)</h5>
-                    <p className="card-text text-black font-weight-normal">
+                    <p className="card-text text-black fw-normal">
                       A type of mole that may develop into a type of skin cancer
                       called malignant melanoma. They look different from common
                       moles. A dysplastic nevus is often larger with borders
@@ -272,12 +272,12 @@ export default function Home() {
                   src="/assets/images/M8/M8E.jpg"
                   className="col-md-5 object-cover"
                   alt="melanoma"
-                  no-context-menu
+                  onContextMenu={(e) => e.preventDefault()}
                 />
                 <div className="col-md-7">
                   <div className="card-body">
                     <h5 className="card-title">Melanoma</h5>
-                    <p className="card-text text-black font-weight-normal">
+                    <p className="card-text text-black fw-normal">
                       A form of cancer that begins in melanocytes (cells that
                       make the pigment melanin). It may begin in a mole (skin
                       melanoma), but can also begin in other pigmented tissues,
