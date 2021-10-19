@@ -12,7 +12,7 @@ export default function Cases({ filters, cases }) {
   const subgrouptype = params.get('subgrouptype') || filter;
 
   const selectedFilter = filters.filter((f) => f.type === filter)[0];
-  const selectedCases = search
+  const filteredCases = search
     ? cases.filter((c) => {
         var content = JSON.stringify(c).toLowerCase();
         return content.includes(search.toLowerCase());
@@ -54,8 +54,8 @@ export default function Cases({ filters, cases }) {
         {!search && (
           <div className="bg-primary text-light py-3">
             <Container fluid="xxl">
-              <p>{parse(selectedFilter.descriptionsummary)}</p>
-              {info == 1 && <p>{parse(selectedFilter.description)}</p>}
+              {parse(selectedFilter.descriptionsummary)}
+              {info == 1 && parse(selectedFilter.description)}
               <div className="text-center my-3">
                 <a
                   className="btn btn-light text-uppercase"
@@ -73,13 +73,14 @@ export default function Cases({ filters, cases }) {
         {/* Subgroup Tabs */}
         {selectedFilter.subgroups && (
           <ul className="nav nav-tabs nav-fill bg-light">
-            {selectedFilter.subgroups.map((sub) => (
+            {selectedFilter.subgroups.map((sub, i) => (
               <li
+                key={i}
                 className="nav-item"
                 style={{ width: 100 / selectedFilter.subgroups.length + '%' }}
               >
                 <a
-                  className={`nav-link font-weight-bold border-secondary h-100 ${
+                  className={`nav-link fw-bold border-secondary h-100 ${
                     subgrouptype == sub.type
                       ? 'bg-light border-bottom-0'
                       : 'bg-white'
@@ -99,10 +100,10 @@ export default function Cases({ filters, cases }) {
             {search ? 'Search Results' : 'Examples'}
           </h2>
           <Row className="mb-3">
-            {selectedCases.map(
+            {filteredCases.map(
               (c, index) =>
                 index < limit && (
-                  <Col md="6" lg="4" className="mb-5">
+                  <Col md="6" lg="4" className="mb-5" key={index}>
                     <Card
                       as="a"
                       className="shadow image-highlight"
@@ -119,7 +120,7 @@ export default function Cases({ filters, cases }) {
                         onContextMenu={(e) => e.preventDefault()}
                       />
                       <Card.Body className="text-center">
-                        <div className="card-text text-dark font-weight-bold text-uppercase">
+                        <div className="card-text text-dark fw-bold text-uppercase">
                           {c.name}
                         </div>
                       </Card.Body>
@@ -131,7 +132,7 @@ export default function Cases({ filters, cases }) {
         </Container>
 
         {/* Show More Images Button */}
-        {limit < selectedCases.length && (
+        {limit < filteredCases.length && (
           <div className="text-center mb-3">
             <Button
               as="a"
