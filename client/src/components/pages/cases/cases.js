@@ -3,8 +3,8 @@ import { Container, Row, Col, Button, Nav, Card } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import './cases.scss';
 
-export default function Cases({ filters, cases }) {
-  const params = new URLSearchParams(window.location.hash);
+export default function Cases({ filters, cases, location }) {
+  const params = new URLSearchParams(location.pathname);
   const filter = params.get('filter') || 'mole';
   const info = params.get('info') || 0;
   const search = params.get('search') || '';
