@@ -91,6 +91,7 @@ export default function ImageModal({ cases, filters }) {
             <div className="p-3 text-center bg-secondary-light">
               {selectedCase.images.map((image, i) => (
                 <a
+                  key={i}
                   className="d-inline-block"
                   href={`#/view-cases&filter=${filter}${
                     selectedFilter.subgroups
@@ -121,7 +122,11 @@ export default function ImageModal({ cases, filters }) {
                     onContextMenu={(e) => e.preventDefault()}
                   />
                 </Col>
-                <Col xl="6" className="p-3 bg-primary-dark text-light" define-terms>
+                <Col
+                  xl="6"
+                  className="p-3 bg-primary-dark text-light"
+                  define-terms
+                >
                   {parse(selectedCase.description)}
                 </Col>
               </Row>
