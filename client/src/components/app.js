@@ -19,6 +19,7 @@ export default function App() {
     {
       route: '/',
       title: 'Home',
+      exact: true,
     },
     {
       route: '/about',
@@ -31,6 +32,7 @@ export default function App() {
     {
       route: '/view-cases',
       title: 'View Cases',
+      isActive: (match, location) => location.pathname.includes('/view-cases'),
     },
     {
       route: '/more-information',
@@ -47,7 +49,7 @@ export default function App() {
       <DisclaimerModal />
       <ImageModal filters={filters} cases={cases} />
       <Navbar links={tabs} />
-      <Route path="/" exact={true} component={Home} />
+      <Route path="/" exact component={Home} />
       <Route path="/about" component={About} />
       <Route path="/intended-audience" component={Audience} />
       <Route

@@ -22,7 +22,7 @@ export function Navbar({ links }) {
             {links
               .filter((link) => link.title)
               .sort((a, b) => a.navIndex - b.navIndex)
-              .map(({ route, title, exact }, index) => (
+              .map(({ route, title, ...props }, index) => (
                 <div
                   data-testid="Navbar"
                   className="d-inline-block"
@@ -31,11 +31,10 @@ export function Navbar({ links }) {
                   <NavLink
                     data-testid={`Navbar-NavLink-${index}`}
                     id={title + '-navbar'}
-                    // key={title}
                     className="navlinks py-2 px-4 d-inline-block"
                     activeClassName="active-navlinks"
-                    exact={true}
                     to={route}
+                    {...props}
                   >
                     {title}
                   </NavLink>
