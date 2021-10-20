@@ -22,7 +22,7 @@
     ng-style="{'width': (100 / c.filters.length) + '%'}"
   >
     <a
-      className="nav-link font-weight-bold border-secondary h-100"
+      className="nav-link fw-bold border-secondary h-100"
       ng-className="{
                 'active bg-dark text-light border-dark': filter == c.filter && !c.search, 
                 'bg-white': filter !== c.filter || c.search}"
@@ -57,7 +57,7 @@
     ng-style="{'width': (100 / c.filter.subgroups.length) + '%'}"
   >
     <a
-      className="nav-link font-weight-bold border-secondary h-100"
+      className="nav-link fw-bold border-secondary h-100"
       ng-className="{'active bg-light border-bottom-0': subgroup == c.subgroup, 'bg-white': subgroup !== c.subgroup}"
       href="#/view-cases?filter={{c.filter.type}}&subgrouptype={{subgroup.type}}&info={{c.showMoreInformation ? 1 : 0}}"
     >
@@ -89,7 +89,7 @@
           no-context-menu
         />
         <div className="card-body text-center">
-          <div className="card-text text-dark font-weight-bold text-uppercase">
+          <div className="card-text text-dark fw-bold text-uppercase">
             {{ case.name }}
           </div>
         </div>

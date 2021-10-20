@@ -12,7 +12,6 @@ import ImageModal from './controls/imageModal/imageModal';
 // data
 import filters from '../data/filters.json';
 import cases from '../data/cases.json';
-import glossary from '../data/glossary.json';
 
 export default function App() {
   const tabs = [

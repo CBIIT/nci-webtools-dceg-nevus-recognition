@@ -53,39 +53,39 @@ export default function ImageModal({ cases, filters }) {
                 <p>"ABCDE" features:</p>
                 <ul className="pl-4">
                   <li>
-                    <strong define-terms>Asymmetry</strong> -{' '}
-                    <span define-terms>
+                    <strong define-terms={true}>Asymmetry</strong> -{' '}
+                    <span define-terms={true}>
                       {parse(selectedCase.abcde.asymmetry)}
                     </span>
                   </li>
                   <li>
-                    <strong define-terms>Border</strong> -{' '}
-                    <span define-terms>{parse(selectedCase.abcde.border)}</span>
+                    <strong define-terms={true}>Border</strong> -{' '}
+                    <span define-terms={true}>{parse(selectedCase.abcde.border)}</span>
                   </li>
                   <li>
-                    <strong define-terms>Color</strong> -{' '}
-                    <span define-terms>{parse(selectedCase.abcde.color)}</span>
+                    <strong define-terms={true}>Color</strong> -{' '}
+                    <span define-terms={true}>{parse(selectedCase.abcde.color)}</span>
                   </li>
                   <li>
-                    <strong define-terms>Diameter</strong> -{' '}
-                    <span define-terms>
+                    <strong define-terms={true}>Diameter</strong> -{' '}
+                    <span define-terms={true}>
                       {parse(selectedCase.abcde.diameter)}
                     </span>
                   </li>
                   <li>
-                    <strong define-terms>Evolving</strong> -{' '}
-                    <span define-terms>
+                    <strong define-terms={true}>Evolving</strong> -{' '}
+                    <span define-terms={true}>
                       {parse(selectedCase.abcde.evolving)}
                     </span>
                   </li>
                 </ul>
                 <strong>
-                  <span className="text-capitalize" define-terms>
+                  <span className="text-capitalize" define-terms={true}>
                     {parse(selectedCase.diagnosis.type)}
                   </span>{' '}
-                  <span define-terms>Diagnosis: </span>
+                  <span define-terms={true}>Diagnosis: </span>
                 </strong>
-                <span define-terms>{parse(selectedCase.diagnosis.result)}</span>
+                <span define-terms={true}>{parse(selectedCase.diagnosis.result)}</span>
               </div>
             </div>
             <div className="p-3 text-center bg-secondary-light">
@@ -125,7 +125,7 @@ export default function ImageModal({ cases, filters }) {
                 <Col
                   xl="6"
                   className="p-3 bg-primary-dark text-light"
-                  define-terms
+                  define-terms={true}
                 >
                   {parse(selectedCase.description)}
                 </Col>

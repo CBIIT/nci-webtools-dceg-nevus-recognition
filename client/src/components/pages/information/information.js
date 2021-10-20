@@ -13,7 +13,7 @@ export default function Information() {
           >
             NCI Skin Cancer (including Melanoma)
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             National Cancer Institute homepage for skin cancer, including
             melanoma.
           </div>
@@ -26,7 +26,7 @@ export default function Information() {
           >
             Melanoma Risk Assessment Tool
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             An interactive NCI tool to help estimate a person’s risk of
             developing invasive melanoma.
           </div>
@@ -39,7 +39,7 @@ export default function Information() {
           >
             Anyone Can Get Skin Cancer
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             An NCI brochure developed to dispel the belief that only people with
             light skin are at risk for skin cancer. Although people with light
             skin have greater risk than people with darker skin, people with
@@ -54,7 +54,7 @@ export default function Information() {
           >
             Common Moles, Dysplastic Nevi, and Risk of Melanoma
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             NCI fact sheet on common moles, dysplastic nevi, and melanoma.
           </div>
         </li>
@@ -66,7 +66,7 @@ export default function Information() {
           >
             INFORMED Skin Cancer Education Series
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             The INternet curriculum FOR Melanoma Early Detection (INFORMED)
             program provides Web-based early-detection training for widespread
             use, and training in dermoscopy (epiluminescence microscopy), which
@@ -82,7 +82,7 @@ export default function Information() {
           >
             Sunscreen on Infants? Not Usually—Shade is Best
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             A pediatrician from the U.S. Food and Drug Administration tells how
             to protect babies from dangerous ultraviolet rays.
           </div>
@@ -95,7 +95,7 @@ export default function Information() {
           >
             Sun Safety: Save Your Skin!
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             Advice from the FDA on how to protect your skin from the sun in all
             seasons.
           </div>
@@ -108,7 +108,7 @@ export default function Information() {
           >
             NCI Physician Data Query (PDQ)
           </a>
-          <div define-terms>A comprehensive source of cancer information.</div>
+          <div define-terms={true}>A comprehensive source of cancer information.</div>
         </li>
       </ul>
       <h3>Educational Videos</h3>
@@ -117,10 +117,10 @@ export default function Information() {
           <a href="https://dcmf.ca" target="_blank" rel="noopener noreferrer">
             Dear 16-year-old Me
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             A short film of real individuals whose lives have been touched by
             melanoma, courtesy of the
-            <span no-define>David Cornfield Melanoma Fund</span>.
+            <span no-define={true}>David Cornfield Melanoma Fund</span>.
           </div>
         </li>
         <li className="mb-3">
@@ -131,7 +131,7 @@ export default function Information() {
           >
             How the Sun Sees You
           </a>
-          <div define-terms>
+          <div define-terms={true}>
             A short film of people captured in the ultraviolet spectrum, which
             highlights freckles and sun damage unnoticeable to the naked eye.
           </div>
