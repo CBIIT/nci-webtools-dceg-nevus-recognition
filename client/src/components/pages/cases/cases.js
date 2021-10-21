@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button, Nav, Card } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import './cases.scss';
+import Define from '../../controls/defineText/define';
 
 export default function Cases({ filters, cases, location }) {
   const params = new URLSearchParams(location.pathname);
@@ -54,8 +55,10 @@ export default function Cases({ filters, cases, location }) {
         {!search && (
           <div className="bg-primary text-light py-3">
             <Container fluid="xxl">
-              {parse(selectedFilter.descriptionsummary)}
-              {info == 1 && parse(selectedFilter.description)}
+              <Define>
+                {parse(selectedFilter.descriptionsummary)}
+                {info == 1 && parse(selectedFilter.description)}
+              </Define>
               <div className="text-center my-3">
                 <a
                   className="btn btn-light text-uppercase"

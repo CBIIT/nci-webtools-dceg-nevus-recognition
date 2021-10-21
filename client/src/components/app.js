@@ -9,6 +9,7 @@ import Information from './pages/information/information';
 import Disclaimer from './pages/disclaimer/disclaimer';
 import DisclaimerModal from './controls/disclaimerModal/disclaimerModal';
 import ImageModal from './controls/imageModal/imageModal';
+
 // data
 import filters from '../data/filters.json';
 import cases from '../data/cases.json';

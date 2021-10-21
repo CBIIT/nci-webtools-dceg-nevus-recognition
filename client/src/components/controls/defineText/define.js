@@ -4,91 +4,72 @@ import glossary from '../../../data/glossary.json';
 import './define.scss';
 
 // This component
-export default function Define({ children }) {
-  console.log(children);
-
+export default function Define({ children, force = false }) {
   // replaces terms within html with <attr> elements, which contain the definition
   // as a part of their title attribute
-  function defineTerms(component) {
-    // determine if children are an array of components or string (inner HTML value)
-    if (typeof component.props.children == 'object') {
-      const newChildren = component.props.children.map((child) => {
-        if (typeof child == 'string') {
-          // if child is a string then parse for definition
-          return glossary
-            .sort((a, b) => b.term.length - a.term.length)
-            .map((record) => {
-              // join all regular expressions if needed
-              const match =
-                '\\b(' + (record.regexp || [record.term]).join('|') + ')\\b';
+  function defineTerms(html) {
+    let newHTML = html;
 
-              // ensure we don't define terms within tags
-              const regexp = new RegExp(
-                match + '(?![^<]*>|[^<abbr>]*</)',
-                'ig'
-              );
+    glossary
+      .sort((a, b) => b.term.length - a.term.length)
+      .forEach((record) => {
+        // join all regular expressions if needed
+        const match =
+          '\\b(' + (record.regexp || [record.term]).join('|') + ')\\b';
 
-              // show term and definition in title
-              const title = [record.term, record.definition].join(': ');
+        // ensure we don't define terms within tags
+        const regexp = new RegExp(match + '(?![^<]*>|[^<abbr>]*</)', 'ig');
 
-              const newHTML = reactStringReplace(child, regexp, (value) => (
-                <abbr title={title}>{value}</abbr>
-              ));
-              if (newHTML != child) return newHTML;
-            });
-        } else {
-          // if child is a component then recurseively call it
-          return defineTerms(child);
-        }
+        // show term and definition in title
+        const title = [record.term, record.definition].join(': ');
+
+        newHTML = reactStringReplace(newHTML, regexp, (value) => (
+          <abbr title={title}>{value}</abbr>
+        ));
       });
-      console.log('multi new', newChildren);
-      return {
-        ...component,
-        props: { ...component.props, children: newChildren },
-      };
-    } else {
-      if (component.props['define-terms']) {
-        const newChild = glossary
-          .sort((a, b) => b.term.length - a.term.length)
-          .map((record) => {
-            // join all regular expressions if needed
-            const match =
-              '\\b(' + (record.regexp || [record.term]).join('|') + ')\\b';
 
-            // ensure we don't define terms within tags
-            const regexp = new RegExp(match + '(?![^<]*>|[^<>]*</)', 'ig');
+    return newHTML;
+  }
 
-            // show term and definition in title
-            const title = [record.term, record.definition].join(': ');
+  function parseComponents(component) {
+    if (component.props && component.props.children.length) {
+      // determine if children are an array of components or string (inner HTML value)
+      if (typeof component.props.children == 'object') {
+        const newChildren = component.props.children.map((child) => {
+          if (typeof child == 'string') {
+            // if child is a string then parse for definition
+            return defineTerms(child);
+          } else {
+            // if child is a component then recurseively call
+            return parseComponents(child);
+          }
+        });
 
-            const newHTML = reactStringReplace(
-              component.props.children,
-              regexp,
-              (value) => <abbr title={title}>{value}</abbr>
-            );
-            if (newHTML != component.props.children) return newHTML;
-          });
-        const newComp = {
+        return {
           ...component,
-          props: {
-            ...component.props,
-            children: newChild,
-          },
+          props: { ...component.props, children: newChildren },
         };
-        console.log('new single', newComp);
-        return newComp;
       } else {
-        console.log('old single', component);
-        return component;
+        if (component.props['define-terms'] || force) {
+          return {
+            ...component,
+            props: {
+              ...component.props,
+              children: defineTerms(component.props.children),
+            },
+          };
+        } else {
+          return component;
+        }
       }
     }
   }
 
   return (
     <>
-      {children.map((child) =>
-        child.props['define-terms'] ? defineTerms(child) : child
-      )}
+      {Array.isArray(children)
+        ? children.map(parseComponents)
+        : parseComponents(children)}
     </>
   );
 }

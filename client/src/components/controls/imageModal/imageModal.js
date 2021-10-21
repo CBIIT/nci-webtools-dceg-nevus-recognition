@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Container, Row, Col } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
 import parse from 'html-react-parser';
+import Define from '../defineText/define';
 
 export default function ImageModal({ cases, filters }) {
   const history = useHistory();
@@ -48,8 +49,10 @@ export default function ImageModal({ cases, filters }) {
           </Modal.Header>
           <Modal.Body className="p-0">
             <div className="p-3">
-              <div>
-                <p>{parse(filteredCases[caseIndex].description)}</p>
+              <Define>
+                <p define-terms="true">
+                  {parse(filteredCases[caseIndex].description)}
+                </p>
                 <p>"ABCDE" features:</p>
                 <ul className="pl-4">
                   <li>
@@ -60,11 +63,15 @@ export default function ImageModal({ cases, filters }) {
                   </li>
                   <li>
                     <strong define-terms={true}>Border</strong> -{' '}
-                    <span define-terms={true}>{parse(selectedCase.abcde.border)}</span>
+                    <span define-terms={true}>
+                      {parse(selectedCase.abcde.border)}
+                    </span>
                   </li>
                   <li>
                     <strong define-terms={true}>Color</strong> -{' '}
-                    <span define-terms={true}>{parse(selectedCase.abcde.color)}</span>
+                    <span define-terms={true}>
+                      {parse(selectedCase.abcde.color)}
+                    </span>
                   </li>
                   <li>
                     <strong define-terms={true}>Diameter</strong> -{' '}
@@ -85,8 +92,10 @@ export default function ImageModal({ cases, filters }) {
                   </span>{' '}
                   <span define-terms={true}>Diagnosis: </span>
                 </strong>
-                <span define-terms={true}>{parse(selectedCase.diagnosis.result)}</span>
-              </div>
+                <span define-terms={true}>
+                  {parse(selectedCase.diagnosis.result)}
+                </span>
+              </Define>
             </div>
             <div className="p-3 text-center bg-secondary-light">
               {selectedCase.images.map((image, i) => (
@@ -127,7 +136,9 @@ export default function ImageModal({ cases, filters }) {
                   className="p-3 bg-primary-dark text-light"
                   define-terms={true}
                 >
-                  {parse(selectedCase.description)}
+                  <Define force={true}>
+                    {parse(selectedCase.images[imgIndex].description)}
+                  </Define>
                 </Col>
               </Row>
             </Container>
