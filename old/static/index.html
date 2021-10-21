@@ -1,296 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Moles to Melanoma: Recognizing the ABCDE Features</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="This tool is intended to help educate the public about the appearance and features of common moles, atypical moles (dysplastic nevi), and melanomas."
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"
-      integrity="sha256-Ww++W3rXBfapN8SZitAvc9jw2Xb+Ixt0rvDsmWmQyTo="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/ui-bootstrap4@3.0.6/dist/ui-bootstrap-csp.css"
-      integrity="sha256-mxOp6VfWLR7niwOLCRpyrQZShFdQJjcoz6C/NV6mhL4="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css"
-      integrity="sha256-6gh97D4atgoM/BfYzrI30gdueoctVdAOksrGFaq0NIk="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-62346354-17"
-    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This tool is intended to help educate the public about the appearance and features of common moles, atypical moles (dysplastic nevi), and melanomas." />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" integrity="sha256-Ww++W3rXBfapN8SZitAvc9jw2Xb+Ixt0rvDsmWmQyTo=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ui-bootstrap4@3.0.6/dist/ui-bootstrap-csp.css" integrity="sha256-mxOp6VfWLR7niwOLCRpyrQZShFdQJjcoz6C/NV6mhL4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css" integrity="sha256-6gh97D4atgoM/BfYzrI30gdueoctVdAOksrGFaq0NIk=" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62346354-17"></script>
     <script src="https://assets.adobedtm.com/f1bfa9f7170c81b1a9a9ecdcc6c5215ee0b03c84/satelliteLib-4b219b82c4737db0e1797b6c511cf10c802c95cb.js"></script>
-  </head>
+</head>
 
-  <body ng-app="app" ng-controller="AppController as ac" className="bg-light">
-    <a className="visually-hidden visually-hidden-focusable" ng-anchor="#main">Skip to Content</a>
-    <nav
-      className="navbar navbar-expand-xxl navbar-light-contrast py-0"
-      role="navigation"
-    >
-      <a className="navbar-brand" href="https://dceg.cancer.gov">
-        <img
-          src="images/DCEG-logo.svg"
-          className="flex-shrink"
-          height="70"
-          width="420"
-          alt="link DCEG Home"
-        />
-      </a>
+<body ng-app="app" ng-controller="AppController as ac" class="bg-light">
+    <a class="sr-only sr-only-focusable" ng-anchor="#main">Skip to Content</a>
+    <nav class="navbar navbar-expand-xxl navbar-light-contrast py-0" role="navigation">
+        <a class="navbar-brand" href="https://dceg.cancer.gov">
+            <img src="images/DCEG-logo.svg" class="flex-shrink" height="70" width="420" alt="link DCEG Home">
+        </a>
 
-      <button
-        className="navbar-toggler"
-        type="button"
-        ng-click="ac.isNavCollapsed = !ac.isNavCollapsed"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i className="fas fa-ellipsis-v"></i>
-      </button>
-      <div className="collapse navbar-collapse" uib-collapse="ac.isNavCollapsed">
-        <ul className="navbar-nav custom flex-auto">
-          <li className="nav-item flex-grow d-flex">
-            <form
-              className="form-inline flex-grow"
-              ng-controller="SearchController as sc"
-            >
-              <input
-                className="form-control w-100 mr-xxl-3 mx-0"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                ng-model="sc.search"
-                ng-model-options="{ debounce: 250 }"
-              />
-            </form>
-          </li>
-
-          <li className="nav-item">
-            <a className="nav-link" href="#/home" ng-route-active-className="active"
-              >Home</a
-            >
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#/about" ng-route-active-className="active"
-              >About the Tool</a
-            >
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="#/intended-audience"
-              ng-route-active-className="active"
-              >Intended Audience</a
-            >
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="#/view-cases"
-              ng-route-active-className="active"
-              >View Cases</a
-            >
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="#/more-information"
-              ng-route-active-className="active"
-              >More Information</a
-            >
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="#/disclaimer"
-              ng-route-active-className="active"
-              >Disclaimer</a
-            >
-          </li>
-        </ul>
-      </div>
+        <button class="navbar-toggler" type="button" ng-click="ac.isNavCollapsed = !ac.isNavCollapsed" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="collapse navbar-collapse" uib-collapse="ac.isNavCollapsed">
+            <ul class="navbar-nav custom flex-auto">
+                <li class="nav-item flex-grow d-flex">
+                    <form class="form-inline flex-grow" ng-controller="SearchController as sc">
+                        <input 
+                            class="form-control w-100 mr-xxl-3 mx-0"
+                            type="search" 
+                            placeholder="Search" 
+                            aria-label="Search" 
+                            ng-model="sc.search" 
+                            ng-model-options="{ debounce: 250 }">
+                    </form>
+                </li>                
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/home" ng-route-active-class="active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/about" ng-route-active-class="active">About the Tool</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/intended-audience" ng-route-active-class="active">Intended Audience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/view-cases" ng-route-active-class="active">View Cases</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/more-information" ng-route-active-class="active">More Information</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/disclaimer" ng-route-active-class="active">Disclaimer</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-
+    <header class="banner bg-secondary-light py-4">
+       <h1 class="text-center display-4">Moles to Melanoma: Recognizing the ABCDE Features</h1>
+    </header>
     <main id="main" tabindex="0" ng-view></main>
-    <footer className="py-3 bg-dark text-light text-center">
-      <button
-        ng-cloak
-        ng-show="ac.scrollTopVisible"
-        className="btn btn-light border rounded-circle fixed-bottom-right-1"
-        ng-click="ac.scrollToSmooth(0, 0)"
-      >
-        <i className="fas fa-chevron-up"></i>
-        <span className="visually-hidden">Back to top</span>
-      </button>
-      <div className="container-xl pt-3">
-        <ul className="list-inline list-inline-separators text-center mb-3">
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://www.cancer.gov/"
-              title="Home"
-              target="_blank"
-              >Home</a
-            >
-          </li>
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="mailto:cancer.gov_staff@mail.nih.gov"
-              title="Support"
-              >Support</a
-            >
-          </li>
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://www.cancer.gov/global/web/policies"
-              title="Policies"
-              target="_blank"
-              >Policies</a
-            >
-          </li>
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://www.cancer.gov/global/web/policies/accessibility"
-              title="Accessibility"
-              target="_blank"
-              >Accessibility</a
-            >
-          </li>
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://cancer.gov/global/viewing-files"
-              title="Viewing Files"
-              target="_blank"
-              >Viewing Files</a
-            >
-          </li>
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://www.cancer.gov/global/web/policies/foia"
-              title="FOIA"
-              target="_blank"
-              >FOIA</a
-            >
-          </li>
-        </ul>
-        <ul className="list-inline list-inline-separators text-center mb-3">
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://www.hhs.gov/"
-              target="_blank"
-              >U.S. Department of Health and Human Services</a
-            >
-          </li>
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://www.nih.gov"
-              target="_blank"
-              >National Institutes of Health</a
-            >
-          </li>
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://www.cancer.gov/"
-              target="_blank"
-              >National Cancer Institute</a
-            >
-          </li>
-          <li className="list-inline-item">
-            <a
-              className="text-white"
-              rel="noreferer noopener"
-              href="http://usa.gov"
-              target="_blank"
-              >USA.gov</a
-            >
-          </li>
-        </ul>
-        <p className="text-center">
-          NIH ... Turning Discovery Into Health<sup>®</sup>
-        </p>
-      </div>
+    <footer class="py-3 bg-dark text-light text-center">
+
+        <button 
+            ng-cloak
+            ng-show="ac.scrollTopVisible" 
+            class="btn btn-light border rounded-circle fixed-bottom-right-1" 
+            ng-click="ac.scrollToSmooth(0, 0)">
+            <i class="fas fa-chevron-up"></i>
+            <span class="sr-only">Back to top</span>
+        </button>
+        <div class="container-xl pt-3">
+            <ul class="list-inline list-inline-separators text-center mb-3">
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://www.cancer.gov/" title="Home" target="_blank">Home</a></li>
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="mailto:cancer.gov_staff@mail.nih.gov" title="Support">Support</a></li>
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://www.cancer.gov/global/web/policies" title="Policies" target="_blank">Policies</a></li>
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://www.cancer.gov/global/web/policies/accessibility" title="Accessibility" target="_blank">Accessibility</a></li>
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://cancer.gov/global/viewing-files" title="Viewing Files" target="_blank">Viewing Files</a></li>
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://www.cancer.gov/global/web/policies/foia" title="FOIA" target="_blank">FOIA</a></li>
+            </ul>
+            <ul class="list-inline list-inline-separators text-center mb-3">
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://www.hhs.gov/" target="_blank">U.S. Department of Health and Human Services</a></li>
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://www.nih.gov" target="_blank">National Institutes of Health</a></li>
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://www.cancer.gov/" target="_blank">National Cancer Institute</a></li>
+                <li class="list-inline-item"><a class="text-white" rel="noreferer noopener" href="http://usa.gov" target="_blank">USA.gov</a></li>
+            </ul>
+            <p class="text-center "> NIH ... Turning Discovery Into Health<sup>®</sup></p>
+        </div>
     </footer>
     <script src="https://static.cancer.gov/webanalytics/wa_dceg_pageload.js"></script>
 
     <!-- Polyfills for older browsers -->
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/@babel/polyfill@7.10.4/dist/polyfill.min.js"
-      integrity="sha256-025dcygmjSHGlBA5p7ahXH7XQU9g2+5y0iMdEayb2vM="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/object-fit-images@3.2.4/dist/ofi.min.js"
-      integrity="sha256-NyF8/ts5NW0qD9MX5Kjuh9Il9DZOOvx0c6tajn2X7GQ="
-      crossorigin="anonymous"
-    ></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@babel/polyfill@7.10.4/dist/polyfill.min.js" integrity="sha256-025dcygmjSHGlBA5p7ahXH7XQU9g2+5y0iMdEayb2vM=" crossorigin="anonymous"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/object-fit-images@3.2.4/dist/ofi.min.js" integrity="sha256-NyF8/ts5NW0qD9MX5Kjuh9Il9DZOOvx0c6tajn2X7GQ=" crossorigin="anonymous"></script>
     <script nomodule src="js/polyfills/details-polyfill.js"></script>
-    <script nomodule>
-      objectFitImages && objectFitImages();
-    </script>
+    <script nomodule>objectFitImages && objectFitImages();</script>
 
     <!-- AngularJS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/angular@1.8.0/angular.min.js"
-      integrity="sha256-Vm8Yy4vCNVhwHCzE+TT+ULzIVinRqvXVifg18rPlep8="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/angular-animate@1.8.0/angular-animate.min.js"
-      integrity="sha256-M5zTroQANQ0DXCveaZVMRjlAQanx+n73kinzVaPM38c="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/angular-aria@1.8.0/angular-aria.min.js"
-      integrity="sha256-/XGQDbTgQYl0v5/VyGZcPw/tzxOzRR5lTC/+bqBBONI="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/angular-route@1.8.0/angular-route.min.js"
-      integrity="sha256-NCLq5Mc3/y0wq/499sMOaxGGnTowaDxe/O0VEkjrlmE="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/angular-sanitize@1.8.0/angular-sanitize.min.js"
-      integrity="sha256-lY5qqbMvXvPoas8W0kE/CLqgL2j744uqXYkWKCrhuII="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/ui-bootstrap4@3.0.6/dist/ui-bootstrap-tpls.js"
-      integrity="sha256-JxdIwMe6jFVtVmz1EgkcmI9FeTlFtbu9vU6gXmtLG2k="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular@1.8.0/angular.min.js" integrity="sha256-Vm8Yy4vCNVhwHCzE+TT+ULzIVinRqvXVifg18rPlep8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.8.0/angular-animate.min.js" integrity="sha256-M5zTroQANQ0DXCveaZVMRjlAQanx+n73kinzVaPM38c=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-aria@1.8.0/angular-aria.min.js" integrity="sha256-/XGQDbTgQYl0v5/VyGZcPw/tzxOzRR5lTC/+bqBBONI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-route@1.8.0/angular-route.min.js" integrity="sha256-NCLq5Mc3/y0wq/499sMOaxGGnTowaDxe/O0VEkjrlmE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-sanitize@1.8.0/angular-sanitize.min.js" integrity="sha256-lY5qqbMvXvPoas8W0kE/CLqgL2j744uqXYkWKCrhuII=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ui-bootstrap4@3.0.6/dist/ui-bootstrap-tpls.js" integrity="sha256-JxdIwMe6jFVtVmz1EgkcmI9FeTlFtbu9vU6gXmtLG2k=" crossorigin="anonymous"></script>
 
     <!-- AngularJS app -->
     <script src="js/app.module.js"></script>
@@ -298,5 +114,6 @@
     <script src="js/search.controller.js"></script>
     <script src="js/view-cases.controller.js"></script>
     <script src="js/analytics.js"></script>
-  </body>
+</body>
+
 </html>

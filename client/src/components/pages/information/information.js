@@ -108,7 +108,9 @@ export default function Information() {
           >
             NCI Physician Data Query (PDQ)
           </a>
-          <div define-terms={true}>A comprehensive source of cancer information.</div>
+          <div define-terms={true}>
+            A comprehensive source of cancer information.
+          </div>
         </li>
       </ul>
       <h3>Educational Videos</h3>

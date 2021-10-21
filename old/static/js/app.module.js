@@ -71,7 +71,7 @@ app.directive('ngRouteActiveClass', function ($location) {
         link: function (scope, element, attrs) {
             scope.$on('$locationChangeSuccess', function() {
                 var $el = angular.element(element);
-                var href = attrs.href.replace(/^#/, '').split(/[#?]/g)[0];
+                var href = attrs.href.replace(/^#!/, '').split(/[#?]/g)[0];
                 if (href === $location.path()) {
                     $el.addClass(attrs.ngRouteActiveClass);
                 } else {

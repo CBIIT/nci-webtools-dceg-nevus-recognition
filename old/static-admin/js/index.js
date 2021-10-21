@@ -305,7 +305,7 @@ app.filter('define', function() {
     for (var term in $_cancer_terms) {
       var dynamic = $_cancer_terms[term].dynamic || [ term ];
       for (var index in dynamic) {
-        output = output.replace(new RegExp('\\b('+dynamic[index]+')\\b','i'),'<span className="define" data-term="'+term+'">$1</span>');
+        output = output.replace(new RegExp('\\b('+dynamic[index]+')\\b','i'),'<span class="define" data-term="'+term+'">$1</span>');
       }
     }
     return output;

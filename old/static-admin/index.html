@@ -17,48 +17,48 @@
 </head>
 
 <body>
-  <div className="app" ng-app="nevusAdmin" ng-controller="nevusDataAdmin">
-    <div className="page-container">
-      <nav className="navbar-default">
+  <div class="app" ng-app="nevusAdmin" ng-controller="nevusDataAdmin">
+    <div class="page-container">
+      <nav class="navbar-default">
         <a href="http://dceg.cancer.gov" id="brand">&nbsp;</a>
       </nav>
-      <div className="jumbotron">
+      <div class="jumbotron">
         <h1>NEVUS Administration</h1>
       </div>
-      <div className="contain">
-        <div className="button-group" id="filters">
-          <div className="button blur" ng-className="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick(filter)" ng-repeat="filter in filters">{{filter.name}}</div>
+      <div class="contain">
+        <div class="button-group" id="filters">
+          <div class="button blur" ng-class="{'is-checked':currenttype.type==filter.type}" ng-click="filterClick(filter)" ng-repeat="filter in filters">{{filter.name}}</div>
         </div>
-        <div className="type">
-          <div className="subgroup button-group" ng-show="currenttype.subgroups">
-            <div className="button blur" ng-className="{'is-checked':subgrouptype.type==subgroup.type}" ng-click="filterClick(currenttype,subgroup)" ng-repeat="subgroup in currenttype.subgroups">{{subgroup.name}}</div>
+        <div class="type">
+          <div class="subgroup button-group" ng-show="currenttype.subgroups">
+            <div class="button blur" ng-class="{'is-checked':subgrouptype.type==subgroup.type}" ng-click="filterClick(currenttype,subgroup)" ng-repeat="subgroup in currenttype.subgroups">{{subgroup.name}}</div>
           </div>
         </div>
-        <div className="isotope">
-          <div className="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
-            <div className="boundry">
+        <div class="isotope">
+          <div class="item {{case.type}} {{case.subgroup}}" ng-repeat="case in cases">
+            <div class="boundry">
               <input type="text" ng-model="case.order" onchange="angular.element(this).scope().casesReordered()"/>
               <input type="button" value="x" ng-click="removeCase($index)"/>
               <a adamant-modal-target="#case" href="javascript:void(0);" ng-click="update(case,$index)">
                 <img alt="" src="../images/MissingImage.png" ng-src="..{{case.images[0].image}}" />
-                <span className="title">{{case.name || 'Untitled Case'}}</span>
+                <span class="title">{{case.name || 'Untitled Case'}}</span>
               </a>
-              <div className="visually-hidden" ng-bind="case.description"></div>
+              <div class="sr-only" ng-bind="case.description"></div>
             </div>
           </div>
-          <div className="item" ng-className="allFilters">
+          <div class="item" ng-class="allFilters">
             <a adamant-modal-target="#case" href="javascript:void(0);" ng-click="createNew()">
               <img alt="" src="../images/AddImage.png" />
-              <span className="title">Add New Case</title>
+              <span class="title">Add New Case</title>
             </a>
-            <div className="visually-hidden"></div>
+            <div class="sr-only"></div>
           </div>
         </div>
-        <button className="save blur" ng-click="saveChanges()">Save</button>
+        <button class="save blur" ng-click="saveChanges()">Save</button>
       </div>
-      <footer className="container footer">
-        <div className="center-block">
-          <ul className="list-inline">
+      <footer class="container footer">
+        <div class="center-block">
+          <ul class="list-inline">
             <li><a href="http://www.cancer.gov/" title="Home" target="_blank">Home</a></li>
             <li>|</li>
             <li><a href="mailto:NevusToolSupport@mail.nih.gov" title="Support" target="_top">Support</a></li>
@@ -71,7 +71,7 @@
             <li>|</li>
             <li><a href="http://www.cancer.gov/global/web/policies/foia" title="FOIA" target="_blank">FOIA</a></li>
           </ul>
-          <ul className="list-inline">
+          <ul class="list-inline">
             <li><a href="http://www.hhs.gov/" target="_blank">U.S. Department of Health and Human Services</a></li>
             <li>|</li>
             <li><a href="http://www.nih.gov" target="_blank">National Institutes of Health</a></li>
@@ -80,67 +80,67 @@
             <li>|</li>
             <li><a href="http://usa.gov" target="_blank">USA.gov</a></li>
           </ul>
-          <div className="text-center">NIH ... Turning Discovery Into Health<sup>®</sup></div>
+          <div class="text-center">NIH ... Turning Discovery Into Health<sup>®</sup></div>
         </div>
       </footer>
-      <button className="backtotop blur" ng-show="showbacktotop" ng-click="backToTop()">
-        <span className="glyphicon glyphicon-chevron-up"></span>
+      <button class="backtotop blur" ng-show="showbacktotop" ng-click="backToTop()">
+        <span class="glyphicon glyphicon-chevron-up"></span>
       </button>
     </div>
     <div id="case" tabindex="-1" adamant-modal>
-      <div className="header">
-        <button aria-label="Close" className="close-icon" type="button" adamant-modal-close><span className="glyphicon glyphicon-remove"></span></button>
-        <textarea id="myModalLabel" className="modal-title" placeholder="Title" ng-model="currentcase.title"></textarea>
-        <label>Display Name:</label><div className="textwrap"><textarea className="modal-title" placeholder="Untitled Case" ng-model="currentcase.name"></textarea></div>
-        <label>Display Category:</label><div className="textwrap"><select ng-options="filter.type as filter.name for filter in filters" ng-model="currentcase.type" ng-change="filterClick();"></select></div>
-        <label ng-show="currenttype.subgroups">Display Subgroup:</label><div className="textwrap" ng-show="currenttype.subgroups"><select ng-show="currenttype.subgroups" ng-options="subgroup.type as subgroup.name for subgroup in currenttype.subgroups" ng-model="currentcase.subgroup" ng-change="filterClick()"></select></div>
+      <div class="header">
+        <button aria-label="Close" class="close-icon" type="button" adamant-modal-close><span class="glyphicon glyphicon-remove"></span></button>
+        <textarea id="myModalLabel" class="modal-title" placeholder="Title" ng-model="currentcase.title"></textarea>
+        <label>Display Name:</label><div class="textwrap"><textarea class="modal-title" placeholder="Untitled Case" ng-model="currentcase.name"></textarea></div>
+        <label>Display Category:</label><div class="textwrap"><select ng-options="filter.type as filter.name for filter in filters" ng-model="currentcase.type" ng-change="filterClick();"></select></div>
+        <label ng-show="currenttype.subgroups">Display Subgroup:</label><div class="textwrap" ng-show="currenttype.subgroups"><select ng-show="currenttype.subgroups" ng-options="subgroup.type as subgroup.name for subgroup in currenttype.subgroups" ng-model="currentcase.subgroup" ng-change="filterClick()"></select></div>
       </div>
-      <div className="body group">
-        <div className="casedescription">
+      <div class="body group">
+        <div class="casedescription">
           <textarea placeholder="Description" ng-model="currentcase.description"></textarea>
           <div>
             <span>The "ABCDE" features for this case are as follows:</span>
             <ul>
-              <li><label>Asymmetry</label><div className="textwrap"><input type="text" placeholder="Asymmetry" ng-model="currentcase.abcde.asymmetry"/></div></li>
-              <li><label>Border</label><div className="textwrap"><input type="text" placeholder="Border" ng-model="currentcase.abcde.border"/></div></li>
-              <li><label>Color</label><div className="textwrap"><input type="text" placeholder="Color" ng-model="currentcase.abcde.color"/></div></li>
-              <li><label>Diameter</label><div className="textwrap"><input type="text" placeholder="Diameter" ng-model="currentcase.abcde.diameter"/></div></li>
-              <li><label>Evolving</label><div className="textwrap"><input type="text" placeholder="Evolving" ng-model="currentcase.abcde.evolving"/></div></li>
+              <li><label>Asymmetry</label><div class="textwrap"><input type="text" placeholder="Asymmetry" ng-model="currentcase.abcde.asymmetry"/></div></li>
+              <li><label>Border</label><div class="textwrap"><input type="text" placeholder="Border" ng-model="currentcase.abcde.border"/></div></li>
+              <li><label>Color</label><div class="textwrap"><input type="text" placeholder="Color" ng-model="currentcase.abcde.color"/></div></li>
+              <li><label>Diameter</label><div class="textwrap"><input type="text" placeholder="Diameter" ng-model="currentcase.abcde.diameter"/></div></li>
+              <li><label>Evolving</label><div class="textwrap"><input type="text" placeholder="Evolving" ng-model="currentcase.abcde.evolving"/></div></li>
             </ul>
           </div>
-          <select className="aslabel" ng-model="currentcase.diagnosis.type">
+          <select class="aslabel" ng-model="currentcase.diagnosis.type">
             <option value="clinical">Clinical Diagnosis</option>
             <option value="pathology">Pathology Diagnosis</option>
           </select>
-          <div className="textwrap"><input type="text" placeholder="Diagnosis" ng-model="currentcase.diagnosis.result"/></div>
+          <div class="textwrap"><input type="text" placeholder="Diagnosis" ng-model="currentcase.diagnosis.result"/></div>
         </div>
-        <div className="carousel">
-          <div className="leftarrow blur" ng-click="scrollLeft()">
-            <span className="glyphicon glyphicon-chevron-left"></span>
+        <div class="carousel">
+          <div class="leftarrow blur" ng-click="scrollLeft()">
+            <span class="glyphicon glyphicon-chevron-left"></span>
           </div>
-          <div className="rightarrow blur" ng-click="scrollRight()">
-            <span className="glyphicon glyphicon-chevron-right"></span>
+          <div class="rightarrow blur" ng-click="scrollRight()">
+            <span class="glyphicon glyphicon-chevron-right"></span>
           </div>
-          <div className="images">
-            <div className="boundry" ng-repeat="image in currentcase.images">
+          <div class="images">
+            <div class="boundry" ng-repeat="image in currentcase.images">
               <input type="button" value="x" ng-click="removeImage($index)"/>
-              <img src="../images/MissingImage.png" ng-src="..{{ image.thumbnail }}" carousel-dir="" ng-className="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" className="blur" tabindex="0" />
+              <img src="../images/MissingImage.png" ng-src="..{{ image.thumbnail }}" carousel-dir="" ng-class="{active: image==currentcase.images[currentimg]}" ng-click="updatecurrentimg($index)" class="blur" tabindex="0" />
             </div>
-            <img src="../images/AddImage.png" adamant-modal-target="#uploadForm" carousel-dir="" className="blur" tabindex="0" />
+            <img src="../images/AddImage.png" adamant-modal-target="#uploadForm" carousel-dir="" class="blur" tabindex="0" />
           </div>
         </div>
-        <div className="imgbox clearfix">
-          <img alt="" className="currentimage" image-on-load="" src="..{{currentcase.images[currentimg].image}}" />
-          <textarea className="currentimagedescription" placeholder="Image Description" ng-model="currentcase.images[currentimg].description"></textarea>
+        <div class="imgbox clearfix">
+          <img alt="" class="currentimage" image-on-load="" src="..{{currentcase.images[currentimg].image}}" />
+          <textarea class="currentimagedescription" placeholder="Image Description" ng-model="currentcase.images[currentimg].description"></textarea>
         </div>
       </div>
     </div>
     <div id="uploadForm" adamant-modal tabindex="-1">
-      <div className="header">
-        <button aria-label="Close" className="close-icon" type="button" adamant-modal-close><span className="glyphicon glyphicon-remove"></span></button>
+      <div class="header">
+        <button aria-label="Close" class="close-icon" type="button" adamant-modal-close><span class="glyphicon glyphicon-remove"></span></button>
         <label>Upload a File</label>
       </div>
-      <div className="body">
+      <div class="body">
         <p ng-show="fileUploadError" ng-bind="fileUploadError"></p>
         <form enctype="multipart/form-data">
           <input type="file" name="image" onchange="angular.element(this).scope().imageSelected(this)"/>
