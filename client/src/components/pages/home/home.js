@@ -214,7 +214,7 @@ export default function Home() {
               dysplastic nevi, and melanoma.
             </p>
             <a
-              href="#/view-cases?filter=mole"
+              href="#/view-cases&filter=mole"
               className="card mb-4 shadow-sm text-decoration-none"
             >
               <Row className="g-0">
@@ -238,7 +238,7 @@ export default function Home() {
               </Row>
             </a>
             <a
-              href="#/view-cases?filter=dysplasticnevi"
+              href="#/view-cases&filter=dysplasticnevi"
               className="card mb-4 shadow-sm text-decoration-none"
             >
               <Row className="g-0">
@@ -264,7 +264,7 @@ export default function Home() {
               </Row>
             </a>
             <a
-              href="#/view-cases?filter=melanoma"
+              href="#/view-cases&filter=melanoma"
               className="card mb-4 shadow-sm text-decoration-none"
             >
               <Row className="g-0">

@@ -9,9 +9,9 @@ export default function About() {
         <p define-terms={true}>
           The Moles to Melanoma Tool presents photographs in three main groups
           of pigmented lesions:{' '}
-          <a href="#/view-cases?filter=mole">common moles</a>;{' '}
-          <a href="#/view-cases?filter=dysplasticnevi">dysplastic nevi (DN)</a>;
-          and <a href="#/view-cases?filter=melanoma">melanomas</a> that arose
+          <a href="#/view-cases&filter=mole">common moles</a>;{' '}
+          <a href="#/view-cases&filter=dysplasticnevi">dysplastic nevi (DN)</a>;
+          and <a href="#/view-cases&filter=melanoma">melanomas</a> that arose
           from DN.
         </p>
         <p define-terms={true}>
