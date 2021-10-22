@@ -56,7 +56,7 @@ export default function Audience() {
                 rel="noopener noreferrer"
               >
                 http://seer.cancer.gov/csr/1975_2012/sections.html
-              </a>
+              </a>{' '}
               Figure 16.2.
             </p>
           </figcaption>

@@ -32,7 +32,7 @@ export default function Define({ children, force = false }) {
   }
 
   function parseComponents(component) {
-    if (component.props && component.props.children.length) {
+    if (component.props && component.props.children) {
       // determine if children are an array of components or string (inner HTML value)
       if (typeof component.props.children == 'object') {
         const newChildren = component.props.children.map((child) => {
@@ -62,6 +62,8 @@ export default function Define({ children, force = false }) {
           return component;
         }
       }
+    } else {
+      return component;
     }
   }
 
