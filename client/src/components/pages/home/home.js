@@ -65,6 +65,7 @@ export default function Home() {
                     <li>
                       <b>Dysplastic Nevi (DN)</b> - A type of mole that
                       <em>
+                        {' '}
                         may develop into a type of skin cancer called malignant
                         melanoma
                       </em>
@@ -127,7 +128,7 @@ export default function Home() {
                     squamous cell). Since they arise from different cell types
                     in the skin, they look very different from melanoma.
                     Additional information, including resources for other types
-                    of non-melanoma skin cancer, can be found in the
+                    of non-melanoma skin cancer, can be found in the{' '}
                     <a href="#/intended-audience">Intended Audience section</a>.
                   </p>
                 </Accordion.Body>
