@@ -133,7 +133,7 @@ export default function ImageModal({ cases, filters }) {
                 </Col>
                 <Col
                   xl="6"
-                  className="p-3 bg-primary-dark text-light"
+                  className="p-3 bg-dark text-light"
                   define-terms={true}
                 >
                   <Define force={true}>

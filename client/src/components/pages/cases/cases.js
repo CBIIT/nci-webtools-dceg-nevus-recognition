@@ -34,9 +34,9 @@ export default function Cases({ filters, cases, location }) {
 
   return (
     <Card className="border-0 bg-light">
-      <Card.Header>
+      <Card.Header className="pb-0">
         <Nav
-          variant="pills"
+          variant="tabs"
           defaultActiveKey="mole"
           activeKey={!search && filter}
           className="justify-content-center"
@@ -53,7 +53,7 @@ export default function Cases({ filters, cases, location }) {
       <Card.Body className="p-0">
         {/* Description */}
         {!search && (
-          <div className="bg-primary text-light py-3">
+          <div className="bg-dark text-light py-3">
             <Container fluid="xxl">
               <Define>
                 {parse(selectedFilter.descriptionsummary)}
@@ -75,30 +75,27 @@ export default function Cases({ filters, cases, location }) {
 
         {/* Subgroup Tabs */}
         {selectedFilter.subgroups && (
-          <ul className="nav nav-tabs nav-fill bg-light">
+          <Nav
+            variant="tabs"
+            defaultActiveKey={1}
+            activeKey={!search && filter}
+            className="justify-content-center"
+          >
             {selectedFilter.subgroups.map((sub, i) => (
-              <li
-                key={i}
-                className="nav-item"
-                style={{ width: 100 / selectedFilter.subgroups.length + '%' }}
-              >
-                <a
-                  className={`nav-link fw-bold border-secondary h-100 ${
-                    subgrouptype == sub.type
-                      ? 'bg-light border-bottom-0'
-                      : 'bg-white'
-                  }`}
+              <Nav.Item key={i + 1}>
+                <Nav.Link
+                  eventKey={i + 1}
                   href={`#/view-cases&filter=${filter}&subgrouptype=${sub.type}&info=${info}`}
                 >
                   {sub.name}
-                </a>
-              </li>
+                </Nav.Link>
+              </Nav.Item>
             ))}
-          </ul>
+          </Nav>
         )}
 
         {/* Case Image Grid */}
-        <Container fluid="xxl py-5">
+        <Container fluid="xxl pt-4">
           <h2 className="text-center pb-4">
             {search ? 'Search Results' : 'Examples'}
           </h2>
@@ -136,9 +133,10 @@ export default function Cases({ filters, cases, location }) {
 
         {/* Show More Images Button */}
         {limit < filteredCases.length && (
-          <div className="text-center mb-3">
+          <div className="text-center mb-5">
             <Button
               as="a"
+              variant="dark"
               className="text-uppercase"
               href={`#/view-cases${
                 search

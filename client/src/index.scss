@@ -1,3 +1,6 @@
+/** Bootstrap Variable Overrides **/
+$dark: rgb(2, 60, 77);
+
 @import '~bootstrap/scss/bootstrap';
 
 /** Default Overrides **/
@@ -168,26 +171,28 @@ a.nav-link.active {
 }
 
 .nav-tabs > .nav-item {
-  // font-weight: 600;
-  color: black;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
   font-weight: 600;
 }
 
 .nav-tabs .nav-link.active {
-  color: black !important;
+  color: white !important;
+  background-color: $dark !important;
+  :hover {
+    border-bottom: 0 !important;
+  }
 }
 
 .nav-tabs .nav-link {
-  border-bottom: 0;
+  :hover {
+    border-bottom: 0 !important;
+  }
 }
 
 .nav-tabs {
   margin-bottom: -1px;
   border: 0;
   :hover {
-    border-bottom: 0;
+    border-bottom: 0 !important;
   }
 }
 
