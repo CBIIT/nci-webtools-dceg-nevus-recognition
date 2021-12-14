@@ -3,6 +3,12 @@ footer {
   -webkit-font-smoothing: antialiased !important;
 }
 
+.list-inline.list-inline-separators
+  > .list-inline-item:not(:last-child)::after {
+  padding-left: 0.5rem;
+  content: '|';
+}
+
 .footer-header h1 {
   font-weight: bold !important;
   font-style: normal !important;
