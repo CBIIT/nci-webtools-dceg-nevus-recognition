@@ -19,8 +19,8 @@
     "react-string-replace": "^0.4.4"
   },
   "scripts": {
-    "start": "BROWSER=firefox react-scripts start",
-    "build": "npm run format && react-scripts build",
+    "start": "BROWSER=firefox react-scripts --openssl-legacy-provider start",
+    "build": "npm run format && react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --single-quote --write \"src/**/*.{js,json,css,scss}\""
