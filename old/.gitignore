@@ -1,7 +1,0 @@
-.DS_Store
-database/*
-express.log*
-node_modules/*
-static/common/*
-static/images/uploads/*
-uploads/*
