@@ -13,11 +13,11 @@ describe('Navbar Module', function () {
     render(
       <HashRouter>
         <Navbar links={links} />
-      </HashRouter>
+      </HashRouter>,
     );
     expect(screen.queryAllByText(title)[0]).toHaveAttribute(
       'href',
-      expectedRoute
+      expectedRoute,
     );
   });
 });

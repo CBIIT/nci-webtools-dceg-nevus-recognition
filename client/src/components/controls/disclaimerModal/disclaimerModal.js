@@ -4,7 +4,7 @@ import Define from '../defineText/define';
 
 export default function DisclaimerModal() {
   const [show, setShow] = useState(
-    localStorage.getItem('showDisclaimer') == 'false' ? false : true
+    localStorage.getItem('showDisclaimer') == 'false' ? false : true,
   );
 
   return (

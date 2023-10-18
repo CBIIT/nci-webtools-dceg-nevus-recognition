@@ -21,7 +21,7 @@ export default function ImageModal({ cases, filters }) {
     .filter((c) =>
       selectedFilter.subgroups
         ? c.subgroup == subgrouptype || subgrouptype == filter
-        : true
+        : true,
     );
   const selectedCase = caseIndex >= 0 ? filteredCases[caseIndex] : null;
 
@@ -34,7 +34,7 @@ export default function ImageModal({ cases, filters }) {
             history.push(
               `view-cases&filter=${filter}${
                 selectedFilter.subgroups ? `&subgrouptype=${subgrouptype}` : ''
-              }&limit=${limit}&info=${info}`
+              }&limit=${limit}&info=${info}`,
             )
           }
           animation={false}

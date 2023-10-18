@@ -11,7 +11,7 @@ export function Navbar({ links }) {
       const query = value.trim();
       if (query.length) history.push(`view-cases&search=${query}`);
     }, 300),
-    []
+    [],
   );
 
   return (

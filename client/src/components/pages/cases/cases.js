@@ -23,7 +23,7 @@ export default function Cases({ filters, cases, location }) {
         .filter((c) =>
           selectedFilter.subgroups
             ? c.subgroup == subgrouptype || subgrouptype == filter
-            : true
+            : true,
         );
 
   const tabs = [
@@ -126,7 +126,7 @@ export default function Cases({ filters, cases, location }) {
                       </Card.Body>
                     </Card>
                   </Col>
-                )
+                ),
             )}
           </Row>
         </Container>
