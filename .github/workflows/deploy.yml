@@ -1,212 +1,97 @@
 name: Deploy Nevus Recognition Tool
 on:
-    workflow_dispatch:
-        inputs:
-            tier:
-                description: "Deployment Tier"
-                required: true
-                default: "dev"
-                type: choice
-                options:
-                    - dev
-                    - qa
-                    - stage
-                    - prod
+  workflow_dispatch:
+    inputs:
+      tier:
+        description: "Deploy environment"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - qa
+          - stage
+          - prod
 
 env:
-    APP: nevustool
-    TZ: America/New_York
-    AWS_REGION: us-east-1
-    AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-    APP_ROOT: /local/content/nevustool
-    APP_CLIENT_FOLDER: /local/content/nevustool/client
-    APP_BACKUP_FOLDER: /local/content/nevustool/backup
-    WEB_SERVICE: nevustool
-    NCIANALYSIS_USER: ncianalysis
-    NCIANALYSIS_GROUP: ncianalysis
+  APP: nevustool
+  AWS_REGION: us-east-1
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
-    Build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v5
+  deploy-cloudfront:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.tier }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                node-version: '18'
-                cache: 'npm'
-                cache-dependency-path: client/package-lock.json
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: client/package-lock.json
 
-            - name: Build frontend
-              working-directory: ./client
-              run: |
-                npm ci
-                npm run build
-              env:
-                REACT_APP_PROJECT: ${{ env.APP }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5.1.0
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions-cicd
+          aws-region: ${{ env.AWS_REGION }}
 
-            - name: Upload build artifact
-              uses: actions/upload-artifact@v4
-              with:
-                name: nevus-build-${{ github.sha }}
-                path: client/build/
-                retention-days: 7
+      - name: Build frontend assets
+        run: |
+          cd client
+          npm ci
+          npm run build
+        env:
+          REACT_APP_PROJECT: ${{ env.APP }}
 
-    Deploy:
-        needs: Build
-        runs-on: ubuntu-latest
-        environment: ${{ inputs.tier }}
-        permissions:
-            id-token: write
-            contents: read
-        steps:
-            - name: Download build artifact
-              uses: actions/download-artifact@v4
-              with:
-                name: nevus-build-${{ github.sha }}
-                path: ./build
+      - name: Copy build assets to S3
+        run: |
+          STACK_NAME="${{ inputs.tier }}-${{ env.APP }}-cloudfront-s3"
+          
+          S3_BUCKET=$(aws cloudformation describe-stacks \
+            --stack-name "$STACK_NAME" \
+            --query "Stacks[0].Outputs[?OutputKey=='BucketName'].OutputValue" \
+            --output text)
 
-            - name: Configure AWS credentials
-              uses: aws-actions/configure-aws-credentials@v5.1.0
-              with:
-                role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/ec2-role-analysistools-${{ inputs.tier }}-role
-                aws-region: ${{ env.AWS_REGION }}
+          if [ -z "$S3_BUCKET" ] || [ "$S3_BUCKET" = "None" ]; then
+            echo "S3 Bucket name not found. Redeploy CloudFront stack with BucketName output."
+            exit 1
+          fi
 
-            - name: Get EC2 instance ID
-              id: get-instance
-              run: |
-                INSTANCE_ID=$(aws ec2 describe-instances \
-                  --filters "Name=tag:Name,Values=${{ secrets.EC2_INSTANCE_NAME }}" \
-                            "Name=instance-state-name,Values=running" \
-                  --query "Reservations[0].Instances[0].InstanceId" \
-                  --output text)
-                
-                if [ "$INSTANCE_ID" == "None" ] || [ -z "$INSTANCE_ID" ]; then
-                  echo "Error: Could not find running EC2 instance with name ${{ secrets.EC2_INSTANCE_NAME }}"
-                  exit 1
-                fi
-                
-                echo "instance_id=$INSTANCE_ID" >> $GITHUB_OUTPUT
-                echo "Found EC2 instance: $INSTANCE_ID"
+          echo "Deploying to S3 bucket: $S3_BUCKET"
+          aws s3 sync client/build/ s3://$S3_BUCKET --delete
 
-            - name: Create deployment archive
-              run: |
-                tar -czf build.tar.gz -C ./build .
-                echo "Archive created: $(ls -lh build.tar.gz)"
+      - name: Invalidate CloudFront Cache
+        run: |
+          STACK_NAME="${{ inputs.tier }}-${{ env.APP }}-cloudfront-s3"
+          
+          DISTRIBUTION_ID=$(aws cloudformation describe-stacks \
+            --stack-name "$STACK_NAME" \
+            --query "Stacks[0].Outputs[?OutputKey=='DistributionId'].OutputValue" \
+            --output text)
 
-            - name: Upload build to S3
-              run: |
-                S3_BUCKET="${{ secrets.DEPLOYMENT_BUCKET }}"
-                S3_KEY="nevustool/${{ inputs.tier }}/build-${{ github.sha }}.tar.gz"
-                aws s3 cp build.tar.gz "s3://${S3_BUCKET}/${S3_KEY}"
-                echo "s3_key=${S3_KEY}" >> $GITHUB_ENV
-                echo "s3_bucket=${S3_BUCKET}" >> $GITHUB_ENV
+          if [ -z "$DISTRIBUTION_ID" ] || [ "$DISTRIBUTION_ID" = "None" ]; then
+            echo "CloudFront Distribution ID not found. Redeploy CloudFront stack to get the output."
+            exit 1
+          fi
 
-            - name: Deploy to EC2 via SSM
-              run: |
-                TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-                
-                cat > commands.json << 'EOF'
-                {
-                  "Parameters": {
-                    "commands": [
-                      "set -e",
-                      "echo '=== Starting Nevus Tool deployment ==='",
-                      "echo '=== Creating required directories ==='",
-                      "sudo mkdir -p ${{ env.APP_ROOT }}",
-                      "sudo mkdir -p ${{ env.APP_CLIENT_FOLDER }}",
-                      "sudo mkdir -p ${{ env.APP_BACKUP_FOLDER }}/'${TIMESTAMP}'",
-                      "echo '=== Stopping web service ==='",
-                      "sudo systemctl stop ${{ env.WEB_SERVICE }} || echo 'Service not running'",
-                      "echo '=== Backing up current deployment ==='",
-                      "if [ -d ${{ env.APP_CLIENT_FOLDER }} ] && [ \"$(ls -A ${{ env.APP_CLIENT_FOLDER }})\" ]; then sudo mv ${{ env.APP_CLIENT_FOLDER }} ${{ env.APP_BACKUP_FOLDER }}/'${TIMESTAMP}'/client; echo 'Backup created'; else echo 'No existing deployment to backup'; fi",
-                      "echo '=== Downloading build from S3 ==='",
-                      "cd /tmp && aws s3 cp s3://${{ env.s3_bucket }}/${{ env.s3_key }} build.tar.gz",
-                      "echo '=== Creating new client folder ==='",
-                      "sudo mkdir -p ${{ env.APP_CLIENT_FOLDER }}",
-                      "echo '=== Extracting build ==='",
-                      "sudo tar -xzf /tmp/build.tar.gz -C ${{ env.APP_CLIENT_FOLDER }}",
-                      "echo '=== Copying client to app root ==='",
-                      "sudo cp -r ${{ env.APP_CLIENT_FOLDER }}/* ${{ env.APP_ROOT }}/",
-                      "echo '=== Setting permissions ==='",
-                      "sudo chown -R ${{ env.NCIANALYSIS_USER }}:${{ env.NCIANALYSIS_GROUP }} ${{ env.APP_ROOT }}",
-                      "echo '=== Starting web service ==='",
-                      "sudo systemctl start ${{ env.WEB_SERVICE }}",
-                      "echo '=== Checking service status ==='",
-                      "sudo systemctl status ${{ env.WEB_SERVICE }} --no-pager",
-                      "echo '=== Cleaning up ==='",
-                      "rm -f /tmp/build.tar.gz",
-                      "echo '=== Deployment completed successfully ==='"
-                    ]
-                  }
-                }
-                EOF
-                
-                COMMAND_ID=$(aws ssm send-command \
-                  --instance-ids "${{ steps.get-instance.outputs.instance_id }}" \
-                  --document-name "AWS-RunShellScript" \
-                  --cli-input-json file://commands.json \
-                  --query "Command.CommandId" \
-                  --output text)
-                
-                echo "SSM Command ID: $COMMAND_ID"
-                
-                echo "Waiting for deployment to complete..."
-                for i in {1..60}; do
-                  STATUS=$(aws ssm get-command-invocation \
-                    --command-id "$COMMAND_ID" \
-                    --instance-id "${{ steps.get-instance.outputs.instance_id }}" \
-                    --query "Status" \
-                    --output text)
-                  
-                  echo "Status: $STATUS (attempt $i/60)"
-                  
-                  if [[ "$STATUS" == "Success" ]]; then
-                    echo "✅ Deployment successful!"
-                    break
-                  elif [[ "$STATUS" =~ ^(Failed|Cancelled|TimedOut)$ ]]; then
-                    echo "❌ Deployment failed with status: $STATUS"
-                    
-                    echo ""
-                    echo "=== Deployment Output ==="
-                    aws ssm get-command-invocation \
-                      --command-id "$COMMAND_ID" \
-                      --instance-id "${{ steps.get-instance.outputs.instance_id }}" \
-                      --query "StandardOutputContent" \
-                      --output text
-                    
-                    echo ""
-                    echo "=== Deployment Errors ==="
-                    aws ssm get-command-invocation \
-                      --command-id "$COMMAND_ID" \
-                      --instance-id "${{ steps.get-instance.outputs.instance_id }}" \
-                      --query "StandardErrorContent" \
-                      --output text
-                    
-                    exit 1
-                  fi
-                  
-                  sleep 5
-                done
-                
-                echo ""
-                echo "=== Deployment Output ==="
-                aws ssm get-command-invocation \
-                  --command-id "$COMMAND_ID" \
-                  --instance-id "${{ steps.get-instance.outputs.instance_id }}" \
-                  --query "StandardOutputContent" \
-                  --output text
+          echo "Invalidating CloudFront cache..."
+          aws cloudfront create-invalidation \
+            --distribution-id "$DISTRIBUTION_ID" \
+            --paths "/*" \
+            --output table \
+            --query "Invalidation.{Status:Status,CreateTime:CreateTime}" 2>/dev/null
 
-            - name: Deployment summary
-              if: success()
-              run: |
-                echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
-                echo "- **Application**: ${{ env.APP }}" >> $GITHUB_STEP_SUMMARY
-                echo "- **Environment**: ${{ inputs.tier }}" >> $GITHUB_STEP_SUMMARY
-                echo "- **Git Reference**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
-                echo "- **Build Artifact**: nevus-build-${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
-                echo "- **EC2 Instance**: ${{ steps.get-instance.outputs.instance_id }}" >> $GITHUB_STEP_SUMMARY
-                echo "" >> $GITHUB_STEP_SUMMARY
-                echo "✅ Deployment completed successfully!" >> $GITHUB_STEP_SUMMARY
+          if [ $? -eq 0 ]; then
+            echo "CloudFront cache invalidation successful"
+          else
+            echo "CloudFront cache invalidation failed"
+            exit 1
+          fi
