@@ -1,4 +1,4 @@
-name: Deploy Nevus Recognition Tool
+name: Deploy Nevus Tool Frontend
 on:
   workflow_dispatch:
     inputs:
@@ -13,10 +13,6 @@ on:
           - stage
           - prod
 
-env:
-  APP: nevustool
-  AWS_REGION: us-east-1
-
 permissions:
   id-token: write
   contents: read
@@ -26,9 +22,23 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     environment: ${{ inputs.tier }}
+    env:
+      TIER: ${{ inputs.tier }}
+      APP: nevustool
+      AWS_REGION: us-east-1
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5.1.0
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions-cicd
+          role-session-name: ${{ env.TIER }}-nevustool-frontend-${{ github.ref_name }}
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -37,16 +47,10 @@ jobs:
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v5.1.0
-        with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions-cicd
-          aws-region: ${{ env.AWS_REGION }}
-
       - name: Build frontend assets
         run: |
           cd client
-          npm ci
+          npm install
           npm run build
         env:
           REACT_APP_PROJECT: ${{ env.APP }}
@@ -61,11 +65,11 @@ jobs:
             --output text)
 
           if [ -z "$S3_BUCKET" ] || [ "$S3_BUCKET" = "None" ]; then
-            echo "S3 Bucket name not found. Redeploy CloudFront stack with BucketName output."
+            echo "❌ S3 Bucket name not found. Redeploy CloudFront stack with BucketName output."
             exit 1
           fi
 
-          echo "Deploying to S3 bucket: $S3_BUCKET"
+          echo "✅ Deploying to S3 bucket: $S3_BUCKET"
           aws s3 sync client/build/ s3://$S3_BUCKET --delete
 
       - name: Invalidate CloudFront Cache
@@ -78,11 +82,11 @@ jobs:
             --output text)
 
           if [ -z "$DISTRIBUTION_ID" ] || [ "$DISTRIBUTION_ID" = "None" ]; then
-            echo "CloudFront Distribution ID not found. Redeploy CloudFront stack to get the output."
+            echo "❌ CloudFront Distribution ID not found. Redeploy CloudFront stack to get the output."
             exit 1
           fi
 
-          echo "Invalidating CloudFront cache..."
+          echo "Invalidating CloudFront cache for distribution: $DISTRIBUTION_ID"
           aws cloudfront create-invalidation \
             --distribution-id "$DISTRIBUTION_ID" \
             --paths "/*" \
@@ -90,8 +94,8 @@ jobs:
             --query "Invalidation.{Status:Status,CreateTime:CreateTime}" 2>/dev/null
 
           if [ $? -eq 0 ]; then
-            echo "CloudFront cache invalidation successful"
+            echo "✅ CloudFront cache invalidation successful"
           else
-            echo "CloudFront cache invalidation failed"
+            echo "❌ CloudFront cache invalidation failed"
             exit 1
           fi
