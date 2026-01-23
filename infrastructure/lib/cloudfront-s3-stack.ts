@@ -2,27 +2,22 @@ import * as cdk from "aws-cdk-lib";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as s3 from "aws-cdk-lib/aws-s3";
-import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
 import * as certificatemanager from "aws-cdk-lib/aws-certificatemanager";
 import { Construct } from "constructs";
 import { createTags } from "./utils/tags";
-
-export interface CloudFrontS3StackProps extends cdk.StackProps {
-  tier: string;
-  sslCertificateArn?: string;
-}
 
 export class CloudFrontS3Stack extends cdk.Stack {
   public readonly bucket: s3.Bucket;
   public readonly distribution: cloudfront.Distribution;
 
-  constructor(scope: Construct, id: string, props: CloudFrontS3StackProps) {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const { tier, sslCertificateArn } = props;
+    const tier = process.env.TIER || "dev";
+    const sslCertificateArn = process.env.SSL_CERTIFICATE_ARN;
 
     // Define custom domain and certificate if SSL certificate ARN is provided
-    const domainName = sslCertificateArn ? `moles-melanoma-tool-${tier}.cancer.gov` : undefined;
+    const domainName = `moles-melanoma-tool-${tier}.cancer.gov`;
     let certificate: certificatemanager.ICertificate | undefined;
 
     if (sslCertificateArn) {
@@ -35,18 +30,11 @@ export class CloudFrontS3Stack extends cdk.Stack {
 
     // Create S3 bucket for hosting frontend files
     this.bucket = new s3.Bucket(this, "FrontendBucket", {
-      bucketName: `${tier}-nevustool-website`,
+      bucketName: `nevustool-website-${tier}`,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-      removalPolicy: tier === 'prod' ? cdk.RemovalPolicy.RETAIN : cdk.RemovalPolicy.DESTROY,
-      autoDeleteObjects: tier !== 'prod',
+      removalPolicy: cdk.RemovalPolicy.DESTROY, // For development - change for production
+      autoDeleteObjects: true, // For development - change for production
       encryption: s3.BucketEncryption.S3_MANAGED,
-      versioned: tier === 'prod',
-      lifecycleRules: [
-        {
-          enabled: true,
-          noncurrentVersionExpiration: cdk.Duration.days(30),
-        },
-      ],
     });
 
     // Add tags to S3 bucket
@@ -57,7 +45,7 @@ export class CloudFrontS3Stack extends cdk.Stack {
 
     // Create CloudFront distribution
     this.distribution = new cloudfront.Distribution(this, "FrontendDistribution", {
-      comment: `CloudFront distribution for Nevus Recognition Tool ${tier}`,
+      comment: `CloudFront distribution for moles-melanoma-tool-${tier}.cancer.gov`,
       defaultBehavior: {
         origin: origins.S3BucketOrigin.withOriginAccessControl(this.bucket),
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
@@ -70,19 +58,18 @@ export class CloudFrontS3Stack extends cdk.Stack {
           httpStatus: 403,
           responseHttpStatus: 200,
           responsePagePath: "/index.html",
-          ttl: cdk.Duration.seconds(0),
+          ttl: cdk.Duration.minutes(5),
         },
         {
           httpStatus: 404,
           responseHttpStatus: 200,
           responsePagePath: "/index.html",
-          ttl: cdk.Duration.seconds(0),
+          ttl: cdk.Duration.minutes(5),
         },
       ],
-      priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
-      enableIpv6: true,
+      priceClass: cloudfront.PriceClass.PRICE_CLASS_100, // Use only North America and Europe
       // Add custom domain and certificate if SSL certificate ARN is provided
-      ...(certificate && domainName && {
+      ...(certificate && {
         domainNames: [domainName],
         certificate: certificate,
       }),
@@ -95,29 +82,21 @@ export class CloudFrontS3Stack extends cdk.Stack {
     });
 
     // Stack outputs
-    new cdk.CfnOutput(this, "BucketName", {
-      value: this.bucket.bucketName,
-      description: "S3 bucket name for website hosting",
-      exportName: `${tier}-nevustool-bucket-name`,
+    new cdk.CfnOutput(this, "WebsiteURL", {
+      value: certificate 
+        ? `https://${domainName}` 
+        : `https://${this.distribution.distributionDomainName}`,
+      description: "Website URL",
     });
 
     new cdk.CfnOutput(this, "DistributionId", {
       value: this.distribution.distributionId,
-      description: "CloudFront distribution ID",
-      exportName: `${tier}-nevustool-distribution-id`,
+      description: "CloudFront Distribution ID",
     });
 
-    new cdk.CfnOutput(this, "DistributionDomainName", {
-      value: this.distribution.distributionDomainName,
-      description: "CloudFront distribution domain name",
-      exportName: `${tier}-nevustool-domain-name`,
-    });
-
-    new cdk.CfnOutput(this, "WebsiteUrl", {
-      value: certificate && domainName
-        ? `https://${domainName}` 
-        : `https://${this.distribution.distributionDomainName}`,
-      description: "Website URL",
+    new cdk.CfnOutput(this, "BucketName", {
+      value: this.bucket.bucketName,
+      description: "S3 Bucket Name",
     });
   }
 }
