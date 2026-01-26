@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useMemo } from 'react';
 import { Row, Col, Form, FormControl } from 'react-bootstrap';
 import { NavLink, useHistory } from 'react-router-dom';
 import _debounce from 'lodash/debounce';
@@ -6,12 +6,12 @@ import './navbar.scss';
 
 export function Navbar({ links }) {
   const history = useHistory();
-  const handleDebounceSearch = useCallback(
-    _debounce((value) => {
+  const handleDebounceSearch = useMemo(
+    () => _debounce((value) => {
       const query = value.trim();
       if (query.length) history.push(`view-cases&search=${query}`);
     }, 300),
-    [],
+    [history],
   );
 
   return (
