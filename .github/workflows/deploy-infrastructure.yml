@@ -68,8 +68,7 @@ jobs:
         run: |
           cd infrastructure
           echo "Deploying CloudFront and S3 for ${{ env.TIER }} environment..."
-          npx cdk deploy ${{ env.TIER }}-nevustool-cloudfront-s3 \
-            -c tier=${{ env.TIER }} \
+          npx cdk deploy NevusToolStack-${{ env.TIER }} \
             --require-approval never
 
       - name: Deploy Application to S3
