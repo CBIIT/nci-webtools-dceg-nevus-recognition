@@ -22,7 +22,7 @@ export default function Cases({ filters, cases, location }) {
         .filter((c) => c.type === filter)
         .filter((c) =>
           selectedFilter.subgroups
-            ? c.subgroup == subgrouptype || subgrouptype == filter
+            ? c.subgroup === subgrouptype || subgrouptype === filter
             : true,
         );
 
@@ -57,16 +57,16 @@ export default function Cases({ filters, cases, location }) {
             <Container fluid="xxl">
               <Define>
                 {parse(selectedFilter.descriptionsummary)}
-                {info == 1 && parse(selectedFilter.description)}
+                {info === 1 && parse(selectedFilter.description)}
               </Define>
               <div className="text-center my-3">
                 <a
                   className="btn btn-light text-uppercase"
                   href={`#/view-cases&filter=${filter}&info=${
-                    info == 1 ? 0 : 1
+                    info === 1 ? 0 : 1
                   }`}
                 >
-                  Show {info == 1 ? 'Less' : 'More'} Information
+                  Show {info === 1 ? 'Less' : 'More'} Information
                 </a>
               </div>
             </Container>
