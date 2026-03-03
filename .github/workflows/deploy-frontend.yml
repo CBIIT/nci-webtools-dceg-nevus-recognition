@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   deploy-cloudfront:
-    timeout-minutes: 60
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     environment: ${{ inputs.tier }}
     env:
