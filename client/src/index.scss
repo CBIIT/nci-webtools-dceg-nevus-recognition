@@ -11,8 +11,8 @@ hr {
 
 a {
   //color: rgb(0, 140, 186);
-  color: rgb(0, 126, 167);
-  text-decoration: none;
+  color: #005ea2;
+  text-decoration: underline;
 }
 
 label {
@@ -36,6 +36,16 @@ label.disabled {
 a:hover,
 a:focus {
   text-decoration: underline;
+}
+
+/* Suppress underline for navigation and button-style links */
+.navlinks,
+a.nav-link,
+.btn,
+.btn a,
+a.btn,
+a.card {
+  text-decoration: none !important;
 }
 
 /** Bootstrap Overrides **/
@@ -131,7 +141,7 @@ a:focus {
 
 .btn.btn-link {
   // color: rgb(0, 140, 186);
-  color: rgb(0, 126, 167);
+  color: #005ea2;
 }
 
 .btn.btn-link:active,
@@ -247,8 +257,8 @@ a.nav-link.active {
 .small-link {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #007bff !important;
-  text-decoration: none;
+  color: #005ea2 !important;
+  text-decoration: underline;
   cursor: pointer;
 }
 
