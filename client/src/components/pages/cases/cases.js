@@ -7,7 +7,7 @@ import Define from '../../controls/defineText/define';
 export default function Cases({ filters, cases, location }) {
   const params = new URLSearchParams(location.pathname);
   const filter = params.get('filter') || 'mole';
-  const info = params.get('info') || 0;
+  const info = parseInt(params.get('info')) || 0;
   const search = params.get('search') || '';
   const limit = params.get('limit') || 6;
   const subgrouptype = params.get('subgrouptype') || filter;
