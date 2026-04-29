@@ -363,7 +363,7 @@
       },
       {
         "name": "Image 4",
-        "description": "<p>This picture shows the DN 4.five years after image 1. The lower part of the DN has darkened considerably. There is a new very dark brown area that extends inwardly at the 4 o’clock to 5 o’clock position.</p><p>The DN was removed because it had darkened in color over the past year.</p>",
+        "description": "<p>This picture shows the DN 4.5 years after image 1. The lower part of the DN has darkened considerably. There is a new very dark brown area that extends inwardly at the 4 o’clock to 5 o’clock position.</p><p>The DN was removed because it had darkened in color over the past year.</p>",
         "image": "images/DN6/DN6D.jpg",
         "thumbnail": "images/DN6/DN6D-thumb.jpg"
       }
@@ -396,7 +396,7 @@
       },
       {
         "name": "Image 2",
-        "description": "<p>This picture shows the mole fifteen months after than image 1. The mole had continued to grow, but is still slightly smaller than a pencil eraser. The borders have become more indistinct and more irregular in outline. The color is more variable, darker in the center and lighter at the edges.</p>",
+        "description": "<p>This picture shows the mole fifteen months after image 1. The mole had continued to grow, but is still slightly smaller than a pencil eraser. The borders have become more indistinct and more irregular in outline. The color is more variable, darker in the center and lighter at the edges.</p>",
         "image": "images/DN7/DN7B.jpg",
         "thumbnail": "images/DN7/DN7B-thumb.jpg"
       },
@@ -414,7 +414,7 @@
       },
       {
         "name": "Image 5",
-        "description": "<p>This picture shows the mole two years and 9 months years after image 1. The mole shows continued growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular, asymmetric shape and dark coloration.</p><p>The DN was removed because it was changing in ways suspicious for melanoma.</p>",
+        "description": "<p>This picture shows the mole two years and 9 months after image 1. The mole shows continued growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular, asymmetric shape and dark coloration.</p><p>The DN was removed because it was changing in ways suspicious for melanoma.</p>",
         "image": "images/DN7/DN7E.jpg",
         "thumbnail": "images/DN7/DN7E-thumb.jpg"
       }
@@ -447,7 +447,7 @@
       },
       {
         "name": "Image 2",
-        "description": "<p>This picture shows the mole two years and 9 months  after image 1. It no longer meets criteria for DN.  The mole has faded dramatically and decreased in size substantially. It is now 3 millimeters, a small pink smooth papule (bump) that appears as “mature” moles often look during the normal fading away process. The papule is likely the remnant of the elevated portion of the center of the DN in image 1.  The color is slightly reddened in the upper portion. The patient had received immunotherapy as a treatment for melanoma that had spread. In addition to fighting the cancer cells, sometimes this type of treatment causes moles, especially DN, to fade a lot.</p>",
+        "description": "<p>This picture shows the mole two years and 9 months after image 1. It no longer meets criteria for DN.  The mole has faded dramatically and decreased in size substantially. It is now 3 millimeters, a small pink smooth papule (bump) that appears as “mature” moles often look during the normal fading away process. The papule is likely the remnant of the elevated portion of the center of the DN in image 1.  The color is slightly reddened in the upper portion. The patient had received immunotherapy as a treatment for melanoma that had spread. In addition to fighting the cancer cells, sometimes this type of treatment causes moles, especially DN, to fade a lot.</p>",
         "image": "images/DN8/DN8B.jpg",
         "thumbnail": "images/DN8/DN8B-thumb.jpg"
       },
