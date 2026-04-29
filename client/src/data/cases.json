@@ -414,7 +414,7 @@
       },
       {
         "name": "Image 5",
-        "description": "<p>This picture shows the mole two years and 9 months years after image 1. The mole shows continued growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular, asymmetric shape and dark coloration.</p><div><span>The DN was removed because it was changing in ways suspicious for melanoma.</p>",
+        "description": "<p>This picture shows the mole two years and 9 months years after image 1. The mole shows continued growth, increasing elevation of the central area with changing skin markings (lines through the mole), indistinct borders, irregular, asymmetric shape and dark coloration.</p><p>The DN was removed because it was changing in ways suspicious for melanoma.</p>",
         "image": "images/DN7/DN7E.jpg",
         "thumbnail": "images/DN7/DN7E-thumb.jpg"
       }
