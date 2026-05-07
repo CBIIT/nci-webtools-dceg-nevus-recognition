@@ -1,9 +1,13 @@
-name: Deploy Nevus Tool Infrastructure
+name: Deploy Nevus Infrastructure
+permissions:
+  id-token: write
+  contents: read
+
 on:
   workflow_dispatch:
     inputs:
       tier:
-        description: "Environment to deploy to"
+        description: "Deploy environment"
         required: true
         default: "dev"
         type: choice
@@ -13,36 +17,26 @@ on:
           - stage
           - prod
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   deploy-infrastructure:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     environment: ${{ inputs.tier }}
     env:
       TIER: ${{ inputs.tier }}
       AWS_REGION: us-east-1
-      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-      SSL_CERTIFICATE_ARN: ${{ secrets.SSL_CERTIFICATE_ARN }}
+      AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+      SSL_CERTIFICATE_ARN: ${{ vars.SSL_CERTIFICATE_ARN }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: "actions/checkout@v6.0.2"
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v5.1.0
+        uses: aws-actions/configure-aws-credentials@v6.0.0
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions-cicd
-          role-session-name: ${{ env.TIER }}-nevustool-deploy-${{ github.ref_name }}
+          role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/power-user-github-actions-cicd
+          role-session-name: ${{ env.TIER }}-nevustool-infra-${{ github.ref_name }}
           aws-region: ${{ env.AWS_REGION }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-          cache: "npm"
-          cache-dependency-path: infrastructure/package-lock.json
 
       - name: Install CDK and dependencies
         run: |
@@ -50,26 +44,16 @@ jobs:
           cd infrastructure
           npm ci
 
-      - name: CDK Bootstrap
+      - name: Build app
         run: |
-          cd infrastructure
-          npx cdk bootstrap --region ${{ env.AWS_REGION }}
-
-      - name: Build React application
-        run: |
-          echo "Building React application for ${{ env.TIER }} environment..."
           cd client
           npm ci
           npm run build
-        env:
-          REACT_APP_PROJECT: nevustool
 
       - name: Deploy CloudFront + S3 Stack
         run: |
           cd infrastructure
-          echo "Deploying CloudFront and S3 for ${{ env.TIER }} environment..."
-          npx cdk deploy ${{ env.TIER }}-nevustool-cloudfront-s3 \
-            -c tier=${{ env.TIER }} \
+          npx cdk deploy NevusToolStack-${{ env.TIER }} \
             --require-approval never
 
       - name: Deploy Application to S3
@@ -80,11 +64,10 @@ jobs:
             --output text)
 
           if [ -z "$BUCKET_NAME" ] || [ "$BUCKET_NAME" = "None" ]; then
-            echo "❌ S3 Bucket name not found in stack outputs."
+            echo "S3 Bucket name not found in stack outputs."
             exit 1
           fi
 
-          echo "Deploying to S3 bucket: $BUCKET_NAME"
           aws s3 sync client/build/ s3://$BUCKET_NAME --delete
 
       - name: Invalidate CloudFront Cache
@@ -117,19 +100,15 @@ jobs:
         run: |
           echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ **Infrastructure Deployment Complete!**" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Application**: Nevus Recognition Tool" >> $GITHUB_STEP_SUMMARY
           echo "- **Environment**: ${{ env.TIER }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Region**: ${{ env.AWS_REGION }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Stack**: ${{ env.TIER }}-nevustool-cloudfront-s3" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           WEBSITE_URL=$(aws cloudformation describe-stacks \
             --stack-name "${{ env.TIER }}-nevustool-cloudfront-s3" \
             --query "Stacks[0].Outputs[?OutputKey=='WebsiteUrl'].OutputValue" \
             --output text)
-          
+
           if [ ! -z "$WEBSITE_URL" ] && [ "$WEBSITE_URL" != "None" ]; then
             echo "- **Website URL**: $WEBSITE_URL" >> $GITHUB_STEP_SUMMARY
           fi
