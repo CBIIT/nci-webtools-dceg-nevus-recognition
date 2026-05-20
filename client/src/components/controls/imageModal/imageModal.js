@@ -20,7 +20,7 @@ export default function ImageModal({ cases, filters }) {
     .filter((c) => c.type === filter)
     .filter((c) =>
       selectedFilter.subgroups
-        ? c.subgroup == subgrouptype || subgrouptype == filter
+        ? c.subgroup === subgrouptype || subgrouptype === filter
         : true,
     );
   const selectedCase = caseIndex >= 0 ? filteredCases[caseIndex] : null;
@@ -112,9 +112,9 @@ export default function ImageModal({ cases, filters }) {
                     src={'assets/' + image.thumbnail}
                     height="65"
                     className={`m-2 shadow-lg object-cover ${
-                      i == imgIndex ? 'outline-white-1¸' : ''
+                      i === imgIndex ? 'outline-white-1¸' : ''
                     }`}
-                    alt={`Thumbnail for ${selectedCase.title}, Image ${i + 1}`}
+                    alt={`Thumbnail ${i + 1} for ${selectedCase.title}`}
                     onContextMenu={(e) => e.preventDefault()}
                   />
                 </a>
@@ -127,7 +127,7 @@ export default function ImageModal({ cases, filters }) {
                   <img
                     className="w-100 h-100 object-cover"
                     src={'assets/' + selectedCase.images[imgIndex].image}
-                    alt={`${selectedCase.title}, Image ${imgIndex + 1}`}
+                    alt={`${selectedCase.title}, ${imgIndex + 1}`}
                     onContextMenu={(e) => e.preventDefault()}
                   />
                 </Col>
