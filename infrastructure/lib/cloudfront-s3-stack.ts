@@ -17,7 +17,10 @@ export class CloudFrontS3Stack extends cdk.Stack {
     const sslCertificateArn = process.env.SSL_CERTIFICATE_ARN;
 
     // Define custom domain and certificate if SSL certificate ARN is provided
-    const domainName = `moles-melanoma-tool-${tier}.cancer.gov`;
+    const domainName =
+      tier === "prod"
+        ? `moles-melanoma-tool.cancer.gov`
+        : `moles-melanoma-tool-${tier}.cancer.gov`;
     let certificate: certificatemanager.ICertificate | undefined;
 
     if (sslCertificateArn) {
@@ -32,8 +35,8 @@ export class CloudFrontS3Stack extends cdk.Stack {
     this.bucket = new s3.Bucket(this, "FrontendBucket", {
       bucketName: `nci-cbiit-nevustool-website-${tier}`,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-      removalPolicy: cdk.RemovalPolicy.DESTROY, // For development - change for production
-      autoDeleteObjects: true, // For development - change for production
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
 
@@ -44,36 +47,41 @@ export class CloudFrontS3Stack extends cdk.Stack {
     });
 
     // Create CloudFront distribution
-    this.distribution = new cloudfront.Distribution(this, "FrontendDistribution", {
-      comment: `CloudFront distribution for moles-melanoma-tool-${tier}.cancer.gov`,
-      defaultBehavior: {
-        origin: origins.S3BucketOrigin.withOriginAccessControl(this.bucket),
-        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-        cachePolicy: cloudfront.CachePolicy.CACHING_OPTIMIZED,
-        originRequestPolicy: cloudfront.OriginRequestPolicy.CORS_S3_ORIGIN,
-      },
-      defaultRootObject: "index.html",
-      errorResponses: [
-        {
-          httpStatus: 403,
-          responseHttpStatus: 200,
-          responsePagePath: "/index.html",
-          ttl: cdk.Duration.minutes(5),
+    this.distribution = new cloudfront.Distribution(
+      this,
+      "FrontendDistribution",
+      {
+        comment: `CloudFront distribution for ${domainName}`,
+        defaultBehavior: {
+          origin: origins.S3BucketOrigin.withOriginAccessControl(this.bucket),
+          viewerProtocolPolicy:
+            cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+          cachePolicy: cloudfront.CachePolicy.CACHING_OPTIMIZED,
+          originRequestPolicy: cloudfront.OriginRequestPolicy.CORS_S3_ORIGIN,
         },
-        {
-          httpStatus: 404,
-          responseHttpStatus: 200,
-          responsePagePath: "/index.html",
-          ttl: cdk.Duration.minutes(5),
-        },
-      ],
-      priceClass: cloudfront.PriceClass.PRICE_CLASS_100, // Use only North America and Europe
-      // Add custom domain and certificate if SSL certificate ARN is provided
-      ...(certificate && {
-        domainNames: [domainName],
-        certificate: certificate,
-      }),
-    });
+        defaultRootObject: "index.html",
+        errorResponses: [
+          {
+            httpStatus: 403,
+            responseHttpStatus: 200,
+            responsePagePath: "/index.html",
+            ttl: cdk.Duration.minutes(5),
+          },
+          {
+            httpStatus: 404,
+            responseHttpStatus: 200,
+            responsePagePath: "/index.html",
+            ttl: cdk.Duration.minutes(5),
+          },
+        ],
+        priceClass: cloudfront.PriceClass.PRICE_CLASS_100, // Use only North America and Europe
+        // Add custom domain and certificate if SSL certificate ARN is provided
+        ...(certificate && {
+          domainNames: [domainName],
+          certificate: certificate,
+        }),
+      }
+    );
 
     // Add tags to CloudFront distribution
     const cloudfrontTags = createTags({ tier, resourceName: "cloudfront" });
@@ -83,8 +91,8 @@ export class CloudFrontS3Stack extends cdk.Stack {
 
     // Stack outputs
     new cdk.CfnOutput(this, "WebsiteURL", {
-      value: certificate 
-        ? `https://${domainName}` 
+      value: certificate
+        ? `https://${domainName}`
         : `https://${this.distribution.distributionDomainName}`,
       description: "Website URL",
     });
