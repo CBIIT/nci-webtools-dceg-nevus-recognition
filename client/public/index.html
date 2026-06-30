@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="index.css" />
     <title>Moles to Melanoma: Recognizing the ABCDE Features</title>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-62346354-17"
-    ></script>
+    <script>
+      (function () {
+        var GA_ID = "G-E6CX4EGMDE";
+        if (!/^G-[A-Z0-9]+$/.test(GA_ID)) return;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag; window.GA_MEASUREMENT_ID = GA_ID;
+        gtag('js', new Date());
+        gtag('config', GA_ID, { send_page_view: false });
+        var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID; document.head.appendChild(s);
+      })();
+    </script>
     <script src="https://cbiit.github.io/nci-softwaresolutions-elements/components/include-html.js"></script>
     <script
       src="https://assets.adobedtm.com/6a4249cd0a2c/785de09de161/launch-70d67a6a40a8.min.js"

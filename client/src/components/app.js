@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './controls/navbar/navbar';
 import Home from './pages/home/home';
 import About from './pages/about/about';
@@ -13,6 +13,17 @@ import ImageModal from './controls/imageModal/imageModal';
 // data
 import filters from '../data/filters.json';
 import cases from '../data/cases.json';
+import { trackPageView } from '../services/analytics';
+
+// Emits a GA4 page_view on every HashRouter route change (and the initial route).
+// No-op unless analytics was bootstrapped in index.html. Must render inside <Router>.
+function AnalyticsTracker() {
+  const location = useLocation();
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location.pathname]);
+  return null;
+}
 
 export default function App() {
   const tabs = [
@@ -46,6 +57,7 @@ export default function App() {
 
   return (
     <Router>
+      <AnalyticsTracker />
       <DisclaimerModal />
       <ImageModal filters={filters} cases={cases} />
       <Navbar links={tabs} />
