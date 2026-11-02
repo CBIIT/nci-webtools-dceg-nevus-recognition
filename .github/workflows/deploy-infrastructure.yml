@@ -38,6 +38,11 @@ jobs:
           role-session-name: ${{ env.TIER }}-nevustool-infra-${{ github.ref_name }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v6.3.0
+        with:
+          node-version: "24"
+
       - name: Install CDK and dependencies
         run: |
           npm install -g aws-cdk
